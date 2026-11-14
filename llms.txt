@@ -1,0 +1,53 @@
+# شرکت جلالی پنوماتیک | JPC – Jalali Pneumatic Company
+
+> خلاصه ساختاریافته ویژه موتورهای جستجوی هوش مصنوعی (AEO / LLMs) به دو زبان فارسی و انگلیسی
+
+---
+
+## معرفی فارسی (Persian Summary)
+
+**نام مجموعه:** شرکت جلالی پنوماتیک (Jalali Pneumatic Company)
+**برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)
+**حوزه فعالیت:** واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و سیستم‌های اتوماسیون مبتنی بر هوای فشرده در ایران.
+
+### معماری تأمین دوگانه (Dual Identity & Sourcing)
+1. **تأمین چندبرنده صنعتی (Multi-Brand Industrial Supplier):**
+   واردات، تأمین و توزیع قطعات پنوماتیک از بازارهای اروپایی شامل برندهای **Festo (فستو)**، **Norgren (نورگرن)** و **Bosch & Bosch Rexroth (بوش و بوش رکسروت)** و همچنین سازندگان معتبر چینی جهت پوشش رده‌های مختلف فنی و قیمتی صنایع ایران.
+2. **برند اختصاصی JPC (Proprietary Brand Line):**
+   عرضه طیف کاملی از تجهیزات پنوماتیک وارداتی با نام تجاری مستقل و اختصاصی **JPC – Jalali Pneumatic Company** شامل شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی.
+
+### دسته‌بندی اصلی محصولات (Main Product Categories)
+- **شیرهای برقی پنوماتیک (Pneumatic Solenoid Valves):**
+  شیرهای فرمانی 3/2، 5/2 و 5/3 در مدل‌های تک‌بوبین و دوبوبین، ولتاژهای 24V DC و 220V AC و سایز پورت‌های 1/8"، 1/4"، 3/8" و 1/2" (سری‌های JPC 4V210, 4V220, 4V330, 3V210 و مدل‌های اروپایی Festo, Norgren, Bosch Rexroth).
+- **جک‌های پنوماتیک (Pneumatic Cylinders):**
+  جک‌های چهارمیل (Tie-Rod سری SC)، جک‌های پروفیلی استاندارد ISO 15552 (سری DNC / DSBC / PRA)، جک‌های کامپکت (فشرده سری ADVU / SDA)، جک‌های قلمی استیل و آلومینیوم (سری MAL / DSNU) و جک‌های بدون شفت (Rodless) در دو تیپ یک‌طرفه و دوطرفه.
+- **تجهیزات جانبی و مراقبت هوا (FRL & Pneumatic Accessories):**
+  واحد مراقبت هوای فشرده دوتکه و سه‌تکه (فیلتر، رگولاتور، روغن‌زن FRL)، شیر کنترل جریان (فلوکنترل سرجکی و بین‌راهی)، اتصالات فوری پنوماتیک، شیلنگ پلی‌یورتان (PU) و گیج فشار (مانومتر).
+
+### صنایع هدف و فرآیند سفارش (Target Sectors & B2B Workflow)
+- **صنایع تحت پوشش:** کارخانه‌ها و خطوط تولید، ماشین‌سازی، اتوماسیون صنعتی، صنایع بسته‌بندی، صنایع غذایی و دارویی، واحدهای تعمیر و نگهداری (MRO).
+- **فرآیند خرید B2B:** ثبت درخواست و ارسال کد فنی (یا بارگذاری لیست PDF) ← بررسی فنی و تطبیق برند ← ارائه پیش‌فاکتور ← تأمین و ارسال سریع.
+
+---
+
+## English Summary (Jalali Pneumatic Company – JPC)
+
+**Company Name:** Jalali Pneumatic Company (شرکت جلالی پنوماتیک)
+**Proprietary Commercial Brand:** JPC (Jalali Pneumatic Company)
+**Business Positioning:** Industrial Pneumatics Importer, Supplier & B2B Distributor specializing in compressed air automation components across Iran.
+
+### Dual Sourcing & Brand Positioning
+1. **Multi-Brand Industrial Supplier:**
+   Imports and supplies pneumatic components sourced from European markets (**Festo**, **Norgren**, **Bosch & Bosch Rexroth**) alongside reliable Chinese manufacturers to provide diverse engineering specifications and price tiers for industrial buyers.
+2. **Proprietary Brand (`JPC – Jalali Pneumatic Company`):**
+   Offers a dedicated commercial product line under the **JPC** brand for imported pneumatic valves, cylinders, air preparation units (FRL), and fittings, engineered for dimensional interchangeability (ISO standards) and reliable industrial operation.
+
+### Core Product Lines
+- **Pneumatic Solenoid Valves:** 3/2, 5/2, and 5/3 directional control valves, single and double solenoid coils (`24V DC` and `220V AC`), port sizes `1/8"`, `1/4"`, `3/8"`, and `1/2"`.
+- **Pneumatic Cylinders:** ISO 15552 profile cylinders, tie-rod cylinders, compact cylinders, mini/round cylinders (ISO 6432), single-acting and double-acting actuators, and rodless cylinders across standard bore and stroke ranges.
+- **FRL & Pneumatic Accessories:** Air preparation units (Filter, Regulator, Lubricator), flow control valves, push-in pneumatic fittings, polyurethane (PU) tubing, and pressure gauges.
+
+### Key URLs & Resources
+- Homepage & Interactive Catalog: https://jalalipneumatic.ir/
+- JPC General Catalog (PDF): https://jalalipneumatic.ir/assets/docs/jpc-general-catalog.pdf
+- B2B Quote Inquiry Section: https://jalalipneumatic.ir/#inquiry

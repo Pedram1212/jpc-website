@@ -1,0 +1,3 @@
+# Ignore environment & user dotfiles in /home/antigravity
+.*
+!.gitignore
