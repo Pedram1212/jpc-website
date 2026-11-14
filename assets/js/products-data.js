@@ -1,7 +1,7 @@
 /**
  * Jalali Pneumatic Company (JPC) - Industrial Product Catalog Data
  * فایل داده‌های محصولات کاتالوگ صنعتی جلالی پنوماتیک
- * قابل ویرایش آسان جهت افزودن یا به‌روزرسانی کدهای فنی محصولات
+ * شامل کدهای معادل‌یابی فنی (equivalentTo)، کلیدواژه‌های بازار ایران (keywords) و سایزهای قطر پیستون (supportedBores)
  */
 
 const PRODUCT_CATEGORIES = [
@@ -9,24 +9,28 @@ const PRODUCT_CATEGORIES = [
     id: "all",
     titleFa: "همه تجهیزات",
     titleEn: "All Components",
+    pageUrl: "index.html#catalog",
     countLabel: "تمامی دسته‌ها"
   },
   {
     id: "valves",
     titleFa: "شیرهای برقی پنوماتیک",
     titleEn: "Pneumatic Solenoid Valves",
+    pageUrl: "solenoid-valves.html",
     descriptionFa: "شیرهای فرمانی 3/2، 5/2 و 5/3 تک‌بوبین و دوبوبین در ولتاژهای 24V DC و 220V AC"
   },
   {
     id: "cylinders",
     titleFa: "جک‌های پنوماتیک",
     titleEn: "Pneumatic Cylinders",
-    descriptionFa: "جک‌های چهارمیل، پروفیلی، کامپکت، قلمی و بدون شفت (راdlس) یک‌طرفه و دوطرفه"
+    pageUrl: "pneumatic-cylinders.html",
+    descriptionFa: "جک‌های چهارمیل، پروفیلی، کامپکت، قلمی و بدون شفت (رادلس) یک‌طرفه و دوطرفه"
   },
   {
     id: "frl-accessories",
     titleFa: "تجهیزات جانبی و مراقبت هوا",
     titleEn: "FRL & Pneumatic Accessories",
+    pageUrl: "frl-accessories.html",
     descriptionFa: "واحد مراقبت هوا (FRL)، رگولاتور، شیر کنترل جریان، اتصالات، شیلنگ و گیج فشار"
   }
 ];
@@ -57,6 +61,25 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "MFH-5-1/4",
+      "FESTO-MFH-5-1/4-B",
+      "V61B513A-A213J",
+      "NORGREN-V61B513A",
+      "0820055051",
+      "4V210-08",
+      "SY5120-5LZD-02"
+    ],
+    keywords: [
+      "شیر برقی پنج دو",
+      "شیر برقی 5/2",
+      "شیر تک بوبین",
+      "شیر باد 24 ولت",
+      "شیر باد 220 ولت",
+      "شیر پنوماتیک یک چهارم",
+      "4V210",
+      "شیر فرمان جک دوطرفه"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "اسپول آلومینیومی با پرداخت میکرونی و آب‌بندی NBR مقاوم در برابر سایش",
@@ -87,6 +110,23 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "JMFH-5-1/4",
+      "FESTO-JMFH-5-1/4-B",
+      "V61B522A-A213J",
+      "REXROTH-0820055051-CD07",
+      "CD07-5/2",
+      "4V220-08",
+      "SY5220-5LZD-02"
+    ],
+    keywords: [
+      "شیر برقی دو بوبین",
+      "شیر دو سر بوبین",
+      "شیر حافظه دار پنوماتیک",
+      "4V220",
+      "شیر پنج به دو دوبوبین",
+      "شیر برقی 220 ولت"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "حفظ آخرین وضعیت اسپول در صورت قطع برق لحظه‌ای (Memory Function)",
@@ -117,6 +157,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "VUVG-L18-M53C",
+      "V62C611A-A213J",
+      "4V330C-10",
+      "4V230C-08",
+      "0820055501"
+    ],
+    keywords: [
+      "شیر برقی پنج سه",
+      "شیر 5/3 وسط بسته",
+      "شیر مرکز بسته پنوماتیک",
+      "4V330C",
+      "4V230C",
+      "شیر سه حالته پنوماتیک",
+      "شیر سایز سه هشتم"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "توقف دقیق پیستون جک در نقاط میانی کورس حرکتی به واسطه مرکز بسته",
@@ -147,11 +203,25 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: false,
+    equivalentTo: [
+      "MFH-3-1/8",
+      "MFH-3-1/4",
+      "V60A513A-A213J",
+      "3V210-06",
+      "3V210-08"
+    ],
+    keywords: [
+      "شیر برقی سه دو",
+      "شیر 3/2 نرمال بسته",
+      "شیر جک یکطرفه",
+      "3V210",
+      "شیر باد یک هشتم"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "طراحی فشرده جهت فرمان جک‌های یک‌طرفه (برگشت فنر) و نازل‌های بادپاش",
       "مصرف انرژی پایین جهت اتصال مستقیم به خروجی PLC",
-      "امکان تامین در سایز پورت 1/8 و 1/4 اینچ"
+      "امکان تأمین در سایز پورت 1/8 و 1/4 اینچ"
     ],
     applicationsFa: "جک‌های قلمی و کامپکت یک‌طرفه، سیستم‌های اجکتور و تفکیک قطعات در خطوط سورتینگ"
   },
@@ -177,6 +247,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-4v210-08",
+    jpcAlternativeCode: "JPC-4V210-08-24DC",
+    equivalentTo: [
+      "MFH-5-1/4",
+      "JMFH-5-1/4",
+      "MFH-5-1/8",
+      "JPC-4V210-08-24DC",
+      "4V210-08"
+    ],
+    keywords: [
+      "شیر برقی فستو",
+      "شیر تایگر فستو",
+      "MFH-5-1/4",
+      "JMFH",
+      "شیر پنوماتیک آلمانی"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "ساختار پاپت-اسپول بسیار مقاوم برای محیط‌های کارگاهی و صنعتی سنگین",
@@ -207,6 +293,21 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-4v210-08",
+    jpcAlternativeCode: "JPC-4V210-08-24DC",
+    equivalentTo: [
+      "V61B513A",
+      "V60A513A",
+      "V62C513A",
+      "JPC-4V210-08-24DC",
+      "JPC-4V330C-10-24DC"
+    ],
+    keywords: [
+      "شیر برقی نورگرن",
+      "شیر V61 نورگرن",
+      "شیر پنوماتیک انگلیسی",
+      "V61B513A"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "دبی عبوری بالا نسبت به ابعاد بدنه جهت تغذیه سریع عملگرها",
@@ -237,6 +338,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-4v220-08",
+    jpcAlternativeCode: "JPC-4V220-08-220AC",
+    equivalentTo: [
+      "0820055051",
+      "CD07",
+      "581-ISO1",
+      "JPC-4V220-08-220AC",
+      "JPC-4V210-08-24DC"
+    ],
+    keywords: [
+      "شیر برقی رکسروت",
+      "شیر برقی بوش",
+      "CD07",
+      "0820055051",
+      "شیر زیرشیری ایزو"
+    ],
     datasheetUrl: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     highlightsFa: [
       "مطابق با استانداردهای صنعتی اروپا جهت جایگزینی سریع در خطوط تولید",
@@ -263,6 +380,7 @@ const PRODUCTS_DATA = [
     cylinderType: "پروفیلی دوطرفه مغناطیسی (Double-Acting Profile)",
     portSize: 'G 3/8" (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ)',
     boreStrokeSpec: "قطر پیستون ۳۲ الی ۱۲۵ میلی‌متر | کورس ۲۵ الی ۱۰۰۰ میلی‌متر",
+    supportedBores: [32, 40, 50, 63, 80, 100, 125],
     pressureRange: "1.0 – 10.0 bar",
     voltage: "سازگار با سنسور مگنتی 24V DC (Reed / PNP)",
     bodyMaterial: "لوله پروفیل آلومینیوم هاردآنودایز + شفت کروم سخت CK45",
@@ -272,6 +390,30 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "DSBC-32",
+      "DSBC-40-100",
+      "DSBC-50-250",
+      "DSBC-63-200",
+      "DNC-40-100",
+      "DNC-63-200",
+      "PRA/182040/M/100",
+      "PRA/182050/M",
+      "R480141402",
+      "ISO-15552"
+    ],
+    keywords: [
+      "جک پروفیلی",
+      "جک DNC",
+      "سیلندر پروفیلی مگنت دار",
+      "جک ایزو 15552",
+      "جک دوطرفه پنوماتیک",
+      "جک قطر 40",
+      "جک قطر 50",
+      "جک قطر 63",
+      "جک قطر 80",
+      "جک قطر 100"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "مجهز به رینگ مگنت داخلی جهت نصب مستقیم سنسورهای موقعیت‌یاب روی شیار بدنه",
@@ -294,6 +436,7 @@ const PRODUCTS_DATA = [
     cylinderType: "چهارمیل دوطرفه (Tie-Rod Double-Acting)",
     portSize: 'G 1/4" الی G 3/4" (متناسب با قطر سیلندر)',
     boreStrokeSpec: "قطر ۳۲ الی ۲۰۰ میلی‌متر | کورس‌های استاندارد و سفارشی",
+    supportedBores: [32, 40, 50, 63, 80, 100, 125],
     pressureRange: "1.0 – 9.0 bar",
     voltage: "قابلیت سفارش با پیستون مگنت‌دار (سری SC-S)",
     bodyMaterial: "کپ‌های آلومینیوم دایکاست + چهار میل مهار فولادی گالوانیزه",
@@ -303,6 +446,25 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "SC-32",
+      "SC-40",
+      "SC-50",
+      "SC-63",
+      "SC-80x150",
+      "SC-100",
+      "SC-125",
+      "MBB50",
+      "CP96SDB"
+    ],
+    keywords: [
+      "جک چهارمیل",
+      "جک چهار میل",
+      "سیلندر چهارمیل",
+      "جک SC",
+      "جک بادی کارگاهی",
+      "جک پنوماتیک سنگین"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "استحکام مکانیکی بالا به واسطه چهار میل مهار بیرونی در برابر ضربه و فشار کاری",
@@ -325,6 +487,7 @@ const PRODUCTS_DATA = [
     cylinderType: "کامپکت یک‌طرفه و دوطرفه (Compact Single & Double Acting)",
     portSize: 'M5 / G 1/8" / G 1/4"',
     boreStrokeSpec: "قطر ۱۲ الی ۱۰۰ میلی‌متر | کورس ۵ الی ۱۰۰ میلی‌متر",
+    supportedBores: [16, 20, 25, 32, 40, 50, 63, 80, 100],
     pressureRange: "1.0 – 10.0 bar",
     voltage: "مجهز به مگنت داخلی جهت نصب سنسور",
     bodyMaterial: "بدنه یکپارچه آلومینیوم آنودایز با شفت استیل/کروم",
@@ -334,6 +497,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "ADVU-40-50-P-A",
+      "ADN-40-50",
+      "SDA-40x50",
+      "KPZ-40",
+      "RM/92040/M"
+    ],
+    keywords: [
+      "جک کامپکت",
+      "جک فشرده",
+      "جک کتابی",
+      "جک ADVU",
+      "جک SDA",
+      "جک کورس کوتاه",
+      "جک یکطرفه کامپکت"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "اشغال حداقل فضا (تا ۵۰٪ کوتاه‌تر از جک‌های استاندارد هم‌کورس)",
@@ -356,6 +535,7 @@ const PRODUCTS_DATA = [
     cylinderType: "قلمی یک‌طرفه و دوطرفه (Mini Round Cylinder)",
     portSize: 'M5 / G 1/8"',
     boreStrokeSpec: "قطر ۱۶، ۲۰، ۲۵، ۳۲ و ۴۰ میلی‌متر | کورس ۱۰ الی ۳۰۰ میلی‌متر",
+    supportedBores: [16, 20, 25, 32, 40],
     pressureRange: "1.0 – 9.0 bar",
     voltage: "دارای مگنت داخلی جهت سنسور کمربندی",
     bodyMaterial: "لوله استنلس استیل ۳۰۴ یا آلومینیوم سخت‌کاری شده",
@@ -365,6 +545,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: false,
+    equivalentTo: [
+      "DSNU-16",
+      "DSNU-20",
+      "DSNU-25-100-P-A",
+      "MAL-25x100",
+      "RA/802025/M",
+      "ISO-6432"
+    ],
+    keywords: [
+      "جک قلمی",
+      "جک مینی",
+      "جک استیل",
+      "جک DSNU",
+      "جک MAL",
+      "سیلندر قلمی برگشت فنر"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "وزن سبک و سرعت حرکتی بالا برای سیکل‌های کاری متناوب و سریع",
@@ -387,15 +583,31 @@ const PRODUCTS_DATA = [
     cylinderType: "پروفیلی دوطرفه استاندارد ISO 15552",
     portSize: 'G 1/4" (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵)',
     boreStrokeSpec: "قطر ۳۲ الی ۱۲۵ میلی‌متر | کورس‌های استاندارد",
+    supportedBores: [32, 40, 50, 63, 80, 100, 125],
     pressureRange: "0.6 – 12.0 bar",
     voltage: "شیار استاندارد سنسور سری SME / SMT-8M",
-    bodyMaterial: "آلومینیوم wrought آنودایز + شفت فولاد آلیاژی High-Alloy",
+    bodyMaterial: "آلومینیوم آنودایز + شفت فولاد آلیاژی High-Alloy",
     flowRate: "ضربه‌گیر خودتنظیم PPS یا قابل تنظیم دستی PPV",
     operatingTemp: "-20°C to +80°C",
     protectionClass: "ISO 15552",
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-dnc-63-200",
+    jpcAlternativeCode: "JPC-DNC-63-200-PPV-A",
+    equivalentTo: [
+      "DSBC-50-250",
+      "DSBC-40-100",
+      "DNC-50-250",
+      "DNC-40-100",
+      "JPC-DNC-63-200-PPV-A"
+    ],
+    keywords: [
+      "جک فستو",
+      "جک DSBC",
+      "جک DNC فستو",
+      "سیلندر پروفیلی فستو"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "اصطکاک داخلی فوق‌العاده پایین و حرکت یکنواخت حتی در فشارهای کاری کم",
@@ -418,6 +630,7 @@ const PRODUCTS_DATA = [
     cylinderType: "پروفیلی (PRA) و جک بدون شفت / رادلس (Rodless Lintra)",
     portSize: 'G 1/8" الی G 1/2"',
     boreStrokeSpec: "قطر ۲۵ الی ۱۰۰ میلی‌متر | کورس‌های بلند تا ۳۰۰۰ میلی‌متر (در تیپ رادلس)",
+    supportedBores: [25, 32, 40, 50, 63, 80, 100],
     pressureRange: "1.0 – 10.0 bar",
     voltage: "مجهز به مگنت موقعیت‌یاب کالسکه",
     bodyMaterial: "پروفیل آلومینیوم اکسترود شده با نوار آب‌بندی استیل/پلی‌یورتان",
@@ -427,9 +640,25 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-dnc-63-200",
+    jpcAlternativeCode: "JPC-DNC-63-200-PPV-A",
+    equivalentTo: [
+      "PRA/182050/M",
+      "PRA/182040/M/100",
+      "RA/8000",
+      "M/46000",
+      "JPC-DNC-63-200-PPV-A"
+    ],
+    keywords: [
+      "جک نورگرن",
+      "جک بدون شفت",
+      "جک رادلس",
+      "جک کالسکه ای",
+      "PRA/182050"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
-      "امکان تامین جک‌های بدون شفت (Rodless) جهت جابجایی‌های خطی با کورس بلند بدون افزایش طول نصب",
+      "امکان تأمین جک‌های بدون شفت (Rodless) جهت جابجایی‌های خطی با کورس بلند بدون افزایش طول نصب",
       "تحمل بارهای جانبی و گشتاورهای خمشی به واسطه گاید و کالسکه تقویت‌شده",
       "عملکرد پایدار در سیکل‌های حرکتی رفت و برگشت پیوسته"
     ],
@@ -449,6 +678,7 @@ const PRODUCTS_DATA = [
     cylinderType: "پروفیلی استاندارد (PRA) و کامپکت (KPZ)",
     portSize: 'G 1/8" الی G 1/2"',
     boreStrokeSpec: "قطر ۲۰ الی ۱۰۰ میلی‌متر | کورس استاندارد ISO",
+    supportedBores: [20, 25, 32, 40, 50, 63, 80, 100],
     pressureRange: "1.5 – 10.0 bar",
     voltage: "سازگار با سنسورهای شیاری T-Slot",
     bodyMaterial: "بدنه آلومینیوم مقاوم و شفت استنلس استیل",
@@ -458,6 +688,22 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-dnc-63-200",
+    jpcAlternativeCode: "JPC-DNC-63-200-PPV-A",
+    equivalentTo: [
+      "R480141402",
+      "0822350",
+      "PRA-ISO",
+      "KPZ",
+      "JPC-DNC-63-200-PPV-A",
+      "JPC-ADVU-40-50-PA"
+    ],
+    keywords: [
+      "جک رکسروت",
+      "جک بوش رکسروت",
+      "سیلندر PRA رکسروت",
+      "جک KPZ"
+    ],
     datasheetUrl: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     highlightsFa: [
       "طراحی مهندسی جهت کار در سرعت‌های پیستون بالا و بارهای دینامیکی",
@@ -492,6 +738,27 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "MS6-LFR-1/2",
+      "FESTO-MS6-LFR-1/2-D7-ERM-AS",
+      "B74G-4GK-AD3-RMN",
+      "0821300300",
+      "AC4010-04",
+      "AC3010-03",
+      "AC2010-02",
+      "OU-1/2"
+    ],
+    keywords: [
+      "واحد مراقبت",
+      "واحد مراقبت باد",
+      "فیلتر رگولاتور",
+      "روغن زن پنوماتیک",
+      "FRL",
+      "AC4010",
+      "واحد مراقبت نیم اینچ",
+      "واحد مراقبت یک چهارم",
+      "آبگیر باد"
+    ],
     datasheetUrl: "assets/docs/jpc-frl-accessories-datasheet.pdf",
     highlightsFa: [
       "حذف کامل ذرات معلق، رطوبت و قطرات آب از خط هوای فشرده به همراه تنظیم دقیق فشار خروجی",
@@ -522,6 +789,28 @@ const PRODUCTS_DATA = [
     availabilityFa: "آماده تأمین / استعلام قیمت",
     availabilityStatus: "available",
     isJpcFeatured: true,
+    equivalentTo: [
+      "GRLA-1/4-QS-8",
+      "ASC-200-08",
+      "ASC-300-10",
+      "SL8-02",
+      "PC8-02",
+      "PL8-02",
+      "PUN-H-8X1.25"
+    ],
+    keywords: [
+      "فلوکنترل",
+      "فلو کنترل",
+      "شیر یکطرفه گلویی",
+      "شیر تنظیم سرعت جک",
+      "اتصالات پنوماتیک",
+      "فیتینگ پنوماتیک",
+      "شیلنگ پلی یورتان",
+      "شیلنگ PU",
+      "گیج فشار باد",
+      "مانومتر پنوماتیک",
+      "اگزوز خفه کن"
+    ],
     datasheetUrl: "assets/docs/jpc-frl-accessories-datasheet.pdf",
     highlightsFa: [
       "شیرهای کنترل سرعت سرجکی (SL) و بین‌راهی (ASC) با پیچ تنظیم دقیق و مهره قفل‌شونده",
@@ -552,6 +841,20 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-ou-frl-1-2",
+    jpcAlternativeCode: "JPC-AC4010-04-D",
+    equivalentTo: [
+      "MS6-LFR-1/2",
+      "MS4-LFR-1/4",
+      "LFR-1/2-D-MIDI",
+      "JPC-AC4010-04-D"
+    ],
+    keywords: [
+      "واحد مراقبت فستو",
+      "فیلتر رگولاتور فستو",
+      "MS6-LFR",
+      "MS4-LFR"
+    ],
     datasheetUrl: "assets/docs/jpc-frl-accessories-datasheet.pdf",
     highlightsFa: [
       "پایداری بسیار بالای فشار خروجی حتی در زمان تغییرات ناگهانی مصرف هوای خط",
@@ -582,6 +885,20 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-ou-frl-1-2",
+    jpcAlternativeCode: "JPC-AC4010-04-D",
+    equivalentTo: [
+      "B74G-4GK-AD3-RMN",
+      "B72G-2GK",
+      "B73G-3GK",
+      "JPC-AC4010-04-D"
+    ],
+    keywords: [
+      "فیلتر رگولاتور نورگرن",
+      "واحد مراقبت نورگرن",
+      "B74G",
+      "Excelon"
+    ],
     datasheetUrl: "assets/docs/jpc-frl-accessories-datasheet.pdf",
     highlightsFa: [
       "مکانیزم جداسازی گریز از مرکز بسیار کارآمد جهت حذف حداکثری رطوبت هوای فشرده",
@@ -612,6 +929,20 @@ const PRODUCTS_DATA = [
     availabilityFa: "استعلام قیمت و موجودی",
     availabilityStatus: "inquiry",
     isJpcFeatured: false,
+    jpcAlternativeId: "jpc-ou-frl-1-2",
+    jpcAlternativeCode: "JPC-AC4010-04-D",
+    equivalentTo: [
+      "0821300300",
+      "NL2-FRE",
+      "AS2-FRE",
+      "JPC-AC4010-04-D"
+    ],
+    keywords: [
+      "واحد مراقبت رکسروت",
+      "رگولاتور بوش رکسروت",
+      "0821300300",
+      "NL2"
+    ],
     datasheetUrl: "assets/docs/jpc-frl-accessories-datasheet.pdf",
     highlightsFa: [
       "رگولاسیون دقیق فشار با هیسترزیس حداقلی جهت عملکرد یکنواخت عملگرهای پنوماتیک",

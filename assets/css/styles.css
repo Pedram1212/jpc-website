@@ -1,7 +1,96 @@
 /* ==========================================================================
    شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)
    Industrial Luxury B2B Design System - RTL Persian & Technical Monospace
+   Self-Hosted Local Fonts (Zero External Font Dependencies)
    ========================================================================== */
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Core Palette - Light Engineering Default Theme */
@@ -9,7 +98,7 @@
   --bg-secondary: #FFFFFF;
   --bg-tertiary: #F1F5F9;
   --bg-elevated: #FFFFFF;
-  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(255, 255, 255, 0.92);
 
   /* Fixed Deep Slate Surfaces (Hero & JPC Brand Showcase) */
   --slate-deep: #0B1120;
@@ -51,8 +140,8 @@
 
   /* Typography */
   --font-fa: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-  --font-en: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Inter', monospace;
+  --font-en: 'JetBrains Mono', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Radii & Spacing */
   --radius-xs: 4px;
@@ -71,7 +160,7 @@
   --bg-secondary: #111827;
   --bg-tertiary: #1E293B;
   --bg-elevated: #162033;
-  --bg-glass: rgba(11, 17, 32, 0.9);
+  --bg-glass: rgba(11, 17, 32, 0.92);
 
   --text-primary: #F8FAFC;
   --text-secondary: #CBD5E1;
@@ -181,7 +270,7 @@ ul {
 }
 
 .section {
-  padding-block: 5.5rem;
+  padding-block: 5.25rem;
   position: relative;
   border-bottom: 1px solid var(--border-tech);
 }
@@ -190,7 +279,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 }
 
 .section-header-row {
@@ -221,7 +310,7 @@ ul {
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
   font-weight: 800;
   line-height: 1.35;
   color: var(--text-primary);
@@ -229,9 +318,9 @@ ul {
 }
 
 .section-desc {
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-secondary);
-  max-width: 760px;
+  max-width: 780px;
   line-height: 1.8;
 }
 
@@ -242,11 +331,11 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.625rem;
-  padding: 0.75rem 1.35rem;
+  gap: 0.5rem;
+  padding: 0.72rem 1.25rem;
   border-radius: var(--radius-sm);
   font-weight: 700;
-  font-size: 0.9375rem;
+  font-size: 0.92rem;
   line-height: 1.4;
   white-space: nowrap;
   transition: all var(--transition-fast);
@@ -254,8 +343,8 @@ ul {
 }
 
 .btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
 }
 
@@ -309,9 +398,105 @@ ul {
   background-color: var(--steel-soft);
 }
 
+.btn-rfq-add {
+  background-color: var(--steel-soft);
+  color: var(--steel-accent);
+  border-color: var(--steel-border);
+}
+
+.btn-rfq-add:hover,
+.btn-rfq-add.in-list {
+  background-color: var(--steel-accent);
+  color: #FFFFFF;
+  border-color: var(--steel-accent);
+}
+
+.btn-telegram {
+  background-color: rgba(14, 165, 233, 0.14);
+  color: #0284C7;
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+[data-theme="dark"] .btn-telegram {
+  color: #38BDF8;
+}
+
+.btn-telegram:hover {
+  background-color: #0284C7;
+  color: #FFFFFF;
+  border-color: #0284C7;
+}
+
 .btn-sm {
-  padding: 0.55rem 0.95rem;
-  font-size: 0.84rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.81rem;
+}
+
+.btn-xs {
+  padding: 0.32rem 0.65rem;
+  font-size: 0.75rem;
+}
+
+/* One-Click Copy Button */
+.copy-code-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.48rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-strong);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.copy-code-btn:hover {
+  border-color: var(--steel-accent);
+  color: var(--steel-accent);
+  background-color: var(--steel-soft);
+}
+
+.copy-code-btn.copied {
+  border-color: var(--status-success);
+  color: var(--status-success);
+  background-color: var(--status-success-bg);
+}
+
+.copy-code-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Toast Notification */
+.copy-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 400;
+  background-color: var(--slate-deep);
+  color: #FFFFFF;
+  border: 1px solid var(--amber-cta);
+  border-right: 4px solid var(--amber-cta);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -321,8 +506,8 @@ ul {
   background-color: var(--slate-deep);
   color: var(--slate-muted);
   border-bottom: 1px solid var(--slate-border);
-  font-size: 0.78rem;
-  padding-block: 0.45rem;
+  font-size: 0.76rem;
+  padding-block: 0.42rem;
 }
 
 .top-tech-bar-inner {
@@ -335,7 +520,7 @@ ul {
 .top-tech-items {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.35rem;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -372,20 +557,20 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
   flex-shrink: 0;
   white-space: nowrap;
 }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-sm);
   background: linear-gradient(135deg, #0B1120 0%, #1E293B 100%);
   border: 1px solid rgba(245, 158, 11, 0.5);
@@ -395,7 +580,7 @@ ul {
   color: var(--amber-cta);
   font-family: var(--font-mono);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.98rem;
   letter-spacing: 0.04em;
   box-shadow: var(--shadow-xs);
   flex-shrink: 0;
@@ -404,11 +589,11 @@ ul {
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.08rem;
 }
 
 .brand-name-fa {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
@@ -416,7 +601,7 @@ ul {
 }
 
 .brand-name-sub {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-family: var(--font-mono);
   color: var(--text-muted);
   letter-spacing: 0.03em;
@@ -426,15 +611,15 @@ ul {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.88rem;
+  gap: 0.32rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-secondary);
   border-radius: var(--radius-xs);
@@ -450,9 +635,9 @@ ul {
 
 .nav-link-badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  padding: 0.05rem 0.38rem;
+  padding: 0.05rem 0.36rem;
   border-radius: 3px;
   background-color: var(--amber-soft);
   color: var(--amber-hover);
@@ -466,13 +651,49 @@ ul {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
   flex-shrink: 0;
 }
 
+/* Header RFQ Drawer Trigger Button */
+.header-rfq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.header-rfq-btn:hover {
+  border-color: var(--amber-cta);
+  background-color: var(--amber-soft);
+}
+
+.rfq-count-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  padding-inline: 0.35rem;
+  border-radius: 999px;
+  background-color: var(--amber-cta);
+  color: var(--amber-text-contrast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .theme-toggle-btn {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-tech);
   background-color: var(--bg-secondary);
@@ -490,8 +711,8 @@ ul {
 }
 
 .theme-toggle-btn svg {
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
 }
 
 [data-theme="light"] .icon-sun {
@@ -504,8 +725,8 @@ ul {
 
 .mobile-menu-btn {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-tech);
   background-color: var(--bg-secondary);
@@ -547,6 +768,7 @@ ul {
   transform: translateX(102%);
   transition: transform var(--transition-base);
   box-shadow: var(--shadow-lg);
+  overflow-y: auto;
 }
 
 .mobile-drawer.open {
@@ -575,18 +797,18 @@ ul {
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  margin-block: 1.5rem;
+  gap: 0.35rem;
+  margin-block: 1.25rem;
 }
 
 .mobile-nav-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem 1rem;
+  padding: 0.72rem 0.9rem;
   border-radius: var(--radius-sm);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
   border: 1px solid transparent;
   white-space: nowrap;
@@ -603,11 +825,162 @@ ul {
   border-top: 1px solid var(--border-tech);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 /* ==========================================================================
-   Section 1: Hero Section (Deep Slate Industrial Luxury)
+   Multi-Item RFQ Slide-Over Drawer (سبد استعلام قیمت چندقلمی)
+   ========================================================================== */
+.rfq-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 17, 32, 0.68);
+  backdrop-filter: blur(4px);
+  z-index: 250;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.rfq-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.rfq-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(460px, 94vw);
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-strong);
+  z-index: 260;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-102%);
+  transition: transform var(--transition-base);
+  box-shadow: var(--shadow-lg);
+}
+
+.rfq-drawer.open {
+  transform: translateX(0);
+}
+
+.rfq-drawer-header {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--slate-deep);
+  color: #FFFFFF;
+  border-bottom: 1px solid var(--slate-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rfq-drawer-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.rfq-item-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.rfq-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.rfq-item-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.rfq-item-remove {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.rfq-item-remove:hover {
+  color: #EF4444;
+  border-color: rgba(239, 68, 68, 0.35);
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.rfq-item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-tech);
+}
+
+.rfq-qty-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.rfq-qty-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.rfq-qty-btn:hover {
+  background-color: var(--steel-soft);
+  color: var(--steel-accent);
+}
+
+.rfq-qty-input {
+  width: 46px;
+  height: 28px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-inline: 1px solid var(--border-tech);
+}
+
+.rfq-drawer-footer {
+  padding: 1.15rem 1.5rem;
+  background-color: var(--bg-tertiary);
+  border-top: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* ==========================================================================
+   Section 1: Hero Section & Category Compact Hero
    ========================================================================== */
 .hero-section {
   background-color: var(--slate-deep);
@@ -654,7 +1027,7 @@ ul {
 }
 
 .hero-title {
-  font-size: clamp(1.9rem, 3.3vw, 2.85rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   font-weight: 800;
   line-height: 1.35;
   color: #FFFFFF;
@@ -666,7 +1039,7 @@ ul {
 }
 
 .hero-lead {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: #CBD5E1;
   line-height: 1.85;
   margin-bottom: 2rem;
@@ -677,8 +1050,8 @@ ul {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
 }
 
 .hero-specs-strip {
@@ -769,6 +1142,11 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  transition: border-color var(--transition-fast);
+}
+
+.hero-mini-card:hover {
+  border-color: var(--amber-cta);
 }
 
 .hero-mini-card-title {
@@ -783,8 +1161,63 @@ ul {
   color: var(--amber-cta);
 }
 
+/* Category Landing Page Compact Hero & Breadcrumbs */
+.page-hero-compact {
+  background-color: var(--slate-deep);
+  color: var(--slate-text);
+  padding-block: 3rem 3.25rem;
+  border-bottom: 1px solid var(--slate-border);
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--slate-muted);
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--amber-cta);
+}
+
+.breadcrumb-sep {
+  color: #475569;
+}
+
+.buying-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.guide-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  border-top: 3px solid var(--steel-accent);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.guide-card h3 {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.guide-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
 /* ==========================================================================
-   Section 2: Dual Sourcing & Brand Matrix (اروپا، چین و برند اختصاصی JPC)
+   Section 2: Dual Sourcing & Brand Matrix
    ========================================================================== */
 .sourcing-matrix-grid {
   display: grid;
@@ -863,14 +1296,14 @@ ul {
 }
 
 .pillar-title {
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 0.6rem;
 }
 
 .pillar-desc {
-  font-size: 0.92rem;
+  font-size: 0.91rem;
   color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 1.25rem;
@@ -944,7 +1377,7 @@ ul {
 .brand-matrix-code {
   font-family: var(--font-mono);
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--text-primary);
 }
 
@@ -973,7 +1406,7 @@ ul {
 }
 
 /* ==========================================================================
-   Section 3: Interactive Industrial Product Catalog
+   Section 3: Interactive Industrial Product Catalog & JPC Cross-Reference
    ========================================================================== */
 .catalog-controls-panel {
   background-color: var(--bg-secondary);
@@ -1049,7 +1482,7 @@ ul {
 }
 
 .catalog-result-counter {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-tech);
@@ -1086,12 +1519,12 @@ ul {
 }
 
 .filter-pill {
-  padding: 0.45rem 0.9rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-xs);
   border: 1px solid var(--border-tech);
   background-color: var(--bg-primary);
   color: var(--text-secondary);
-  font-size: 0.84rem;
+  font-size: 0.83rem;
   font-weight: 600;
   white-space: nowrap;
   transition: all var(--transition-fast);
@@ -1142,8 +1575,13 @@ ul {
   border-top: 3px solid var(--amber-cta);
 }
 
+.product-card.highlight-pulse {
+  border-color: var(--amber-cta);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35);
+}
+
 .product-card-top {
-  padding: 1.25rem 1.25rem 0.75rem;
+  padding: 1.15rem 1.2rem 0.65rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1152,9 +1590,9 @@ ul {
 
 .brand-badge {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 0.22rem 0.65rem;
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-xs);
   border: 1px solid var(--border-strong);
   background-color: var(--bg-tertiary);
@@ -1181,9 +1619,9 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   font-weight: 700;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.52rem;
   border-radius: var(--radius-xs);
 }
 
@@ -1214,20 +1652,20 @@ ul {
 
 /* Schematic Illustration Box */
 .product-schematic-box {
-  margin-inline: 1.25rem;
-  padding: 1rem;
+  margin-inline: 1.2rem;
+  padding: 0.85rem 0.95rem;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-tech);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .schematic-svg-wrap {
-  width: 92px;
-  height: 58px;
+  width: 86px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1239,37 +1677,43 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.2rem;
+  gap: 0.25rem;
   text-align: left;
+}
+
+.product-code-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .product-code-pill {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-primary);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-strong);
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 3px;
   direction: ltr;
 }
 
 .product-cat-label {
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   color: var(--text-muted);
 }
 
 .product-card-body {
-  padding: 1rem 1.25rem;
+  padding: 0.95rem 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
   flex: 1;
 }
 
 .product-title-fa {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.5;
@@ -1278,8 +1722,8 @@ ul {
 .product-specs-table {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  padding-top: 0.65rem;
+  gap: 0.45rem;
+  padding-top: 0.55rem;
   border-top: 1px solid var(--border-tech);
 }
 
@@ -1287,10 +1731,10 @@ ul {
   background-color: var(--bg-primary);
   border: 1px solid var(--border-tech);
   border-radius: var(--radius-xs);
-  padding: 0.45rem 0.6rem;
+  padding: 0.42rem 0.55rem;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.08rem;
 }
 
 .spec-cell.spec-cell-wide {
@@ -1298,28 +1742,85 @@ ul {
 }
 
 .spec-key {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
 }
 
 .spec-val {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
+/* Technical Cross-Reference & JPC Equivalent Badge */
+.jpc-equivalent-banner {
+  background-color: var(--amber-soft);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-right: 3px solid var(--amber-cta);
+  border-radius: var(--radius-xs);
+  padding: 0.5rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+}
+
+.jpc-equivalent-text {
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.jpc-equivalent-switch-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--amber-text-contrast);
+  background-color: var(--amber-cta);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.jpc-equivalent-switch-btn:hover {
+  background-color: var(--amber-hover);
+}
+
+.equivalent-codes-strip {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background-color: var(--bg-primary);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .product-card-footer {
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 0.9rem 1.2rem 1.15rem;
   border-top: 1px solid var(--border-tech);
   background-color: var(--bg-tertiary);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .product-card-actions {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.product-card-actions-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
@@ -1327,7 +1828,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-muted);
   padding-top: 0.2rem;
 }
@@ -1359,7 +1860,158 @@ ul {
 }
 
 /* ==========================================================================
-   Section 4: Dedicated JPC Brand Showcase (Dark Slate Engineering Section)
+   Interactive Pneumatic Cylinder Force Calculator Section
+   ========================================================================== */
+.calculator-wrapper {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.calc-controls-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bore-pills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.45rem;
+}
+
+.bore-preset-btn {
+  padding: 0.48rem 0.4rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.bore-preset-btn:hover {
+  border-color: var(--steel-accent);
+  color: var(--steel-accent);
+}
+
+.bore-preset-btn.active {
+  background-color: var(--steel-accent);
+  border-color: var(--steel-accent);
+  color: #FFFFFF;
+}
+
+.calc-inputs-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.calc-slider-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.calc-range-slider {
+  width: 100%;
+  accent-color: var(--amber-cta);
+  cursor: pointer;
+}
+
+.calc-results-box {
+  background-color: var(--slate-deep);
+  color: var(--slate-text);
+  border: 1px solid var(--slate-border);
+  border-radius: var(--radius-sm);
+  padding: 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.force-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.force-output-card {
+  background-color: rgba(30, 41, 59, 0.75);
+  border: 1px solid var(--slate-border);
+  border-top: 3px solid var(--amber-cta);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.force-output-card.retraction {
+  border-top-color: #38BDF8;
+}
+
+.force-val-primary {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.force-val-secondary {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--amber-cta);
+}
+
+.force-output-card.retraction .force-val-secondary {
+  color: #38BDF8;
+}
+
+.calc-recommended-box {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-tech);
+}
+
+.calc-rec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.calc-rec-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   Section 4: Dedicated JPC Brand Showcase
    ========================================================================== */
 .jpc-showcase-section {
   background-color: var(--slate-deep);
@@ -1493,7 +2145,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .industry-card {
@@ -1590,7 +2242,7 @@ ul {
 }
 
 /* ==========================================================================
-   Section 6: B2B Inquiry, Bulk Order & WhatsApp Contact Section
+   Section 6: B2B Inquiry, Bulk Order & WhatsApp / Telegram Contact Section
    ========================================================================== */
 .inquiry-layout {
   display: grid;
@@ -1605,6 +2257,20 @@ ul {
   border-radius: var(--radius-md);
   padding: 2.25rem;
   box-shadow: var(--shadow-sm);
+}
+
+.rfq-bom-form-banner {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-strong);
+  border-right: 4px solid var(--amber-cta);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.35rem;
+  display: none;
+}
+
+.rfq-bom-form-banner.active {
+  display: block;
 }
 
 .form-grid {
@@ -1655,7 +2321,7 @@ ul {
 }
 
 textarea.form-control {
-  min-height: 110px;
+  min-height: 115px;
   resize: vertical;
 }
 
@@ -1722,26 +2388,34 @@ textarea.form-control {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.35rem;
 }
 
 .contact-channel-item {
   background-color: rgba(30, 41, 59, 0.65);
   border: 1px solid var(--slate-border);
   border-radius: var(--radius-sm);
-  padding: 1rem 1.15rem;
+  padding: 0.95rem 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
+}
+
+.contact-channel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .contact-channel-label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--slate-muted);
 }
 
 .contact-channel-value {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #FFFFFF;
 }
@@ -1771,7 +2445,7 @@ textarea.form-control {
 
 .modal-dialog {
   width: 100%;
-  max-width: 640px;
+  max-width: 650px;
   max-height: 90vh;
   overflow-y: auto;
   background-color: var(--bg-secondary);
@@ -1832,22 +2506,48 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   Floating RTL WhatsApp Quick-Inquiry Button
+   Floating RTL Action Stack (WhatsApp + RFQ Drawer Pill)
    ========================================================================== */
-.floating-whatsapp {
+.floating-actions-stack {
   position: fixed;
   bottom: 1.5rem;
   left: 1.5rem;
   z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.floating-rfq-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: var(--slate-deep);
+  color: #FFFFFF;
+  padding: 0.65rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--amber-cta);
+  transition: transform var(--transition-fast);
+}
+
+.floating-rfq-fab:hover {
+  transform: translateY(-2px);
+}
+
+.floating-whatsapp {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   background-color: #10B981;
   color: #FFFFFF;
-  padding: 0.75rem 1.15rem;
+  padding: 0.72rem 1.15rem;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   box-shadow: 0 10px 25px rgba(16, 185, 129, 0.38);
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -1860,8 +2560,8 @@ textarea.form-control {
 }
 
 .floating-whatsapp svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
@@ -1931,7 +2631,7 @@ textarea.form-control {
 /* ==========================================================================
    Responsive Design Breakpoints
    ========================================================================== */
-@media (max-width: 1140px) {
+@media (max-width: 1180px) {
   .main-nav {
     display: none;
   }
@@ -1940,13 +2640,16 @@ textarea.form-control {
   }
   .hero-grid,
   .jpc-showcase-wrapper,
-  .inquiry-layout {
+  .inquiry-layout,
+  .calc-grid {
     grid-template-columns: 1fr;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .sourcing-matrix-grid {
+  .sourcing-matrix-grid,
+  .buying-guide-grid,
+  .calc-rec-grid {
     grid-template-columns: 1fr;
   }
   .brand-matrix-bar {
@@ -1971,8 +2674,13 @@ textarea.form-control {
   .brand-matrix-bar,
   .jpc-pillars-grid,
   .form-grid,
-  .footer-grid {
+  .footer-grid,
+  .force-cards-grid,
+  .calc-inputs-row {
     grid-template-columns: 1fr;
+  }
+  .bore-pills-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
   .hero-specs-strip,
   .hero-schematic-cards {

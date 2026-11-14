@@ -1,8 +1,12 @@
 /**
  * Jalali Pneumatic Company (JPC) - Site Configuration
- * شرکت جلالی پنوماتیک - تنظیمات پایه وب‌سایت و درگاه‌های ارتباطی
+ * شرکت جلالی پنوماتیک - تنظیمات پایه وب‌سایت و درگاه‌های ارتباطی B2B
  */
 const SITE_CONFIG = {
+  // دسترسی مستقیم در سطح اول جهت سازگاری با اسکریپت‌های استعلام و پیام‌رسان‌ها
+  whatsappNumber: "989120000000",
+  telegramUsername: "JalaliPneumatic_Sales",
+
   company: {
     nameFa: "شرکت جلالی پنوماتیک",
     shortNameFa: "جلالی پنوماتیک",
@@ -16,12 +20,17 @@ const SITE_CONFIG = {
   },
 
   contact: {
-    // شماره واتساپ جهت استعلام سریع (قابل تغییر به شماره رسمی مجموعه)
+    // شماره واتساپ و نام کاربری تلگرام جهت استعلام سریع و ارسال لیست BOM
     whatsappNumber: "989120000000",
     whatsappBaseUrl: "https://wa.me/989120000000",
-    phoneDisplay: "۰۲۱-۳۳۹۰۰۰۰۰",
+    telegramUsername: "JalaliPneumatic_Sales",
+    telegramBaseUrl: "https://t.me/JalaliPneumatic_Sales",
+    phoneDisplay: "021-33900000",
+    phoneDisplayFa: "۰۲۱-۳۳۹۰۰۰۰۰",
     phoneTel: "+982133900000",
-    salesMobileDisplay: "۰۹۱۲-۰۰۰-۰۰۰۰",
+    salesMobileDisplay: "0912-000-0000",
+    salesMobileDisplayFa: "۰۹۱۲-۰۰۰-۰۰۰۰",
+    salesMobileRaw: "09120000000",
     email: "info@jalalipneumatic.ir",
     salesEmail: "sales@jalalipneumatic.ir"
   },
@@ -29,7 +38,6 @@ const SITE_CONFIG = {
   endpoints: {
     // آدرس وب‌هوک یا API دریافت فرم استعلام قیمت و سفارش عمده B2B
     inquirySubmitUrl: "https://api.jalalipneumatic.ir/v1/b2b-inquiry",
-    // در صورت عدم اتصال بک‌اند، حالت شبیه‌سازی و ارسال مستقیم به واتساپ/ایمیل فعال است
     enableMockSubmission: true,
     maxUploadSizeMB: 15,
     allowedFileTypes: [".pdf"]
@@ -40,6 +48,13 @@ const SITE_CONFIG = {
     valvesCatalogPdf: "assets/docs/jpc-solenoid-valves-datasheet.pdf",
     cylindersCatalogPdf: "assets/docs/jpc-pneumatic-cylinders-datasheet.pdf",
     frlAccessoriesCatalogPdf: "assets/docs/jpc-frl-accessories-datasheet.pdf"
+  },
+
+  pages: {
+    home: "index.html",
+    valves: "solenoid-valves.html",
+    cylinders: "pneumatic-cylinders.html",
+    frlAccessories: "frl-accessories.html"
   },
 
   brands: [

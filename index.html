@@ -10,7 +10,7 @@
   />
   <meta
     name="keywords"
-    content="جلالی پنوماتیک, شرکت جلالی پنوماتیک, JPC, Jalali Pneumatic Company, تجهیزات پنوماتیک صنعتی, شیر برقی پنوماتیک, جک پنوماتیک, واحد مراقبت هوا FRL, پنوماتیک فستو Festo, نورگرن Norgren, بوش رکسروت Bosch Rexroth, اتصالات پنوماتیک"
+    content="جلالی پنوماتیک, شرکت جلالی پنوماتیک, JPC, Jalali Pneumatic Company, تجهیزات پنوماتیک صنعتی, شیر برقی پنوماتیک, جک پنوماتیک, واحد مراقبت هوا FRL, پنوماتیک فستو Festo, نورگرن Norgren, بوش رکسروت Bosch Rexroth, اتصالات پنوماتیک, محاسبه نیروی جک پنوماتیک"
   />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://jalalipneumatic.ir/" />
@@ -22,7 +22,7 @@
   <meta property="og:title" content="شرکت جلالی پنوماتیک (JPC) | تأمین‌کننده تخصصی تجهیزات پنوماتیک صنعتی" />
   <meta
     property="og:description"
-    content="کاتالوگ تخصصی و استعلام قیمت شیرهای برقی، جک‌های پنوماتیک، واحد مراقبت و اتصالات هوای فشرده با برند اختصاصی JPC و برندهای معتبر اروپایی و آسیایی."
+    content="کاتالوگ تخصصی، سیستم معادل‌یابی فنی، محاسبه‌گر نیروی جک و استعلام قیمت شیرهای برقی، جک‌های پنوماتیک و واحد مراقبت هوا با برند اختصاصی JPC و برندهای اروپایی."
   />
   <meta property="og:url" content="https://jalalipneumatic.ir/" />
   <meta property="og:image" content="https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg" />
@@ -35,15 +35,12 @@
     content="واردات، تأمین و توزیع تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده — برند اختصاصی JPC و برندهای Festo, Norgren, Bosch Rexroth."
   />
 
-  <!-- Google Fonts: Vazirmatn + Inter + JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Preload Self-Hosted Local Fonts for Instant Rendering -->
+  <link rel="preload" href="assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/JetBrainsMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- Stylesheet -->
+  <!-- Stylesheet (Includes Local @font-face Rules) -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- JSON-LD Structured Data (Organization & ItemList Product Catalog) -->
@@ -84,6 +81,7 @@
           {
             "@type": "ListItem",
             "position": 1,
+            "url": "https://jalalipneumatic.ir/solenoid-valves.html",
             "item": {
               "@type": "Product",
               "name": "شیرهای برقی پنوماتیک (Pneumatic Solenoid Valves)",
@@ -95,6 +93,7 @@
           {
             "@type": "ListItem",
             "position": 2,
+            "url": "https://jalalipneumatic.ir/pneumatic-cylinders.html",
             "item": {
               "@type": "Product",
               "name": "جک‌های پنوماتیک صنعتی (Pneumatic Cylinders)",
@@ -106,6 +105,7 @@
           {
             "@type": "ListItem",
             "position": 3,
+            "url": "https://jalalipneumatic.ir/frl-accessories.html",
             "item": {
               "@type": "Product",
               "name": "تجهیزات جانبی و واحد مراقبت هوا (FRL & Pneumatic Accessories)",
@@ -120,7 +120,7 @@
   }
   </script>
 </head>
-<body>
+<body data-page-category="all">
 
   <!-- Top Technical Status Strip -->
   <div class="top-tech-bar">
@@ -135,8 +135,12 @@
           <strong class="mono" style="color: #F59E0B;">JPC – Jalali Pneumatic Company</strong>
         </span>
         <span class="top-tech-item">
-          <span>تأمین چندبرنده:</span>
-          <span class="mono" style="color: #E2E8F0;">Festo · Norgren · Bosch Rexroth</span>
+          <span>صفحات تخصصی:</span>
+          <a href="solenoid-valves.html" style="color: #E2E8F0; text-decoration: underline;">شیرهای برقی</a>
+          <span>·</span>
+          <a href="pneumatic-cylinders.html" style="color: #E2E8F0; text-decoration: underline;">جک‌های پنوماتیک</a>
+          <span>·</span>
+          <a href="frl-accessories.html" style="color: #E2E8F0; text-decoration: underline;">واحد مراقبت و اتصالات</a>
         </span>
       </div>
       <div class="top-tech-items">
@@ -150,7 +154,7 @@
   <!-- Main Sticky Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="brand-logo" aria-label="شرکت جلالی پنوماتیک - صفحه اصلی">
+      <a href="index.html" class="brand-logo" aria-label="شرکت جلالی پنوماتیک - صفحه اصلی">
         <div class="brand-mark">JPC</div>
         <div class="brand-text">
           <span class="brand-name-fa">شرکت جلالی پنوماتیک</span>
@@ -159,17 +163,34 @@
       </a>
 
       <nav class="main-nav" aria-label="ناوبری اصلی">
-        <a href="#sourcing" class="nav-link">شبکه تأمین و برندها</a>
-        <a href="#catalog" class="nav-link">کاتالوگ محصولات</a>
+        <a href="#catalog" class="nav-link active">کاتالوگ جامع</a>
+        <a href="solenoid-valves.html" class="nav-link">شیرهای برقی</a>
+        <a href="pneumatic-cylinders.html" class="nav-link">جک‌های پنوماتیک</a>
+        <a href="frl-accessories.html" class="nav-link">واحد مراقبت و اتصالات</a>
+        <a href="#calculator" class="nav-link">محاسبه‌گر نیروی جک</a>
         <a href="#jpc-brand" class="nav-link">
-          <span>برند اختصاصی</span>
+          <span>برند</span>
           <span class="nav-link-badge">JPC</span>
         </a>
-        <a href="#industries" class="nav-link">صنایع و فرآیند خرید</a>
-        <a href="#inquiry" class="nav-link">استعلام قیمت و سفارش عمده</a>
+        <a href="#inquiry" class="nav-link">استعلام B2B</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Multi-Item RFQ Drawer Trigger Button -->
+        <button
+          type="button"
+          class="header-rfq-btn js-open-rfq-drawer"
+          id="header-rfq-btn"
+          aria-label="مشاهده لیست استعلام چندقلمی"
+        >
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          <span>لیست استعلام</span>
+          <span class="rfq-count-pill js-rfq-count" id="header-rfq-count">0</span>
+        </button>
+
         <button
           type="button"
           class="theme-toggle-btn"
@@ -177,11 +198,9 @@
           aria-label="تغییر تم روشن و تاریک"
           title="تغییر حالت نمایش (روشن / تاریک)"
         >
-          <!-- Moon Icon -->
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <!-- Sun Icon -->
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -233,36 +252,108 @@
       </div>
 
       <nav class="mobile-nav-list">
-        <a href="#sourcing" class="mobile-nav-link">
-          <span>شبکه تأمین و برندها</span>
+        <a href="#catalog" class="mobile-nav-link">
+          <span>کاتالوگ جامع محصولات</span>
           <span class="mono">01</span>
         </a>
-        <a href="#catalog" class="mobile-nav-link">
-          <span>کاتالوگ تخصصی محصولات</span>
-          <span class="mono">02</span>
+        <a href="solenoid-valves.html" class="mobile-nav-link">
+          <span>صفحه تخصصی شیرهای برقی</span>
+          <span class="mono">3/2 · 5/2</span>
+        </a>
+        <a href="pneumatic-cylinders.html" class="mobile-nav-link">
+          <span>صفحه تخصصی جک‌های پنوماتیک</span>
+          <span class="mono">ISO</span>
+        </a>
+        <a href="frl-accessories.html" class="mobile-nav-link">
+          <span>صفحه تخصصی واحد مراقبت و اتصالات</span>
+          <span class="mono">FRL</span>
+        </a>
+        <a href="#calculator" class="mobile-nav-link">
+          <span>ماشین‌حساب محاسبه نیروی جک</span>
+          <span class="mono">N / kgf</span>
         </a>
         <a href="#jpc-brand" class="mobile-nav-link">
           <span>برند اختصاصی JPC</span>
           <span class="nav-link-badge">JPC</span>
         </a>
-        <a href="#industries" class="mobile-nav-link">
-          <span>صنایع و فرآیند تأمین B2B</span>
-          <span class="mono">04</span>
-        </a>
         <a href="#inquiry" class="mobile-nav-link">
           <span>استعلام قیمت و سفارش عمده</span>
-          <span class="mono">05</span>
+          <span class="mono">B2B</span>
         </a>
       </nav>
     </div>
 
     <div class="mobile-drawer-footer">
+      <button type="button" class="btn btn-rfq-add js-open-rfq-drawer" style="width: 100%;">
+        <span>مشاهده لیست استعلام چندقلمی</span>
+        <span class="rfq-count-pill js-rfq-count">0</span>
+      </button>
       <a href="#inquiry" class="btn btn-amber" style="width: 100%;">
         استعلام قیمت و مشاوره فنی
       </a>
-      <a href="assets/docs/jpc-general-catalog.pdf" download class="btn btn-outline-tech" style="width: 100%;">
-        دانلود کاتالوگ PDF
-      </a>
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       MULTI-ITEM RFQ SLIDE-OVER DRAWER (سبد استعلام قیمت چندقلمی)
+       =================================================================== -->
+  <div class="rfq-drawer-backdrop" id="rfq-drawer-backdrop"></div>
+  <aside class="rfq-drawer" id="rfq-drawer" aria-label="سبد استعلام قیمت چندقلمی" aria-hidden="true">
+    <div class="rfq-drawer-header">
+      <div>
+        <span class="mono" style="font-size: 0.72rem; color: #F59E0B;">MULTI-ITEM B2B RFQ LIST</span>
+        <h3 style="font-size: 1.08rem; font-weight: 800; color: #FFFFFF;">
+          لیست استعلام قیمت چندقلمی (BOM)
+        </h3>
+      </div>
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <button
+          type="button"
+          class="btn btn-outline-light btn-xs"
+          id="rfq-clear-btn"
+          style="display:none;"
+        >
+          پاک کردن لیست
+        </button>
+        <button type="button" class="modal-close-btn" id="rfq-drawer-close" aria-label="بستن سبد استعلام">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <div class="rfq-drawer-body" id="rfq-drawer-body"></div>
+
+    <div class="rfq-drawer-footer">
+      <button
+        type="button"
+        class="btn btn-amber"
+        id="rfq-populate-form-btn"
+        style="width: 100%; justify-content: center;"
+      >
+        <span>درج کل لیست در فرم استعلام رسمی B2B</span>
+      </button>
+      <div style="display:grid; grid-template-columns: 1.3fr 0.7fr; gap:0.5rem;">
+        <a
+          href="https://wa.me/989120000000"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-steel btn-sm"
+          id="rfq-send-whatsapp-btn"
+          style="justify-content: center;"
+        >
+          ارسال لیست استعلام در واتساپ
+        </a>
+        <a
+          href="https://t.me/JalaliPneumatic_Sales"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-telegram btn-sm"
+          id="rfq-send-telegram-btn"
+          style="justify-content: center;"
+        >
+          ارسال در تلگرام
+        </a>
+      </div>
     </div>
   </aside>
 
@@ -298,6 +389,9 @@
             </a>
             <a href="#" class="btn btn-outline-light js-open-general-inquiry">
               <span>استعلام قیمت و مشاوره فنی</span>
+            </a>
+            <a href="#calculator" class="btn btn-outline-light">
+              <span>محاسبه‌گر مهندسی نیروی جک</span>
             </a>
           </div>
 
@@ -336,7 +430,7 @@
                   تأمین قطعات خطوط تولید و ماشین‌سازی
                 </div>
                 <div style="font-size: 0.74rem; color: #CBD5E1;">
-                  تطبیق دقیق کد فنی و ارائه گزینه‌های چندسطحی قیمتی و مهندسی
+                  تطبیق دقیق کد فنی و معادل‌یابی ابعادی در برند اختصاصی JPC
                 </div>
               </div>
               <span class="brand-badge badge-jpc">JPC SERIES</span>
@@ -344,18 +438,18 @@
           </div>
 
           <div class="hero-schematic-cards">
-            <div class="hero-mini-card">
-              <span class="hero-mini-card-title">شیرآلات برقی</span>
+            <a href="solenoid-valves.html" class="hero-mini-card">
+              <span class="hero-mini-card-title">شیرآلات برقی ←</span>
               <span class="hero-mini-card-sub">1/8" to 1/2" Ports</span>
-            </div>
-            <div class="hero-mini-card">
-              <span class="hero-mini-card-title">سیلندر و عملگرها</span>
+            </a>
+            <a href="pneumatic-cylinders.html" class="hero-mini-card">
+              <span class="hero-mini-card-title">سیلندر و جک‌ها ←</span>
               <span class="hero-mini-card-sub">Bore Ø12 – Ø200mm</span>
-            </div>
-            <div class="hero-mini-card">
-              <span class="hero-mini-card-title">مراقبت و اتصالات</span>
+            </a>
+            <a href="frl-accessories.html" class="hero-mini-card">
+              <span class="hero-mini-card-title">مراقبت و اتصالات ←</span>
               <span class="hero-mini-card-sub">FRL · PU · Fittings</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -423,7 +517,7 @@
             <ul class="pillar-feature-list">
               <li>بررسی فنی و تأمین بر اساس پارت‌نامبر و کد فنی دقیق درج‌شده روی قطعه</li>
               <li>مناسب برای خطوط پیوسته با سیکل کاری بالا و شرایط محیطی سخت</li>
-              <li>امکان ارائه پیشنهاد جایگزین هم‌ردیف در صورت توقف تولید کدهای قدیمی</li>
+              <li>امکان ارائه پیشنهاد جایگزین هم‌ابعاد در برند اختصاصی JPC</li>
             </ul>
           </article>
 
@@ -494,25 +588,31 @@
     </section>
 
     <!-- ===================================================================
-         3. INTERACTIVE INDUSTRIAL PRODUCT CATALOG
+         3. INTERACTIVE INDUSTRIAL PRODUCT CATALOG + JPC CROSS-REFERENCE
          =================================================================== -->
     <section class="section" id="catalog">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">کاتالوگ تخصصی با فیلتر زنده</span>
+          <span class="section-eyebrow">کاتالوگ تخصصی و سیستم معادل‌یابی فنی</span>
           <div class="section-header-row">
             <h2 class="section-title">کاتالوگ تعاملی تجهیزات پنوماتیک صنعتی</h2>
-            <a href="assets/docs/jpc-general-catalog.pdf" download class="btn btn-outline-tech btn-sm">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>دانلود PDF لیست محصولات</span>
-            </a>
+            <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
+              <button type="button" class="btn btn-rfq-add btn-sm js-open-rfq-drawer">
+                <span>سبد استعلام چندقلمی</span>
+                <span class="rfq-count-pill js-rfq-count">0</span>
+              </button>
+              <a href="assets/docs/jpc-general-catalog.pdf" download class="btn btn-outline-tech btn-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>دانلود PDF لیست محصولات</span>
+              </a>
+            </div>
           </div>
           <p class="section-desc">
-            مدل‌های زیر را بر اساس دسته‌بندی فنی، برند یا کد مهندسی فیلتر نمایید. با کلیک بر روی <strong>«درخواست استعلام قیمت»</strong> در هر کارت، نام و کد فنی تجهیز به صورت خودکار در فرم استعلام و لینک واتساپ درج می‌شود.
+            جستجوی هوشمند کاتالوگ از اعداد فارسی/انگلیسی، کدهای فنی اروپایی (مانند <span class="mono">DSBC-40-100</span>، <span class="mono">MFH-5-1/4</span>، <span class="mono">PRA/182050</span>) و اصطلاحات بازار ایران (مانند <em>فلوکنترل</em>، <em>شیر یکطرفه گلویی</em>، <em>جک چهارمیل</em>) پشتیبانی می‌کند و معادل ابعادی و فنی موجود در برند اختصاصی <strong>JPC</strong> را نمایش می‌دهد.
           </p>
         </div>
 
@@ -528,7 +628,7 @@
                 type="search"
                 id="catalog-search-input"
                 class="catalog-search-input"
-                placeholder="جستجوی زنده کد فنی یا کلیدواژه (مثال: 4V210، DNC، 5/2، 24V DC، FRL، 1/4)..."
+                placeholder="جستجوی کد فنی، کد معادل اروپایی یا نام قطعه (مثال: 4V210، DSBC-40-100، فلوکنترل، جک چهارمیل)..."
                 aria-label="جستجوی کد فنی یا نام تجهیز پنوماتیک"
               />
               <button
@@ -591,6 +691,168 @@
 
         <!-- Dynamic Products Grid (Populated from assets/js/products-data.js) -->
         <div class="products-grid" id="catalog-products-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         3B. INTERACTIVE PNEUMATIC CYLINDER FORCE CALCULATOR SECTION
+         =================================================================== -->
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ابزار محاسباتی مهندسی و ماشین‌سازی</span>
+          <div class="section-header-row">
+            <h2 class="section-title">ماشین‌حساب مهندسی محاسبه نیروی جک پنوماتیک</h2>
+            <a href="pneumatic-cylinders.html" class="btn btn-outline-tech btn-sm">
+              مشاهده صفحه تخصصی جک‌های پنوماتیک ←
+            </a>
+          </div>
+          <p class="section-desc">
+            با انتخاب قطر پیستون (<span class="mono">Bore</span>)، قطر شفت (<span class="mono">Rod</span>) و فشار هوای فشرده خط (<span class="mono">bar</span>)، نیروی تئوری کورس رفت و برگشت جک را بر حسب نیوتن (<span class="mono">N</span>) و کیلوگرم‌نیرو (<span class="mono">kgf</span>) محاسبه کرده و مدل‌های هم‌سایز را مستقیماً به لیست استعلام اضافه کنید.
+          </p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <div class="calc-grid">
+            <!-- Calculator Inputs -->
+            <div class="calc-controls-box">
+              <div>
+                <label class="form-label" style="margin-bottom: 0.55rem;">
+                  <span>۱. انتخاب سریع قطر پیستون استاندارد (Bore Diameter - mm):</span>
+                  <span class="mono" style="color: var(--steel-accent);">ISO Standard</span>
+                </label>
+                <div class="bore-pills-grid" role="group" aria-label="قطرهای استاندارد جک">
+                  <button type="button" class="bore-preset-btn" data-bore-preset="16">Ø16</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="20">Ø20</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="25">Ø25</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="32">Ø32</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="40">Ø40</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="50">Ø50</button>
+                  <button type="button" class="bore-preset-btn active" data-bore-preset="63">Ø63</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="80">Ø80</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="100">Ø100</button>
+                  <button type="button" class="bore-preset-btn" data-bore-preset="125">Ø125</button>
+                </div>
+              </div>
+
+              <div class="calc-inputs-row">
+                <div class="form-group">
+                  <label class="form-label" for="calc-bore-input">قطر پیستون (mm)</label>
+                  <input
+                    type="number"
+                    id="calc-bore-input"
+                    class="form-control mono"
+                    min="10"
+                    max="320"
+                    value="63"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="calc-rod-input">قطر شفت (mm)</label>
+                  <input
+                    type="number"
+                    id="calc-rod-input"
+                    class="form-control mono"
+                    min="4"
+                    max="100"
+                    value="20"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="calc-pressure-input">فشار کاری (bar)</label>
+                  <input
+                    type="number"
+                    id="calc-pressure-input"
+                    class="form-control mono"
+                    min="1"
+                    max="12"
+                    step="0.5"
+                    value="6"
+                  />
+                </div>
+              </div>
+
+              <div class="calc-slider-wrap">
+                <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-secondary);">
+                  <span>تنظیم فشار هوای ورودی (۱ تا ۱۰ بار):</span>
+                  <span class="mono" style="font-weight:700; color:var(--amber-hover);">استاندارد کارگاهی: 6 bar</span>
+                </div>
+                <input
+                  type="range"
+                  id="calc-pressure-slider"
+                  class="calc-range-slider"
+                  min="1"
+                  max="10"
+                  step="0.5"
+                  value="6"
+                  aria-label="اسلایدر فشار کاری بر حسب بار"
+                />
+                <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted);" class="mono">
+                  <span>1 bar</span>
+                  <span>4 bar</span>
+                  <span>6 bar</span>
+                  <span>8 bar</span>
+                  <span>10 bar</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculator Results -->
+            <div class="calc-results-box">
+              <div>
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; margin-bottom:1rem;">
+                  <span style="font-size:0.82rem; font-weight:700; color:#94A3B8;">خروجی محاسبات مهندسی جک دوطرفه</span>
+                  <span class="mono" id="calc-formula-summary" style="font-size:0.78rem; color:#38BDF8; background:rgba(56,189,248,0.12); padding:0.2rem 0.55rem; border-radius:4px;">
+                    Ø63mm Bore | Ø20mm Rod | 6 bar
+                  </span>
+                </div>
+
+                <div class="force-cards-grid">
+                  <div class="force-output-card">
+                    <span style="font-size:0.8rem; color:#CBD5E1; font-weight:700;">
+                      نیروی کورس رفت (Extension Force)
+                    </span>
+                    <div class="force-val-primary" id="calc-ext-n">1,870 N</div>
+                    <div class="force-val-secondary" id="calc-ext-kgf">≈ 190.7 kgf</div>
+                    <span style="font-size:0.72rem; color:#94A3B8; margin-top:0.2rem;">
+                      سطح مؤثر کامل پیستون
+                    </span>
+                  </div>
+
+                  <div class="force-output-card retraction">
+                    <span style="font-size:0.8rem; color:#CBD5E1; font-weight:700;">
+                      نیروی کورس برگشت (Retraction Force)
+                    </span>
+                    <div class="force-val-primary" id="calc-ret-n">1,682 N</div>
+                    <div class="force-val-secondary" id="calc-ret-kgf">≈ 171.5 kgf</div>
+                    <span style="font-size:0.72rem; color:#94A3B8; margin-top:0.2rem;">
+                      با کسر سطح مقطع شفت جک
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="font-size:0.78rem; color:#94A3B8; border-top:1px solid var(--slate-border); padding-top:0.85rem; line-height:1.65;">
+                <strong style="color:#F8FAFC;">نکته طراحی مهندسی:</strong> در طراحی مکانیزم‌های صنعتی، به دلیل اصطکاک داخلی و نوسان فشار خط، معمولاً ضریب بار مفید <strong>۷۰٪ الی ۸۵٪</strong> نیروی تئوری فوق مبنای انتخاب سایز جک قرار می‌گیرد.
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamically Matched Cylinders for Selected Bore -->
+          <div class="calc-recommended-box">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+              <h3 style="font-size:0.98rem; font-weight:800; color:var(--text-primary);">
+                مدل‌های جک پنوماتیک پیشنهادی متناسب با سایز انتخاب‌شده در کاتالوگ:
+              </h3>
+              <span style="font-size:0.78rem; color:var(--text-muted);">
+                با کلیک بر روی دکمه هر کارت، جک با قطر انتخاب‌شده به سبد استعلام اضافه می‌شود
+              </span>
+            </div>
+            <div class="calc-rec-grid" id="calc-recommended-cylinders"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -679,53 +941,53 @@
               </p>
 
               <div class="jpc-series-list">
-                <div class="jpc-series-row">
+                <a href="solenoid-valves.html" class="jpc-series-row">
                   <div>
                     <div style="font-weight: 800; color: #F8FAFC; font-size: 0.94rem;">
-                      شیرهای برقی فرمانی ۵/۲، ۵/۳ و ۳/۲
+                      شیرهای برقی فرمانی ۵/۲، ۵/۳ و ۳/۲ ←
                     </div>
                     <div style="font-size: 0.78rem; color: #94A3B8;">
                       تک‌بوبین و دوبوبین، سایز 1/8" الی 1/2"، بوبین 24V DC و 220V AC
                     </div>
                   </div>
                   <span class="jpc-series-codes">4V210 · 4V220 · 4V330 · 3V210</span>
-                </div>
+                </a>
 
-                <div class="jpc-series-row">
+                <a href="pneumatic-cylinders.html" class="jpc-series-row">
                   <div>
                     <div style="font-weight: 800; color: #F8FAFC; font-size: 0.94rem;">
-                      جک‌های پروفیلی و چهارمیل صنعتی
+                      جک‌های پروفیلی و چهارمیل صنعتی ←
                     </div>
                     <div style="font-size: 0.78rem; color: #94A3B8;">
                       مغناطیسی با ضربه‌گیر قابل رگلاژ PPV در قطرهای ۳۲ الی ۲۰۰ میلی‌متر
                     </div>
                   </div>
                   <span class="jpc-series-codes">DNC · SC · SU</span>
-                </div>
+                </a>
 
-                <div class="jpc-series-row">
+                <a href="pneumatic-cylinders.html" class="jpc-series-row">
                   <div>
                     <div style="font-weight: 800; color: #F8FAFC; font-size: 0.94rem;">
-                      جک‌های کامپکت و قلمی (مینی)
+                      جک‌های کامپکت و قلمی (مینی) ←
                     </div>
                     <div style="font-size: 0.78rem; color: #94A3B8;">
                       طراحی فشرده یک‌طرفه و دوطرفه مناسب فیکسچرها و فضاهای محدود
                     </div>
                   </div>
                   <span class="jpc-series-codes">ADVU · SDA · MAL · DSNU</span>
-                </div>
+                </a>
 
-                <div class="jpc-series-row">
+                <a href="frl-accessories.html" class="jpc-series-row">
                   <div>
                     <div style="font-weight: 800; color: #F8FAFC; font-size: 0.94rem;">
-                      واحدهای مراقبت هوا، فلوکنترل و اتصالات
+                      واحدهای مراقبت هوا، فلوکنترل و اتصالات ←
                     </div>
                     <div style="font-size: 0.78rem; color: #94A3B8;">
                       فیلتر رگولاتور روغن‌زن، شیر کنترل سرعت، شیلنگ PU، فیتینگ و مانومتر
                     </div>
                   </div>
                   <span class="jpc-series-codes">AC / OU · ASC · SL · PU</span>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -751,7 +1013,6 @@
           </p>
         </div>
 
-        <!-- 6 Target Industrial Sectors Grid -->
         <div class="industries-grid">
           <article class="industry-card">
             <div class="industry-icon">
@@ -851,7 +1112,7 @@
             <div class="workflow-step-card">
               <span class="step-number">01</span>
               <h4>ثبت درخواست / ارسال کد فنی</h4>
-              <p>ارسال پارت‌نامبر، مشخصات فنی، تصویر پلاک قطعه یا بارگذاری لیست PDF اقلام مورد نیاز از طریق فرم سایت یا واتساپ.</p>
+              <p>ارسال پارت‌نامبر، افزودن اقلام به سبد استعلام چندقلمی یا بارگذاری لیست PDF اقلام از طریق فرم سایت، واتساپ یا تلگرام.</p>
             </div>
 
             <div class="workflow-step-card">
@@ -877,7 +1138,7 @@
     </section>
 
     <!-- ===================================================================
-         6. B2B INQUIRY, BULK ORDER & WHATSAPP CONTACT SECTION
+         6. B2B INQUIRY, BULK ORDER & WHATSAPP / TELEGRAM CONTACT SECTION
          =================================================================== -->
     <section class="section" id="inquiry">
       <div class="container">
@@ -885,13 +1146,15 @@
           <span class="section-eyebrow">استعلام قیمت، سفارش عمده و مشاوره فنی</span>
           <h2 class="section-title">ارسال درخواست پیش‌فاکتور و استعلام کد فنی</h2>
           <p class="section-desc">
-            جهت استعلام قیمت تکی یا سفارش عمده (لیست اقلام پروژه)، فرم زیر را تکمیل نمایید یا فایل <span class="mono">PDF</span> لیست قطعات خود را بارگذاری کنید.
+            جهت استعلام قیمت تکی یا سفارش عمده (لیست اقلام پروژه)، فرم زیر را تکمیل نمایید، از سبد استعلام چندقلمی استفاده کنید یا فایل <span class="mono">PDF</span> لیست قطعات خود را بارگذاری نمایید.
           </p>
         </div>
 
         <div class="inquiry-layout">
           <!-- Main B2B Inquiry Form -->
           <div class="inquiry-form-card">
+            <div class="rfq-bom-form-banner" id="rfq-bom-form-banner"></div>
+
             <form id="b2b-inquiry-form" novalidate>
               <div class="form-grid">
                 <div class="form-group">
@@ -981,7 +1244,7 @@
 
                 <div class="form-group full-width">
                   <label class="form-label" for="b2b-tech-code">
-                    <span>کد فنی تجهیز (Technical Code) یا نام محصول</span>
+                    <span>کد فنی تجهیز (Technical Code) یا خلاصه اقلام</span>
                     <span class="form-required">الزامی *</span>
                   </label>
                   <input
@@ -996,7 +1259,7 @@
 
                 <div class="form-group full-width">
                   <label class="form-label" for="b2b-notes">
-                    <span>توضیحات فنی تکمیلی (فشار کاری، سایز پورت، ولتاژ یا کورس جک)</span>
+                    <span>لیست اقلام (BOM) و توضیحات فنی تکمیلی (فشار کاری، سایز پورت، ولتاژ یا کورس جک)</span>
                   </label>
                   <textarea
                     id="b2b-notes"
@@ -1045,16 +1308,16 @@
                 <button type="submit" class="btn btn-amber">
                   <span>ثبت درخواست استعلام قیمت</span>
                 </button>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">
-                  پاسخگویی سریع در ساعات کاری به واحدهای صنعتی و تدارکات
-                </span>
+                <button type="button" class="btn btn-outline-tech js-open-rfq-drawer">
+                  <span>مدیریت لیست چندقلمی (<span class="js-rfq-count">0</span>)</span>
+                </button>
               </div>
 
               <div class="form-feedback" id="b2b-form-feedback" role="status" aria-live="polite"></div>
             </form>
           </div>
 
-          <!-- Direct Contact & WhatsApp Channel Card -->
+          <!-- Direct Contact, Copyable Numbers, WhatsApp & Telegram Card -->
           <aside class="contact-channels-card">
             <div>
               <span class="mono" style="font-size: 0.75rem; color: #F59E0B; font-weight: 700;">
@@ -1063,46 +1326,77 @@
               <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-top: 0.25rem;">
                 راه‌های ارتباط مستقیم با واحد فروش مهندسی
               </h3>
-              <p style="font-size: 0.88rem; color: #CBD5E1; margin-top: 0.5rem;">
-                برای ارسال فوری تصویر پلاک قطعه یا دریافت مشاوره جایگزینی کد فنی، می‌توانید مستقیماً از طریق واتساپ یا خطوط ارتباطی زیر اقدام فرمایید.
+              <p style="font-size: 0.86rem; color: #CBD5E1; margin-top: 0.5rem;">
+                برای ارسال فوری تصویر پلاک قطعه، فایل لیست خرید یا دریافت مشاوره معادل‌یابی کد فنی، می‌توانید از طریق واتساپ، تلگرام یا خطوط تلفن زیر اقدام فرمایید.
               </p>
             </div>
 
             <div class="contact-channel-item">
               <span class="contact-channel-label">تلفن واحد فروش و استعلام</span>
-              <a href="tel:+982133900000" class="contact-channel-value mono">021-33900000</a>
+              <div class="contact-channel-row">
+                <a href="tel:+982133900000" class="contact-channel-value mono">021-33900000</a>
+                <button type="button" class="copy-code-btn js-static-copy-btn" data-copy="02133900000">
+                  کپی شماره
+                </button>
+              </div>
             </div>
 
             <div class="contact-channel-item">
               <span class="contact-channel-label">همراه و واتساپ استعلام فنی</span>
-              <a href="https://wa.me/989120000000" target="_blank" rel="noopener" class="contact-channel-value mono" style="color: #34D399;">
-                +98 912 000 0000
-              </a>
+              <div class="contact-channel-row">
+                <a href="https://wa.me/989120000000" target="_blank" rel="noopener" class="contact-channel-value mono" style="color: #34D399;">
+                  0912-000-0000
+                </a>
+                <button type="button" class="copy-code-btn js-static-copy-btn" data-copy="09120000000">
+                  کپی موبایل
+                </button>
+              </div>
             </div>
 
             <div class="contact-channel-item">
-              <span class="contact-channel-label">پست الکترونیک ارسال لیست مناقصه و خرید</span>
-              <a href="mailto:sales@jalalipneumatic.ir" class="contact-channel-value mono" style="font-size: 0.92rem;">
-                sales@jalalipneumatic.ir
-              </a>
+              <span class="contact-channel-label">کانال و ارتباط مستقیم تلگرام فروش</span>
+              <div class="contact-channel-row">
+                <a href="https://t.me/JalaliPneumatic_Sales" target="_blank" rel="noopener" class="contact-channel-value mono" style="color: #38BDF8; font-size: 0.92rem;">
+                  @JalaliPneumatic_Sales
+                </a>
+                <button type="button" class="copy-code-btn js-static-copy-btn" data-copy="@JalaliPneumatic_Sales">
+                  کپی آیدی
+                </button>
+              </div>
             </div>
 
             <div class="contact-channel-item">
-              <span class="contact-channel-label">ساعات پاسخگویی</span>
-              <span style="font-size: 0.86rem; color: #E2E8F0;">
-                شنبه تا چهارشنبه: ۹:۰۰ الی ۱۷:۳۰ | پنج‌شنبه: ۹:۰۰ الی ۱۳:۳۰
-              </span>
+              <span class="contact-channel-label">پست الکترونیک واحد بازرگانی و تدارکات</span>
+              <div class="contact-channel-row">
+                <a href="mailto:sales@jalalipneumatic.ir" class="contact-channel-value mono" style="font-size: 0.9rem;">
+                  sales@jalalipneumatic.ir
+                </a>
+                <button type="button" class="copy-code-btn js-static-copy-btn" data-copy="sales@jalalipneumatic.ir">
+                  کپی ایمیل
+                </button>
+              </div>
             </div>
 
-            <a
-              href="https://wa.me/989120000000"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-amber"
-              style="width: 100%; justify-content: center;"
-            >
-              <span>ارسال پیام مستقیم در واتساپ</span>
-            </a>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+              <a
+                href="https://wa.me/989120000000"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-amber btn-sm"
+                style="justify-content: center;"
+              >
+                <span>پیام در واتساپ</span>
+              </a>
+              <a
+                href="https://t.me/JalaliPneumatic_Sales"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-light btn-sm"
+                style="justify-content: center;"
+              >
+                <span>پیام در تلگرام</span>
+              </a>
+            </div>
           </aside>
         </div>
       </div>
@@ -1129,12 +1423,12 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">دسته‌بندی محصولات</h4>
+          <h4 class="footer-col-title">صفحات تخصصی محصولات</h4>
           <ul class="footer-links">
-            <li><a href="#catalog" data-category-filter="valves">شیرهای برقی پنوماتیک (3/2, 5/2, 5/3)</a></li>
-            <li><a href="#catalog" data-category-filter="cylinders">جک‌های پنوماتیک (پروفیلی، چهارمیل، کامپکت)</a></li>
-            <li><a href="#catalog" data-category-filter="frl-accessories">واحد مراقبت هوا (FRL) و رگولاتور</a></li>
-            <li><a href="#catalog" data-category-filter="frl-accessories">شیر کنترل جریان، شیلنگ و اتصالات</a></li>
+            <li><a href="solenoid-valves.html">شیرهای برقی پنوماتیک (3/2, 5/2, 5/3)</a></li>
+            <li><a href="pneumatic-cylinders.html">جک‌های پنوماتیک (پروفیلی، چهارمیل، کامپکت)</a></li>
+            <li><a href="frl-accessories.html">واحد مراقبت هوا (FRL) و اتصالات پنوماتیک</a></li>
+            <li><a href="#calculator">ماشین‌حساب محاسبه نیروی جک پنوماتیک</a></li>
           </ul>
         </div>
 
@@ -1295,7 +1589,7 @@
     <div class="modal-dialog">
       <div class="modal-header">
         <div>
-          <span class="mono" style="font-size: 0.72rem; color: #38BDF8;">TECHNICAL DATASHEET SUMMARY</span>
+          <span class="mono" style="font-size: 0.72rem; color: #38BDF8;">TECHNICAL DATASHEET &amp; CROSS-REFERENCE</span>
           <h3 id="tech-detail-modal-title" style="font-size: 1.05rem; font-weight: 800;">
             مشخصات فنی تجهیز پنوماتیک
           </h3>
@@ -1309,22 +1603,33 @@
   </div>
 
   <!-- ===================================================================
-       FLOATING RTL WHATSAPP QUICK-INQUIRY BUTTON
+       FLOATING RTL ACTION STACK (RFQ Drawer Trigger + WhatsApp Button)
        =================================================================== -->
-  <a
-    href="https://wa.me/989120000000"
-    target="_blank"
-    rel="noopener"
-    class="floating-whatsapp"
-    id="floating-whatsapp-btn"
-    aria-label="استعلام سریع واتساپ شرکت جلالی پنوماتیک"
-  >
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-    </svg>
-    <span id="floating-wa-label">استعلام سریع واتساپ</span>
-    <span class="floating-wa-code-badge" id="floating-wa-code-badge"></span>
-  </a>
+  <div class="floating-actions-stack">
+    <button
+      type="button"
+      class="floating-rfq-fab js-open-rfq-drawer"
+      aria-label="مشاهده سبد استعلام چندقلمی"
+    >
+      <span>لیست استعلام (BOM)</span>
+      <span class="rfq-count-pill js-rfq-count" id="floating-rfq-count">0</span>
+    </button>
+
+    <a
+      href="https://wa.me/989120000000"
+      target="_blank"
+      rel="noopener"
+      class="floating-whatsapp"
+      id="floating-whatsapp-btn"
+      aria-label="استعلام سریع واتساپ شرکت جلالی پنوماتیک"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span id="floating-wa-label">استعلام سریع واتساپ</span>
+      <span class="floating-wa-code-badge" id="floating-wa-code-badge"></span>
+    </a>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/config.js"></script>
