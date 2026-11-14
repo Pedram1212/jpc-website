@@ -1626,6 +1626,34 @@
       });
     });
 
+    // Support ?q= query parameter from JSON-LD SearchAction
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const qParam = urlParams.get("q");
+      if (qParam && qParam.trim()) {
+        state.searchQuery = qParam.trim();
+        if (searchInput) {
+          searchInput.value = state.searchQuery;
+        }
+        if (clearBtn) {
+          clearBtn.classList.add("visible");
+        }
+      }
+    } catch (e) {
+      // ignore URLSearchParams errors on older browsers
+    }
+
+    // Comparison Table quick-view / inquiry triggers
+    document.querySelectorAll(".js-table-product-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const pid = btn.getAttribute("data-id");
+        const prod = findProductById(pid);
+        if (prod) {
+          openTechDetailModal(prod);
+        }
+      });
+    });
+
     // Initialize Views
     syncFilterPillsUI();
     renderCatalog();

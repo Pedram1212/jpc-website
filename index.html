@@ -12,17 +12,19 @@
     name="keywords"
     content="جلالی پنوماتیک, شرکت جلالی پنوماتیک, JPC, Jalali Pneumatic Company, تجهیزات پنوماتیک صنعتی, شیر برقی پنوماتیک, جک پنوماتیک, واحد مراقبت هوا FRL, پنوماتیک فستو Festo, نورگرن Norgren, بوش رکسروت Bosch Rexroth, اتصالات پنوماتیک, محاسبه نیروی جک پنوماتیک"
   />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://jalalipneumatic.ir/" />
+  <link rel="alternate" hreflang="fa-IR" href="https://jalalipneumatic.ir/" />
+  <link rel="alternate" hreflang="x-default" href="https://jalalipneumatic.ir/" />
 
   <!-- OpenGraph Metadata -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fa_IR" />
-  <meta property="og:site_name" content="شرکت جلالی پنوماتیک (JPC)" />
+  <meta property="og:site_name" content="شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)" />
   <meta property="og:title" content="شرکت جلالی پنوماتیک (JPC) | تأمین‌کننده تخصصی تجهیزات پنوماتیک صنعتی" />
   <meta
     property="og:description"
-    content="کاتالوگ تخصصی، سیستم معادل‌یابی فنی، محاسبه‌گر نیروی جک و استعلام قیمت شیرهای برقی، جک‌های پنوماتیک و واحد مراقبت هوا با برند اختصاصی JPC و برندهای اروپایی."
+    content="کاتالوگ تخصصی، جدول معادل‌یابی فنی، محاسبه‌گر نیروی جک و استعلام قیمت شیرهای برقی، جک‌های پنوماتیک و واحد مراقبت هوا با برند اختصاصی JPC و برندهای اروپایی."
   />
   <meta property="og:url" content="https://jalalipneumatic.ir/" />
   <meta property="og:image" content="https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg" />
@@ -34,6 +36,11 @@
     name="twitter:description"
     content="واردات، تأمین و توزیع تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده — برند اختصاصی JPC و برندهای Festo, Norgren, Bosch Rexroth."
   />
+  <meta name="twitter:image" content="https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg" />
+
+  <!-- AI / LLM Discovery Links -->
+  <link rel="help" type="text/plain" href="https://jalalipneumatic.ir/llms.txt" title="LLMs Structured Summary" />
+  <link rel="alternate" type="text/plain" href="https://jalalipneumatic.ir/llms-full.txt" title="LLMs Full Catalog Reference" />
 
   <!-- Preload Self-Hosted Local Fonts for Instant Rendering -->
   <link rel="preload" href="assets/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -43,75 +50,133 @@
   <!-- Stylesheet (Includes Local @font-face Rules) -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- JSON-LD Structured Data (Organization & ItemList Product Catalog) -->
-  <script type="application/ld+json">
+  <!-- JSON-LD Structured Data: Bilingual Organization/LocalBusiness, WebSite (SearchAction), ItemList (Products), FAQPage -->
+  <script type="application/ld+json" id="jpc-jsonld-schema">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://jalalipneumatic.ir/#organization",
         "name": "شرکت جلالی پنوماتیک",
-        "alternateName": ["Jalali Pneumatic Company", "JPC"],
+        "alternateName": [
+          "Jalali Pneumatic Company",
+          "JPC",
+          "جلالی پنوماتیک",
+          "JPC – Jalali Pneumatic Company"
+        ],
         "url": "https://jalalipneumatic.ir/",
-        "description": "واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و اتوماسیون مبتنی بر هوای فشرده با برند تجاری اختصاصی JPC و تأمین از بازارهای اروپایی و آسیایی.",
+        "logo": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "description": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)؛ واردکننده، تأمین‌کننده و توزیع‌کننده تخصصی تجهیزات پنوماتیک صنعتی و اتوماسیون مبتنی بر هوای فشرده با برند تجاری اختصاصی JPC و تأمین از برندهای اروپایی Festo، Norgren و Bosch Rexroth و سازندگان معتبر آسیایی.",
+        "telephone": "+98-21-33900000",
+        "email": "sales@jalalipneumatic.ir",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)",
+          "addressLocality": "تهران",
+          "addressRegion": "تهران",
+          "addressCountry": "IR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+            "opens": "08:30",
+            "closes": "17:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Thursday"],
+            "opens": "08:30",
+            "closes": "13:30"
+          }
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Iran"
+        },
         "brand": [
           {
             "@type": "Brand",
-            "name": "JPC – Jalali Pneumatic Company",
-            "description": "برند تجاری اختصاصی شرکت جلالی پنوماتیک در حوزه شیرهای برقی، جک‌های پنوماتیک و تجهیزات مراقبت هوا"
+            "name": "JPC",
+            "alternateName": "JPC – Jalali Pneumatic Company",
+            "description": "برند تجاری اختصاصی شرکت جلالی پنوماتیک برای تجهیزات پنوماتیک وارداتی شامل شیرهای برقی، جک‌های پنوماتیک، واحد مراقبت هوا و اتصالات"
           },
           { "@type": "Brand", "name": "Festo" },
           { "@type": "Brand", "name": "Norgren" },
           { "@type": "Brand", "name": "Bosch Rexroth" }
         ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "sales",
-          "availableLanguage": ["Persian", "English"]
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+98-21-33900000",
+            "contactType": "sales",
+            "areaServed": "IR",
+            "availableLanguage": ["fa", "en"]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jalalipneumatic.ir/#website",
+        "url": "https://jalalipneumatic.ir/",
+        "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+        "inLanguage": "fa-IR",
+        "publisher": {
+          "@id": "https://jalalipneumatic.ir/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://jalalipneumatic.ir/?q={search_term_string}#catalog"
+          },
+          "query-input": "required name=search_term_string"
         }
       },
       {
-        "@type": "ItemList",
-        "@id": "https://jalalipneumatic.ir/#catalog",
-        "name": "کاتالوگ تجهیزات پنوماتیک صنعتی شرکت جلالی پنوماتیک (JPC)",
-        "itemListOrder": "https://schema.org/ItemListUnordered",
-        "numberOfItems": 3,
-        "itemListElement": [
+        "@type": "FAQPage",
+        "@id": "https://jalalipneumatic.ir/#faq",
+        "mainEntity": [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "url": "https://jalalipneumatic.ir/solenoid-valves.html",
-            "item": {
-              "@type": "Product",
-              "name": "شیرهای برقی پنوماتیک (Pneumatic Solenoid Valves)",
-              "brand": { "@type": "Brand", "name": "JPC" },
-              "category": "Pneumatic Solenoid Valves",
-              "description": "شیرهای برقی پنوماتیک 3/2، 5/2 و 5/3 تک‌بویین و دوبوبین در ولتاژهای 24V DC و 220V AC و سایز پورت 1/8 الی 1/2 اینچ."
+            "@type": "Question",
+            "name": "تفاوت برند اختصاصی JPC با برندهای اروپایی موجود در جلالی پنوماتیک چیست؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "شرکت جلالی پنوماتیک دارای معماری تأمین دوگانه است: از یک سو قطعات برندهای معتبر اروپایی (Festo، Norgren و Bosch Rexroth) را برای خطوط تولید حساس تأمین می‌کند، و از سوی دیگر برند تجاری اختصاصی خود با نام JPC را برای تجهیزات پنوماتیک وارداتی با تطابق کامل ابعادی و فنی (استانداردهای ISO 15552 و ISO 6432) و صرفه اقتصادی بالا عرضه می‌نماید."
             }
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "url": "https://jalalipneumatic.ir/pneumatic-cylinders.html",
-            "item": {
-              "@type": "Product",
-              "name": "جک‌های پنوماتیک صنعتی (Pneumatic Cylinders)",
-              "brand": { "@type": "Brand", "name": "JPC" },
-              "category": "Pneumatic Cylinders",
-              "description": "جک‌های پنوماتیک چهارمیل، پروفیلی ISO 15552، کامپکت، قلمی و بدون شفت در مدل‌های یک‌طرفه و دوطرفه."
+            "@type": "Question",
+            "name": "آیا جک‌ها و شیرهای برقی برند JPC از نظر ابعاد نصبی جایگزین مدل‌های اروپایی می‌شوند؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "بله؛ جک‌های پروفیلی سری JPC-DNC منطبق بر استاندارد ابعادی ISO 15552 و جک‌های قلمی منطبق بر ISO 6432 هستند و بدون نیاز به تغییر در شاسی یا پایه‌های نصبی (LB, FA, CB)، از نظر ابعادی و فنی جایگزین مدل‌های هم‌ردیف مانند سری DSBC/DNC فستو یا PRA نورگرن و رکسروت می‌شوند."
             }
           },
           {
-            "@type": "ListItem",
-            "position": 3,
-            "url": "https://jalalipneumatic.ir/frl-accessories.html",
-            "item": {
-              "@type": "Product",
-              "name": "تجهیزات جانبی و واحد مراقبت هوا (FRL & Pneumatic Accessories)",
-              "brand": { "@type": "Brand", "name": "JPC" },
-              "category": "Air Preparation & Pneumatic Fittings",
-              "description": "واحد مراقبت هوا (فیلتر، رگولاتور، روغن‌زن)، شیر کنترل جریان، اتصالات پنوماتیک، شیلنگ پلی‌یورتان و گیج فشار."
+            "@type": "Question",
+            "name": "برای تابلوهای فرمان اتوماسیون صنعتی، بوبین 24V DC مناسب‌تر است یا 220V AC؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "در تابلوهای مدرن مبتنی بر PLC، بوبین 24V DC به دلیل ایمنی الکتریکی، عدم ایجاد نویز القایی، مصرف توان پایین‌تر و طول عمر حرارتی بیشتر گزینه استاندارد است. در مدارهای سنتی فرمان رله‌ای یا بدون منبع تغذیه سوئیچینگ از بوبین‌های 220V AC استفاده می‌شود. هر دو ولتاژ در شیرهای سری 4V و 3V برند JPC قابل تأمین هستند."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "نحوه ثبت استعلام قیمت چندقلمی (BOM) و ارسال به شهرستان‌ها چگونه است؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "شما می‌توانید اقلام مورد نظر را از کاتالوگ به «سبد استعلام چندقلمی» اضافه کرده و لیست کامل را از طریق فرم رسمی B2B، واتساپ یا تلگرام واحد فروش ارسال نمایید. سفارش‌ها از دفتر فروش تهران (محدوده بازار صنعتی لالهزار) به سراسر کشور از طریق باربری، تیپاکس یا پیک ارسال می‌گردند."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "چگونه قطر مناسب جک پنوماتیک را بر اساس نیروی مورد نیاز محاسبه کنیم؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "در فشار کاری استاندارد ۶ بار، نیروی تئوری کورس رفت از رابطه حاصل‌ضرب سطح مقطع پیستون در فشار کاری به دست می‌آید و برای اطمینان از حرکت یکنواخت در شرایط صنعتی، ضریب بار مفید ۷۰ تا ۸۵ درصد در نظر گرفته می‌شود. شما می‌توانید از ماشین‌حساب آنلاین موجود در همین صفحه برای محاسبه دقیق نیرو بر حسب نیوتن (N) و کیلوگرم‌نیرو (kgf) استفاده کنید."
             }
           }
         ]
@@ -119,6 +184,1270 @@
     ]
   }
   </script>
+  <!-- SSR_JSONLD_PRODUCTS_START -->
+  <script type="application/ld+json" id="jpc-products-itemlist-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://jalalipneumatic.ir/#catalog-itemlist",
+  "name": "لیست تجهیزات پنوماتیک صنعتی شرکت جلالی پنوماتیک (JPC) - all",
+  "numberOfItems": 19,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://jalalipneumatic.ir/#card-jpc-4v210-08",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-4v210-08",
+        "sku": "JPC-4V210-08-24DC",
+        "mpn": "JPC-4V210-08-24DC",
+        "name": "شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210 (JPC 5/2 Way Single Solenoid Valve 4V210-08)",
+        "AlternateName": "JPC 5/2 Way Single Solenoid Valve 4V210-08",
+        "description": "شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210 — کد فنی: JPC-4V210-08-24DC | سایز پورت: G 1/4\" (سایز ۱/۴ اینچ) | فشار کاری: 1.5 – 8.0 bar | کاربرد: فرمان جک‌های دوطرفه در ماشین‌آلات بسته‌بندی، خطوط مونتاژ و سیستم‌های اتوماسیون صنعتی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-4v210-08",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" (سایز ۱/۴ اینچ)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 8.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلیاژ آلومینیوم آنودایز صنعتی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "890 L/min (Cv = 0.89)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 220V AC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "MFH-5-1/4, FESTO-MFH-5-1/4-B, V61B513A-A213J, NORGREN-V61B513A, 0820055051, 4V210-08, SY5120-5LZD-02"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://jalalipneumatic.ir/#card-jpc-4v220-08",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-4v220-08",
+        "sku": "JPC-4V220-08-220AC",
+        "mpn": "JPC-4V220-08-220AC",
+        "name": "شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220 (JPC 5/2 Way Double Solenoid Valve 4V220-08)",
+        "AlternateName": "JPC 5/2 Way Double Solenoid Valve 4V220-08",
+        "description": "شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220 — کد فنی: JPC-4V220-08-220AC | سایز پورت: G 1/4\" (سایز ۱/۴ اینچ) | فشار کاری: 1.5 – 8.0 bar | کاربرد: ماشین‌آلات صنعتی نیازمند حفظ موقعیت جک در زمان توقف اضطراری یا قطع تغذیه الکتریکی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-4v220-08",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" (سایز ۱/۴ اینچ)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 8.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلیاژ آلومینیوم تقویت‌شده"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "890 L/min (Cv = 0.89)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "220V AC / 24V DC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "JMFH-5-1/4, FESTO-JMFH-5-1/4-B, V61B522A-A213J, REXROTH-0820055051-CD07, CD07-5/2, 4V220-08, SY5220-5LZD-02"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://jalalipneumatic.ir/#card-jpc-4v330c-10",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-4v330c-10",
+        "sku": "JPC-4V330C-10-24DC",
+        "mpn": "JPC-4V330C-10-24DC",
+        "name": "شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C (JPC 5/3 Way Closed Center Solenoid Valve 4V330C-10)",
+        "AlternateName": "JPC 5/3 Way Closed Center Solenoid Valve 4V330C-10",
+        "description": "شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C — کد فنی: JPC-4V330C-10-24DC | سایز پورت: G 3/8\" (سایز ۳/۸ اینچ) | فشار کاری: 1.5 – 8.0 bar | کاربرد: پرس‌های پنوماتیک، دریچه‌های صنعتی و مکانیزم‌های موقعیت‌دهی میانی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-4v330c-10",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 3/8\" (سایز ۳/۸ اینچ)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 8.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم ماشین‌کاری دقیق"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "1680 L/min (Cv = 1.68)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 220V AC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "VUVG-L18-M53C, V62C611A-A213J, 4V330C-10, 4V230C-08, 0820055501"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://jalalipneumatic.ir/#card-jpc-3v210-06",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-3v210-06",
+        "sku": "JPC-3V210-06-24DC",
+        "mpn": "JPC-3V210-06-24DC",
+        "name": "شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210 (JPC 3/2 Way NC Solenoid Valve 3V210-06)",
+        "AlternateName": "JPC 3/2 Way NC Solenoid Valve 3V210-06",
+        "description": "شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210 — کد فنی: JPC-3V210-06-24DC | سایز پورت: G 1/8\" (سایز ۱/۸ اینچ) | فشار کاری: 1.5 – 8.0 bar | کاربرد: جک‌های قلمی و کامپکت یک‌طرفه، سیستم‌های اجکتور و تفکیک قطعات در خطوط سورتینگ",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-3v210-06",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/8\" (سایز ۱/۸ اینچ)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 8.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلیاژ آلومینیوم فشرده"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "550 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 220V AC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "MFH-3-1/8, MFH-3-1/4, V60A513A-A213J, 3V210-06, 3V210-08"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://jalalipneumatic.ir/#card-festo-mfh-5-1-4",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-festo-mfh-5-1-4",
+        "sku": "FESTO-MFH-5-1/4-B",
+        "mpn": "FESTO-MFH-5-1/4-B",
+        "name": "شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH (Festo Tiger Classic 5/2 Solenoid Valve MFH-5-1/4)",
+        "AlternateName": "Festo Tiger Classic 5/2 Solenoid Valve MFH-5-1/4",
+        "description": "شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH — کد فنی: FESTO-MFH-5-1/4-B | سایز پورت: G 1/4\" & G 1/8\" & G 1/2\" | فشار کاری: 2.0 – 10.0 bar | کاربرد: خطوط اتوماسیون کارخانجات خودروسازی، صنایع غذایی، دارویی و ماشین‌سازی پیشرفته",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-festo-mfh-5-1-4",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Festo"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" & G 1/8\" & G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "2.0 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم دایکاست صنعتی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "1000 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 220V AC (کویل سری F)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "MFH-5-1/4, JMFH-5-1/4, MFH-5-1/8, JPC-4V210-08-24DC, 4V210-08"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://jalalipneumatic.ir/#card-norgren-v61b513a",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-norgren-v61b513a",
+        "sku": "NORGREN-V61B513A-A213J",
+        "mpn": "NORGREN-V61B513A-A213J",
+        "name": "شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61 (Norgren V61 Series Inline 5/2 & 5/3 Solenoid Valve)",
+        "AlternateName": "Norgren V61 Series Inline 5/2 & 5/3 Solenoid Valve",
+        "description": "شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61 — کد فنی: NORGREN-V61B513A-A213J | سایز پورت: G 1/4\" & G 3/8\" & G 1/2\" | فشار کاری: 2.0 – 10.0 bar | کاربرد: صنایع فولاد، سیمان، پتروشیمی و ماشین‌آلات سنگین خطوط فرآیندی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-norgren-v61b513a",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Norgren"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" & G 3/8\" & G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "2.0 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم صنعتی با پوشش مقاوم به خوردگی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "1300 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 220V AC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "V61B513A, V60A513A, V62C513A, JPC-4V210-08-24DC, JPC-4V330C-10-24DC"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://jalalipneumatic.ir/#card-rexroth-581-iso1",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-rexroth-581-iso1",
+        "sku": "REXROTH-0820055051-CD07",
+        "mpn": "REXROTH-0820055051-CD07",
+        "name": "شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599 (Bosch Rexroth 5/2 Directional Control Valve CD07 / 581)",
+        "AlternateName": "Bosch Rexroth 5/2 Directional Control Valve CD07 / 581",
+        "description": "شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599 — کد فنی: REXROTH-0820055051-CD07 | سایز پورت: G 1/4\" & G 3/8\" & G 1/2\" | فشار کاری: 1.5 – 10.0 bar | کاربرد: تجهیزات خطوط نورد، ماشین‌آلات CNC، صنایع چوب، کاغذ و نساجی صنعتی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-rexroth-581-iso1",
+        "category": "شیرهای برقی پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bosch Rexroth"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" & G 3/8\" & G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم و پلی‌آمید تقویت‌شده با الیاف شیشه"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "1400 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "24V DC / 230V AC"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "0820055051, CD07, 581-ISO1, JPC-4V220-08-220AC, JPC-4V210-08-24DC"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "url": "https://jalalipneumatic.ir/#card-jpc-dnc-63-200",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-dnc-63-200",
+        "sku": "JPC-DNC-63-200-PPV-A",
+        "mpn": "JPC-DNC-63-200-PPV-A",
+        "name": "جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC (JPC Profile Pneumatic Cylinder ISO 15552 Series DNC)",
+        "AlternateName": "JPC Profile Pneumatic Cylinder ISO 15552 Series DNC",
+        "description": "جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC — کد فنی: JPC-DNC-63-200-PPV-A | سایز پورت: G 3/8\" (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ) | فشار کاری: 1.0 – 10.0 bar | کاربرد: ایستگاه‌های انتقال قطعه، خطوط بسته‌بندی، پرس‌های سبک و ماشین‌آلات صنعتی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-dnc-63-200",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 3/8\" (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.0 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "لوله پروفیل آلومینیوم هاردآنودایز + شفت کروم سخت CK45"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "ضربه‌گیر پنوماتیکی قابل تنظیم در دو انتها (PPV)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "سازگار با سنسور مگنتی 24V DC (Reed / PNP)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر پیستون ۳۲ الی ۱۲۵ میلی‌متر | کورس ۲۵ الی ۱۰۰۰ میلی‌متر"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "DSBC-32, DSBC-40-100, DSBC-50-250, DSBC-63-200, DNC-40-100, DNC-63-200, PRA/182040/M/100, PRA/182050/M, R480141402, ISO-15552"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "url": "https://jalalipneumatic.ir/#card-jpc-sc-80-150",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-sc-80-150",
+        "sku": "JPC-SC-80x150-S",
+        "mpn": "JPC-SC-80x150-S",
+        "name": "جک پنوماتیک چهارمیل صنعتی سری SC / SU (JPC Tie-Rod Double-Acting Pneumatic Cylinder SC Series)",
+        "AlternateName": "JPC Tie-Rod Double-Acting Pneumatic Cylinder SC Series",
+        "description": "جک پنوماتیک چهارمیل صنعتی سری SC / SU — کد فنی: JPC-SC-80x150-S | سایز پورت: G 1/4\" الی G 3/4\" (متناسب با قطر سیلندر) | فشار کاری: 1.0 – 9.0 bar | کاربرد: صنایع چوب و ام‌دی‌اف، دروازه‌های تخلیه مواد، خطوط کانوایر و ماشین‌سازی عمومی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-sc-80-150",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" الی G 3/4\" (متناسب با قطر سیلندر)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.0 – 9.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "کپ‌های آلومینیوم دایکاست + چهار میل مهار فولادی گالوانیزه"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "مجهز به ضربه‌گیر قابل تنظیم در دو سر جک"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "قابلیت سفارش با پیستون مگنت‌دار (سری SC-S)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۳۲ الی ۲۰۰ میلی‌متر | کورس‌های استاندارد و سفارشی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "SC-32, SC-40, SC-50, SC-63, SC-80x150, SC-100, SC-125, MBB50, CP96SDB"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "url": "https://jalalipneumatic.ir/#card-jpc-advu-40-50",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-advu-40-50",
+        "sku": "JPC-ADVU-40-50-PA",
+        "mpn": "JPC-ADVU-40-50-PA",
+        "name": "جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA (JPC Compact Pneumatic Cylinder ADVU / SDA Series)",
+        "AlternateName": "JPC Compact Pneumatic Cylinder ADVU / SDA Series",
+        "description": "جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA — کد فنی: JPC-ADVU-40-50-PA | سایز پورت: M5 / G 1/8\" / G 1/4\" | فشار کاری: 1.0 – 10.0 bar | کاربرد: فیکسچرهای صنعتی، ماشین‌آلات بسته‌بندی وکیوم، لیبل‌چسبان و خطوط مونتاژ قطعات الکترونیک",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-advu-40-50",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "M5 / G 1/8\" / G 1/4\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.0 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "بدنه یکپارچه آلومینیوم آنودایز با شفت استیل/کروم"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "طول بدنه بسیار کوتاه جهت فضاهای محدود نصب"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "مجهز به مگنت داخلی جهت نصب سنسور"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۱۲ الی ۱۰۰ میلی‌متر | کورس ۵ الی ۱۰۰ میلی‌متر"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "ADVU-40-50-P-A, ADN-40-50, SDA-40x50, KPZ-40, RM/92040/M"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "url": "https://jalalipneumatic.ir/#card-jpc-mal-25-100",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-mal-25-100",
+        "sku": "JPC-MAL-25x100-CA",
+        "mpn": "JPC-MAL-25x100-CA",
+        "name": "جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL (JPC Mini Round Pneumatic Cylinder DSNU / MAL Series)",
+        "AlternateName": "JPC Mini Round Pneumatic Cylinder DSNU / MAL Series",
+        "description": "جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL — کد فنی: JPC-MAL-25x100-CA | سایز پورت: M5 / G 1/8\" | فشار کاری: 1.0 – 9.0 bar | کاربرد: صنایع غذایی و لبنی، دستگاه‌های پرکن، تفکیک‌کننده‌های خطوط بسته‌بندی و نساجی",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-mal-25-100",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "M5 / G 1/8\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.0 – 9.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "لوله استنلس استیل ۳۰۴ یا آلومینیوم سخت‌کاری شده"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "واشر ضربه‌گیر الاستومری یا بادی قابل تنظیم"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "دارای مگنت داخلی جهت سنسور کمربندی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۱۶، ۲۰، ۲۵، ۳۲ و ۴۰ میلی‌متر | کورس ۱۰ الی ۳۰۰ میلی‌متر"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "DSNU-16, DSNU-20, DSNU-25-100-P-A, MAL-25x100, RA/802025/M, ISO-6432"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "url": "https://jalalipneumatic.ir/#card-festo-dsbc-50-250",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-festo-dsbc-50-250",
+        "sku": "FESTO-DSBC-50-250-PPVA-N3",
+        "mpn": "FESTO-DSBC-50-250-PPVA-N3",
+        "name": "جک پنوماتیک پروفیلی فستو سری DSBC / DNC (Festo ISO 15552 Standards-Based Cylinder DSBC-50)",
+        "AlternateName": "Festo ISO 15552 Standards-Based Cylinder DSBC-50",
+        "description": "جک پنوماتیک پروفیلی فستو سری DSBC / DNC — کد فنی: FESTO-DSBC-50-250-PPVA-N3 | سایز پورت: G 1/4\" (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵) | فشار کاری: 0.6 – 12.0 bar | کاربرد: ماشین‌آلات دقیق صنعتی، خطوط رباتیک و اتوماسیون پیشرفته کارخانجات",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-festo-dsbc-50-250",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Festo"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\" (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0.6 – 12.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم آنودایز + شفت فولاد آلیاژی High-Alloy"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "ضربه‌گیر خودتنظیم PPS یا قابل تنظیم دستی PPV"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "شیار استاندارد سنسور سری SME / SMT-8M"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۳۲ الی ۱۲۵ میلی‌متر | کورس‌های استاندارد"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "DSBC-50-250, DSBC-40-100, DNC-50-250, DNC-40-100, JPC-DNC-63-200-PPV-A"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "url": "https://jalalipneumatic.ir/#card-norgren-pra-182050",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-norgren-pra-182050",
+        "sku": "NORGREN-PRA/182050/M",
+        "mpn": "NORGREN-PRA/182050/M",
+        "name": "جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra (Norgren ISOLine Profile & Lintra Rodless Cylinder)",
+        "AlternateName": "Norgren ISOLine Profile & Lintra Rodless Cylinder",
+        "description": "جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra — کد فنی: NORGREN-PRA/182050/M | سایز پورت: G 1/8\" الی G 1/2\" | فشار کاری: 1.0 – 10.0 bar | کاربرد: سیستم‌های پالتایزر، درب‌های اتوماتیک صنعتی، برش‌های طولی و خطوط انتقال مواد",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-norgren-pra-182050",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Norgren"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/8\" الی G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.0 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "پروفیل آلومینیوم اکسترود شده با نوار آب‌بندی استیل/پلی‌یورتان"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "سیستم ضربه‌گیر تطبیقی (Adaptive Cushioning)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "مجهز به مگنت موقعیت‌یاب کالسکه"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۲۵ الی ۱۰۰ میلی‌متر | کورس‌های بلند تا ۳۰۰۰ میلی‌متر (در تیپ رادلس)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "PRA/182050/M, PRA/182040/M/100, RA/8000, M/46000, JPC-DNC-63-200-PPV-A"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "url": "https://jalalipneumatic.ir/#card-rexroth-pra-iso",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-rexroth-pra-iso",
+        "sku": "REXROTH-R480141402-PRA",
+        "mpn": "REXROTH-R480141402-PRA",
+        "name": "جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ (Bosch Rexroth Profile & Compact Cylinder PRA / KPZ Series)",
+        "AlternateName": "Bosch Rexroth Profile & Compact Cylinder PRA / KPZ Series",
+        "description": "جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ — کد فنی: REXROTH-R480141402-PRA | سایز پورت: G 1/8\" الی G 1/2\" | فشار کاری: 1.5 – 10.0 bar | کاربرد: تجهیزات تست و مونتاژ، ماشین‌آلات فرم‌دهی و خطوط اتوماسیون کارخانجات",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-rexroth-pra-iso",
+        "category": "جک‌های پنوماتیک",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bosch Rexroth"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/8\" الی G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "1.5 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "بدنه آلومینیوم مقاوم و شفت استنلس استیل"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "ضربه‌گیر پنوماتیک دقیق با قابلیت جذب انرژی جنبشی بالا"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "سازگار با سنسورهای شیاری T-Slot"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Bore & Stroke (قطر و کورس)",
+            "value": "قطر ۲۰ الی ۱۰۰ میلی‌متر | کورس استاندارد ISO"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "R480141402, 0822350, PRA-ISO, KPZ, JPC-DNC-63-200-PPV-A, JPC-ADVU-40-50-PA"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "url": "https://jalalipneumatic.ir/#card-jpc-ou-frl-1-2",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-ou-frl-1-2",
+        "sku": "JPC-AC4010-04-D",
+        "mpn": "JPC-AC4010-04-D",
+        "name": "واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن) (JPC FRL Air Preparation Unit AC4010-04 (Filter, Regulator, Lubricator))",
+        "AlternateName": "JPC FRL Air Preparation Unit AC4010-04 (Filter, Regulator, Lubricator)",
+        "description": "واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن) — کد فنی: JPC-AC4010-04-D | سایز پورت: G 1/4\", G 3/8\", G 1/2\", G 3/4\", G 1\" | فشار کاری: 0.5 – 10.0 bar (حداکثر فشار ورودی 12 bar) | کاربرد: ورودی هوای فشرده کلیه ماشین‌آلات صنعتی، تابلوهای پنوماتیک و ایستگاه‌های کاری",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-ou-frl-1-2",
+        "category": "تجهیزات جانبی و مراقبت هوا",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\", G 3/8\", G 1/2\", G 3/4\", G 1\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0.5 – 10.0 bar (حداکثر فشار ورودی 12 bar)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "بدنه آلومینیوم دایکاست + لیوان پلی‌کربنات با گارد محافظ فلزی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "فیلتراسیون ۵ و ۴۰ میکرون | دبی تا 4000 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "تخلیه دستی / نیمه‌اتوماتیک / اتوماتیک (Drain)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "MS6-LFR-1/2, FESTO-MS6-LFR-1/2-D7-ERM-AS, B74G-4GK-AD3-RMN, 0821300300, AC4010-04, AC3010-03, AC2010-02, OU-1/2"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "url": "https://jalalipneumatic.ir/#card-jpc-asc-flow-fitting",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-jpc-asc-flow-fitting",
+        "sku": "JPC-HVFF-ASC-SET",
+        "mpn": "JPC-HVFF-ASC-SET",
+        "name": "شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار (JPC Flow Control Valves, Push-in Fittings, PU Tubing & Pressure Gauges)",
+        "AlternateName": "JPC Flow Control Valves, Push-in Fittings, PU Tubing & Pressure Gauges",
+        "description": "شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار — کد فنی: JPC-HVFF-ASC-SET | سایز پورت: رزوه M5 الی 1/2\" | قطر شیلنگ 4, 6, 8, 10, 12, 16 mm | فشار کاری: 0 – 10.0 bar (فشار ترکیدگی شیلنگ تا 24 bar) | کاربرد: لوله‌کشی مدارهای فرمان و قدرت پنوماتیک، تنظیم سرعت حرکت جک‌ها و مانیتورینگ فشار خط",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-jpc-asc-flow-fitting",
+        "category": "تجهیزات جانبی و مراقبت هوا",
+        "brand": {
+          "@type": "Brand",
+          "name": "JPC"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "رزوه M5 الی 1/2\" | قطر شیلنگ 4, 6, 8, 10, 12, 16 mm"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0 – 10.0 bar (فشار ترکیدگی شیلنگ تا 24 bar)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "برنج آبکاری نیکل، PBT صنعتی و شیلنگ 100% پلی‌یورتان (PU)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "تنظیم دقیق سرعت کورس رفت و برگشت جک"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "مکانیکی / پنوماتیکی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "GRLA-1/4-QS-8, ASC-200-08, ASC-300-10, SL8-02, PC8-02, PL8-02, PUN-H-8X1.25"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "url": "https://jalalipneumatic.ir/#card-festo-ms6-lfr",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-festo-ms6-lfr",
+        "sku": "FESTO-MS6-LFR-1/2-D7-ERM-AS",
+        "mpn": "FESTO-MS6-LFR-1/2-D7-ERM-AS",
+        "name": "واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6 (Festo MS6 Series Modular Filter Regulator & Lubricator)",
+        "AlternateName": "Festo MS6 Series Modular Filter Regulator & Lubricator",
+        "description": "واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6 — کد فنی: FESTO-MS6-LFR-1/2-D7-ERM-AS | سایز پورت: G 1/4\", G 3/8\", G 1/2\" | فشار کاری: 0.8 – 12.0 bar | کاربرد: تغذیه هوای فشرده ماشین‌آلات حساس، خطوط بسته‌بندی دارویی و صنایع الکترونیک",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-festo-ms6-lfr",
+        "category": "تجهیزات جانبی و مراقبت هوا",
+        "brand": {
+          "@type": "Brand",
+          "name": "Festo"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\", G 3/8\", G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0.8 – 12.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم دایکاست با کاسه محافظ یکپارچه"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "2200 – 5500 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "تخلیه دستی چرخشی یا اتوماتیک کامل"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "MS6-LFR-1/2, MS4-LFR-1/4, LFR-1/2-D-MIDI, JPC-AC4010-04-D"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "url": "https://jalalipneumatic.ir/#card-norgren-b74g-frl",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-norgren-b74g-frl",
+        "sku": "NORGREN-B74G-4GK-AD3-RMN",
+        "mpn": "NORGREN-B74G-4GK-AD3-RMN",
+        "name": "فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G) (Norgren Excelon B74G Filter-Regulator & FRL Unit)",
+        "AlternateName": "Norgren Excelon B74G Filter-Regulator & FRL Unit",
+        "description": "فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G) — کد فنی: NORGREN-B74G-4GK-AD3-RMN | سایز پورت: G 1/4\", G 3/8\", G 1/2\", G 3/4\" | فشار کاری: 0.3 – 10.0 bar (فشار ورودی تا 17 bar در کاسه فلزی) | کاربرد: کمپرسورخانه‌ها، خطوط اصلی توزیع باد کارخانجات، صنایع ذوب، پتروشیمی و معادن",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-norgren-b74g-frl",
+        "category": "تجهیزات جانبی و مراقبت هوا",
+        "brand": {
+          "@type": "Brand",
+          "name": "Norgren"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\", G 3/8\", G 1/2\", G 3/4\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0.3 – 10.0 bar (فشار ورودی تا 17 bar در کاسه فلزی)"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم صنعتی با کاسه شفاف گارددار یا تمام فلزی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "تا 4800 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "تخلیه اتوماتیک (Auto Drain) یا دستی"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "B74G-4GK-AD3-RMN, B72G-2GK, B73G-3GK, JPC-AC4010-04-D"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "url": "https://jalalipneumatic.ir/#card-rexroth-nl2-frl",
+      "item": {
+        "@type": "Product",
+        "@id": "https://jalalipneumatic.ir/#product-rexroth-nl2-frl",
+        "sku": "REXROTH-0821300300-NL2",
+        "mpn": "REXROTH-0821300300-NL2",
+        "name": "واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS (Bosch Rexroth Air Preparation Unit & Pressure Regulator NL2 / AS)",
+        "AlternateName": "Bosch Rexroth Air Preparation Unit & Pressure Regulator NL2 / AS",
+        "description": "واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS — کد فنی: REXROTH-0821300300-NL2 | سایز پورت: G 1/4\", G 3/8\", G 1/2\" | فشار کاری: 0.5 – 10.0 bar | کاربرد: خطوط مونتاژ خودروسازی، ماشین‌آلات تزریق و فرمینگ، سیستم‌های کنترل فرآیند",
+        "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+        "url": "https://jalalipneumatic.ir/#card-rexroth-nl2-frl",
+        "category": "تجهیزات جانبی و مراقبت هوا",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bosch Rexroth"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Port Size (سایز پورت)",
+            "value": "G 1/4\", G 3/8\", G 1/2\""
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Working Pressure (فشار کاری)",
+            "value": "0.5 – 10.0 bar"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Body Material (جنس بدنه)",
+            "value": "آلومینیوم دایکاست و پلیمر مهندسی مقاوم"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Flow / Performance (دبی / عملکرد)",
+            "value": "تا 3500 L/min"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Voltage / Sensor (ولتاژ)",
+            "value": "نیمه‌اتوماتیک / اتوماتیک"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Compatible Cross-Reference Codes (کدهای هم‌ابعاد و معادل فنی)",
+            "value": "0821300300, NL2-FRE, AS2-FRE, JPC-AC4010-04-D"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://jalalipneumatic.ir/#inquiry",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "seller": {
+            "@type": "Organization",
+            "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
+            "url": "https://jalalipneumatic.ir/"
+          }
+        }
+      }
+    }
+  ]
+}
+  </script>
+  <!-- SSR_JSONLD_PRODUCTS_END -->
 </head>
 <body data-page-category="all">
 
@@ -640,9 +1969,7 @@
                 ✕
               </button>
             </div>
-            <div class="catalog-result-counter" id="catalog-result-counter">
-              در حال بارگذاری تجهیزات کاتالوگ...
-            </div>
+            <div class="catalog-result-counter" id="catalog-result-counter">نمایش <strong>19</strong> مدل از <strong>19</strong> تجهیز کاتالوگ</div>
           </div>
 
           <div class="catalog-filters-grid">
@@ -689,8 +2016,2003 @@
           </div>
         </div>
 
-        <!-- Dynamic Products Grid (Populated from assets/js/products-data.js) -->
-        <div class="products-grid" id="catalog-products-grid" aria-live="polite"></div>
+        <!-- Dynamic Products Grid (Pre-rendered by scripts/build-seo.py & hydrated by assets/js/app.js) -->
+        <div class="products-grid" id="catalog-products-grid" aria-live="polite">
+          <!-- SSR_PRODUCTS_START -->
+          <article class="product-card is-jpc-brand" id="card-jpc-4v210-08" data-product-id="jpc-4v210-08">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-4V210-08-24DC"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-4V210-08-24DC</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">MFH-5-1/4 · FESTO-MFH-5-1/4-B · V61B513A-A213J</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; (سایز ۱/۴ اینچ)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 8.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 220V AC | 5/2 (پنج به دو - تک بوبین برگشت فنر)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-4v210-08"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-4v210-08"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-4v210-08"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-4v220-08" data-product-id="jpc-4v220-08">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-4V220-08-220AC"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-4V220-08-220AC</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">JMFH-5-1/4 · FESTO-JMFH-5-1/4-B · V61B522A-A213J</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; (سایز ۱/۴ اینچ)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 8.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">220V AC / 24V DC | 5/2 (پنج به دو - دو بوبین حافظه‌دار)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-4v220-08"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-4v220-08"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-4v220-08"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-4v330c-10" data-product-id="jpc-4v330c-10">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-4V330C-10-24DC"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-4V330C-10-24DC</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">VUVG-L18-M53C · V62C611A-A213J · 4V330C-10</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 3/8&quot; (سایز ۳/۸ اینچ)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 8.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 220V AC | 5/3 (پنج به سه - مرکز بسته Closed Center)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-4v330c-10"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-4v330c-10"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-4v330c-10"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-3v210-06" data-product-id="jpc-3v210-06">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="24" y="14" width="36" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="36" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="10" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="12" y1="38" x2="21" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <line x1="42" y1="50" x2="42" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="42,14 39,20 45,20" fill="currentColor"/>
+            <line x1="74" y1="38" x2="82" y2="38" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="78" y1="38" x2="78" y2="50" stroke="#F59E0B" stroke-width="2"/>
+            <path d="M96 28L102 22L106 34L110 22L114 28" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-3V210-06-24DC"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-3V210-06-24DC</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">MFH-3-1/8 · MFH-3-1/4 · V60A513A-A213J</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/8&quot; (سایز ۱/۸ اینچ)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 8.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 220V AC | 3/2 (سه به دو - تک بوبین NC/NO)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-3v210-06"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-3v210-06"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-3v210-06"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-festo-mfh-5-1-4" data-product-id="festo-mfh-5-1-4">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Festo (فستو)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="FESTO-MFH-5-1/4-B"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">FESTO-MFH-5-1/4-B</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-4v210-08"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-4V210-08-24DC ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; &amp; G 1/8&quot; &amp; G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">2.0 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 220V AC (کویل سری F) | 5/2 (تک بوبین سری MFH / دو بوبین سری JMFH)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="festo-mfh-5-1-4"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="festo-mfh-5-1-4"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="festo-mfh-5-1-4"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-norgren-v61b513a" data-product-id="norgren-v61b513a">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Norgren (نورگرن)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="NORGREN-V61B513A-A213J"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">NORGREN-V61B513A-A213J</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-4v210-08"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-4V210-08-24DC ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; &amp; G 3/8&quot; &amp; G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">2.0 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 220V AC | 5/2 &amp; 5/3 (تک بوبین و دو بوبین)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="norgren-v61b513a"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="norgren-v61b513a"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="norgren-v61b513a"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-rexroth-581-iso1" data-product-id="rexroth-581-iso1">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Bosch Rexroth (بوش رکسروت)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="60" y="14" width="40" height="36" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="6" y="22" width="14" height="20" rx="1" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="9" y1="38" x2="17" y2="26" stroke="#F59E0B" stroke-width="1.8"/>
+            <path d="M100 26L106 20L110 32L114 20L118 26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="32" y1="50" x2="32" y2="14" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="32,14 29,20 35,20" fill="currentColor"/>
+            <line x1="48" y1="14" x2="48" y2="50" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="48,50 45,44 51,44" fill="currentColor"/>
+            <line x1="72" y1="50" x2="88" y2="14" stroke="#F59E0B" stroke-width="1.8"/>
+            <circle cx="32" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="48" cy="8" r="2.2" fill="currentColor"/>
+            <circle cx="40" cy="56" r="2.2" fill="#F59E0B"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="REXROTH-0820055051-CD07"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">REXROTH-0820055051-CD07</span>
+                  </div>
+                  <span class="product-cat-label">شیرهای برقی پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-4v220-08"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-4V220-08-220AC ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; &amp; G 3/8&quot; &amp; G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">ولتاژ بوبین / آرایش</span>
+                    <span class="spec-val">24V DC / 230V AC | 5/2 &amp; 5/3 (نصب خطی و زیرشیری ISO)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="rexroth-581-iso1"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="rexroth-581-iso1"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="rexroth-581-iso1"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-solenoid-valves-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-dnc-63-200" data-product-id="jpc-dnc-63-200">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="14" y="14" width="72" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="46" y1="14" x2="46" y2="50" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="46" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="4"/>
+            <rect x="108" y="25" width="6" height="14" rx="1" fill="#F59E0B"/>
+            <line x1="22" y1="14" x2="22" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="78" y1="14" x2="78" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="14" y1="20" x2="86" y2="20" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="14" y1="44" x2="86" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-DNC-63-200-PPV-A"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-DNC-63-200-PPV-A</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">DSBC-32 · DSBC-40-100 · DSBC-50-250</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 3/8&quot; (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.0 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر پیستون ۳۲ الی ۱۲۵ میلی‌متر | کورس ۲۵ الی ۱۰۰۰ میلی‌متر</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-dnc-63-200"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-dnc-63-200"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-dnc-63-200"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-sc-80-150" data-product-id="jpc-sc-80-150">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="14" y="14" width="72" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="46" y1="14" x2="46" y2="50" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="46" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="4"/>
+            <rect x="108" y="25" width="6" height="14" rx="1" fill="#F59E0B"/>
+            <line x1="22" y1="14" x2="22" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="78" y1="14" x2="78" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="14" y1="20" x2="86" y2="20" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="14" y1="44" x2="86" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-SC-80x150-S"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-SC-80x150-S</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک چهارمیل صنعتی سری SC / SU</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">SC-32 · SC-40 · SC-50</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; الی G 3/4&quot; (متناسب با قطر سیلندر)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.0 – 9.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۳۲ الی ۲۰۰ میلی‌متر | کورس‌های استاندارد و سفارشی</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-sc-80-150"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-sc-80-150"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-sc-80-150"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-advu-40-50" data-product-id="jpc-advu-40-50">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="24" y="12" width="52" height="40" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="50" y1="12" x2="50" y2="52" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="50" y1="32" x2="104" y2="32" stroke="currentColor" stroke-width="4.5"/>
+            <circle cx="34" cy="22" r="2.5" fill="currentColor"/>
+            <circle cx="66" cy="22" r="2.5" fill="currentColor"/>
+            <circle cx="34" cy="42" r="2.5" fill="currentColor"/>
+            <circle cx="66" cy="42" r="2.5" fill="currentColor"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-ADVU-40-50-PA"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-ADVU-40-50-PA</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">ADVU-40-50-P-A · ADN-40-50 · SDA-40x50</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">M5 / G 1/8&quot; / G 1/4&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.0 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۱۲ الی ۱۰۰ میلی‌متر | کورس ۵ الی ۱۰۰ میلی‌متر</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-advu-40-50"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-advu-40-50"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-advu-40-50"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-mal-25-100" data-product-id="jpc-mal-25-100">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="24" y="12" width="52" height="40" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="50" y1="12" x2="50" y2="52" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="50" y1="32" x2="104" y2="32" stroke="currentColor" stroke-width="4.5"/>
+            <circle cx="34" cy="22" r="2.5" fill="currentColor"/>
+            <circle cx="66" cy="22" r="2.5" fill="currentColor"/>
+            <circle cx="34" cy="42" r="2.5" fill="currentColor"/>
+            <circle cx="66" cy="42" r="2.5" fill="currentColor"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-MAL-25x100-CA"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-MAL-25x100-CA</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">DSNU-16 · DSNU-20 · DSNU-25-100-P-A</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">M5 / G 1/8&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.0 – 9.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۱۶، ۲۰، ۲۵، ۳۲ و ۴۰ میلی‌متر | کورس ۱۰ الی ۳۰۰ میلی‌متر</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-mal-25-100"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-mal-25-100"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-mal-25-100"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-festo-dsbc-50-250" data-product-id="festo-dsbc-50-250">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Festo (فستو)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="14" y="14" width="72" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="46" y1="14" x2="46" y2="50" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="46" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="4"/>
+            <rect x="108" y="25" width="6" height="14" rx="1" fill="#F59E0B"/>
+            <line x1="22" y1="14" x2="22" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="78" y1="14" x2="78" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="14" y1="20" x2="86" y2="20" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="14" y1="44" x2="86" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="FESTO-DSBC-50-250-PPVA-N3"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">FESTO-DSBC-50-250-PPVA-N3</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک پروفیلی فستو سری DSBC / DNC</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-dnc-63-200"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-DNC-63-200-PPV-A ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot; (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵)</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0.6 – 12.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۳۲ الی ۱۲۵ میلی‌متر | کورس‌های استاندارد</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="festo-dsbc-50-250"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="festo-dsbc-50-250"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="festo-dsbc-50-250"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-norgren-pra-182050" data-product-id="norgren-pra-182050">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Norgren (نورگرن)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="10" y="24" width="100" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+            <rect x="44" y="12" width="32" height="12" rx="2" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="24" x2="60" y2="46" stroke="#F59E0B" stroke-width="2.5"/>
+            <line x1="18" y1="35" x2="102" y2="35" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="NORGREN-PRA/182050/M"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">NORGREN-PRA/182050/M</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-dnc-63-200"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-DNC-63-200-PPV-A ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/8&quot; الی G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.0 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۲۵ الی ۱۰۰ میلی‌متر | کورس‌های بلند تا ۳۰۰۰ میلی‌متر (در تیپ رادلس)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="norgren-pra-182050"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="norgren-pra-182050"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="norgren-pra-182050"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-rexroth-pra-iso" data-product-id="rexroth-pra-iso">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Bosch Rexroth (بوش رکسروت)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="14" y="14" width="72" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="46" y1="14" x2="46" y2="50" stroke="#F59E0B" stroke-width="3"/>
+            <line x1="46" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="4"/>
+            <rect x="108" y="25" width="6" height="14" rx="1" fill="#F59E0B"/>
+            <line x1="22" y1="14" x2="22" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="78" y1="14" x2="78" y2="6" stroke="currentColor" stroke-width="2"/>
+            <line x1="14" y1="20" x2="86" y2="20" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="14" y1="44" x2="86" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="REXROTH-R480141402-PRA"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">REXROTH-R480141402-PRA</span>
+                  </div>
+                  <span class="product-cat-label">جک‌های پنوماتیک</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-dnc-63-200"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-DNC-63-200-PPV-A ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/8&quot; الی G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">1.5 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات کورس و سیلندر</span>
+                    <span class="spec-val">قطر ۲۰ الی ۱۰۰ میلی‌متر | کورس استاندارد ISO</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="rexroth-pra-iso"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="rexroth-pra-iso"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="rexroth-pra-iso"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-pneumatic-cylinders-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-ou-frl-1-2" data-product-id="jpc-ou-frl-1-2">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="31" y1="12" x2="31" y2="52" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="32" r="14" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="32" x2="67" y2="24" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <rect x="76" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="44" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="74" y1="32" x2="76" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="102" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-AC4010-04-D"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-AC4010-04-D</span>
+                  </div>
+                  <span class="product-cat-label">تجهیزات جانبی و مراقبت هوا</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن)</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">MS6-LFR-1/2 · FESTO-MS6-LFR-1/2-D7-ERM-AS · B74G-4GK-AD3-RMN</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot;, G 3/8&quot;, G 1/2&quot;, G 3/4&quot;, G 1&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0.5 – 10.0 bar (حداکثر فشار ورودی 12 bar)</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات فنی / دبی</span>
+                    <span class="spec-val">واحد مراقبت کامل (فیلتر + رگولاتور + روغن‌زن + گیج فشار)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-ou-frl-1-2"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-ou-frl-1-2"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-ou-frl-1-2"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-frl-accessories-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card is-jpc-brand" id="card-jpc-asc-flow-fitting" data-product-id="jpc-asc-flow-fitting">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-jpc">JPC (برند اختصاصی)</span>
+                <span class="status-badge status-available">آماده تأمین / استعلام قیمت</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="31" y1="12" x2="31" y2="52" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="32" r="14" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="32" x2="67" y2="24" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <rect x="76" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="44" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="74" y1="32" x2="76" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="102" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="JPC-HVFF-ASC-SET"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">JPC-HVFF-ASC-SET</span>
+                  </div>
+                  <span class="product-cat-label">تجهیزات جانبی و مراقبت هوا</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار</h3>
+                
+            <div class="equivalent-codes-strip">
+              <span>کدهای هم‌ابعاد و معادل فنی:</span>
+              <span class="mono" style="font-weight:700; color:var(--steel-accent);">GRLA-1/4-QS-8 · ASC-200-08 · ASC-300-10</span>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">رزوه M5 الی 1/2&quot; | قطر شیلنگ 4, 6, 8, 10, 12, 16 mm</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0 – 10.0 bar (فشار ترکیدگی شیلنگ تا 24 bar)</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات فنی / دبی</span>
+                    <span class="spec-val">شیر یک‌طرفه کنترل سرعت، فیتینگ، شیلنگ پلی‌یورتان و مانومتر</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="jpc-asc-flow-fitting"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="jpc-asc-flow-fitting"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="jpc-asc-flow-fitting"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-frl-accessories-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-festo-ms6-lfr" data-product-id="festo-ms6-lfr">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Festo (فستو)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="31" y1="12" x2="31" y2="52" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="32" r="14" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="32" x2="67" y2="24" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <rect x="76" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="44" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="74" y1="32" x2="76" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="102" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="FESTO-MS6-LFR-1/2-D7-ERM-AS"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">FESTO-MS6-LFR-1/2-D7-ERM-AS</span>
+                  </div>
+                  <span class="product-cat-label">تجهیزات جانبی و مراقبت هوا</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-ou-frl-1-2"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-AC4010-04-D ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot;, G 3/8&quot;, G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0.8 – 12.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات فنی / دبی</span>
+                    <span class="spec-val">فیلتر رگولاتور و واحد مراقبت ماژولار صنعتی</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="festo-ms6-lfr"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="festo-ms6-lfr"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="festo-ms6-lfr"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-frl-accessories-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-norgren-b74g-frl" data-product-id="norgren-b74g-frl">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Norgren (نورگرن)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="31" y1="12" x2="31" y2="52" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="32" r="14" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="32" x2="67" y2="24" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <rect x="76" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="44" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="74" y1="32" x2="76" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="102" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="NORGREN-B74G-4GK-AD3-RMN"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">NORGREN-B74G-4GK-AD3-RMN</span>
+                  </div>
+                  <span class="product-cat-label">تجهیزات جانبی و مراقبت هوا</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G)</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-ou-frl-1-2"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-AC4010-04-D ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot;, G 3/8&quot;, G 1/2&quot;, G 3/4&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0.3 – 10.0 bar (فشار ورودی تا 17 bar در کاسه فلزی)</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات فنی / دبی</span>
+                    <span class="spec-val">فیلتر رگولاتور صنعتی سنگین سری Excelon</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="norgren-b74g-frl"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="norgren-b74g-frl"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="norgren-b74g-frl"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-frl-accessories-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="product-card " id="card-rexroth-nl2-frl" data-product-id="rexroth-nl2-frl">
+            <div>
+              <div class="product-card-top">
+                <span class="brand-badge badge-euro">Bosch Rexroth (بوش رکسروت)</span>
+                <span class="status-badge status-inquiry">استعلام قیمت و موجودی</span>
+              </div>
+
+              <div class="product-schematic-box">
+                <div class="schematic-svg-wrap">
+                  <svg viewBox="0 0 120 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="31" y1="12" x2="31" y2="52" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="60" cy="32" r="14" stroke="#F59E0B" stroke-width="2"/>
+            <line x1="60" y1="32" x2="67" y2="24" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+            <rect x="76" y="12" width="26" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="32" x2="18" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="44" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="74" y1="32" x2="76" y2="32" stroke="currentColor" stroke-width="2"/>
+            <line x1="102" y1="32" x2="112" y2="32" stroke="currentColor" stroke-width="2"/>
+          </svg>
+                </div>
+                <div class="schematic-meta">
+                  <div class="product-code-row">
+                    <button
+                      type="button"
+                      class="copy-code-btn js-copy-btn"
+                      data-copy="REXROTH-0821300300-NL2"
+                      title="کپی کد فنی"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      <span>کپی</span>
+                    </button>
+                    <span class="product-code-pill">REXROTH-0821300300-NL2</span>
+                  </div>
+                  <span class="product-cat-label">تجهیزات جانبی و مراقبت هوا</span>
+                </div>
+              </div>
+
+              <div class="product-card-body">
+                <h3 class="product-title-fa">واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS</h3>
+                
+            <div class="jpc-equivalent-banner">
+              <span class="jpc-equivalent-text">
+                معادل ابعادی و فنی موجود در برند اختصاصی JPC
+              </span>
+              <button
+                type="button"
+                class="jpc-equivalent-switch-btn js-switch-to-jpc"
+                data-target-id="jpc-ou-frl-1-2"
+                title="مشاهده معادل ابعادی و فنی در برند اختصاصی JPC"
+              >
+                JPC-AC4010-04-D ←
+              </button>
+            </div>
+                <div class="product-specs-table">
+                  <div class="spec-cell">
+                    <span class="spec-key">سایز پورت (Port)</span>
+                    <span class="spec-val mono">G 1/4&quot;, G 3/8&quot;, G 1/2&quot;</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-key">فشار کاری (Pressure)</span>
+                    <span class="spec-val mono">0.5 – 10.0 bar</span>
+                  </div>
+                  <div class="spec-cell spec-cell-wide">
+                    <span class="spec-key">مشخصات فنی / دبی</span>
+                    <span class="spec-val">واحد مراقبت، رگولاتور دقیق و شیر کنترل جریان</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card-footer">
+              <div class="product-card-actions">
+                <button
+                  type="button"
+                  class="btn btn-amber btn-sm js-quote-trigger"
+                  data-id="rexroth-nl2-frl"
+                >
+                  درخواست استعلام قیمت
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-rfq-add btn-sm js-add-rfq-btn"
+                  data-id="rexroth-nl2-frl"
+                >
+                  + افزودن به لیست استعلام
+                </button>
+              </div>
+              <div class="product-sub-links">
+                <button
+                  type="button"
+                  class="product-pdf-link js-spec-trigger"
+                  data-id="rexroth-nl2-frl"
+                >
+                  مشاهده مشخصات فنی و کدهای معادل ←
+                </button>
+                <a
+                  href="assets/docs/jpc-frl-accessories-datasheet.pdf"
+                  download
+                  class="product-pdf-link"
+                >
+                  دانلود PDF
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- SSR_PRODUCTS_END -->
+        </div>
       </div>
     </section>
 
@@ -1138,6 +4460,230 @@
     </section>
 
     <!-- ===================================================================
+         5B. TECHNICAL CROSS-REFERENCE & COMPARISON HTML TABLE (SEO + GEO)
+         =================================================================== -->
+    <section class="section" id="cross-reference">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">مرجع مهندسی تطبیق کدهای فنی (Cross-Reference)</span>
+          <div class="section-header-row">
+            <h2 class="section-title">جدول تطبیق ابعادی و فنی سری‌های تجاری <span class="mono">JPC</span> با استانداردهای اروپایی</h2>
+            <a href="#catalog" class="btn btn-outline-tech btn-sm">جستجوی کد در کاتالوگ ←</a>
+          </div>
+          <p class="section-desc">
+            جدول زیر راهنمای مرجع مهندسان طراحی، ماشین‌سازان و مسئولین تدارکات جهت بررسی <strong>تطابق ابعادی و فنی</strong> سری‌های تجاری وارداتی برند اختصاصی <strong>JPC</strong> در مقایسه با کدهای رایج اروپایی (<span class="mono">Festo</span>، <span class="mono">Norgren</span>، <span class="mono">Bosch Rexroth</span>) بر اساس استانداردهای <span class="mono">ISO 15552</span>، <span class="mono">ISO 6432</span> و آرایش پورت‌های استاندارد است.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="tech-comparison-table">
+            <caption>
+              جدول مقایسه مشخصات فنی و تطابق ابعادی تجهیزات پنوماتیک برند اختصاصی JPC با سری‌های استاندارد اروپایی
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">گروه تجهیز پنوماتیک</th>
+                <th scope="col">سری و کد فنی برند اختصاصی JPC</th>
+                <th scope="col">کدهای هم‌ردیف اروپایی (Festo / Norgren / Rexroth)</th>
+                <th scope="col">استاندارد ابعادی و تطابق نصبی</th>
+                <th scope="col">سایز پورت / قطر استاندارد</th>
+                <th scope="col">محدوده فشار و ولتاژ کاری</th>
+                <th scope="col">استعلام / مشخصات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>شیر برقی ۵/۲ تک‌بوبین</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">فرمان جک دوطرفه (برگشت فنر)</span></td>
+                <td><span class="table-jpc-code">JPC-4V210-08-24DC</span></td>
+                <td>
+                  <span class="table-euro-code">Festo MFH-5-1/4-B</span>
+                  <span class="table-euro-code">Norgren V61B513A</span>
+                  <span class="table-euro-code">Rexroth 0820055051</span>
+                </td>
+                <td>تطابق کامل آرایش ۵ پورت ۲ وضعیت، قابل نصب خطی و روی منیفولد</td>
+                <td class="mono">G 1/4" (1/8" – 1/2")</td>
+                <td class="mono">1.5 – 8.0 bar | 24V DC / 220V AC</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-4v210-08">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>شیر برقی ۵/۲ دوبوبین</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">دو سر بوبین حافظه‌دار (Bistable)</span></td>
+                <td><span class="table-jpc-code">JPC-4V220-08-220AC</span></td>
+                <td>
+                  <span class="table-euro-code">Festo JMFH-5-1/4</span>
+                  <span class="table-euro-code">Norgren V61B522A</span>
+                  <span class="table-euro-code">Rexroth CD07-5/2</span>
+                </td>
+                <td>تطابق عملکرد حافظه‌دار و سوکت بوبین استاندارد DIN 43650 (IP65)</td>
+                <td class="mono">G 1/4"</td>
+                <td class="mono">1.5 – 8.0 bar | 220V AC / 24V DC</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-4v220-08">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>شیر برقی ۵/۳ وسط بسته</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">توقف پیستون در میانه کورس</span></td>
+                <td><span class="table-jpc-code">JPC-4V330C-10-24DC</span></td>
+                <td>
+                  <span class="table-euro-code">Festo VUVG-L18-M53C</span>
+                  <span class="table-euro-code">Norgren V62C611A</span>
+                  <span class="table-euro-code">Rexroth 581-5/3</span>
+                </td>
+                <td>تطابق آرایش ۵/۳ مرکز بسته (Closed Center) با گذردهی بالا</td>
+                <td class="mono">G 3/8" &amp; G 1/4"</td>
+                <td class="mono">1.5 – 8.0 bar | 24V DC / 220V AC</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-4v330c-10">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>شیر برقی ۳/۲ نرمال بسته</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">فرمان جک یک‌طرفه و نازل باد</span></td>
+                <td><span class="table-jpc-code">JPC-3V210-06-24DC</span></td>
+                <td>
+                  <span class="table-euro-code">Festo MFH-3-1/8</span>
+                  <span class="table-euro-code">Norgren V60A513A</span>
+                </td>
+                <td>تطابق عملکرد ۳/۲ تک‌بوبین برگشت فنر (NC/NO)</td>
+                <td class="mono">G 1/8" &amp; G 1/4"</td>
+                <td class="mono">1.5 – 8.0 bar | 24V DC / 220V AC</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-3v210-06">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>جک پروفیلی استاندارد</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">دوطرفه مگنت‌دار با ضربه‌گیر PPV</span></td>
+                <td><span class="table-jpc-code">JPC-DNC-63-200-PPV-A</span></td>
+                <td>
+                  <span class="table-euro-code">Festo DSBC / DNC</span>
+                  <span class="table-euro-code">Norgren PRA/182000</span>
+                  <span class="table-euro-code">Rexroth PRA R48014</span>
+                </td>
+                <td>تطابق ۱۰۰٪ ابعادی و فواصل سوراخ‌کاری طبق استاندارد <strong>ISO 15552</strong></td>
+                <td class="mono">Bore Ø32 – Ø125 mm</td>
+                <td class="mono">1.0 – 10.0 bar | سنسور 24V DC</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-dnc-63-200">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>جک کامپکت (فشرده)</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">مناسب فیکسچر و فضای محدود</span></td>
+                <td><span class="table-jpc-code">JPC-ADVU-40-50-PA</span></td>
+                <td>
+                  <span class="table-euro-code">Festo ADVU / ADN</span>
+                  <span class="table-euro-code">Norgren RM/92000</span>
+                  <span class="table-euro-code">Rexroth KPZ</span>
+                </td>
+                <td>تطابق ابعادی بدنه فشرده جهت جایگزینی در فیکسچرهای مونتاژ</td>
+                <td class="mono">Bore Ø12 – Ø100 mm</td>
+                <td class="mono">1.0 – 10.0 bar | مگنت داخلی</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-advu-40-50">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>جک قلمی (مینی استیل)</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">یک‌طرفه و دوطرفه سرعت بالا</span></td>
+                <td><span class="table-jpc-code">JPC-MAL-25x100-CA</span></td>
+                <td>
+                  <span class="table-euro-code">Festo DSNU</span>
+                  <span class="table-euro-code">Norgren RA/802000</span>
+                </td>
+                <td>تطابق ابعادی با استاندارد <strong>ISO 6432</strong> (در تیپ استیل DSNU)</td>
+                <td class="mono">Bore Ø16 – Ø40 mm</td>
+                <td class="mono">1.0 – 9.0 bar | مگنت داخلی</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-mal-25-100">مشخصات فنی</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>واحد مراقبت هوا (FRL)</strong><br /><span style="font-size:0.78rem; color:var(--text-muted);">فیلتر، رگولاتور، روغن‌زن و مانومتر</span></td>
+                <td><span class="table-jpc-code">JPC-AC4010-04-D</span></td>
+                <td>
+                  <span class="table-euro-code">Festo MS6-LFR-1/2</span>
+                  <span class="table-euro-code">Norgren B74G-4GK</span>
+                  <span class="table-euro-code">Rexroth NL2-FRE</span>
+                </td>
+                <td>تطابق رزوه پورت‌های G و عملکرد ماژولار فیلتراسیون و رگولاسیون فشار</td>
+                <td class="mono">G 1/4" to G 1"</td>
+                <td class="mono">0.5 – 10.0 bar (Max 12 bar)</td>
+                <td>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-table-product-trigger" data-id="jpc-ou-frl-1-2">مشخصات فنی</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         5C. ENGINEERING FAQ SECTION (پرسش‌های متداول فنی و مهندسی)
+         =================================================================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">پاسخ به سؤالات رایج مهندسین و مدیران خرید</span>
+          <h2 class="section-title">پرسش‌های متداول فنی درباره تجهیزات پنوماتیک و برند <span class="mono">JPC</span></h2>
+          <p class="section-desc">
+            پاسخ‌های کارشناسی به مهم‌ترین پرسش‌های فنی در زمینه انتخاب شیرهای برقی، محاسبه سایز جک، واحد مراقبت هوا و معادل‌یابی قطعات در شرکت جلالی پنوماتیک.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>۱. تفاوت برند اختصاصی JPC با برندهای اروپایی موجود در جلالی پنوماتیک چیست؟</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <strong>شرکت جلالی پنوماتیک (Jalali Pneumatic Company)</strong> دارای معماری تأمین دوگانه است: از یک سو قطعات برندهای معتبر اروپایی (<span class="mono">Festo</span>، <span class="mono">Norgren</span> و <span class="mono">Bosch Rexroth</span>) را برای خطوط تولید حساس تأمین می‌کند، و از سوی دیگر برند تجاری اختصاصی خود با نام <strong>JPC</strong> را برای تجهیزات پنوماتیک وارداتی با تطابق کامل ابعادی و فنی (استانداردهای <span class="mono">ISO 15552</span> و <span class="mono">ISO 6432</span>) و صرفه اقتصادی بالا برای ماشین‌سازان و صنایع کشور عرضه می‌نماید.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>۲. آیا جک‌ها و شیرهای برقی برند JPC از نظر ابعاد نصبی جایگزین مدل‌های اروپایی می‌شوند؟</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              بله؛ جک‌های پروفیلی سری <span class="mono">JPC-DNC</span> منطبق بر استاندارد ابعادی <span class="mono">ISO 15552</span> و جک‌های قلمی منطبق بر <span class="mono">ISO 6432</span> هستند و بدون نیاز به تغییر در شاسی یا پایه‌های نصبی (<span class="mono">LB, FA, CB</span>)، از نظر ابعادی و فنی جایگزین مدل‌های هم‌ردیف مانند سری <span class="mono">DSBC / DNC</span> فستو یا <span class="mono">PRA</span> نورگرن و رکسروت می‌شوند.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>۳. برای تابلوهای فرمان اتوماسیون صنعتی، بوبین 24V DC مناسب‌تر است یا 220V AC؟</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              در تابلوهای مدرن مبتنی بر <span class="mono">PLC</span>، بوبین <span class="mono">24V DC</span> به دلیل ایمنی الکتریکی، عدم ایجاد نویز القایی، مصرف توان پایین‌تر و طول عمر حرارتی بیشتر گزینه استاندارد است. در مدارهای سنتی فرمان رله‌ای یا بدون منبع تغذیه سوئیچینگ از بوبین‌های <span class="mono">220V AC</span> استفاده می‌شود. هر دو ولتاژ در شیرهای سری <span class="mono">4V</span> و <span class="mono">3V</span> برند <span class="mono">JPC</span> قابل تأمین هستند.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>۴. نحوه ثبت استعلام قیمت چندقلمی (BOM) و ارسال به شهرستان‌ها چگونه است؟</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              شما می‌توانید اقلام مورد نظر را از کاتالوگ به <strong>«سبد استعلام چندقلمی»</strong> اضافه کرده و لیست کامل را از طریق فرم رسمی <span class="mono">B2B</span>، واتساپ یا تلگرام واحد فروش ارسال نمایید. سفارش‌ها از دفتر فروش تهران (محدوده بازار صنعتی لالهزار) به سراسر کشور از طریق باربری، تیپاکس یا پیک ویژه ارسال می‌گردند.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>۵. چگونه قطر مناسب جک پنوماتیک را بر اساس نیروی مورد نیاز محاسبه کنیم؟</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              در فشار کاری استاندارد ۶ بار، نیروی تئوری کورس رفت از رابطه حاصل‌ضرب سطح مقطع پیستون در فشار کاری به دست می‌آید و برای اطمینان از حرکت یکنواخت در شرایط صنعتی، ضریب بار مفید <strong>۷۰ تا ۸۵ درصد</strong> در نظر گرفته می‌شود. شما می‌توانید از <a href="#calculator" style="color:var(--steel-accent); font-weight:700;">ماشین‌حساب آنلاین موجود در همین صفحه</a> برای محاسبه دقیق نیرو بر حسب نیوتن (<span class="mono">N</span>) و کیلوگرم‌نیرو (<span class="mono">kgf</span>) استفاده کنید.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
          6. B2B INQUIRY, BULK ORDER & WHATSAPP / TELEGRAM CONTACT SECTION
          =================================================================== -->
     <section class="section" id="inquiry">
@@ -1377,6 +4923,16 @@
               </div>
             </div>
 
+            <div class="contact-channel-item">
+              <span class="contact-channel-label">موقعیت دفتر فروش و ساعات پاسخگویی مهندسی</span>
+              <div style="font-size: 0.84rem; color: #F8FAFC; font-weight: 700; margin-bottom: 0.25rem;">
+                تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)
+              </div>
+              <div style="font-size: 0.78rem; color: #94A3B8;">
+                شنبه تا چهارشنبه ۸:۳۰ الی ۱۷:۳۰ | پنجشنبه ۸:۳۰ الی ۱۳:۳۰
+              </div>
+            </div>
+
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
               <a
                 href="https://wa.me/989120000000"
@@ -1420,6 +4976,11 @@
           <p style="font-size: 0.86rem; line-height: 1.8; color: #94A3B8;">
             واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و اتوماسیون مبتنی بر هوای فشرده. عرضه مستقیم برند تجاری اختصاصی <strong class="mono" style="color: #F8FAFC;">JPC</strong> در کنار تأمین قطعات از برندهای اروپایی (<span class="mono">Festo</span>، <span class="mono">Norgren</span>، <span class="mono">Bosch Rexroth</span>) و سازندگان معتبر آسیایی.
           </p>
+          <div class="footer-eeat-box">
+            <div><strong>آدرس و مرکز تأمین:</strong> تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)</div>
+            <div><strong>تلفن ثابت فروش:</strong> <a href="tel:+982133900000" class="mono" style="color:#38BDF8;">021-33900000</a> | <strong>واتساپ:</strong> <a href="https://wa.me/989120000000" class="mono" style="color:#34D399;">0912-000-0000</a></div>
+            <div><strong>ساعات کاری:</strong> شنبه تا چهارشنبه ۸:۳۰ الی ۱۷:۳۰ | پنجشنبه ۸:۳۰ الی ۱۳:۳۰</div>
+          </div>
         </div>
 
         <div>
@@ -1429,6 +4990,7 @@
             <li><a href="pneumatic-cylinders.html">جک‌های پنوماتیک (پروفیلی، چهارمیل، کامپکت)</a></li>
             <li><a href="frl-accessories.html">واحد مراقبت هوا (FRL) و اتصالات پنوماتیک</a></li>
             <li><a href="#calculator">ماشین‌حساب محاسبه نیروی جک پنوماتیک</a></li>
+            <li><a href="#cross-reference">جدول معادل‌یابی کدهای فنی JPC</a></li>
           </ul>
         </div>
 
@@ -1439,6 +5001,7 @@
             <li><a href="#sourcing">تأمین تجهیزات Festo (فستو)</a></li>
             <li><a href="#sourcing">تأمین تجهیزات Norgren (نورگرن)</a></li>
             <li><a href="#sourcing">تأمین تجهیزات Bosch Rexroth (بوش رکسروت)</a></li>
+            <li><a href="#faq">پرسش‌های متداول مهندسی و خرید</a></li>
           </ul>
         </div>
 
@@ -1447,7 +5010,8 @@
           <ul class="footer-links">
             <li><a href="assets/docs/jpc-general-catalog.pdf" download>دانلود کاتالوگ جامع JPC (PDF)</a></li>
             <li><a href="#inquiry">فرم استعلام قیمت و سفارش عمده</a></li>
-            <li><a href="llms.txt" target="_blank">مشخصات ساختاریافته هوش مصنوعی (llms.txt)</a></li>
+            <li><a href="llms.txt" target="_blank">خلاصه ساختاریافته هوش مصنوعی (llms.txt)</a></li>
+            <li><a href="llms-full.txt" target="_blank">مرجع کامل کاتالوگ هوش مصنوعی (llms-full.txt)</a></li>
             <li><a href="sitemap.xml" target="_blank">نقشه سایت (Sitemap XML)</a></li>
           </ul>
         </div>
@@ -1458,7 +5022,7 @@
           © تمامی حقوق برای <strong>شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)</strong> محفوظ است.
         </div>
         <div class="mono" style="color: #64748B;">
-          JPC INDUSTRIAL PNEUMATICS &amp; AUTOMATION SUPPLY
+          JPC INDUSTRIAL PNEUMATICS &amp; AUTOMATION SUPPLY · TEHRAN, IRAN
         </div>
       </div>
     </div>

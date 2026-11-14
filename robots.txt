@@ -1,21 +1,32 @@
 User-agent: *
 Allow: /
 
-# AI & Answer Engine Crawlers
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI & Generative Search Crawlers (GEO / AEO)
 User-agent: GPTBot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://jalalipneumatic.ir/sitemap.xml
 # LLMs Summary: https://jalalipneumatic.ir/llms.txt
+# LLMs Full Catalog & Technical Index: https://jalalipneumatic.ir/llms-full.txt

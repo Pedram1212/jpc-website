@@ -1,11 +1,14 @@
 /**
- * Jalali Pneumatic Company (JPC) - Site Configuration
- * شرکت جلالی پنوماتیک - تنظیمات پایه وب‌سایت و درگاه‌های ارتباطی B2B
+ * Jalali Pneumatic Company (JPC) - Site Configuration & B2B E-E-A-T Signals
+ * شرکت جلالی پنوماتیک - تنظیمات پایه وب‌سایت، اطلاعات تماس و سیگنال‌های مکانی و تجاری
  */
 const SITE_CONFIG = {
-  // دسترسی مستقیم در سطح اول جهت سازگاری با اسکریپت‌های استعلام و پیام‌رسان‌ها
+  // دسترسی مستقیم در سطح اول جهت سازگاری با اسکریپت‌ها و کامپوننت‌های استعلام
   whatsappNumber: "989120000000",
   telegramUsername: "JalaliPneumatic_Sales",
+  landlinePhone: "021-33900000",
+  addressFa: "تهران، محدوده بازار صنعتی / لاله‌زار (تأمین و ارسال به سراسر کشور)",
+  workingHoursFa: "شنبه تا چهارشنبه: ۹:۰۰ الی ۱۷:۳۰ | پنج‌شنبه: ۹:۰۰ الی ۱۳:۳۰",
 
   company: {
     nameFa: "شرکت جلالی پنوماتیک",
@@ -15,16 +18,19 @@ const SITE_CONFIG = {
     taglineFa: "واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده",
     descriptionFa:
       "تأمین تخصصی شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی از برندهای معتبر اروپایی (Festo, Norgren, Bosch Rexroth)، خطوط تأمین منتخب آسیایی و برند اختصاصی JPC.",
+    addressFa: "تهران، محدوده بازار صنعتی / لاله‌زار (تأمین و ارسال به سراسر کشور)",
+    addressEn: "Tehran Industrial & Commercial Automation District (Lalehzar), Tehran, Iran",
     workingHoursFa: "شنبه تا چهارشنبه: ۹:۰۰ الی ۱۷:۳۰ | پنج‌شنبه: ۹:۰۰ الی ۱۳:۳۰",
-    locationFa: "تهران، قطب صنعتی و تجاری تجهیزات اتوماسیون و پنوماتیک"
+    workingHoursIso: "Sa-We 09:00-17:30, Th 09:00-13:30",
+    locationFa: "تهران، محدوده بازار صنعتی / لاله‌زار (تأمین و ارسال به سراسر کشور)"
   },
 
   contact: {
-    // شماره واتساپ و نام کاربری تلگرام جهت استعلام سریع و ارسال لیست BOM
     whatsappNumber: "989120000000",
     whatsappBaseUrl: "https://wa.me/989120000000",
     telegramUsername: "JalaliPneumatic_Sales",
     telegramBaseUrl: "https://t.me/JalaliPneumatic_Sales",
+    landlinePhone: "021-33900000",
     phoneDisplay: "021-33900000",
     phoneDisplayFa: "۰۲۱-۳۳۹۰۰۰۰۰",
     phoneTel: "+982133900000",
@@ -32,11 +38,12 @@ const SITE_CONFIG = {
     salesMobileDisplayFa: "۰۹۱۲-۰۰۰-۰۰۰۰",
     salesMobileRaw: "09120000000",
     email: "info@jalalipneumatic.ir",
-    salesEmail: "sales@jalalipneumatic.ir"
+    salesEmail: "sales@jalalipneumatic.ir",
+    addressFa: "تهران، محدوده بازار صنعتی / لاله‌زار (تأمین و ارسال به سراسر کشور)",
+    workingHoursFa: "شنبه تا چهارشنبه: ۹:۰۰ الی ۱۷:۳۰ | پنج‌شنبه: ۹:۰۰ الی ۱۳:۳۰"
   },
 
   endpoints: {
-    // آدرس وب‌هوک یا API دریافت فرم استعلام قیمت و سفارش عمده B2B
     inquirySubmitUrl: "https://api.jalalipneumatic.ir/v1/b2b-inquiry",
     enableMockSubmission: true,
     maxUploadSizeMB: 15,
