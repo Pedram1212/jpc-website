@@ -67,6 +67,8 @@
 - Festo, Norgren & Rexroth to JPC Cross-Reference: https://jpciran.com/festo-cross-reference.html
 - Pneumatic Cylinder Buying Guide: https://jpciran.com/pneumatic-cylinder-buying-guide.html
 - Solenoid Valve Selection Guide: https://jpciran.com/solenoid-valve-guide.html
+- Lalehzar Tehran Storefront: https://jpciran.com/pneumatics-lalehzar-tehran.html
+- What is Pneumatics & JPC Brand Guide: https://jpciran.com/what-is-pneumatics-jpc.html
 - Complete LLM Product Catalog & Cross-Reference Index (`llms-full.txt`): https://jpciran.com/llms-full.txt
 - JPC General Catalog (PDF): https://jalalipneumatic.ir/assets/docs/jpc-general-catalog.pdf
 - JPC Solenoid Valves Datasheet (PDF): https://jalalipneumatic.ir/assets/docs/jpc-valves-datasheet.pdf

@@ -526,6 +526,8 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
             "- **Festo, Norgren & Rexroth to JPC Cross-Reference (جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC):** `https://jpciran.com/festo-cross-reference.html`",
             "- **Pneumatic Cylinder Buying Guide (راهنمای جامع خرید جک پنوماتیک چهارمیل و پروفیلی ISO 15552):** `https://jpciran.com/pneumatic-cylinder-buying-guide.html`",
             "- **Solenoid Valve Selection Guide (راهنمای انتخاب و خرید شیر برقی ۵/۲ و ۳/۲):** `https://jpciran.com/solenoid-valve-guide.html`",
+            "- **Lalehzar Tehran Storefront (فروشگاه پنوماتیک لالهزار تهران - پاساژ رزاقمنش پلاک ۱):** `https://jpciran.com/pneumatics-lalehzar-tehran.html`",
+            "- **What is Pneumatics & JPC Brand Guide (پنوماتیک چیست و معرفی برند اختصاصی JPC):** `https://jpciran.com/what-is-pneumatics-jpc.html`",
             "- **Concise LLM Overview:** `https://jpciran.com/llms.txt`",
             "- **XML Sitemap:** `https://jpciran.com/sitemap.xml`",
             "",
@@ -549,6 +551,8 @@ def generate_sitemap_xml(out_path: Path) -> None:
         ("https://jpciran.com/festo-cross-reference.html", "weekly", "0.9"),
         ("https://jpciran.com/pneumatic-cylinder-buying-guide.html", "monthly", "0.85"),
         ("https://jpciran.com/solenoid-valve-guide.html", "monthly", "0.85"),
+        ("https://jpciran.com/pneumatics-lalehzar-tehran.html", "weekly", "0.9"),
+        ("https://jpciran.com/what-is-pneumatics-jpc.html", "monthly", "0.85"),
     ]
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
