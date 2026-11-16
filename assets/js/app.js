@@ -21,6 +21,7 @@
     selectedProduct: null,
     theme: localStorage.getItem("jpc_theme") || "light",
     rfqItems: loadRfqFromStorage(),
+    rfqCustomerNote: localStorage.getItem("jpc_rfq_note") || "",
     calc: {
       bore: 63,
       rod: 20,
@@ -59,9 +60,25 @@
   function saveRfqToStorage() {
     try {
       localStorage.setItem("jpc_rfq_items", JSON.stringify(state.rfqItems));
+      localStorage.setItem("jpc_rfq_note", state.rfqCustomerNote || "");
     } catch (e) {
       // ignore storage errors
     }
+  }
+
+  function syncOverlayOpenState() {
+    const anyModalOpen = Array.from(
+      document.querySelectorAll(".modal-backdrop")
+    ).some((el) => el.classList.contains("open"));
+    const rfqDrawer = document.getElementById("rfq-drawer");
+    const mobileDrawer = document.getElementById("mobile-drawer");
+    const anyDrawerOpen =
+      (rfqDrawer && rfqDrawer.classList.contains("open")) ||
+      (mobileDrawer && mobileDrawer.classList.contains("open"));
+    document.body.classList.toggle(
+      "overlay-open",
+      Boolean(anyModalOpen || anyDrawerOpen)
+    );
   }
 
   /**
@@ -267,7 +284,7 @@
         (window.SITE_CONFIG.whatsappNumber ||
           (window.SITE_CONFIG.contact &&
             window.SITE_CONFIG.contact.whatsappNumber))) ||
-      "989120000000";
+      "989121305167";
     const base = `https://wa.me/${waNumber}`;
 
     let message = "";
@@ -354,6 +371,7 @@
 
   function clearRfqList() {
     state.rfqItems = [];
+    state.rfqCustomerNote = "";
     saveRfqToStorage();
     renderRfqUI();
     renderCatalog();
@@ -370,15 +388,20 @@
           item.note ? ` (${item.note})` : ""
         }`
     );
+    const noteSection =
+      state.rfqCustomerNote && state.rfqCustomerNote.trim()
+        ? `\n\nتوضیحات تکمیلی خریدار:\n${state.rfqCustomerNote.trim()}`
+        : "";
     return (
       `سلام، درخواست استعلام قیمت لیست اقلام زیر (BOM) را از وب‌سایت شرکت جلالی پنوماتیک (JPC) دارم:\n\n` +
       lines.join("\n") +
+      noteSection +
       `\n\nلطفاً موجودی و پیش‌فاکتور را اعلام فرمایید.`
     );
   }
 
   function formatRfqForFormText() {
-    return state.rfqItems
+    const itemsText = state.rfqItems
       .map(
         (item, idx) =>
           `${idx + 1}) کد فنی: ${item.code} | شرح: ${item.nameFa} | برند: ${item.brand} | تعداد: ${item.qty} عدد${
@@ -386,6 +409,21 @@
           }`
       )
       .join("\n");
+    if (state.rfqCustomerNote && state.rfqCustomerNote.trim()) {
+      return `${itemsText}\n\nتوضیحات تکمیلی: ${state.rfqCustomerNote.trim()}`;
+    }
+    return itemsText;
+  }
+
+  function updateRfqActionLinks() {
+    const waSendBtn = document.getElementById("rfq-send-whatsapp-btn");
+    const tgSendBtn = document.getElementById("rfq-send-telegram-btn");
+    if (waSendBtn) {
+      waSendBtn.href = buildWhatsAppUrl(null, formatRfqWhatsAppMessage());
+    }
+    if (tgSendBtn) {
+      tgSendBtn.href = buildTelegramUrl(formatRfqWhatsAppMessage());
+    }
   }
 
   function renderRfqUI() {
@@ -398,17 +436,10 @@
     });
 
     const drawerBody = document.getElementById("rfq-drawer-body");
-    const waSendBtn = document.getElementById("rfq-send-whatsapp-btn");
-    const tgSendBtn = document.getElementById("rfq-send-telegram-btn");
     const formPopulateBtn = document.getElementById("rfq-populate-form-btn");
     const clearBtn = document.getElementById("rfq-clear-btn");
 
-    if (waSendBtn) {
-      waSendBtn.href = buildWhatsAppUrl(null, formatRfqWhatsAppMessage());
-    }
-    if (tgSendBtn) {
-      tgSendBtn.href = buildTelegramUrl(formatRfqWhatsAppMessage());
-    }
+    updateRfqActionLinks();
 
     if (!drawerBody) return;
 
@@ -425,6 +456,7 @@
       `;
       if (formPopulateBtn) formPopulateBtn.disabled = true;
       if (clearBtn) clearBtn.style.display = "none";
+      updateFloatingWhatsApp(state.selectedProduct);
       return;
     }
 
@@ -462,7 +494,7 @@
               <span style="font-size:0.76rem; color:var(--text-muted);">تعداد:</span>
               <div class="rfq-qty-controls">
                 <button type="button" class="rfq-qty-btn js-rfq-dec" data-id="${item.id}" aria-label="کاهش تعداد">−</button>
-                <input type="number" min="1" class="rfq-qty-input js-rfq-qty-input" data-id="${item.id}" value="${item.qty}" aria-label="تعداد" />
+                <input type="number" inputmode="numeric" min="1" class="rfq-qty-input js-rfq-qty-input" data-id="${item.id}" value="${item.qty}" aria-label="تعداد" />
                 <button type="button" class="rfq-qty-btn js-rfq-inc" data-id="${item.id}" aria-label="افزایش تعداد">+</button>
               </div>
             </div>
@@ -471,6 +503,15 @@
       `
         )
         .join("")}
+      <div class="rfq-notes-box">
+        <label for="rfq-customer-notes">توضیحات تکمیلی سفارش (ولتاژ، کورس جک، نام شرکت یا شرایط ارسال):</label>
+        <textarea
+          id="rfq-customer-notes"
+          class="rfq-notes-input"
+          rows="2"
+          placeholder="مثال: بوبین 24V DC، ارسال به شهرک صنعتی..."
+        >${state.rfqCustomerNote || ""}</textarea>
+      </div>
     `;
 
     drawerBody.querySelectorAll(".js-rfq-remove").forEach((btn) => {
@@ -501,6 +542,16 @@
       });
     });
 
+    const notesTextarea = document.getElementById("rfq-customer-notes");
+    if (notesTextarea) {
+      notesTextarea.addEventListener("input", () => {
+        state.rfqCustomerNote = notesTextarea.value;
+        saveRfqToStorage();
+        updateRfqActionLinks();
+        updateFloatingWhatsApp(state.selectedProduct);
+      });
+    }
+
     updateFloatingWhatsApp(state.selectedProduct);
   }
 
@@ -511,6 +562,7 @@
     drawer.classList.toggle("open", open);
     backdrop.classList.toggle("open", open);
     drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    syncOverlayOpenState();
   }
 
   function populateMainFormFromRfq() {
@@ -565,15 +617,21 @@
   }
 
   /**
-   * Update the Floating RTL WhatsApp button to carry the active product code or RFQ count
+   * Update the Floating RTL WhatsApp button & Mobile Quick-Action Bar to carry the active product code or RFQ count
    */
   function updateFloatingWhatsApp(product) {
     const waLink = document.getElementById("floating-whatsapp-btn");
     const waBadge = document.getElementById("floating-wa-code-badge");
     const waLabel = document.getElementById("floating-wa-label");
+    const targetUrl = buildWhatsAppUrl(product);
+
+    document.querySelectorAll(".js-mobile-quick-wa").forEach((el) => {
+      el.href = targetUrl;
+    });
+
     if (!waLink) return;
 
-    waLink.href = buildWhatsAppUrl(product);
+    waLink.href = targetUrl;
     if (product && waBadge) {
       waBadge.textContent = product.code;
       waBadge.classList.add("active");
@@ -1154,11 +1212,12 @@
     if (modal) {
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");
+      syncOverlayOpenState();
     }
   }
 
   /**
-   * Open Technical Specification Detail Modal (with Add to RFQ + Cross-Reference)
+   * Open Technical Specification Detail Modal (with Add to RFQ + Cross-Reference + Sticky Mobile Footer)
    */
   function openTechDetailModal(product) {
     state.selectedProduct = product;
@@ -1166,6 +1225,7 @@
 
     const modal = document.getElementById("tech-detail-modal");
     const body = document.getElementById("tech-detail-modal-body");
+    const footer = document.getElementById("tech-detail-modal-footer");
     const title = document.getElementById("tech-detail-modal-title");
     if (!modal || !body) return;
 
@@ -1202,6 +1262,22 @@
         </button>
       </div>`
         : "";
+
+    const actionsMarkup = `
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.65rem; flex-wrap: wrap; width: 100%;">
+        <div style="display:flex; gap:0.55rem; flex-wrap:wrap; flex: 1;">
+          <button type="button" class="btn btn-amber btn-sm" id="spec-modal-to-quote-btn" style="flex: 1;">
+            درخواست استعلام قیمت
+          </button>
+          <button type="button" class="btn btn-rfq-add btn-sm" id="spec-modal-add-rfq-btn" style="flex: 1;">
+            + افزودن به لیست استعلام
+          </button>
+        </div>
+        <a href="${product.datasheetUrl}" download class="btn btn-outline-tech btn-sm">
+          دانلود کاتالوگ PDF
+        </a>
+      </div>
+    `;
 
     body.innerHTML = `
       <div class="prefilled-product-banner">
@@ -1255,24 +1331,16 @@
         </ul>
       </div>
 
-      <div style="background: var(--bg-primary); border: 1px solid var(--border-tech); padding: 0.8rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.83rem;">
+      <div style="background: var(--bg-primary); border: 1px solid var(--border-tech); padding: 0.8rem 1rem; border-radius: var(--radius-sm); margin-bottom: 0.5rem; font-size: 0.83rem;">
         <strong>کاربردهای صنعتی:</strong> ${product.applicationsFa}
       </div>
 
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.65rem; flex-wrap: wrap;">
-        <div style="display:flex; gap:0.55rem; flex-wrap:wrap;">
-          <button type="button" class="btn btn-amber btn-sm" id="spec-modal-to-quote-btn">
-            درخواست استعلام قیمت
-          </button>
-          <button type="button" class="btn btn-rfq-add btn-sm" id="spec-modal-add-rfq-btn">
-            + افزودن به لیست استعلام
-          </button>
-        </div>
-        <a href="${product.datasheetUrl}" download class="btn btn-outline-tech btn-sm">
-          دانلود کاتالوگ PDF
-        </a>
-      </div>
+      ${footer ? "" : `<div style="margin-top: 1rem;">${actionsMarkup}</div>`}
     `;
+
+    if (footer) {
+      footer.innerHTML = actionsMarkup;
+    }
 
     const copyBtn = document.getElementById("modal-copy-code-btn");
     if (copyBtn) {
@@ -1306,6 +1374,7 @@
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
+    syncOverlayOpenState();
   }
 
   function closeAllModals() {
@@ -1313,6 +1382,7 @@
       m.classList.remove("open");
       m.setAttribute("aria-hidden", "true");
     });
+    syncOverlayOpenState();
   }
 
   /**
@@ -1407,10 +1477,10 @@
                 درخواست استعلام شما با کد پیگیری <span class="mono">${refCode}</span> در سامانه ثبت گردید (${endpoint}). کارشناسان فروش جلالی پنوماتیک در کوتاه‌ترین زمان پیش‌فاکتور و مشخصات فنی را ارسال خواهند کرد.
               </div>
               <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
-                <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-amber btn-sm">
+                <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-sm">
                   ارسال همزمان در واتساپ فروش
                 </a>
-                <a href="${tgUrl}" target="_blank" rel="noopener" class="btn btn-telegram btn-sm">
+                <a href="${tgUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-sm">
                   ارسال در تلگرام مهندسی فروش
                 </a>
               </div>
@@ -1451,7 +1521,7 @@
                 استعلام قیمت برای <span class="mono">${techCode}</span> با کد <span class="mono">${refCode}</span> ثبت شد.
               </div>
               <div>
-                <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-amber btn-sm">
+                <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-sm">
                   ادامه گفتگو و دریافت فوری قیمت در واتساپ
                 </a>
               </div>
@@ -1460,6 +1530,110 @@
         }
       });
     }
+  }
+
+  /**
+   * Interactive Cross-Reference Quick Finder in #cross-reference section
+   */
+  function initCrossReferenceFinder() {
+    const input = document.getElementById("crossref-finder-input");
+    const resultBox = document.getElementById("crossref-finder-result");
+    if (!input || !resultBox) return;
+
+    function runLookup(rawVal) {
+      const q = normalizeSearchText(rawVal);
+      const compact = normalizeCompact(rawVal);
+      if (!q || q.length < 2) {
+        resultBox.style.display = "none";
+        resultBox.innerHTML = "";
+        return;
+      }
+
+      const products = window.PRODUCTS_DATA || [];
+      const matches = products.filter((p) => {
+        const hay = [
+          p.code,
+          p.nameFa,
+          p.nameEn,
+          p.brand,
+          p.portSize,
+          ...(p.equivalentTo || []),
+          ...(p.keywords || [])
+        ].join(" ");
+        return (
+          normalizeSearchText(hay).includes(q) ||
+          (compact.length >= 2 && normalizeCompact(hay).includes(compact))
+        );
+      });
+
+      resultBox.style.display = "block";
+      if (matches.length === 0) {
+        resultBox.innerHTML = `
+          <div style="padding:0.75rem 0.9rem; background:var(--bg-primary); border:1px solid var(--border-tech); border-radius:var(--radius-sm); font-size:0.83rem;">
+            کد <strong>${rawVal}</strong> در جدول نمونه یافت نشد؛ برای استعلام معادل دقیق در برند <strong>JPC</strong> یا تأمین اروپایی، مستقیماً در واتساپ پیام دهید:
+            <div style="margin-top:0.55rem;">
+              <a href="${buildWhatsAppUrl(null, `سلام، درخواست بررسی و معادل‌یابی کد فنی ${rawVal} را دارم.`)}" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-xs">
+                استعلام کد در واتساپ (0912 130 5167)
+              </a>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      resultBox.innerHTML = matches
+        .slice(0, 3)
+        .map((m) => {
+          const jpcAlt =
+            m.brand === "JPC"
+              ? m
+              : m.jpcAlternativeId
+              ? findProductById(m.jpcAlternativeId)
+              : null;
+          return `
+            <div style="padding:0.75rem 0.9rem; background:var(--bg-primary); border:1px solid var(--border-strong); border-radius:var(--radius-sm); margin-bottom:0.5rem; display:flex; align-items:center; justify-content:space-between; gap:0.75rem; flex-wrap:wrap;">
+              <div>
+                <div style="font-size:0.84rem; font-weight:800; color:var(--text-primary);">
+                  <span class="mono" style="color:var(--steel-accent);">${m.code}</span> — ${m.nameFa}
+                </div>
+                <div style="font-size:0.76rem; color:var(--text-secondary); margin-top:0.2rem;">
+                  سایز پورت: <span class="mono">${m.portSize}</span> | فشار: <span class="mono">${m.pressureRange}</span>
+                  ${
+                    jpcAlt
+                      ? ` | <strong style="color:var(--amber-hover);">معادل ابعادی JPC: <span class="mono">${jpcAlt.code}</span></strong>`
+                      : ""
+                  }
+                </div>
+              </div>
+              <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn-rfq-add btn-xs js-xref-add" data-id="${(jpcAlt || m).id}">
+                  + افزودن ${(jpcAlt || m).code} به استعلام
+                </button>
+                <button type="button" class="btn btn-outline-tech btn-xs js-xref-spec" data-id="${m.id}">
+                  مشخصات فنی
+                </button>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+
+      resultBox.querySelectorAll(".js-xref-add").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const prod = findProductById(btn.getAttribute("data-id"));
+          if (prod) addToRfqList(prod);
+        });
+      });
+
+      resultBox.querySelectorAll(".js-xref-spec").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const prod = findProductById(btn.getAttribute("data-id"));
+          if (prod) openTechDetailModal(prod);
+        });
+      });
+    }
+
+    input.addEventListener("input", () => runLookup(input.value));
   }
 
   /**
@@ -1486,6 +1660,8 @@
       if (!mobileDrawer || !mobileBackdrop) return;
       mobileDrawer.classList.toggle("open", open);
       mobileBackdrop.classList.toggle("open", open);
+      mobileDrawer.setAttribute("aria-hidden", open ? "false" : "true");
+      syncOverlayOpenState();
     }
 
     if (mobileMenuBtn) {
@@ -1590,6 +1766,28 @@
       });
     }
 
+    // Hero Quick Search Form (Above the fold on mobile/desktop)
+    const heroSearchForm = document.getElementById("hero-quick-search-form");
+    const heroSearchInput = document.getElementById("hero-quick-search-input");
+    if (heroSearchForm && heroSearchInput) {
+      heroSearchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const q = heroSearchInput.value.trim();
+        state.searchQuery = q;
+        if (searchInput) {
+          searchInput.value = q;
+        }
+        if (clearBtn) {
+          clearBtn.classList.toggle("visible", q.length > 0);
+        }
+        renderCatalog();
+        const catalogSection = document.getElementById("catalog");
+        if (catalogSection) {
+          catalogSection.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    }
+
     // Modal close triggers
     document.querySelectorAll("[data-close-modal]").forEach((btn) => {
       btn.addEventListener("click", closeAllModals);
@@ -1659,6 +1857,7 @@
     renderCatalog();
     renderRfqUI();
     initCylinderCalculator();
+    initCrossReferenceFinder();
     updateFloatingWhatsApp(null);
     initForms();
   }

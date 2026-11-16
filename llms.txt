@@ -8,17 +8,19 @@
 ## معرفی فارسی (Persian Summary)
 
 **نام مجموعه:** شرکت جلالی پنوماتیک (Jalali Pneumatic Company)
+**مؤسس و مدیریت مجموعه:** امیر جلالی (Amir Jalali)
 **برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)
+**دامنه‌های رسمی:** `jpciran.com` و `jalalipneumatic.ir`
 **حوزه فعالیت:** واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و سیستم‌های اتوماسیون مبتنی بر هوای فشرده در ایران.
 **موقعیت و دسترسی B2B:** تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)
-**تلفن ثابت دفتر فروش:** 021-33900000 | **خط مستقیم و واتساپ:** 09120000000
+**خط مستقیم و واتساپ استعلام قیمت:** `0912 130 5167` / `00989121305167` (`https://wa.me/989121305167`) | **تلفن ثابت دفتر فروش:** `021-33900000`
 **ساعات کاری:** شنبه تا چهارشنبه ۸:۳۰ الی ۱۷:۳۰ — پنجشنبه‌ها ۸:۳۰ الی ۱۳:۳۰
 
 ### معماری تأمین دوگانه (Dual Identity & Sourcing)
 1. **تأمین چندبرنده صنعتی (Multi-Brand Industrial Supplier):**
    واردات، تأمین و توزیع قطعات پنوماتیک از بازارهای اروپایی شامل برندهای **Festo (فستو)**، **Norgren (نورگرن)** و **Bosch & Bosch Rexroth (بوش و بوش رکسروت)** و همچنین سازندگان معتبر چینی جهت پوشش رده‌های مختلف فنی و قیمتی صنایع ایران.
 2. **برند اختصاصی JPC (Proprietary Brand Line):**
-   عرضه طیف کاملی از تجهیزات پنوماتیک وارداتی با نام تجاری مستقل و اختصاصی **JPC – Jalali Pneumatic Company** شامل شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی با تطابق ابعادی و فنی استاندارد.
+   عرضه طیف کاملی از تجهیزات پنوماتیک وارداتی با نام تجاری مستقل و اختصاصی **JPC – Jalali Pneumatic Company** (تحت مدیریت امیر جلالی) شامل شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی با تطابق ابعادی و فنی استاندارد.
 
 ### دسته‌بندی اصلی محصولات و صفحات تخصصی (Dedicated Category Pages)
 - **شیرهای برقی پنوماتیک (`/solenoid-valves.html`):**
@@ -29,7 +31,7 @@
   واحد مراقبت هوای فشرده دوتکه و سه‌تکه (فیلتر، رگولاتور، روغن‌زن FRL)، شیر کنترل جریان (فلوکنترل سرجکی و بین‌راهی)، اتصالات فوری پنوماتیک، شیلنگ پلی‌یورتان (PU) و گیج فشار (مانومتر).
 
 ### ابزارهای مهندسی، جداول معادل‌یابی و قابلیت‌های تعاملی B2B
-- **سبد استعلام قیمت چندقلمی (Multi-Item RFQ List / BOM Drawer):** امکان افزودن چندین کد فنی به لیست استعلام، تنظیم تعداد و ارسال یکپارچه لیست در فرم B2B، واتساپ یا تلگرام.
+- **سبد استعلام قیمت چندقلمی (Multi-Item RFQ List / BOM Drawer):** امکان افزودن چندین کد فنی به لیست استعلام، تنظیم تعداد و ارسال یکپارچه لیست در فرم B2B، واتساپ (`https://wa.me/989121305167`) یا تلگرام.
 - **جداول مقایسه و معادل‌یابی فنی برند JPC (Technical Cross-Reference Tables):** تطبیق کدهای فنی اروپایی (Festo, Norgren, Bosch Rexroth) با معادل‌های ابعادی و فنی موجود در برند تجاری اختصاصی JPC.
 - **ماشین‌حساب مهندسی محاسبه نیروی جک پنوماتیک:** محاسبه آنی نیروی کورس رفت (Extension Force) و کورس برگشت (Retraction Force) بر حسب نیوتن (`N`) و کیلوگرم‌نیرو (`kgf`) بر اساس قطر پیستون، قطر شفت و فشار هوای فشرده (`bar`).
 
@@ -38,25 +40,27 @@
 ## English Summary (Jalali Pneumatic Company – JPC)
 
 **Company Name:** Jalali Pneumatic Company (شرکت جلالی پنوماتیک)
+**Founder & Managing Director:** Amir Jalali (امیر جلالی)
 **Proprietary Commercial Brand:** JPC (Jalali Pneumatic Company)
+**Official Domains:** `https://jpciran.com` & `https://jalalipneumatic.ir`
 **Business Positioning:** Industrial Pneumatics Importer, Supplier & B2B Distributor specializing in compressed air automation components across Iran.
 **Location:** Tehran Industrial Market / Lalehzar District (Nationwide B2B Supply & Dispatch across Iran)
-**Landline Phone:** +98-21-33900000 | **Direct Mobile / WhatsApp:** +98-912-000-0000
+**Direct Mobile / WhatsApp:** `+98-912-130-5167` / `00989121305167` (`https://wa.me/989121305167`) | **Landline Phone:** `+98-21-33900000`
 **Working Hours:** Saturday to Wednesday 08:30–17:30, Thursday 08:30–13:30 (IRST)
 
 ### Dual Sourcing & Brand Positioning
 1. **Multi-Brand Industrial Supplier:**
    Imports and supplies pneumatic components sourced from European markets (**Festo**, **Norgren**, **Bosch & Bosch Rexroth**) alongside reliable Chinese manufacturers to provide diverse engineering specifications and price tiers for industrial buyers.
 2. **Proprietary Brand (`JPC – Jalali Pneumatic Company`):**
-   Offers a dedicated commercial product line under the **JPC** brand for imported pneumatic valves, cylinders, air preparation units (FRL), and fittings, engineered for dimensional interchangeability (ISO standards) and reliable industrial operation.
+   Offers a dedicated commercial product line under the **JPC** brand (managed by Amir Jalali) for imported pneumatic valves, cylinders, air preparation units (FRL), and fittings, engineered for dimensional interchangeability (ISO standards) and reliable industrial operation.
 
 ### Interactive Engineering & Procurement Features
-- **Multi-Item B2B RFQ Drawer:** Build a multi-line Bill of Materials (BOM) and dispatch it directly to the B2B inquiry form, WhatsApp, or Telegram.
+- **Multi-Item B2B RFQ Drawer:** Build a multi-line Bill of Materials (BOM) and dispatch it directly to the B2B inquiry form, WhatsApp (`https://wa.me/989121305167`), or Telegram.
 - **JPC Technical Cross-Reference Engine & HTML Tables:** Match European part numbers (e.g., `DSBC-40-100`, `MFH-5-1/4`, `PRA/182050`, `MS6-LFR`) to dimensionally compatible models in the proprietary **JPC** product line.
 - **Pneumatic Cylinder Force Calculator:** Calculate theoretical extension and retraction forces in `N` and `kgf` across standard ISO bore sizes (`16mm` to `125mm`) and working pressures (`1` to `10 bar`).
 
 ### Key URLs & Structured AI Resources
-- Homepage & Full Catalog: https://jalalipneumatic.ir/
+- Homepage & Full Catalog: https://jalalipneumatic.ir/ (https://jpciran.com/)
 - Pneumatic Solenoid Valves Catalog: https://jalalipneumatic.ir/solenoid-valves.html
 - Pneumatic Cylinders & Force Calculator: https://jalalipneumatic.ir/pneumatic-cylinders.html
 - FRL Air Preparation & Accessories Catalog: https://jalalipneumatic.ir/frl-accessories.html

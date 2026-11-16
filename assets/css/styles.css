@@ -199,6 +199,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 16px);
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -209,6 +212,8 @@ body {
   direction: rtl;
   text-align: right;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
@@ -223,17 +228,23 @@ a {
   color: inherit;
   text-decoration: none;
   transition: color var(--transition-fast);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
 input,
 select,
-textarea {
+textarea,
+summary,
+[role="button"] {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   border: none;
   background: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -2629,30 +2640,225 @@ textarea.form-control {
 }
 
 /* ==========================================================================
+   Brand Disambiguation & Ownership Attribution Badges (با مدیریت امیر جلالی)
+   ========================================================================== */
+.ownership-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.36rem 0.85rem;
+  border-radius: 999px;
+  background-color: rgba(245, 158, 11, 0.16);
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  color: #FDE68A;
+  font-size: clamp(0.76rem, 2.2vw, 0.86rem);
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 0.9rem;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.ownership-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--amber-cta);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-owner-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--amber-hover);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .brand-owner-sub {
+  color: var(--amber-cta);
+}
+
+.eeat-ownership-callout {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(2, 132, 199, 0.08) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-right: 4px solid var(--amber-cta);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.75;
+}
+
+.eeat-ownership-callout strong {
+  color: var(--amber-hover);
+}
+
+[data-theme="dark"] .eeat-ownership-callout strong {
+  color: var(--amber-cta);
+}
+
+/* ==========================================================================
+   Hero Quick Search Box & Horizontal Swipeable Pill Strip
+   ========================================================================== */
+.hero-quick-search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem;
+  margin-bottom: 1.25rem;
+  max-width: 640px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero-quick-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.85rem;
+  font-size: 16px;
+  color: #F8FAFC;
+  background: transparent;
+  border: none;
+}
+
+.hero-quick-search-input::placeholder {
+  color: #94A3B8;
+  font-size: 0.85rem;
+}
+
+.hero-quick-search-input:focus {
+  outline: none;
+}
+
+.hero-quick-search-btn {
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--amber-cta);
+  color: var(--amber-text-contrast);
+  font-weight: 800;
+  font-size: 0.84rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+/* Swipeable Filter Pill Strip with Edge Fade Indicators */
+.filter-pills-scroll-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.filter-pills-scroll-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  background: linear-gradient(to right, var(--bg-secondary) 15%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ==========================================================================
    Technical Cross-Reference & Comparison HTML Tables (SEO + GEO Extraction)
    ========================================================================== */
+.crossref-finder-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-strong);
+  border-right: 4px solid var(--steel-accent);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crossref-finder-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.crossref-finder-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+.crossref-finder-input:focus {
+  outline: none;
+  border-color: var(--steel-accent);
+  box-shadow: 0 0 0 3px var(--steel-soft);
+}
+
+.crossref-finder-result {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  padding-top: 0.25rem;
+  display: none;
+}
+
+.crossref-finder-result.active {
+  display: block;
+}
+
+.table-scroll-hint {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--steel-accent);
+  background-color: var(--steel-soft);
+  border: 1px solid var(--steel-border);
+  border-radius: var(--radius-xs);
+  padding: 0.45rem 0.8rem;
+  margin-bottom: 0.65rem;
+}
+
 .comparison-table-wrapper {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-tech);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xs);
+  position: relative;
 }
 
 .tech-comparison-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   text-align: right;
   font-size: 0.86rem;
-  min-width: 760px;
+  min-width: 720px;
 }
 
 .tech-comparison-table caption {
   text-align: right;
-  padding: 1rem 1.35rem;
+  padding: 0.95rem 1.25rem;
   font-weight: 800;
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
   background-color: var(--bg-tertiary);
   border-bottom: 1px solid var(--border-tech);
@@ -2663,16 +2869,36 @@ textarea.form-control {
   color: #F8FAFC;
   font-weight: 700;
   font-size: 0.8rem;
-  padding: 0.9rem 1.15rem;
+  padding: 0.85rem 1rem;
   border-bottom: 2px solid var(--amber-cta);
   white-space: nowrap;
 }
 
 .tech-comparison-table tbody td {
-  padding: 0.88rem 1.15rem;
+  padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--border-tech);
   color: var(--text-secondary);
   vertical-align: middle;
+  background-color: var(--bg-secondary);
+}
+
+/* Sticky First Column in RTL Table for Easy Mobile Comparison */
+.tech-comparison-table thead th:first-child {
+  position: sticky;
+  right: 0;
+  z-index: 3;
+  background-color: var(--slate-deep);
+  box-shadow: -3px 0 8px rgba(11, 17, 32, 0.25);
+}
+
+.tech-comparison-table tbody td:first-child {
+  position: sticky;
+  right: 0;
+  z-index: 2;
+  background-color: var(--bg-secondary);
+  box-shadow: -3px 0 8px rgba(11, 17, 32, 0.07);
+  min-width: 155px;
+  max-width: 210px;
 }
 
 .tech-comparison-table tbody tr:last-child td {
@@ -2681,6 +2907,10 @@ textarea.form-control {
 
 .tech-comparison-table tbody tr:hover td {
   background-color: var(--steel-soft);
+}
+
+.tech-comparison-table tbody tr:hover td:first-child {
+  background-color: var(--bg-tertiary);
 }
 
 .table-jpc-code {
@@ -2693,6 +2923,7 @@ textarea.form-control {
   border: 1px solid rgba(245, 158, 11, 0.35);
   direction: ltr;
   display: inline-block;
+  white-space: nowrap;
 }
 
 [data-theme="dark"] .table-jpc-code {
@@ -2705,6 +2936,7 @@ textarea.form-control {
   color: var(--steel-accent);
   direction: ltr;
   display: inline-block;
+  margin-left: 0.35rem;
 }
 
 /* ==========================================================================
@@ -2730,8 +2962,9 @@ details.faq-item[open] {
 }
 
 summary.faq-question {
-  padding: 1.1rem 1.35rem;
-  font-size: 0.96rem;
+  padding: 1.05rem 1.25rem;
+  min-height: 52px;
+  font-size: clamp(0.88rem, 2.4vw, 0.96rem);
   font-weight: 800;
   color: var(--text-primary);
   cursor: pointer;
@@ -2739,11 +2972,15 @@ summary.faq-question {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.85rem;
   user-select: none;
 }
 
 summary.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+summary.faq-question .faq-icon {
   display: none;
 }
 
@@ -2753,8 +2990,8 @@ summary.faq-question::after {
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--amber-cta);
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-xs);
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-strong);
@@ -2773,12 +3010,11 @@ details.faq-item[open] summary.faq-question::after {
 }
 
 .faq-answer {
-  padding: 0 1.35rem 1.2rem;
-  font-size: 0.9rem;
+  padding: 0.95rem 1.25rem 1.15rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.85;
   border-top: 1px solid var(--border-tech);
-  padding-top: 0.95rem;
 }
 
 /* ==========================================================================
@@ -2795,11 +3031,118 @@ details.faq-item[open] summary.faq-question::after {
   color: #CBD5E1;
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Sticky Modal Footer & RFQ Notes Field */
+.modal-footer-sticky {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background-color: var(--bg-tertiary);
+  border-top: 1px solid var(--border-strong);
+  padding: 0.9rem 1.25rem calc(0.9rem + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.rfq-notes-box {
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-strong);
+  display: flex;
+  flex-direction: column;
   gap: 0.35rem;
 }
 
+.rfq-notes-input {
+  width: 100%;
+  min-height: 62px;
+  padding: 0.6rem 0.75rem;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  color: var(--text-primary);
+  resize: vertical;
+}
+
 /* ==========================================================================
-   Responsive Design Breakpoints
+   Floating Mobile Quick-Action Bar (Safe-Area Aware, < 768px)
+   ========================================================================== */
+.mobile-quick-action-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 175;
+  background-color: rgba(11, 17, 32, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(245, 158, 11, 0.38);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 26px rgba(11, 17, 32, 0.4);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.mobile-quick-action-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.55rem;
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+.mobile-quick-wa-btn {
+  min-height: 46px;
+  border-radius: var(--radius-sm);
+  background-color: #10B981;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.84rem;
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.mobile-quick-wa-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.mobile-quick-rfq-btn {
+  min-height: 46px;
+  border-radius: var(--radius-sm);
+  background-color: var(--slate-elevated);
+  border: 1px solid var(--amber-cta);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.5rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+/* Hide mobile bottom bar when any modal or drawer is open */
+body.overlay-open .mobile-quick-action-bar {
+  transform: translateY(115%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Responsive Design Breakpoints (Mobile-First Engineering Audit)
    ========================================================================== */
 @media (max-width: 1180px) {
   .main-nav {
@@ -2807,15 +3150,14 @@ details.faq-item[open] summary.faq-question::after {
   }
   .mobile-menu-btn {
     display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
   }
   .hero-grid,
   .jpc-showcase-wrapper,
   .inquiry-layout,
   .calc-grid {
     grid-template-columns: 1fr;
-  }
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   .sourcing-matrix-grid,
   .buying-guide-grid,
@@ -2833,30 +3175,476 @@ details.faq-item[open] summary.faq-question::after {
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding-block: 3.75rem;
+/* Small Tablets (640px – 1023px): 2-Column Product Grid & Table Hint */
+@media (max-width: 1023px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
   }
-  .catalog-filters-grid,
-  .products-grid,
+  .table-scroll-hint {
+    display: flex;
+  }
+}
+
+/* Smartphones & Mobile Viewports (< 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  body {
+    padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+  /* Hide top bar on compact mobile to save above-the-fold height */
+  .top-tech-bar {
+    display: none;
+  }
+
+  /* Compact Sticky Mobile Header (62px height) */
+  .site-header {
+    height: 62px;
+  }
+
+  .header-inner {
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 0.88rem;
+  }
+
+  .brand-name-fa {
+    font-size: 0.9rem;
+  }
+
+  .brand-name-sub {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .header-cta-desktop {
+    display: none;
+  }
+
+  .header-rfq-btn {
+    min-height: 44px;
+    padding: 0.4rem 0.65rem;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+  }
+
+  .theme-toggle-btn,
+  .mobile-menu-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Mobile Slide-Over Navigation Drawer */
+  .mobile-drawer {
+    width: min(340px, 88vw);
+    max-height: 100dvh;
+    overscroll-behavior: contain;
+    padding: 1.15rem 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-drawer-close {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .mobile-nav-link {
+    min-height: 46px;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.88rem;
+  }
+
+  /* Tighten Hero Section for Immediate Above-the-Fold Visibility */
+  .hero-section {
+    padding-block: 1.5rem 2.15rem;
+  }
+
+  .page-hero-compact {
+    padding-block: 1.4rem 1.85rem;
+  }
+
+  .hero-grid {
+    gap: 1.75rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.75rem;
+    padding: 0.32rem 0.7rem;
+    margin-bottom: 0.75rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: clamp(1.38rem, 5.6vw, 1.85rem);
+    line-height: 1.42;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-lead {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-cta-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero-cta-group .btn:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    min-height: 46px;
+    font-size: 0.86rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .hero-specs-strip,
+  .hero-schematic-cards {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding-top: 1.15rem;
+  }
+
+  /* Section Spacing & Fluid Headings */
+  .section {
+    padding-block: 2.65rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.65rem;
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.28rem, 5vw, 1.65rem);
+  }
+
+  .section-desc {
+    font-size: 0.88rem;
+    line-height: 1.72;
+  }
+
+  /* Single-Row Horizontal Swipeable Filter Pill Strips on Mobile */
+  .catalog-controls-panel {
+    padding: 1rem;
+    gap: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .search-input-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .catalog-search-input {
+    min-height: 46px;
+    font-size: 16px;
+    padding: 0.65rem 2.5rem 0.65rem 2.25rem;
+  }
+
+  .catalog-result-counter {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .catalog-filters-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding-top: 0.75rem;
+  }
+
+  .filter-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    padding-left: 24px;
+    gap: 0.45rem;
+  }
+
+  .filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-pill {
+    min-height: 44px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Mobile-First Interactive Tools (Calculator & Cross-Reference) */
+  .calculator-wrapper,
+  .inquiry-form-card,
+  .contact-channels-card,
+  .jpc-brand-identity-box,
+  .jpc-lineup-panel,
+  .workflow-box {
+    padding: 1.15rem 1rem;
+  }
+
+  .calc-controls-box,
+  .calc-results-box {
+    padding: 1.1rem 1rem;
+  }
+
+  .bore-pills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.38rem;
+  }
+
+  .bore-preset-btn {
+    min-height: 44px;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.25rem;
+  }
+
+  .calc-inputs-row,
+  .force-cards-grid,
+  .crossref-finder-row,
   .industries-grid,
   .workflow-steps,
   .brand-matrix-bar,
   .jpc-pillars-grid,
   .form-grid,
-  .footer-grid,
-  .force-cards-grid,
-  .calc-inputs-row {
+  .footer-grid {
     grid-template-columns: 1fr;
   }
-  .bore-pills-grid {
-    grid-template-columns: repeat(5, 1fr);
+
+  .form-control {
+    min-height: 46px;
+    padding: 12px 14px;
+    font-size: 16px;
   }
-  .hero-specs-strip,
-  .hero-schematic-cards {
-    grid-template-columns: 1fr;
+
+  .btn {
+    min-height: 44px;
   }
-  .header-cta-desktop {
+
+  .copy-code-btn {
+    min-height: 36px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  /* Bottom-Sheet Modals & Mobile RFQ Cart Drawer (< 768px) */
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+    width: 100%;
+    max-height: 92dvh;
+    overscroll-behavior: contain;
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-backdrop.open .modal-dialog {
+    transform: translateY(0);
+  }
+
+  .modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    padding: 1rem 1.1rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modal-close-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.05rem;
+  }
+
+  .modal-body {
+    padding: 1.1rem 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .rfq-drawer {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 92dvh;
+    overscroll-behavior: contain;
+    border-right: none;
+    border-top: 1px solid var(--amber-cta);
+    border-radius: 16px 16px 0 0;
+    transform: translateY(104%);
+  }
+
+  .rfq-drawer.open {
+    transform: translateY(0);
+  }
+
+  .rfq-drawer-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding: 1rem 1.1rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .rfq-drawer-body {
+    padding: 1rem;
+    overscroll-behavior: contain;
+  }
+
+  .rfq-qty-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .rfq-qty-input {
+    width: 50px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .rfq-drawer-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    padding: 0.9rem 1rem calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Show Mobile Sticky Quick-Action Bar & Hide Desktop Floating Stack */
+  .floating-actions-stack {
     display: none;
   }
+
+  .mobile-quick-action-bar {
+    display: block;
+  }
+
+  .copy-toast {
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+    right: 1rem;
+    left: 1rem;
+  }
 }
+
+/* Thumb-Friendly 1-Column Product Cards on Mobile (< 640px) */
+@media (max-width: 639px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-card-top {
+    padding: 16px 16px 8px;
+  }
+
+  .product-schematic-box {
+    margin-inline: 16px;
+    padding: 10px 12px;
+  }
+
+  .product-card-body {
+    padding: 12px 16px;
+    gap: 0.65rem;
+  }
+
+  .product-card-footer {
+    padding: 12px 16px 16px;
+  }
+
+  .product-card-actions {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .product-card-actions .btn {
+    min-height: 44px;
+    padding: 0.5rem 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .product-sub-links {
+    padding-top: 0.35rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .product-pdf-link {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Ultra-Compact Screens (360px – 390px) */
+@media (max-width: 390px) {
+  .container {
+    padding-inline: 0.8rem;
+  }
+
+  .hero-cta-group {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-quick-action-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .mobile-quick-wa-btn,
+  .mobile-quick-rfq-btn {
+    font-size: 0.76rem;
+    padding: 0.45rem 0.5rem;
+  }
+}
+
