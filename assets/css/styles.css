@@ -3701,3 +3701,52 @@ body.overlay-open .mobile-quick-action-bar {
     height: 240px;
   }
 }
+
+/* ==========================================================================
+   AI Nameplate Recognition Assistant CTA & Nav Styles (ai.jpciran.com)
+   ========================================================================== */
+.nav-link-ai {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.14), rgba(245, 158, 11, 0.12));
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  color: var(--steel-accent);
+  font-weight: 700;
+}
+
+.nav-link-ai:hover {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.24), rgba(245, 158, 11, 0.2));
+  border-color: var(--steel-accent);
+  color: var(--steel-accent);
+}
+
+[data-theme="dark"] .nav-link-ai {
+  color: #38BDF8;
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.btn-ai-scan {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(56, 189, 248, 0.55);
+  box-shadow: 0 8px 22px -6px rgba(2, 132, 199, 0.55);
+}
+
+.btn-ai-scan:hover {
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  border-color: #F59E0B;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px -6px rgba(2, 132, 199, 0.7);
+}
+
+.btn-ai-scan svg,
+.nav-link-ai svg {
+  color: #F59E0B;
+  flex-shrink: 0;
+}
+
+.mobile-nav-link-ai {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.14), rgba(245, 158, 11, 0.1));
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  color: var(--steel-accent);
+  font-weight: 800;
+}
