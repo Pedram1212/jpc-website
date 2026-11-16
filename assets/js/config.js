@@ -1,6 +1,6 @@
 /**
  * Jalali Pneumatic Company (JPC) - Site Configuration & B2B E-E-A-T Signals
- * شرکت جلالی پنوماتیک (JPC) با مدیریت امیر جلالی - تنظیمات پایه وب‌سایت، اطلاعات تماس و سیگنال‌های مکانی و تجاری
+ * شرکت جلالی پنوماتیک (JPC) - تنظیمات پایه وب‌سایت، اطلاعات تماس و سیگنال‌های مکانی و تجاری
  */
 const SITE_CONFIG = {
   // دسترسی مستقیم در سطح اول جهت سازگاری با اسکریپت‌ها و کامپوننت‌های استعلام
@@ -10,30 +10,33 @@ const SITE_CONFIG = {
   phoneDisplayLtr: "0912 130 5167",
   phoneIntlDisplayLtr: "0098 912 130 5167",
   telegramUsername: "JalaliPneumatic_Sales",
-  landlinePhone: "021-33900000",
+  landlinePhone: "021-33110796",
+  landlinePhones: ["021-33110796", "021-33932529"],
   founderFa: "امیر جلالی",
   founderEn: "Amir Jalali",
-  ownershipTitleFa: "شرکت جلالی پنوماتیک (JPC) — با مدیریت امیر جلالی",
-  addressFa: "تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)",
-  workingHoursFa: "شنبه تا چهارشنبه: ۸:۳۰ الی ۱۷:۳۰ | پنجشنبه: ۸:۳۰ الی ۱۳:۳۰",
+  ownershipTitleFa: "شرکت جلالی پنوماتیک (JPC)",
+  addressFa: "تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱ (ارسال فوری به سراسر کشور)",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=تهران+لاله+زار+جنوبی+روبروی+کوچه+علیپور+پاساژ+رزاق+منش+پلاک+۱",
+  workingHoursFa: "شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰",
 
   company: {
     nameFa: "شرکت جلالی پنوماتیک",
-    fullTitleFa: "شرکت جلالی پنوماتیک (JPC) — با مدیریت امیر جلالی",
+    fullTitleFa: "شرکت جلالی پنوماتیک (JPC)",
     shortNameFa: "جلالی پنوماتیک",
     nameEn: "Jalali Pneumatic Company",
     brandCode: "JPC",
     founderFa: "امیر جلالی",
     founderEn: "Amir Jalali",
     domains: ["jpciran.com", "jalalipneumatic.ir"],
-    taglineFa: "واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده (با مدیریت امیر جلالی)",
+    taglineFa: "واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده",
     descriptionFa:
-      "شرکت جلالی پنوماتیک (JPC) با مدیریت امیر جلالی؛ تأمین تخصصی شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی از برندهای معتبر اروپایی (Festo, Norgren, Bosch Rexroth)، خطوط تأمین منتخب آسیایی و برند اختصاصی JPC.",
-    addressFa: "تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)",
-    addressEn: "Tehran Industrial & Commercial Automation District (Lalehzar), Tehran, Iran",
-    workingHoursFa: "شنبه تا چهارشنبه: ۸:۳۰ الی ۱۷:۳۰ | پنجشنبه: ۸:۳۰ الی ۱۳:۳۰",
-    workingHoursIso: "Sa-We 08:30-17:30, Th 08:30-13:30",
-    locationFa: "تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)"
+      "شرکت جلالی پنوماتیک (JPC)؛ تأمین تخصصی شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی از برندهای معتبر اروپایی (Festo, Norgren, Bosch Rexroth)، خطوط تأمین منتخب آسیایی و برند اختصاصی JPC.",
+    addressFa: "تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱ (ارسال فوری به سراسر کشور)",
+    addressEn: "No. 1, Razaghmanesh Passage, Opposite Alipour Alley, South Lalehzar, Tehran, Iran",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=تهران+لاله+زار+جنوبی+روبروی+کوچه+علیپور+پاساژ+رزاق+منش+پلاک+۱",
+    workingHoursFa: "شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰",
+    workingHoursIso: "Sa-Th 09:00-18:00",
+    locationFa: "تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱"
   },
 
   contact: {
@@ -41,19 +44,22 @@ const SITE_CONFIG = {
     whatsappBaseUrl: "https://wa.me/989121305167",
     telegramUsername: "JalaliPneumatic_Sales",
     telegramBaseUrl: "https://t.me/JalaliPneumatic_Sales",
-    landlinePhone: "021-33900000",
+    landlinePhone: "021-33110796",
+    landlinePhoneSecondary: "021-33932529",
     phoneDisplay: "0912 130 5167",
     phoneIntlDisplay: "0098 912 130 5167",
     phoneDisplayFa: "۰۹۱۲ ۱۳۰ ۵۱۶۷",
     phoneTel: "+989121305167",
-    landlineTel: "+982133900000",
+    landlineTel: "+982133110796",
+    landlineTelSecondary: "+982133932529",
     salesMobileDisplay: "0912 130 5167",
     salesMobileDisplayFa: "۰۹۱۲ ۱۳۰ ۵۱۶۷",
     salesMobileRaw: "00989121305167",
     email: "info@jalalipneumatic.ir",
     salesEmail: "sales@jalalipneumatic.ir",
-    addressFa: "تهران، محدوده بازار صنعتی / لالهزار (تأمین و ارسال به سراسر کشور)",
-    workingHoursFa: "شنبه تا چهارشنبه: ۸:۳۰ الی ۱۷:۳۰ | پنجشنبه: ۸:۳۰ الی ۱۳:۳۰"
+    addressFa: "تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱ (ارسال فوری به سراسر کشور)",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=تهران+لاله+زار+جنوبی+روبروی+کوچه+علیپور+پاساژ+رزاق+منش+پلاک+۱",
+    workingHoursFa: "شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰"
   },
 
   endpoints: {
@@ -82,7 +88,7 @@ const SITE_CONFIG = {
       id: "JPC",
       nameEn: "JPC",
       nameFa: "جی‌پی‌سی (برند اختصاصی)",
-      originFa: "برند تجاری اختصاصی شرکت جلالی پنوماتیک (با مدیریت امیر جلالی)",
+      originFa: "برند تجاری اختصاصی شرکت جلالی پنوماتیک",
       tierFa: "تأمین مستقیم با کنترل کیفی دقیق و ارزش خرید بالا"
     },
     {

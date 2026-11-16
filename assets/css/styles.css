@@ -3648,3 +3648,56 @@ body.overlay-open .mobile-quick-action-bar {
   }
 }
 
+/* ==========================================================================
+   Store Location Map & Multi-Landline B2B Channels
+   ========================================================================== */
+.landline-phones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.store-map-card {
+  margin-top: 2rem;
+  background-color: var(--navy-900);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  color: #F8FAFC;
+  box-shadow: var(--shadow-md);
+}
+
+.store-map-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.store-map-frame-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background-color: #0F172A;
+}
+
+.store-map-frame {
+  display: block;
+  width: 100%;
+  height: 310px;
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg) contrast(95%);
+}
+
+@media (max-width: 640px) {
+  .store-map-card {
+    padding: 1rem;
+  }
+  .store-map-frame {
+    height: 240px;
+  }
+}
