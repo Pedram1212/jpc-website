@@ -16,11 +16,13 @@ Zero-dependency Python 3 script that:
 import html
 import json
 import re
+from datetime import date
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 PRODUCTS_JS_PATH = ROOT_DIR / "assets" / "js" / "products-data.js"
 LLMS_FULL_PATH = ROOT_DIR / "llms-full.txt"
+SITEMAP_PATH = ROOT_DIR / "sitemap.xml"
 
 PAGE_TARGETS = [
     ("index.html", "all", "https://jalalipneumatic.ir/"),
@@ -521,17 +523,54 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
             "",
             "## 5. Key Pages & Technical Tools (صفحات تخصصی و ابزارهای مهندسی سایت)",
             "",
-            "- **Main Catalog & Cylinder Force Calculator:** `https://jalalipneumatic.ir/`",
-            "- **Pneumatic Solenoid Valves (شیرهای برقی پنوماتیک 3/2, 5/2, 5/3):** `https://jalalipneumatic.ir/solenoid-valves.html`",
-            "- **Pneumatic Cylinders (جک‌های پنوماتیک پروفیلی، چهارمیل، کامپکت، قلمی و رادلس):** `https://jalalipneumatic.ir/pneumatic-cylinders.html`",
-            "- **FRL Air Preparation & Accessories (واحد مراقبت هوا، فلوکنترل، فیتینگ و شیلنگ PU):** `https://jalalipneumatic.ir/frl-accessories.html`",
-            "- **Concise LLM Overview:** `https://jalalipneumatic.ir/llms.txt`",
-            "- **XML Sitemap:** `https://jalalipneumatic.ir/sitemap.xml`",
+            "- **Main Catalog & Cylinder Force Calculator:** `https://jpciran.com/`",
+            "- **Pneumatic Solenoid Valves (شیرهای برقی پنوماتیک 3/2, 5/2, 5/3):** `https://jpciran.com/solenoid-valves.html`",
+            "- **Pneumatic Cylinders (جک‌های پنوماتیک پروفیلی، چهارمیل، کامپکت، قلمی و رادلس):** `https://jpciran.com/pneumatic-cylinders.html`",
+            "- **FRL Air Preparation & Accessories (واحد مراقبت هوا، فلوکنترل، فیتینگ و شیلنگ PU):** `https://jpciran.com/frl-accessories.html`",
+            "- **Festo, Norgren & Rexroth to JPC Cross-Reference (جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC):** `https://jpciran.com/festo-cross-reference.html`",
+            "- **Pneumatic Cylinder Buying Guide (راهنمای جامع خرید جک پنوماتیک چهارمیل و پروفیلی ISO 15552):** `https://jpciran.com/pneumatic-cylinder-buying-guide.html`",
+            "- **Solenoid Valve Selection Guide (راهنمای انتخاب و خرید شیر برقی ۵/۲ و ۳/۲):** `https://jpciran.com/solenoid-valve-guide.html`",
+            "- **Concise LLM Overview:** `https://jpciran.com/llms.txt`",
+            "- **XML Sitemap:** `https://jpciran.com/sitemap.xml`",
             "",
         ]
     )
 
     out_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_sitemap_xml(out_path: Path) -> None:
+    """
+    Generate valid XML sitemap.xml for https://jpciran.com/ covering all catalog
+    and commercial B2B guide pages.
+    """
+    today = date.today().isoformat()
+    urls = [
+        ("https://jpciran.com/", "weekly", "1.0"),
+        ("https://jpciran.com/solenoid-valves.html", "weekly", "0.9"),
+        ("https://jpciran.com/pneumatic-cylinders.html", "weekly", "0.9"),
+        ("https://jpciran.com/frl-accessories.html", "weekly", "0.9"),
+        ("https://jpciran.com/festo-cross-reference.html", "weekly", "0.9"),
+        ("https://jpciran.com/pneumatic-cylinder-buying-guide.html", "monthly", "0.85"),
+        ("https://jpciran.com/solenoid-valve-guide.html", "monthly", "0.85"),
+    ]
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for loc, changefreq, priority in urls:
+        xml_lines.extend(
+            [
+                "  <url>",
+                f"    <loc>{loc}</loc>",
+                f"    <lastmod>{today}</lastmod>",
+                f"    <changefreq>{changefreq}</changefreq>",
+                f"    <priority>{priority}</priority>",
+                "  </url>",
+            ]
+        )
+    xml_lines.append("</urlset>")
+    out_path.write_text("\n".join(xml_lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -545,6 +584,9 @@ def main() -> None:
 
     generate_llms_full_txt(products, LLMS_FULL_PATH)
     print(f"[build-seo] Generated {LLMS_FULL_PATH.name} ({LLMS_FULL_PATH.stat().st_size} bytes)")
+
+    generate_sitemap_xml(SITEMAP_PATH)
+    print(f"[build-seo] Generated {SITEMAP_PATH.name} ({SITEMAP_PATH.stat().st_size} bytes)")
 
 
 if __name__ == "__main__":

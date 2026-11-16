@@ -371,9 +371,12 @@
 
 ## 5. Key Pages & Technical Tools (صفحات تخصصی و ابزارهای مهندسی سایت)
 
-- **Main Catalog & Cylinder Force Calculator:** `https://jalalipneumatic.ir/`
-- **Pneumatic Solenoid Valves (شیرهای برقی پنوماتیک 3/2, 5/2, 5/3):** `https://jalalipneumatic.ir/solenoid-valves.html`
-- **Pneumatic Cylinders (جک‌های پنوماتیک پروفیلی، چهارمیل، کامپکت، قلمی و رادلس):** `https://jalalipneumatic.ir/pneumatic-cylinders.html`
-- **FRL Air Preparation & Accessories (واحد مراقبت هوا، فلوکنترل، فیتینگ و شیلنگ PU):** `https://jalalipneumatic.ir/frl-accessories.html`
-- **Concise LLM Overview:** `https://jalalipneumatic.ir/llms.txt`
-- **XML Sitemap:** `https://jalalipneumatic.ir/sitemap.xml`
+- **Main Catalog & Cylinder Force Calculator:** `https://jpciran.com/`
+- **Pneumatic Solenoid Valves (شیرهای برقی پنوماتیک 3/2, 5/2, 5/3):** `https://jpciran.com/solenoid-valves.html`
+- **Pneumatic Cylinders (جک‌های پنوماتیک پروفیلی، چهارمیل، کامپکت، قلمی و رادلس):** `https://jpciran.com/pneumatic-cylinders.html`
+- **FRL Air Preparation & Accessories (واحد مراقبت هوا، فلوکنترل، فیتینگ و شیلنگ PU):** `https://jpciran.com/frl-accessories.html`
+- **Festo, Norgren & Rexroth to JPC Cross-Reference (جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC):** `https://jpciran.com/festo-cross-reference.html`
+- **Pneumatic Cylinder Buying Guide (راهنمای جامع خرید جک پنوماتیک چهارمیل و پروفیلی ISO 15552):** `https://jpciran.com/pneumatic-cylinder-buying-guide.html`
+- **Solenoid Valve Selection Guide (راهنمای انتخاب و خرید شیر برقی ۵/۲ و ۳/۲):** `https://jpciran.com/solenoid-valve-guide.html`
+- **Concise LLM Overview:** `https://jpciran.com/llms.txt`
+- **XML Sitemap:** `https://jpciran.com/sitemap.xml`

@@ -1852,6 +1852,30 @@
       });
     });
 
+    // Standalone RFQ / Quote triggers (e.g., on SEO guide & cross-reference pages)
+    document.querySelectorAll(".js-add-rfq-btn").forEach((btn) => {
+      if (!btn.closest("#catalog-products-grid")) {
+        btn.addEventListener("click", () => {
+          const pid = btn.getAttribute("data-id");
+          if (pid) {
+            addToRfq(pid);
+          }
+        });
+      }
+    });
+
+    document.querySelectorAll(".js-quote-trigger").forEach((btn) => {
+      if (!btn.closest("#catalog-products-grid")) {
+        btn.addEventListener("click", () => {
+          const pid = btn.getAttribute("data-id");
+          const prod = findProductById(pid);
+          if (prod) {
+            openQuickQuoteModal(prod);
+          }
+        });
+      }
+    });
+
     // Initialize Views
     syncFilterPillsUI();
     renderCatalog();

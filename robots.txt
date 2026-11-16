@@ -27,6 +27,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://jalalipneumatic.ir/sitemap.xml
-# LLMs Summary: https://jalalipneumatic.ir/llms.txt
-# LLMs Full Catalog & Technical Index: https://jalalipneumatic.ir/llms-full.txt
+Sitemap: https://jpciran.com/sitemap.xml
+# LLMs Summary: https://jpciran.com/llms.txt
+# LLMs Full Catalog & Technical Index: https://jpciran.com/llms-full.txt
