@@ -275,9 +275,17 @@ ul {
 /* Container & Layout */
 .container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: min(var(--container-max), 100%);
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(14px, 4vw, 24px);
+}
+
+header,
+main,
+section,
+footer {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .section {
@@ -2711,7 +2719,8 @@ textarea.form-control {
   border-radius: var(--radius-sm);
   padding: 0.35rem;
   margin-bottom: 1.25rem;
-  max-width: 640px;
+  width: 100%;
+  max-width: min(640px, 100%);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
@@ -3078,6 +3087,8 @@ details.faq-item[open] summary.faq-question::after {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  max-width: 100vw;
   z-index: 175;
   background-color: rgba(11, 17, 32, 0.96);
   backdrop-filter: blur(12px);
@@ -3090,25 +3101,30 @@ details.faq-item[open] summary.faq-question::after {
 
 .mobile-quick-action-inner {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 0.55rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  width: 100%;
   max-width: 540px;
   margin-inline: auto;
 }
 
 .mobile-quick-wa-btn {
   min-height: 46px;
+  min-width: 0;
+  width: 100%;
   border-radius: var(--radius-sm);
   background-color: #10B981;
   color: #FFFFFF;
   font-weight: 800;
-  font-size: 0.84rem;
-  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  white-space: nowrap;
+  gap: 0.35rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
@@ -3120,18 +3136,22 @@ details.faq-item[open] summary.faq-question::after {
 
 .mobile-quick-rfq-btn {
   min-height: 46px;
+  min-width: 0;
+  width: 100%;
   border-radius: var(--radius-sm);
   background-color: var(--slate-elevated);
   border: 1px solid var(--amber-cta);
   color: #FFFFFF;
   font-weight: 800;
-  font-size: 0.82rem;
-  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.6rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  white-space: nowrap;
+  gap: 0.35rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
 }
 
 /* Hide mobile bottom bar when any modal or drawer is open */
@@ -3197,7 +3217,7 @@ body.overlay-open .mobile-quick-action-bar {
   }
 
   .container {
-    padding-inline: 1rem;
+    padding-inline: clamp(14px, 4vw, 24px);
   }
 
   /* Hide top bar on compact mobile to save above-the-fold height */
@@ -3208,14 +3228,23 @@ body.overlay-open .mobile-quick-action-bar {
   /* Compact Sticky Mobile Header (62px height) */
   .site-header {
     height: 62px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .header-inner {
-    gap: 0.5rem;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .brand-logo {
-    gap: 0.5rem;
+    gap: 6px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-text {
     min-width: 0;
   }
 
@@ -3226,7 +3255,9 @@ body.overlay-open .mobile-quick-action-bar {
   }
 
   .brand-name-fa {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .brand-name-sub {
@@ -3234,7 +3265,8 @@ body.overlay-open .mobile-quick-action-bar {
   }
 
   .header-actions {
-    gap: 0.4rem;
+    gap: 6px;
+    flex-shrink: 0;
   }
 
   .header-cta-desktop {
@@ -3243,9 +3275,9 @@ body.overlay-open .mobile-quick-action-bar {
 
   .header-rfq-btn {
     min-height: 44px;
-    padding: 0.4rem 0.65rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.78rem;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 
   .theme-toggle-btn,
@@ -3300,15 +3332,21 @@ body.overlay-open .mobile-quick-action-bar {
   }
 
   .hero-title {
-    font-size: clamp(1.38rem, 5.6vw, 1.85rem);
+    font-size: clamp(1.35rem, 5.8vw, 2.4rem);
     line-height: 1.42;
     margin-bottom: 0.85rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
   }
 
   .hero-lead {
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 3.6vw, 1.05rem);
     line-height: 1.75;
     margin-bottom: 1.15rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
   }
 
   .hero-cta-group {
@@ -3316,6 +3354,7 @@ body.overlay-open .mobile-quick-action-bar {
     grid-template-columns: 1fr 1fr;
     gap: 0.55rem;
     margin-bottom: 1.35rem;
+    width: 100%;
   }
 
   .hero-cta-group .btn:first-child {
@@ -3324,9 +3363,12 @@ body.overlay-open .mobile-quick-action-bar {
 
   .hero-cta-group .btn {
     width: 100%;
+    max-width: 100%;
     min-height: 46px;
     font-size: 0.86rem;
     padding: 0.65rem 0.85rem;
+    white-space: normal;
+    text-align: center;
   }
 
   .hero-specs-strip,
@@ -3348,11 +3390,13 @@ body.overlay-open .mobile-quick-action-bar {
 
   .section-title {
     font-size: clamp(1.28rem, 5vw, 1.65rem);
+    overflow-wrap: break-word;
   }
 
   .section-desc {
     font-size: 0.88rem;
     line-height: 1.72;
+    overflow-wrap: break-word;
   }
 
   /* Single-Row Horizontal Swipeable Filter Pill Strips on Mobile */
@@ -3364,9 +3408,14 @@ body.overlay-open .mobile-quick-action-bar {
 
   .search-input-wrapper {
     flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .catalog-search-input {
+    width: 100%;
+    min-width: 0;
     min-height: 46px;
     font-size: 16px;
     padding: 0.65rem 2.5rem 0.65rem 2.25rem;
@@ -3573,8 +3622,32 @@ body.overlay-open .mobile-quick-action-bar {
   }
 }
 
-/* Thumb-Friendly 1-Column Product Cards on Mobile (< 640px) */
-@media (max-width: 639px) {
+/* Thumb-Friendly 1-Column Product Cards & Stacked Hero CTAs on Mobile (<= 640px) */
+@media (max-width: 640px) {
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-quick-search-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-quick-search-input {
+    min-width: 0;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -3622,14 +3695,10 @@ body.overlay-open .mobile-quick-action-bar {
   }
 }
 
-/* Ultra-Compact Screens (360px – 390px) */
-@media (max-width: 390px) {
-  .container {
-    padding-inline: 0.8rem;
-  }
-
-  .hero-cta-group {
-    grid-template-columns: 1fr;
+/* Ultra-Compact Screens (<= 400px) */
+@media (max-width: 400px) {
+  .brand-owner-sub {
+    display: none;
   }
 
   .product-card-actions {
@@ -3637,14 +3706,14 @@ body.overlay-open .mobile-quick-action-bar {
   }
 
   .mobile-quick-action-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0.4rem;
   }
 
   .mobile-quick-wa-btn,
   .mobile-quick-rfq-btn {
-    font-size: 0.76rem;
-    padding: 0.45rem 0.5rem;
+    font-size: 0.74rem;
+    padding: 0.45rem 0.45rem;
   }
 }
 
