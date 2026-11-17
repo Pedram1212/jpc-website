@@ -25,10 +25,10 @@ LLMS_FULL_PATH = ROOT_DIR / "llms-full.txt"
 SITEMAP_PATH = ROOT_DIR / "sitemap.xml"
 
 PAGE_TARGETS = [
-    ("index.html", "all", "https://jalalipneumatic.ir/"),
-    ("solenoid-valves.html", "valves", "https://jalalipneumatic.ir/solenoid-valves.html"),
-    ("pneumatic-cylinders.html", "cylinders", "https://jalalipneumatic.ir/pneumatic-cylinders.html"),
-    ("frl-accessories.html", "frl-accessories", "https://jalalipneumatic.ir/frl-accessories.html"),
+    ("index.html", "all", "https://jpciran.com/"),
+    ("solenoid-valves.html", "valves", "https://jpciran.com/solenoid-valves.html"),
+    ("pneumatic-cylinders.html", "cylinders", "https://jpciran.com/pneumatic-cylinders.html"),
+    ("frl-accessories.html", "frl-accessories", "https://jpciran.com/frl-accessories.html"),
 ]
 
 
@@ -293,12 +293,14 @@ def render_product_card_html(product: dict) -> str:
 
 def build_jsonld_itemlist(products: list, page_url: str, category_filter: str) -> str:
     """
-    Build rich schema.org ItemList with Product entities including sku, mpn, brand,
-    category, additionalProperty technical specs, and B2B inquiry availability.
+    Build schema.org ItemList with technical Product specification entities
+    (sku, mpn, model, brand, manufacturer, additionalProperty) for B2B quotation
+    catalogs without incomplete Offer blocks or invalid category strings.
     """
     list_items = []
     for idx, p in enumerate(products, start=1):
         props = [
+            {"@type": "PropertyValue", "name": "Category (دسته‌بندی)", "value": p.get("categoryTitleFa", "")},
             {"@type": "PropertyValue", "name": "Port Size (سایز پورت)", "value": p.get("portSize", "")},
             {"@type": "PropertyValue", "name": "Working Pressure (فشار کاری)", "value": p.get("pressureRange", "")},
             {"@type": "PropertyValue", "name": "Body Material (جنس بدنه)", "value": p.get("bodyMaterial", "")},
@@ -317,40 +319,26 @@ def build_jsonld_itemlist(products: list, page_url: str, category_filter: str) -
                 }
             )
 
-        availability_url = (
-            "https://schema.org/InStock"
-            if p.get("availabilityStatus") == "available"
-            else "https://schema.org/PreOrder"
-        )
-
         product_schema = {
             "@type": "Product",
             "@id": f"{page_url}#product-{p['id']}",
             "sku": p["code"],
             "mpn": p["code"],
+            "model": p["code"],
             "name": f"{p['nameFa']} ({p['nameEn']})",
-            "AlternateName": p["nameEn"],
+            "alternateName": p["nameEn"],
             "description": f"{p['nameFa']} — کد فنی: {p['code']} | سایز پورت: {p['portSize']} | فشار کاری: {p['pressureRange']} | کاربرد: {p.get('applicationsFa', '')}",
-            "image": "https://jalalipneumatic.ir/assets/images/hero-pneumatics.jpg",
+            "image": "https://jpciran.com/assets/images/hero-pneumatics.jpg",
             "url": f"{page_url}#card-{p['id']}",
-            "category": p["categoryTitleFa"],
             "brand": {
                 "@type": "Brand",
                 "name": p["brand"],
             },
-            "additionalProperty": props,
-            "offers": {
-                "@type": "Offer",
-                "url": f"{page_url}#inquiry",
-                "availability": availability_url,
-                "itemCondition": "https://schema.org/NewCondition",
-                "seller": {
-                    "@type": "Organization",
-                    "name": "شرکت جلالی پنوماتیک (JPC – Jalali Pneumatic Company)",
-                    "url": "https://jpciran.com/",
-                    "telephone": ["+98-21-33110796", "+98-21-33932529", "+98-912-130-5167"]
-                },
+            "manufacturer": {
+                "@type": "Organization",
+                "name": p["brand"],
             },
+            "additionalProperty": props,
         }
 
         list_items.append(
