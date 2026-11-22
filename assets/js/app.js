@@ -86,6 +86,66 @@
   }
 
   /**
+   * Privacy-Conscious Modular Analytics Event Dispatcher (trackJpcEvent)
+   * Fires structured CustomEvent('jpc:analytics') and pushes to window.dataLayer
+   * without transmitting any personal customer text (PII such as phone, company name, or notes).
+   */
+  const ALLOWED_ANALYTICS_EVENTS = new Set([
+    "search_submitted",
+    "search_no_results",
+    "product_opened",
+    "product_added_to_rfq",
+    "rfq_started",
+    "rfq_submitted",
+    "contact_clicked",
+    "engineering_tool_opened",
+    "cross_reference_used"
+  ]);
+
+  function trackJpcEvent(eventName, rawMeta) {
+    if (!eventName || !ALLOWED_ANALYTICS_EVENTS.has(eventName)) return;
+    const safeMeta = {};
+    if (rawMeta && typeof rawMeta === "object") {
+      const allowedKeys = [
+        "sku",
+        "brand",
+        "category",
+        "family",
+        "resultCount",
+        "queryLength",
+        "matchTier",
+        "channel",
+        "toolName",
+        "boreMm",
+        "pressureBar",
+        "itemCount",
+        "totalQty"
+      ];
+      allowedKeys.forEach((k) => {
+        if (rawMeta[k] !== undefined && rawMeta[k] !== null) {
+          safeMeta[k] = rawMeta[k];
+        }
+      });
+    }
+
+    const payload = {
+      event: eventName,
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname || "/",
+      meta: safeMeta
+    };
+
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+      window.dispatchEvent(new CustomEvent("jpc:analytics", { detail: payload }));
+    } catch (e) {
+      // ignore analytics dispatch errors
+    }
+  }
+  window.trackJpcEvent = trackJpcEvent;
+
+  /**
    * Smart Persian/Arabic/English Text & Digit Normalizer
    */
   function normalizeSearchText(input) {
@@ -354,6 +414,13 @@
     renderRfqUI();
     renderCatalog();
     showToast(`به لیست استعلام اضافه شد: ${product.code}`);
+    trackJpcEvent("product_added_to_rfq", {
+      sku: product.sku || product.code,
+      brand: product.brand,
+      category: product.category,
+      family: product.family,
+      itemCount: state.rfqItems.length
+    });
   }
 
   function updateRfqItemQty(productId, newQty) {
@@ -1550,6 +1617,12 @@
   function openQuickQuoteModal(product) {
     state.selectedProduct = product;
     updateFloatingWhatsApp(product);
+    trackJpcEvent("rfq_started", {
+      sku: (product && (product.sku || product.code)) || "GENERAL",
+      brand: (product && product.brand) || "JPC",
+      category: (product && product.category) || "all",
+      itemCount: state.rfqItems.length
+    });
 
     const mainCodeInput = document.getElementById("b2b-tech-code");
     const mainBrandSelect = document.getElementById("b2b-brand-select");
@@ -1601,6 +1674,12 @@
   function openTechDetailModal(product) {
     state.selectedProduct = product;
     updateFloatingWhatsApp(product);
+    trackJpcEvent("product_opened", {
+      sku: (product && (product.sku || product.code)) || "",
+      brand: (product && product.brand) || "",
+      category: (product && product.category) || "",
+      family: (product && product.family) || ""
+    });
 
     const modal = document.getElementById("tech-detail-modal");
     const body = document.getElementById("tech-detail-modal-body");
@@ -1828,6 +1907,12 @@
             fileInput && fileInput.files[0] ? fileInput.files[0].name : null
         };
 
+        trackJpcEvent("rfq_submitted", {
+          brand: payload.brandPreference || "JPC",
+          itemCount: state.rfqItems.length || 1,
+          channel: "b2b_form"
+        });
+
         const refCode = `JPC-${Math.floor(100000 + Math.random() * 900000)}`;
         const endpoint =
           window.SITE_CONFIG &&
@@ -1882,6 +1967,12 @@
         const phone = fd.get("modalPhone");
         const qty = fd.get("modalQty");
         const refCode = `JPC-Q${Math.floor(10000 + Math.random() * 90000)}`;
+
+        trackJpcEvent("rfq_submitted", {
+          sku: (state.selectedProduct && state.selectedProduct.code) || "QUICK_MODAL",
+          itemCount: 1,
+          channel: "quick_quote_modal"
+        });
 
         const waMsg =
           `استعلام سریع محصول (${refCode}) - جلالی پنوماتیک\n` +
@@ -2440,6 +2531,20 @@
       if (clearBtn) clearBtn.classList.toggle("visible", q.length > 0);
       if (heroSearchClear) heroSearchClear.classList.toggle("visible", q.length > 0);
       renderCatalog();
+      if (q.length > 0) {
+        const matches = getRankedProducts(q, true);
+        trackJpcEvent("search_submitted", {
+          queryLength: q.length,
+          resultCount: matches.length,
+          matchTier: matches.length > 0 ? matches[0].match.tier : 0
+        });
+        if (matches.length === 0) {
+          trackJpcEvent("search_no_results", {
+            queryLength: q.length,
+            resultCount: 0
+          });
+        }
+      }
       if (shouldScroll) {
         const catalogSection = document.getElementById("catalog");
         if (catalogSection) {
@@ -2595,6 +2700,11 @@
         const pid = btn.getAttribute("data-id");
         const prod = findProductById(pid);
         if (prod) {
+          trackJpcEvent("cross_reference_used", {
+            sku: prod.sku || prod.code,
+            brand: prod.brand,
+            category: prod.category
+          });
           openTechDetailModal(prod);
         }
       });
@@ -2605,8 +2715,9 @@
       if (!btn.closest("#catalog-products-grid")) {
         btn.addEventListener("click", () => {
           const pid = btn.getAttribute("data-id");
-          if (pid) {
-            addToRfq(pid);
+          const prod = findProductById(pid);
+          if (prod) {
+            addToRfqList(prod);
           }
         });
       }
@@ -2621,6 +2732,26 @@
             openQuickQuoteModal(prod);
           }
         });
+      }
+    });
+
+    // Privacy-Conscious Contact, Tool & RFQ Analytics Hooks
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href") || "";
+      if (href.includes("wa.me/")) {
+        trackJpcEvent("contact_clicked", { channel: "whatsapp" });
+      } else if (href.startsWith("tel:")) {
+        trackJpcEvent("contact_clicked", { channel: "phone" });
+      } else if (href.includes("t.me/")) {
+        trackJpcEvent("contact_clicked", { channel: "telegram" });
+      } else if (href.includes("ai.jpciran.com")) {
+        trackJpcEvent("engineering_tool_opened", { toolName: "ai_nameplate_assistant" });
+      } else if (href === "#calculator") {
+        trackJpcEvent("engineering_tool_opened", { toolName: "cylinder_force_calculator" });
+      } else if (href === "#cross-reference" || href.includes("festo-cross-reference.html")) {
+        trackJpcEvent("engineering_tool_opened", { toolName: "cross_reference_tool" });
       }
     });
 

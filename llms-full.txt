@@ -1,42 +1,23 @@
 # شرکت جلالی پنوماتیک | JPC – Jalali Pneumatic Company (Full AI & Technical Catalog Reference)
 
-> **شرکت جلالی پنوماتیک (`JPC – Jalali Pneumatic Company`)**؛ واردکننده، تأمین‌کننده و توزیع‌کننده تخصصی تجهیزات پنوماتیک صنعتی و سیستم‌های اتوماسیون مبتنی بر هوای فشرده در ایران (تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱).
-> **Jalali Pneumatic Company (`JPC`)** is an Iranian B2B industrial importer, supplier, and distributor of pneumatic components and compressed-air automation systems (`jpciran.com` / `jalalipneumatic.ir`), offering international European brands (`Festo`, `Norgren`, `Bosch Rexroth`), reliable Asian industrial supply, and its proprietary commercial brand **`JPC`**.
+> **شرکت جلالی پنوماتیک (`JPC`)**؛ تأمین‌کننده و توزیع‌کننده تخصصی تجهیزات پنوماتیک صنعتی در ایران (تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱).
 
 ---
 
-## 1. Bilingual Corporate Identity & E-E-A-T Profile (هویت شرکت و مدیریت مجموعه)
+## 1. Verified Corporate Profile (اطلاعات رسمی شرکت جلالی پنوماتیک)
 
-- **Persian Name (نام فارسی):** شرکت جلالی پنوماتیک
-- **English Name (نام انگلیسی):** Jalali Pneumatic Company (`JPC`)
-- **Founder & Managing Director (مؤسس و مدیریت مجموعه):** امیر جلالی (`Amir Jalali`)
-- **Proprietary Commercial Brand (برند تجاری اختصاصی):** `JPC` (`JPC – Jalali Pneumatic Company`)
-- **Official Domains (دامنه‌های رسمی):** `https://jpciran.com` | `https://jalalipneumatic.ir`
-- **Business Activity (حوزه فعالیت):** واردات، تأمین و توزیع تجهیزات پنوماتیک صنعتی و اتوماسیون هوای فشرده (Industrial Pneumatics Importer, Supplier & B2B Distributor)
-- **Store Address (آدرس فروشگاه مرکزی):** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱ (ارسال فوری به سراسر کشور) | No. 1, Razaghmanesh Passage, Opposite Alipour Alley, South Lalehzar, Tehran, Iran
-- **Google Maps:** `https://www.google.com/maps/search/?api=1&query=تهران+لاله+زار+جنوبی+روبروی+کوچه+علیپور+پاساژ+رزاق+منش+پلاک+۱`
-- **Direct Mobile & WhatsApp B2B Sales (شماره تماس مستقیم و واتساپ استعلام قیمت):** `+98-912-130-5167` / `00989121305167` / `0912 130 5167` (`https://wa.me/989121305167`)
-- **Sales Landlines (تلفن ثابت فروشگاه):** `021-33110796` (`+98-21-33110796`) و `021-33932529` (`+98-21-33932529`)
-- **Telegram Sales Engineering (تلگرام مهندسی فروش):** `@JalaliPneumatic_Sales` (`https://t.me/JalaliPneumatic_Sales`)
-- **Email (پست الکترونیک بازرگانی):** `sales@jalalipneumatic.ir`
-- **Working Hours (ساعات کاری):** شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰ (`Sat-Thu 09:00-18:00 IRST`)
+- **Company:** شرکت جلالی پنوماتیک (JPC)
+- **Management:** با مدیریت امیر جلالی (`Amir Jalali`)
+- **Address:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱
+- **Landlines:** `021-33110796` | `021-33932529`
+- **WhatsApp / Mobile:** `09121305167` (`https://wa.me/989121305167`)
+- **Working Hours:** شنبه تا پنجشنبه ۰۹:۰۰ تا ۱۸:۰۰
+- **AI Nameplate Assistant:** `https://ai.jpciran.com` (دستیار هوشمند تشخیص پلاک AI)
 - **Canonical Website:** `https://jpciran.com/`
 
 ---
 
-## 2. Dual-Sourcing & Multi-Brand Architecture (معماری تأمین دوگانه و چندبرنده)
-
-1. **Proprietary Commercial Brand (`JPC – Jalali Pneumatic Company`):**
-   - Imported pneumatic product line marketed under the company's proprietary commercial brand `JPC`.
-   - Engineered for dimensional and technical compatibility (`تطابق ابعادی و فنی`) with international standards (`ISO 15552` profile cylinders, `ISO 6432` mini cylinders, `3/2`, `5/2`, and `5/3` directional solenoid valves, and modular `FRL` air preparation units).
-2. **European Industrial Brands Supply (`تأمین برندهای معتبر اروپایی`):**
-   - Sourcing and supplying pneumatic components from European markets including **Festo (فستو)**, **Norgren (نورگرن)**, and **Bosch & Bosch Rexroth (بوش و بوش رکسروت)** for high-sensitivity production lines and machinery MRO.
-3. **Asian / Chinese Industrial Tier (`تأمین از سازندگان معتبر آسیایی/چینی`):**
-   - Cost-effective pneumatic components, push-in fittings, polyurethane (`PU`) tubing, and flow control valves for OEM machine builders and high-volume workshops.
-
----
-
-## 3. Complete Product Catalog Table (جدول کامل محصولات و معادل‌های فنی)
+## 2. Complete Verified Product Catalog Table (جدول کامل محصولات و معادل‌های فنی)
 
 | ردیف | کد فنی مدل (SKU / Code) | نام فارسی تجهیز | English Product Name | برند (Brand) | سایز پورت (Port) | فشار کاری (Pressure) | کدهای هم‌ابعاد و معادل فنی (Compatible Equivalents) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -62,7 +43,7 @@
 
 ---
 
-## 4. Detailed Technical Specifications by Product (مشخصات فنی تفصیلی تک‌تک مدل‌ها)
+## 3. Detailed Technical Specifications by SKU
 
 ### JPC-4V210-08-24DC — شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210
 - **English Title:** JPC 5/2 Way Single Solenoid Valve 4V210-08
@@ -75,10 +56,9 @@
 - **Flow Rate / Cushioning:** 890 L/min (Cv = 0.89)
 - **Operating Temperature:** `-5°C to +60°C`
 - **Standard / Protection Class:** `IP65 (سوکت چراغ‌دار استاندارد DIN)`
-- **Compatible Equivalent Codes (Cross-Reference):** `MFH-5-1/4, FESTO-MFH-5-1/4-B, V61B513A-A213J, NORGREN-V61B513A, 0820055051, 4V210-08, SY5120-5LZD-02`
-- **Iranian Market Keywords:** شیر برقی پنج دو، شیر برقی 5/2، شیر تک بوبین، شیر باد 24 ولت، شیر باد 220 ولت، شیر پنوماتیک یک چهارم، 4V210، شیر فرمان جک دوطرفه
-- **Industrial Applications:** فرمان جک‌های دوطرفه در ماشین‌آلات بسته‌بندی، خطوط مونتاژ و سیستم‌های اتوماسیون صنعتی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `MFH-5-1/4, FESTO-MFH-5-1/4-B, V61B513A-A213J, NORGREN-V61B513A, 0820055051, 4V210-08, SY5120-5LZD-02`
+- **Keywords:** شیر برقی پنج دو، شیر برقی 5/2، شیر تک بوبین، شیر باد 24 ولت، شیر باد 220 ولت، شیر پنوماتیک یک چهارم، 4V210، شیر فرمان جک دوطرفه
+- **Applications:** فرمان جک‌های دوطرفه در ماشین‌آلات بسته‌بندی، خطوط مونتاژ و سیستم‌های اتوماسیون صنعتی
 
 ### JPC-4V220-08-220AC — شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220
 - **English Title:** JPC 5/2 Way Double Solenoid Valve 4V220-08
@@ -91,10 +71,9 @@
 - **Flow Rate / Cushioning:** 890 L/min (Cv = 0.89)
 - **Operating Temperature:** `-5°C to +60°C`
 - **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes (Cross-Reference):** `JMFH-5-1/4, FESTO-JMFH-5-1/4-B, V61B522A-A213J, REXROTH-0820055051-CD07, CD07-5/2, 4V220-08, SY5220-5LZD-02`
-- **Iranian Market Keywords:** شیر برقی دو بوبین، شیر دو سر بوبین، شیر حافظه دار پنوماتیک، 4V220، شیر پنج به دو دوبوبین، شیر برقی 220 ولت
-- **Industrial Applications:** ماشین‌آلات صنعتی نیازمند حفظ موقعیت جک در زمان توقف اضطراری یا قطع تغذیه الکتریکی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `JMFH-5-1/4, FESTO-JMFH-5-1/4-B, V61B522A-A213J, REXROTH-0820055051-CD07, CD07-5/2, 4V220-08, SY5220-5LZD-02`
+- **Keywords:** شیر برقی دو بوبین، شیر دو سر بوبین، شیر حافظه دار پنوماتیک، 4V220، شیر پنج به دو دوبوبین، شیر برقی 220 ولت
+- **Applications:** ماشین‌آلات صنعتی نیازمند حفظ موقعیت جک در زمان توقف اضطراری یا قطع تغذیه الکتریکی
 
 ### JPC-4V330C-10-24DC — شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C
 - **English Title:** JPC 5/3 Way Closed Center Solenoid Valve 4V330C-10
@@ -107,10 +86,9 @@
 - **Flow Rate / Cushioning:** 1680 L/min (Cv = 1.68)
 - **Operating Temperature:** `-5°C to +60°C`
 - **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes (Cross-Reference):** `VUVG-L18-M53C, V62C611A-A213J, 4V330C-10, 4V230C-08, 0820055501`
-- **Iranian Market Keywords:** شیر برقی پنج سه، شیر 5/3 وسط بسته، شیر مرکز بسته پنوماتیک، 4V330C، 4V230C، شیر سه حالته پنوماتیک، شیر سایز سه هشتم
-- **Industrial Applications:** پرس‌های پنوماتیک، دریچه‌های صنعتی و مکانیزم‌های موقعیت‌دهی میانی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `VUVG-L18-M53C, V62C611A-A213J, 4V330C-10, 4V230C-08, 0820055501`
+- **Keywords:** شیر برقی پنج سه، شیر 5/3 وسط بسته، شیر مرکز بسته پنوماتیک، 4V330C، 4V230C، شیر سه حالته پنوماتیک، شیر سایز سه هشتم
+- **Applications:** پرس‌های پنوماتیک، دریچه‌های صنعتی و مکانیزم‌های موقعیت‌دهی میانی
 
 ### JPC-3V210-06-24DC — شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210
 - **English Title:** JPC 3/2 Way NC Solenoid Valve 3V210-06
@@ -123,10 +101,9 @@
 - **Flow Rate / Cushioning:** 550 L/min
 - **Operating Temperature:** `-5°C to +60°C`
 - **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes (Cross-Reference):** `MFH-3-1/8, MFH-3-1/4, V60A513A-A213J, 3V210-06, 3V210-08`
-- **Iranian Market Keywords:** شیر برقی سه دو، شیر 3/2 نرمال بسته، شیر جک یکطرفه، 3V210، شیر باد یک هشتم
-- **Industrial Applications:** جک‌های قلمی و کامپکت یک‌طرفه، سیستم‌های اجکتور و تفکیک قطعات در خطوط سورتینگ
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `MFH-3-1/8, MFH-3-1/4, V60A513A-A213J, 3V210-06, 3V210-08`
+- **Keywords:** شیر برقی سه دو، شیر 3/2 نرمال بسته، شیر جک یکطرفه، 3V210، شیر باد یک هشتم
+- **Applications:** جک‌های قلمی و کامپکت یک‌طرفه، سیستم‌های اجکتور و تفکیک قطعات در خطوط سورتینگ
 
 ### FESTO-MFH-5-1/4-B — شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH
 - **English Title:** Festo Tiger Classic 5/2 Solenoid Valve MFH-5-1/4
@@ -139,10 +116,9 @@
 - **Flow Rate / Cushioning:** 1000 L/min
 - **Operating Temperature:** `-10°C to +60°C`
 - **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes (Cross-Reference):** `MFH-5-1/4, JMFH-5-1/4, MFH-5-1/8, JPC-4V210-08-24DC, 4V210-08`
-- **Iranian Market Keywords:** شیر برقی فستو، شیر تایگر فستو، MFH-5-1/4، JMFH، شیر پنوماتیک آلمانی
-- **Industrial Applications:** خطوط اتوماسیون کارخانجات خودروسازی، صنایع غذایی، دارویی و ماشین‌سازی پیشرفته
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `MFH-5-1/4, JMFH-5-1/4, MFH-5-1/8, JPC-4V210-08-24DC, 4V210-08`
+- **Keywords:** شیر برقی فستو، شیر تایگر فستو، MFH-5-1/4، JMFH، شیر پنوماتیک آلمانی
+- **Applications:** خطوط اتوماسیون کارخانجات خودروسازی، صنایع غذایی، دارویی و ماشین‌سازی پیشرفته
 
 ### NORGREN-V61B513A-A213J — شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61
 - **English Title:** Norgren V61 Series Inline 5/2 & 5/3 Solenoid Valve
@@ -155,10 +131,9 @@
 - **Flow Rate / Cushioning:** 1300 L/min
 - **Operating Temperature:** `-10°C to +50°C`
 - **Standard / Protection Class:** `IP65 NEMA 4`
-- **Compatible Equivalent Codes (Cross-Reference):** `V61B513A, V60A513A, V62C513A, JPC-4V210-08-24DC, JPC-4V330C-10-24DC`
-- **Iranian Market Keywords:** شیر برقی نورگرن، شیر V61 نورگرن، شیر پنوماتیک انگلیسی، V61B513A
-- **Industrial Applications:** صنایع فولاد، سیمان، پتروشیمی و ماشین‌آلات سنگین خطوط فرآیندی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `V61B513A, V60A513A, V62C513A, JPC-4V210-08-24DC, JPC-4V330C-10-24DC`
+- **Keywords:** شیر برقی نورگرن، شیر V61 نورگرن، شیر پنوماتیک انگلیسی، V61B513A
+- **Applications:** صنایع فولاد، سیمان، پتروشیمی و ماشین‌آلات سنگین خطوط فرآیندی
 
 ### REXROTH-0820055051-CD07 — شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599
 - **English Title:** Bosch Rexroth 5/2 Directional Control Valve CD07 / 581
@@ -171,10 +146,9 @@
 - **Flow Rate / Cushioning:** 1400 L/min
 - **Operating Temperature:** `-15°C to +50°C`
 - **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes (Cross-Reference):** `0820055051, CD07, 581-ISO1, JPC-4V220-08-220AC, JPC-4V210-08-24DC`
-- **Iranian Market Keywords:** شیر برقی رکسروت، شیر برقی بوش، CD07، 0820055051، شیر زیرشیری ایزو
-- **Industrial Applications:** تجهیزات خطوط نورد، ماشین‌آلات CNC، صنایع چوب، کاغذ و نساجی صنعتی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-solenoid-valves-datasheet.pdf`
+- **Compatible Equivalent Codes:** `0820055051, CD07, 581-ISO1, JPC-4V220-08-220AC, JPC-4V210-08-24DC`
+- **Keywords:** شیر برقی رکسروت، شیر برقی بوش، CD07، 0820055051، شیر زیرشیری ایزو
+- **Applications:** تجهیزات خطوط نورد، ماشین‌آلات CNC، صنایع چوب، کاغذ و نساجی صنعتی
 
 ### JPC-DNC-63-200-PPV-A — جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC
 - **English Title:** JPC Profile Pneumatic Cylinder ISO 15552 Series DNC
@@ -187,10 +161,9 @@
 - **Flow Rate / Cushioning:** ضربه‌گیر پنوماتیکی قابل تنظیم در دو انتها (PPV)
 - **Operating Temperature:** `-10°C to +70°C`
 - **Standard / Protection Class:** `استاندارد ابعادی ISO 15552 / VDMA 24562`
-- **Compatible Equivalent Codes (Cross-Reference):** `DSBC-32, DSBC-40-100, DSBC-50-250, DSBC-63-200, DNC-40-100, DNC-63-200, PRA/182040/M/100, PRA/182050/M, R480141402, ISO-15552`
-- **Iranian Market Keywords:** جک پروفیلی، جک DNC، سیلندر پروفیلی مگنت دار، جک ایزو 15552، جک دوطرفه پنوماتیک، جک قطر 40، جک قطر 50، جک قطر 63، جک قطر 80، جک قطر 100
-- **Industrial Applications:** ایستگاه‌های انتقال قطعه، خطوط بسته‌بندی، پرس‌های سبک و ماشین‌آلات صنعتی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `DSBC-32, DSBC-40-100, DSBC-50-250, DSBC-63-200, DNC-40-100, DNC-63-200, PRA/182040/M/100, PRA/182050/M, R480141402, ISO-15552`
+- **Keywords:** جک پروفیلی، جک DNC، سیلندر پروفیلی مگنت دار، جک ایزو 15552، جک دوطرفه پنوماتیک، جک قطر 40، جک قطر 50، جک قطر 63، جک قطر 80، جک قطر 100
+- **Applications:** ایستگاه‌های انتقال قطعه، خطوط بسته‌بندی، پرس‌های سبک و ماشین‌آلات صنعتی
 
 ### JPC-SC-80x150-S — جک پنوماتیک چهارمیل صنعتی سری SC / SU
 - **English Title:** JPC Tie-Rod Double-Acting Pneumatic Cylinder SC Series
@@ -203,10 +176,9 @@
 - **Flow Rate / Cushioning:** مجهز به ضربه‌گیر قابل تنظیم در دو سر جک
 - **Operating Temperature:** `-5°C to +70°C`
 - **Standard / Protection Class:** `مقاوم در برابر بارهای محوری سنگین`
-- **Compatible Equivalent Codes (Cross-Reference):** `SC-32, SC-40, SC-50, SC-63, SC-80x150, SC-100, SC-125, MBB50, CP96SDB`
-- **Iranian Market Keywords:** جک چهارمیل، جک چهار میل، سیلندر چهارمیل، جک SC، جک بادی کارگاهی، جک پنوماتیک سنگین
-- **Industrial Applications:** صنایع چوب و ام‌دی‌اف، دروازه‌های تخلیه مواد، خطوط کانوایر و ماشین‌سازی عمومی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `SC-32, SC-40, SC-50, SC-63, SC-80x150, SC-100, SC-125, MBB50, CP96SDB`
+- **Keywords:** جک چهارمیل، جک چهار میل، سیلندر چهارمیل، جک SC، جک بادی کارگاهی، جک پنوماتیک سنگین
+- **Applications:** صنایع چوب و ام‌دی‌اف، دروازه‌های تخلیه مواد، خطوط کانوایر و ماشین‌سازی عمومی
 
 ### JPC-ADVU-40-50-PA — جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA
 - **English Title:** JPC Compact Pneumatic Cylinder ADVU / SDA Series
@@ -219,10 +191,9 @@
 - **Flow Rate / Cushioning:** طول بدنه بسیار کوتاه جهت فضاهای محدود نصب
 - **Operating Temperature:** `-10°C to +60°C`
 - **Standard / Protection Class:** `طراحی کم‌جا (Space-Saving Design)`
-- **Compatible Equivalent Codes (Cross-Reference):** `ADVU-40-50-P-A, ADN-40-50, SDA-40x50, KPZ-40, RM/92040/M`
-- **Iranian Market Keywords:** جک کامپکت، جک فشرده، جک کتابی، جک ADVU، جک SDA، جک کورس کوتاه، جک یکطرفه کامپکت
-- **Industrial Applications:** فیکسچرهای صنعتی، ماشین‌آلات بسته‌بندی وکیوم، لیبل‌چسبان و خطوط مونتاژ قطعات الکترونیک
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `ADVU-40-50-P-A, ADN-40-50, SDA-40x50, KPZ-40, RM/92040/M`
+- **Keywords:** جک کامپکت، جک فشرده، جک کتابی، جک ADVU، جک SDA، جک کورس کوتاه، جک یکطرفه کامپکت
+- **Applications:** فیکسچرهای صنعتی، ماشین‌آلات بسته‌بندی وکیوم، لیبل‌چسبان و خطوط مونتاژ قطعات الکترونیک
 
 ### JPC-MAL-25x100-CA — جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL
 - **English Title:** JPC Mini Round Pneumatic Cylinder DSNU / MAL Series
@@ -235,10 +206,9 @@
 - **Flow Rate / Cushioning:** واشر ضربه‌گیر الاستومری یا بادی قابل تنظیم
 - **Operating Temperature:** `-10°C to +70°C`
 - **Standard / Protection Class:** `ISO 6432 (در تیپ استیل DSNU)`
-- **Compatible Equivalent Codes (Cross-Reference):** `DSNU-16, DSNU-20, DSNU-25-100-P-A, MAL-25x100, RA/802025/M, ISO-6432`
-- **Iranian Market Keywords:** جک قلمی، جک مینی، جک استیل، جک DSNU، جک MAL، سیلندر قلمی برگشت فنر
-- **Industrial Applications:** صنایع غذایی و لبنی، دستگاه‌های پرکن، تفکیک‌کننده‌های خطوط بسته‌بندی و نساجی
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `DSNU-16, DSNU-20, DSNU-25-100-P-A, MAL-25x100, RA/802025/M, ISO-6432`
+- **Keywords:** جک قلمی، جک مینی، جک استیل، جک DSNU، جک MAL، سیلندر قلمی برگشت فنر
+- **Applications:** صنایع غذایی و لبنی، دستگاه‌های پرکن، تفکیک‌کننده‌های خطوط بسته‌بندی و نساجی
 
 ### FESTO-DSBC-50-250-PPVA-N3 — جک پنوماتیک پروفیلی فستو سری DSBC / DNC
 - **English Title:** Festo ISO 15552 Standards-Based Cylinder DSBC-50
@@ -251,10 +221,9 @@
 - **Flow Rate / Cushioning:** ضربه‌گیر خودتنظیم PPS یا قابل تنظیم دستی PPV
 - **Operating Temperature:** `-20°C to +80°C`
 - **Standard / Protection Class:** `ISO 15552`
-- **Compatible Equivalent Codes (Cross-Reference):** `DSBC-50-250, DSBC-40-100, DNC-50-250, DNC-40-100, JPC-DNC-63-200-PPV-A`
-- **Iranian Market Keywords:** جک فستو، جک DSBC، جک DNC فستو، سیلندر پروفیلی فستو
-- **Industrial Applications:** ماشین‌آلات دقیق صنعتی، خطوط رباتیک و اتوماسیون پیشرفته کارخانجات
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `DSBC-50-250, DSBC-40-100, DNC-50-250, DNC-40-100, JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، جک DSBC، جک DNC فستو، سیلندر پروفیلی فستو
+- **Applications:** ماشین‌آلات دقیق صنعتی، خطوط رباتیک و اتوماسیون پیشرفته کارخانجات
 
 ### NORGREN-PRA/182050/M — جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra
 - **English Title:** Norgren ISOLine Profile & Lintra Rodless Cylinder
@@ -267,10 +236,9 @@
 - **Flow Rate / Cushioning:** سیستم ضربه‌گیر تطبیقی (Adaptive Cushioning)
 - **Operating Temperature:** `-15°C to +80°C`
 - **Standard / Protection Class:** `ISO 15552 / Rodless Industrial`
-- **Compatible Equivalent Codes (Cross-Reference):** `PRA/182050/M, PRA/182040/M/100, RA/8000, M/46000, JPC-DNC-63-200-PPV-A`
-- **Iranian Market Keywords:** جک نورگرن، جک بدون شفت، جک رادلس، جک کالسکه ای، PRA/182050
-- **Industrial Applications:** سیستم‌های پالتایزر، درب‌های اتوماتیک صنعتی، برش‌های طولی و خطوط انتقال مواد
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `PRA/182050/M, PRA/182040/M/100, RA/8000, M/46000, JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک نورگرن، جک بدون شفت، جک رادلس، جک کالسکه ای، PRA/182050
+- **Applications:** سیستم‌های پالتایزر، درب‌های اتوماتیک صنعتی، برش‌های طولی و خطوط انتقال مواد
 
 ### REXROTH-R480141402-PRA — جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ
 - **English Title:** Bosch Rexroth Profile & Compact Cylinder PRA / KPZ Series
@@ -283,10 +251,9 @@
 - **Flow Rate / Cushioning:** ضربه‌گیر پنوماتیک دقیق با قابلیت جذب انرژی جنبشی بالا
 - **Operating Temperature:** `-20°C to +80°C`
 - **Standard / Protection Class:** `ISO 15552 / ISO 21287`
-- **Compatible Equivalent Codes (Cross-Reference):** `R480141402, 0822350, PRA-ISO, KPZ, JPC-DNC-63-200-PPV-A, JPC-ADVU-40-50-PA`
-- **Iranian Market Keywords:** جک رکسروت، جک بوش رکسروت، سیلندر PRA رکسروت، جک KPZ
-- **Industrial Applications:** تجهیزات تست و مونتاژ، ماشین‌آلات فرم‌دهی و خطوط اتوماسیون کارخانجات
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-pneumatic-cylinders-datasheet.pdf`
+- **Compatible Equivalent Codes:** `R480141402, 0822350, PRA-ISO, KPZ, JPC-DNC-63-200-PPV-A, JPC-ADVU-40-50-PA`
+- **Keywords:** جک رکسروت، جک بوش رکسروت، سیلندر PRA رکسروت، جک KPZ
+- **Applications:** تجهیزات تست و مونتاژ، ماشین‌آلات فرم‌دهی و خطوط اتوماسیون کارخانجات
 
 ### JPC-AC4010-04-D — واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن)
 - **English Title:** JPC FRL Air Preparation Unit AC4010-04 (Filter, Regulator, Lubricator)
@@ -299,10 +266,9 @@
 - **Flow Rate / Cushioning:** فیلتراسیون ۵ و ۴۰ میکرون | دبی تا 4000 L/min
 - **Operating Temperature:** `5°C to +60°C`
 - **Standard / Protection Class:** `همراه با براکت نصب و گیج فشار روغنی/خشک`
-- **Compatible Equivalent Codes (Cross-Reference):** `MS6-LFR-1/2, FESTO-MS6-LFR-1/2-D7-ERM-AS, B74G-4GK-AD3-RMN, 0821300300, AC4010-04, AC3010-03, AC2010-02, OU-1/2`
-- **Iranian Market Keywords:** واحد مراقبت، واحد مراقبت باد، فیلتر رگولاتور، روغن زن پنوماتیک، FRL، AC4010، واحد مراقبت نیم اینچ، واحد مراقبت یک چهارم، آبگیر باد
-- **Industrial Applications:** ورودی هوای فشرده کلیه ماشین‌آلات صنعتی، تابلوهای پنوماتیک و ایستگاه‌های کاری
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf`
+- **Compatible Equivalent Codes:** `MS6-LFR-1/2, FESTO-MS6-LFR-1/2-D7-ERM-AS, B74G-4GK-AD3-RMN, 0821300300, AC4010-04, AC3010-03, AC2010-02, OU-1/2`
+- **Keywords:** واحد مراقبت، واحد مراقبت باد، فیلتر رگولاتور، روغن زن پنوماتیک، FRL، AC4010، واحد مراقبت نیم اینچ، واحد مراقبت یک چهارم، آبگیر باد
+- **Applications:** ورودی هوای فشرده کلیه ماشین‌آلات صنعتی، تابلوهای پنوماتیک و ایستگاه‌های کاری
 
 ### JPC-HVFF-ASC-SET — شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار
 - **English Title:** JPC Flow Control Valves, Push-in Fittings, PU Tubing & Pressure Gauges
@@ -315,10 +281,9 @@
 - **Flow Rate / Cushioning:** تنظیم دقیق سرعت کورس رفت و برگشت جک
 - **Operating Temperature:** `-20°C to +60°C`
 - **Standard / Protection Class:** `آب‌بندی اورینگ NBR و رزوه تفلون‌دار (PTFE Coated)`
-- **Compatible Equivalent Codes (Cross-Reference):** `GRLA-1/4-QS-8, ASC-200-08, ASC-300-10, SL8-02, PC8-02, PL8-02, PUN-H-8X1.25`
-- **Iranian Market Keywords:** فلوکنترل، فلو کنترل، شیر یکطرفه گلویی، شیر تنظیم سرعت جک، اتصالات پنوماتیک، فیتینگ پنوماتیک، شیلنگ پلی یورتان، شیلنگ PU، گیج فشار باد، مانومتر پنوماتیک، اگزوز خفه کن
-- **Industrial Applications:** لوله‌کشی مدارهای فرمان و قدرت پنوماتیک، تنظیم سرعت حرکت جک‌ها و مانیتورینگ فشار خط
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf`
+- **Compatible Equivalent Codes:** `GRLA-1/4-QS-8, ASC-200-08, ASC-300-10, SL8-02, PC8-02, PL8-02, PUN-H-8X1.25`
+- **Keywords:** فلوکنترل، فلو کنترل، شیر یکطرفه گلویی، شیر تنظیم سرعت جک، اتصالات پنوماتیک، فیتینگ پنوماتیک، شیلنگ پلی یورتان، شیلنگ PU، گیج فشار باد، مانومتر پنوماتیک، اگزوز خفه کن
+- **Applications:** لوله‌کشی مدارهای فرمان و قدرت پنوماتیک، تنظیم سرعت حرکت جک‌ها و مانیتورینگ فشار خط
 
 ### FESTO-MS6-LFR-1/2-D7-ERM-AS — واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6
 - **English Title:** Festo MS6 Series Modular Filter Regulator & Lubricator
@@ -331,10 +296,9 @@
 - **Flow Rate / Cushioning:** 2200 – 5500 L/min
 - **Operating Temperature:** `-10°C to +60°C`
 - **Standard / Protection Class:** `طراحی ماژولار سری MS`
-- **Compatible Equivalent Codes (Cross-Reference):** `MS6-LFR-1/2, MS4-LFR-1/4, LFR-1/2-D-MIDI, JPC-AC4010-04-D`
-- **Iranian Market Keywords:** واحد مراقبت فستو، فیلتر رگولاتور فستو، MS6-LFR، MS4-LFR
-- **Industrial Applications:** تغذیه هوای فشرده ماشین‌آلات حساس، خطوط بسته‌بندی دارویی و صنایع الکترونیک
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf`
+- **Compatible Equivalent Codes:** `MS6-LFR-1/2, MS4-LFR-1/4, LFR-1/2-D-MIDI, JPC-AC4010-04-D`
+- **Keywords:** واحد مراقبت فستو، فیلتر رگولاتور فستو، MS6-LFR، MS4-LFR
+- **Applications:** تغذیه هوای فشرده ماشین‌آلات حساس، خطوط بسته‌بندی دارویی و صنایع الکترونیک
 
 ### NORGREN-B74G-4GK-AD3-RMN — فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G)
 - **English Title:** Norgren Excelon B74G Filter-Regulator & FRL Unit
@@ -347,10 +311,9 @@
 - **Flow Rate / Cushioning:** تا 4800 L/min
 - **Operating Temperature:** `-20°C to +65°C`
 - **Standard / Protection Class:** `سیستم اتصال سریع ماژولار Quikclamp`
-- **Compatible Equivalent Codes (Cross-Reference):** `B74G-4GK-AD3-RMN, B72G-2GK, B73G-3GK, JPC-AC4010-04-D`
-- **Iranian Market Keywords:** فیلتر رگولاتور نورگرن، واحد مراقبت نورگرن، B74G، Excelon
-- **Industrial Applications:** کمپرسورخانه‌ها، خطوط اصلی توزیع باد کارخانجات، صنایع ذوب، پتروشیمی و معادن
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf`
+- **Compatible Equivalent Codes:** `B74G-4GK-AD3-RMN, B72G-2GK, B73G-3GK, JPC-AC4010-04-D`
+- **Keywords:** فیلتر رگولاتور نورگرن، واحد مراقبت نورگرن، B74G، Excelon
+- **Applications:** کمپرسورخانه‌ها، خطوط اصلی توزیع باد کارخانجات، صنایع ذوب، پتروشیمی و معادن
 
 ### REXROTH-0821300300-NL2 — واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS
 - **English Title:** Bosch Rexroth Air Preparation Unit & Pressure Regulator NL2 / AS
@@ -363,23 +326,6 @@
 - **Flow Rate / Cushioning:** تا 3500 L/min
 - **Operating Temperature:** `-10°C to +60°C`
 - **Standard / Protection Class:** `استاندارد صنعتی اروپا`
-- **Compatible Equivalent Codes (Cross-Reference):** `0821300300, NL2-FRE, AS2-FRE, JPC-AC4010-04-D`
-- **Iranian Market Keywords:** واحد مراقبت رکسروت، رگولاتور بوش رکسروت، 0821300300، NL2
-- **Industrial Applications:** خطوط مونتاژ خودروسازی، ماشین‌آلات تزریق و فرمینگ، سیستم‌های کنترل فرآیند
-- **Technical Datasheet PDF:** `https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf`
-
----
-
-## 5. Key Pages & Technical Tools (صفحات تخصصی و ابزارهای مهندسی سایت)
-
-- **Main Catalog & Cylinder Force Calculator:** `https://jpciran.com/`
-- **Pneumatic Solenoid Valves (شیرهای برقی پنوماتیک 3/2, 5/2, 5/3):** `https://jpciran.com/solenoid-valves.html`
-- **Pneumatic Cylinders (جک‌های پنوماتیک پروفیلی، چهارمیل، کامپکت، قلمی و رادلس):** `https://jpciran.com/pneumatic-cylinders.html`
-- **FRL Air Preparation & Accessories (واحد مراقبت هوا، فلوکنترل، فیتینگ و شیلنگ PU):** `https://jpciran.com/frl-accessories.html`
-- **Festo, Norgren & Rexroth to JPC Cross-Reference (جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC):** `https://jpciran.com/festo-cross-reference.html`
-- **Pneumatic Cylinder Buying Guide (راهنمای جامع خرید جک پنوماتیک چهارمیل و پروفیلی ISO 15552):** `https://jpciran.com/pneumatic-cylinder-buying-guide.html`
-- **Solenoid Valve Selection Guide (راهنمای انتخاب و خرید شیر برقی ۵/۲ و ۳/۲):** `https://jpciran.com/solenoid-valve-guide.html`
-- **Lalehzar Tehran Storefront (فروشگاه پنوماتیک لالهزار تهران - پاساژ رزاقمنش پلاک ۱):** `https://jpciran.com/pneumatics-lalehzar-tehran.html`
-- **What is Pneumatics & JPC Brand Guide (پنوماتیک چیست و معرفی برند اختصاصی JPC):** `https://jpciran.com/what-is-pneumatics-jpc.html`
-- **Concise LLM Overview:** `https://jpciran.com/llms.txt`
-- **XML Sitemap:** `https://jpciran.com/sitemap.xml`
+- **Compatible Equivalent Codes:** `0821300300, NL2-FRE, AS2-FRE, JPC-AC4010-04-D`
+- **Keywords:** واحد مراقبت رکسروت، رگولاتور بوش رکسروت، 0821300300، NL2
+- **Applications:** خطوط مونتاژ خودروسازی، ماشین‌آلات تزریق و فرمینگ، سیستم‌های کنترل فرآیند

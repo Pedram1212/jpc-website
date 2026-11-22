@@ -953,5 +953,174 @@ const PRODUCTS_DATA = [
   }
 ];
 
+/**
+ * Scalable Product Family Registry (Separates Product Families from Individual SKU Variants
+ * to prevent near-duplicate thin pages while scaling to 500+ verified SKUs)
+ */
+const PRODUCT_FAMILIES = [
+  {
+    familyId: "fam-jpc-4v-solenoid",
+    familyCode: "JPC-4V-SERIES",
+    manufacturer: "JPC",
+    category: "valves",
+    subCategory: "directional-solenoid-valves-5-2-5-3",
+    titleFa: "خانواده شیرهای برقی ۵/۲ و ۵/۳ سری 4V برند JPC",
+    titleEn: "JPC 4V Series 5/2 & 5/3 Directional Solenoid Valves",
+    standards: ["ISO 1219", "DIN 43650 Form B (IP65)"],
+    canonicalCategoryUrl: "solenoid-valves.html",
+    variantParamAxes: ["portSize", "coilVoltage", "spoolConfig"]
+  },
+  {
+    familyId: "fam-jpc-3v-solenoid",
+    familyCode: "JPC-3V-SERIES",
+    manufacturer: "JPC",
+    category: "valves",
+    subCategory: "directional-solenoid-valves-3-2",
+    titleFa: "خانواده شیرهای برقی ۳/۲ سری 3V برند JPC",
+    titleEn: "JPC 3V Series 3/2 Directional Solenoid Valves",
+    standards: ["ISO 1219", "DIN 43650 (IP65)"],
+    canonicalCategoryUrl: "solenoid-valves.html",
+    variantParamAxes: ["portSize", "coilVoltage", "normalState"]
+  },
+  {
+    familyId: "fam-euro-solenoid-valves",
+    familyCode: "EURO-MFH-V61-CD07",
+    manufacturer: "Festo / Norgren / Bosch Rexroth",
+    category: "valves",
+    subCategory: "european-directional-solenoid-valves",
+    titleFa: "خانواده شیرهای برقی صنعتی اروپایی (Festo MFH, Norgren V61, Rexroth CD07)",
+    titleEn: "European Industrial Solenoid Valves (Festo, Norgren, Bosch Rexroth)",
+    standards: ["ISO 15407", "ISO 5599-1", "NAMUR"],
+    canonicalCategoryUrl: "solenoid-valves.html",
+    variantParamAxes: ["manufacturer", "portSize", "coilVoltage"]
+  },
+  {
+    familyId: "fam-jpc-iso15552-cylinders",
+    familyCode: "JPC-DNC-SC-SERIES",
+    manufacturer: "JPC",
+    category: "cylinders",
+    subCategory: "iso-15552-profile-and-tierod-cylinders",
+    titleFa: "خانواده جک‌های پروفیلی و چهارمیل استاندارد سری DNC و SC برند JPC",
+    titleEn: "JPC DNC & SC Series Profile & Tie-Rod Pneumatic Cylinders",
+    standards: ["ISO 15552", "ISO 6431", "VDMA 24562"],
+    canonicalCategoryUrl: "pneumatic-cylinders.html",
+    variantParamAxes: ["boreMm", "strokeMm", "cushioning", "mountingAccessory"]
+  },
+  {
+    familyId: "fam-jpc-compact-mini-cylinders",
+    familyCode: "JPC-ADVU-MAL-SERIES",
+    manufacturer: "JPC",
+    category: "cylinders",
+    subCategory: "compact-mini-rodless-cylinders",
+    titleFa: "خانواده جک‌های کامپکت (ADVU)، قلمی (MAL) و رادلس برند JPC",
+    titleEn: "JPC ADVU Compact, MAL Mini & Rodless Pneumatic Cylinders",
+    standards: ["ISO 6432", "ISO 21287"],
+    canonicalCategoryUrl: "pneumatic-cylinders.html",
+    variantParamAxes: ["boreMm", "strokeMm", "magneticPiston"]
+  },
+  {
+    familyId: "fam-euro-iso15552-cylinders",
+    familyCode: "EURO-DSBC-PRA",
+    manufacturer: "Festo / Norgren / Bosch Rexroth",
+    category: "cylinders",
+    subCategory: "european-iso-15552-cylinders",
+    titleFa: "خانواده جک‌های استاندارد ISO 15552 اروپایی (Festo DSBC, Norgren PRA, Rexroth PRA)",
+    titleEn: "European ISO 15552 Pneumatic Cylinders (Festo, Norgren, Bosch Rexroth)",
+    standards: ["ISO 15552", "VDMA 24562"],
+    canonicalCategoryUrl: "pneumatic-cylinders.html",
+    variantParamAxes: ["manufacturer", "boreMm", "strokeMm"]
+  },
+  {
+    familyId: "fam-jpc-frl-accessories",
+    familyCode: "JPC-FRL-ASC-PU",
+    manufacturer: "JPC",
+    category: "frl-accessories",
+    subCategory: "air-preparation-fittings-tubing-flow-control",
+    titleFa: "خانواده واحد مراقبت هوا (FRL)، فلوکنترل، اتصالات و شیلنگ PU برند JPC",
+    titleEn: "JPC Air Preparation (FRL), Flow Control, Fittings & PU Tubing",
+    standards: ["ISO 8573-1", "BSPP G-Thread", "Metric OD Tubing"],
+    canonicalCategoryUrl: "frl-accessories.html",
+    variantParamAxes: ["portSize", "filtrationMicron", "tubeOdMm"]
+  },
+  {
+    familyId: "fam-euro-frl-units",
+    familyCode: "EURO-MS6-B74G-NL2",
+    manufacturer: "Festo / Norgren / Bosch Rexroth",
+    category: "frl-accessories",
+    subCategory: "european-modular-air-preparation",
+    titleFa: "خانواده واحدهای مراقبت هوای ماژولار اروپایی (Festo MS6, Norgren B74G, Rexroth NL2)",
+    titleEn: "European Modular Air Preparation Units (Festo, Norgren, Bosch Rexroth)",
+    standards: ["ISO 8573-1", "Modular FRL"],
+    canonicalCategoryUrl: "frl-accessories.html",
+    variantParamAxes: ["manufacturer", "portSize", "drainType"]
+  }
+];
+
+/**
+ * Standardize every record in PRODUCTS_DATA with the scalable 500+ SKU enterprise schema:
+ * sku, manufacturer, modelCode, articleNumber, family, category, subCategory,
+ * titleFa, titleEn, aliases, synonyms, specs, descriptionFa, applications,
+ * standards, quotationState, verificationStatus
+ */
+function inferFamilyAndSubCategory(p) {
+  const isJpc = p.brand === "JPC";
+  if (p.category === "valves") {
+    if (isJpc && p.code.includes("3V")) {
+      return { family: "fam-jpc-3v-solenoid", subCategory: "directional-solenoid-valves-3-2", standards: ["ISO 1219", "DIN 43650 (IP65)"] };
+    }
+    if (isJpc) {
+      return { family: "fam-jpc-4v-solenoid", subCategory: "directional-solenoid-valves-5-2-5-3", standards: ["ISO 1219", "DIN 43650 Form B (IP65)"] };
+    }
+    return { family: "fam-euro-solenoid-valves", subCategory: "european-directional-solenoid-valves", standards: ["ISO 15407", "ISO 5599-1", "DIN 43650"] };
+  }
+  if (p.category === "cylinders") {
+    if (isJpc && (p.code.includes("DNC") || p.code.includes("SC"))) {
+      return { family: "fam-jpc-iso15552-cylinders", subCategory: "iso-15552-profile-and-tierod-cylinders", standards: ["ISO 15552", "VDMA 24562"] };
+    }
+    if (isJpc) {
+      return { family: "fam-jpc-compact-mini-cylinders", subCategory: "compact-mini-rodless-cylinders", standards: ["ISO 6432", "ISO 21287"] };
+    }
+    return { family: "fam-euro-iso15552-cylinders", subCategory: "european-iso-15552-cylinders", standards: ["ISO 15552", "VDMA 24562"] };
+  }
+  if (isJpc) {
+    return { family: "fam-jpc-frl-accessories", subCategory: "air-preparation-fittings-tubing-flow-control", standards: ["ISO 8573-1", "BSPP G-Thread"] };
+  }
+  return { family: "fam-euro-frl-units", subCategory: "european-modular-air-preparation", standards: ["ISO 8573-1", "BSPP G-Thread"] };
+}
+
+PRODUCTS_DATA.forEach((p) => {
+  const meta = inferFamilyAndSubCategory(p);
+  p.sku = p.sku || p.code;
+  p.manufacturer = p.manufacturer || p.brand;
+  p.modelCode = p.modelCode || p.code.replace(/^(JPC|FESTO|NORGREN|REXROTH)-/i, "");
+  p.articleNumber = p.articleNumber || (p.equivalentTo && p.equivalentTo[0]) || p.code;
+  p.family = p.family || meta.family;
+  p.subCategory = p.subCategory || meta.subCategory;
+  p.titleFa = p.titleFa || p.nameFa;
+  p.titleEn = p.titleEn || p.nameEn;
+  p.aliases = p.aliases || p.equivalentTo || [];
+  p.synonyms = p.synonyms || p.keywords || [];
+  p.specs = p.specs || {
+    portSize: p.portSize,
+    pressureRange: p.pressureRange,
+    voltageOrActuation: p.voltage || "",
+    configuration: p.valveConfiguration || p.cylinderType || p.accessoryType || "",
+    boreStroke: p.boreStrokeSpec || "",
+    bodyMaterial: p.bodyMaterial || "",
+    flowRate: p.flowRate || "",
+    operatingTemp: p.operatingTemp || "",
+    protectionClass: p.protectionClass || ""
+  };
+  p.descriptionFa =
+    p.descriptionFa ||
+    `${p.nameFa} با کد فنی ${p.code}، سایز پورت ${p.portSize} و فشار کاری ${p.pressureRange}.`;
+  p.applications = p.applications || p.applicationsFa || "";
+  p.standards = p.standards || meta.standards;
+  p.quotationState = p.quotationState || "b2b_inquiry_only";
+  p.verificationStatus = p.verificationStatus || "verified_jpc_catalog";
+});
+
 window.PRODUCT_CATEGORIES = PRODUCT_CATEGORIES;
+window.PRODUCT_FAMILIES = PRODUCT_FAMILIES;
 window.PRODUCTS_DATA = PRODUCTS_DATA;
+

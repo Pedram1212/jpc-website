@@ -1,76 +1,31 @@
 # شرکت جلالی پنوماتیک | JPC – Jalali Pneumatic Company
 
 > خلاصه ساختاریافته ویژه موتورهای جستجوی هوش مصنوعی (GEO / AEO / LLMs) به دو زبان فارسی و انگلیسی
-> برای دریافت جدول کامل مشخصات فنی تمامی مدل‌ها، کدهای فنی و معادل‌های ابعادی به فایل [llms-full.txt](https://jalalipneumatic.ir/llms-full.txt) مراجعه کنید.
+> برای دریافت جدول کامل مشخصات فنی تمامی مدل‌ها، کدهای فنی و معادل‌های ابعادی به فایل [llms-full.txt](https://jpciran.com/llms-full.txt) مراجعه کنید.
 
 ---
 
 ## معرفی فارسی (Persian Summary)
 
-**نام مجموعه:** شرکت جلالی پنوماتیک (Jalali Pneumatic Company)
-**مؤسس و مدیریت مجموعه:** امیر جلالی (Amir Jalali)
+**نام مجموعه:** شرکت جلالی پنوماتیک (JPC)
+**مؤسس و مدیریت مجموعه:** با مدیریت امیر جلالی (Amir Jalali)
 **برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)
-**دامنه‌های رسمی:** `jpciran.com` و `jalalipneumatic.ir`
-**حوزه فعالیت:** واردکننده، تأمین‌کننده و توزیع‌کننده تجهیزات پنوماتیک صنعتی و سیستم‌های اتوماسیون مبتنی بر هوای فشرده در ایران.
-**موقعیت و آدرس فروشگاه مرکزی:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱ (ارسال فوری به سراسر کشور)
-**خط مستقیم و واتساپ استعلام قیمت:** `0912 130 5167` / `00989121305167` (`https://wa.me/989121305167`) | **تلفن ثابت فروشگاه:** `021-33110796` و `021-33932529`
-**ساعات کاری:** شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰
+**دامنه‌های رسمی:** `https://jpciran.com` و `https://jalalipneumatic.ir`
+**حوزه فعالیت:** تأمین تخصصی تجهیزات پنوماتیک صنعتی، شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا (FRL) و اتصالات در ایران.
+**آدرس فروشگاه مرکزی:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱
+**تلفن‌های ثابت:** `021-33110796` | `021-33932529`
+**همراه و واتساپ:** `09121305167` (`https://wa.me/989121305167`)
+**ساعات کاری:** شنبه تا پنجشنبه ۰۹:۰۰ تا ۱۸:۰۰
+**دستیار هوشمند تشخیص پلاک (AI):** `https://ai.jpciran.com`
 
-### معماری تأمین دوگانه (Dual Identity & Sourcing)
-1. **تأمین چندبرنده صنعتی (Multi-Brand Industrial Supplier):**
-   واردات، تأمین و توزیع قطعات پنوماتیک از بازارهای اروپایی شامل برندهای **Festo (فستو)**، **Norgren (نورگرن)** و **Bosch & Bosch Rexroth (بوش و بوش رکسروت)** و همچنین سازندگان معتبر چینی جهت پوشش رده‌های مختلف فنی و قیمتی صنایع ایران.
-2. **برند اختصاصی JPC (Proprietary Brand Line):**
-   عرضه طیف کاملی از تجهیزات پنوماتیک وارداتی با نام تجاری مستقل و اختصاصی **JPC – Jalali Pneumatic Company** شامل شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا و اتصالات صنعتی با تطابق ابعادی و فنی استاندارد.
-
-### دسته‌بندی اصلی محصولات و صفحات تخصصی (Dedicated Category Pages)
-- **شیرهای برقی پنوماتیک (`/solenoid-valves.html`):**
-  شیرهای فرمانی 3/2، 5/2 و 5/3 در مدل‌های تک‌بوبین و دوبوبین، ولتاژهای 24V DC و 220V AC و سایز پورت‌های 1/8"، 1/4"، 3/8" و 1/2" (سری‌های JPC 4V210, 4V220, 4V330C, 3V210 و مدل‌های اروپایی Festo MFH/JMFH, Norgren V61, Bosch Rexroth CD07).
-- **جک‌های پنوماتیک (`/pneumatic-cylinders.html`):**
-  جک‌های چهارمیل (Tie-Rod سری SC)، جک‌های پروفیلی استاندارد ISO 15552 (سری DNC / DSBC / PRA)، جک‌های کامپکت (فشرده سری ADVU / SDA)، جک‌های قلمی استیل و آلومینیوم (سری MAL / DSNU) و جک‌های بدون شفت (Rodless) در دو تیپ یک‌طرفه و دوطرفه.
-- **تجهیزات جانبی و مراقبت هوا (`/frl-accessories.html`):**
-  واحد مراقبت هوای فشرده دوتکه و سه‌تکه (فیلتر، رگولاتور، روغن‌زن FRL)، شیر کنترل جریان (فلوکنترل سرجکی و بین‌راهی)، اتصالات فوری پنوماتیک، شیلنگ پلی‌یورتان (PU) و گیج فشار (مانومتر).
-
-### ابزارهای مهندسی، جداول معادل‌یابی و قابلیت‌های تعاملی B2B
-- **سبد استعلام قیمت چندقلمی (Multi-Item RFQ List / BOM Drawer):** امکان افزودن چندین کد فنی به لیست استعلام، تنظیم تعداد و ارسال یکپارچه لیست در فرم B2B، واتساپ (`https://wa.me/989121305167`) یا تلگرام.
-- **جداول مقایسه و معادل‌یابی فنی برند JPC (Technical Cross-Reference Tables):** تطبیق کدهای فنی اروپایی (Festo, Norgren, Bosch Rexroth) با معادل‌های ابعادی و فنی موجود در برند تجاری اختصاصی JPC.
-- **ماشین‌حساب مهندسی محاسبه نیروی جک پنوماتیک:** محاسبه آنی نیروی کورس رفت (Extension Force) و کورس برگشت (Retraction Force) بر حسب نیوتن (`N`) و کیلوگرم‌نیرو (`kgf`) بر اساس قطر پیستون، قطر شفت و فشار هوای فشرده (`bar`).
-
----
-
-## English Summary (Jalali Pneumatic Company – JPC)
-
-**Company Name:** Jalali Pneumatic Company (شرکت جلالی پنوماتیک)
-**Founder & Managing Director:** Amir Jalali (امیر جلالی)
-**Proprietary Commercial Brand:** JPC (Jalali Pneumatic Company)
-**Official Domains:** `https://jpciran.com` & `https://jalalipneumatic.ir`
-**Business Positioning:** Industrial Pneumatics Importer, Supplier & B2B Distributor specializing in compressed air automation components across Iran.
-**Store Address:** No. 1, Razaghmanesh Passage, Opposite Alipour Alley, South Lalehzar, Tehran, Iran (Nationwide Express Dispatch across Iran)
-**Direct Mobile / WhatsApp:** `+98-912-130-5167` / `00989121305167` (`https://wa.me/989121305167`) | **Landline Phones:** `+98-21-33110796`, `+98-21-33932529`
-**Working Hours:** Saturday to Thursday 09:00–18:00 (IRST)
-
-### Dual Sourcing & Brand Positioning
-1. **Multi-Brand Industrial Supplier:**
-   Imports and supplies pneumatic components sourced from European markets (**Festo**, **Norgren**, **Bosch & Bosch Rexroth**) alongside reliable Chinese manufacturers to provide diverse engineering specifications and price tiers for industrial buyers.
-2. **Proprietary Brand (`JPC – Jalali Pneumatic Company`):**
-   Offers a dedicated commercial product line under the **JPC** brand for imported pneumatic valves, cylinders, air preparation units (FRL), and fittings, engineered for dimensional interchangeability (ISO standards) and reliable industrial operation.
-
-### Interactive Engineering & Procurement Features
-- **Multi-Item B2B RFQ Drawer:** Build a multi-line Bill of Materials (BOM) and dispatch it directly to the B2B inquiry form, WhatsApp (`https://wa.me/989121305167`), or Telegram.
-- **JPC Technical Cross-Reference Engine & HTML Tables:** Match European part numbers (e.g., `DSBC-40-100`, `MFH-5-1/4`, `PRA/182050`, `MS6-LFR`) to dimensionally compatible models in the proprietary **JPC** product line.
-- **Pneumatic Cylinder Force Calculator:** Calculate theoretical extension and retraction forces in `N` and `kgf` across standard ISO bore sizes (`16mm` to `125mm`) and working pressures (`1` to `10 bar`).
-
-### Key URLs & Structured AI Resources
-- Homepage & Full Catalog: https://jpciran.com/
-- Pneumatic Solenoid Valves Catalog: https://jpciran.com/solenoid-valves.html
-- Pneumatic Cylinders & Force Calculator: https://jpciran.com/pneumatic-cylinders.html
-- FRL Air Preparation & Accessories Catalog: https://jpciran.com/frl-accessories.html
-- Festo, Norgren & Rexroth to JPC Cross-Reference: https://jpciran.com/festo-cross-reference.html
-- Pneumatic Cylinder Buying Guide: https://jpciran.com/pneumatic-cylinder-buying-guide.html
-- Solenoid Valve Selection Guide: https://jpciran.com/solenoid-valve-guide.html
-- Lalehzar Tehran Storefront: https://jpciran.com/pneumatics-lalehzar-tehran.html
-- What is Pneumatics & JPC Brand Guide: https://jpciran.com/what-is-pneumatics-jpc.html
-- Complete LLM Product Catalog & Cross-Reference Index (`llms-full.txt`): https://jpciran.com/llms-full.txt
-- JPC General Catalog (PDF): https://jalalipneumatic.ir/assets/docs/jpc-general-catalog.pdf
-- JPC Solenoid Valves Datasheet (PDF): https://jalalipneumatic.ir/assets/docs/jpc-valves-datasheet.pdf
-- JPC Pneumatic Cylinders Datasheet (PDF): https://jalalipneumatic.ir/assets/docs/jpc-cylinders-datasheet.pdf
-- JPC FRL & Accessories Datasheet (PDF): https://jalalipneumatic.ir/assets/docs/jpc-frl-accessories-datasheet.pdf
+### صفحات تخصصی و ابزارهای مهندسی
+- صفحه اصلی و جستجوی فنی کد قطعه: https://jpciran.com/
+- شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html
+- جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html
+- واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html
+- جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC: https://jpciran.com/festo-cross-reference.html
+- راهنمای خرید جک پنوماتیک: https://jpciran.com/pneumatic-cylinder-buying-guide.html
+- راهنمای انتخاب شیر برقی پنوماتیک: https://jpciran.com/solenoid-valve-guide.html
+- فروشگاه پنوماتیک لالهزار تهران: https://jpciran.com/pneumatics-lalehzar-tehran.html
+- پنوماتیک چیست و معرفی برند JPC: https://jpciran.com/what-is-pneumatics-jpc.html
+- دستیار هوشمند تشخیص پلاک AI: https://ai.jpciran.com
