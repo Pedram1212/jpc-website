@@ -22,6 +22,8 @@
     theme: localStorage.getItem("jpc_theme") || "light",
     rfqItems: loadRfqFromStorage(),
     rfqCustomerNote: localStorage.getItem("jpc_rfq_note") || "",
+    rfqCompany: localStorage.getItem("jpc_rfq_company") || "",
+    rfqContactPhone: localStorage.getItem("jpc_rfq_phone") || "",
     calc: {
       bore: 63,
       rod: 20,
@@ -61,6 +63,8 @@
     try {
       localStorage.setItem("jpc_rfq_items", JSON.stringify(state.rfqItems));
       localStorage.setItem("jpc_rfq_note", state.rfqCustomerNote || "");
+      localStorage.setItem("jpc_rfq_company", state.rfqCompany || "");
+      localStorage.setItem("jpc_rfq_phone", state.rfqContactPhone || "");
     } catch (e) {
       // ignore storage errors
     }
@@ -385,16 +389,26 @@
     const lines = state.rfqItems.map(
       (item, idx) =>
         `${idx + 1}. [${item.code}] — ${item.nameFa} | برند: ${item.brand} | تعداد: ${item.qty} عدد${
-          item.note ? ` (${item.note})` : ""
+          item.note ? ` | مشخصه فنی: ${item.note}` : ""
         }`
     );
+    const buyerInfo = [];
+    if (state.rfqCompany && state.rfqCompany.trim()) {
+      buyerInfo.push(`• نام شرکت/مجموعه: ${state.rfqCompany.trim()}`);
+    }
+    if (state.rfqContactPhone && state.rfqContactPhone.trim()) {
+      buyerInfo.push(`• شماره تماس خریدار: ${state.rfqContactPhone.trim()}`);
+    }
+    const buyerSection =
+      buyerInfo.length > 0 ? `\n\nمشخصات خریدار:\n${buyerInfo.join("\n")}` : "";
     const noteSection =
       state.rfqCustomerNote && state.rfqCustomerNote.trim()
-        ? `\n\nتوضیحات تکمیلی خریدار:\n${state.rfqCustomerNote.trim()}`
+        ? `\n\nتوضیحات تکمیلی سفارش:\n${state.rfqCustomerNote.trim()}`
         : "";
     return (
       `سلام، درخواست استعلام قیمت لیست اقلام زیر (BOM) را از وب‌سایت شرکت جلالی پنوماتیک (JPC) دارم:\n\n` +
       lines.join("\n") +
+      buyerSection +
       noteSection +
       `\n\nلطفاً موجودی و پیش‌فاکتور را اعلام فرمایید.`
     );
@@ -405,7 +419,7 @@
       .map(
         (item, idx) =>
           `${idx + 1}) کد فنی: ${item.code} | شرح: ${item.nameFa} | برند: ${item.brand} | تعداد: ${item.qty} عدد${
-            item.note ? ` | توضیح: ${item.note}` : ""
+            item.note ? ` | توضیح فنی: ${item.note}` : ""
           }`
       )
       .join("\n");
@@ -418,11 +432,19 @@
   function updateRfqActionLinks() {
     const waSendBtn = document.getElementById("rfq-send-whatsapp-btn");
     const tgSendBtn = document.getElementById("rfq-send-telegram-btn");
+    const emailBtn = document.getElementById("rfq-email-summary-btn");
+    const msg = formatRfqWhatsAppMessage();
     if (waSendBtn) {
-      waSendBtn.href = buildWhatsAppUrl(null, formatRfqWhatsAppMessage());
+      waSendBtn.href = buildWhatsAppUrl(null, msg);
     }
     if (tgSendBtn) {
-      tgSendBtn.href = buildTelegramUrl(formatRfqWhatsAppMessage());
+      tgSendBtn.href = buildTelegramUrl(msg);
+    }
+    if (emailBtn) {
+      const subject = encodeURIComponent(
+        `درخواست پیش‌فاکتور تجهیزات پنوماتیک (BOM) - ${state.rfqCompany || "خریدار صنعتی"}`
+      );
+      emailBtn.href = `mailto:sales@jalalipneumatic.ir?subject=${subject}&body=${encodeURIComponent(msg)}`;
     }
   }
 
@@ -474,17 +496,23 @@
         <div class="rfq-item-card" data-rfq-id="${item.id}">
           <div class="rfq-item-top">
             <div>
-              <span class="mono" style="font-size:0.76rem; font-weight:800; color:var(--steel-accent);">${item.code}</span>
+              <span class="mono" dir="ltr" style="font-size:0.78rem; font-weight:800; color:var(--steel-accent);">${item.code}</span>
               <div class="rfq-item-title">${item.nameFa}</div>
-              ${
-                item.note
-                  ? `<div style="font-size:0.74rem; color:var(--amber-hover); margin-top:0.15rem;">مشخصه انتخابی: ${item.note}</div>`
-                  : ""
-              }
             </div>
             <button type="button" class="rfq-item-remove js-rfq-remove" data-id="${item.id}" aria-label="حذف از لیست">
               حذف ✕
             </button>
+          </div>
+          <div style="margin-top:0.2rem;">
+            <input
+              type="text"
+              class="rfq-notes-input js-rfq-item-note"
+              data-id="${item.id}"
+              value="${(item.note || "").replace(/"/g, "&quot;")}"
+              placeholder="یادداشت فنی این ردیف (مثال: بوبین 24V DC، کورس 250mm، پایه LB)..."
+              aria-label="یادداشت فنی ردیف کالا"
+              style="width:100%; font-size:0.76rem; padding:0.35rem 0.55rem; border:1px solid var(--border-tech); border-radius:var(--radius-xs); background:var(--bg-secondary);"
+            />
           </div>
           <div class="rfq-item-bottom">
             <span class="brand-badge ${item.brand === "JPC" ? "badge-jpc" : "badge-euro"}" style="font-size:0.7rem;">
@@ -503,16 +531,45 @@
       `
         )
         .join("")}
-      <div class="rfq-notes-box">
-        <label for="rfq-customer-notes">توضیحات تکمیلی سفارش (ولتاژ، کورس جک، نام شرکت یا شرایط ارسال):</label>
+      <div class="rfq-notes-box" style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+          <input
+            type="text"
+            id="rfq-company-input"
+            class="rfq-notes-input"
+            value="${(state.rfqCompany || "").replace(/"/g, "&quot;")}"
+            placeholder="نام شرکت / کارگاه (اختیاری)"
+            aria-label="نام شرکت یا کارگاه"
+          />
+          <input
+            type="tel"
+            id="rfq-phone-input"
+            class="rfq-notes-input mono"
+            dir="ltr"
+            value="${(state.rfqContactPhone || "").replace(/"/g, "&quot;")}"
+            placeholder="شماره تماس / واتساپ"
+            aria-label="شماره تماس خریدار"
+          />
+        </div>
+        <label for="rfq-customer-notes">توضیحات کلی سفارش (شرایط ارسال، نحوه صدور پیش‌فاکتور):</label>
         <textarea
           id="rfq-customer-notes"
           class="rfq-notes-input"
           rows="2"
-          placeholder="مثال: بوبین 24V DC، ارسال به شهرک صنعتی..."
+          placeholder="مثال: ارسال به شهرک صنعتی، نیازمند بررسی معادل JPC..."
         >${state.rfqCustomerNote || ""}</textarea>
+        <div style="display:flex; gap:0.45rem; flex-wrap:wrap; padding-top:0.25rem;">
+          <button type="button" class="btn btn-outline-tech btn-xs" id="rfq-copy-summary-btn" style="flex:1;">
+            کپی متن کامل لیست استعلام
+          </button>
+          <a href="mailto:sales@jalalipneumatic.ir" class="btn btn-outline-tech btn-xs" id="rfq-email-summary-btn" style="flex:1; justify-content:center;">
+            ارسال با ایمیل
+          </a>
+        </div>
       </div>
     `;
+
+    updateRfqActionLinks();
 
     drawerBody.querySelectorAll(".js-rfq-remove").forEach((btn) => {
       btn.addEventListener("click", () =>
@@ -542,6 +599,37 @@
       });
     });
 
+    drawerBody.querySelectorAll(".js-rfq-item-note").forEach((inp) => {
+      inp.addEventListener("input", () => {
+        const id = inp.getAttribute("data-id");
+        const found = state.rfqItems.find((i) => i.id === id);
+        if (found) {
+          found.note = inp.value;
+          saveRfqToStorage();
+          updateRfqActionLinks();
+          updateFloatingWhatsApp(state.selectedProduct);
+        }
+      });
+    });
+
+    const companyInp = document.getElementById("rfq-company-input");
+    if (companyInp) {
+      companyInp.addEventListener("input", () => {
+        state.rfqCompany = companyInp.value;
+        saveRfqToStorage();
+        updateRfqActionLinks();
+      });
+    }
+
+    const phoneInp = document.getElementById("rfq-phone-input");
+    if (phoneInp) {
+      phoneInp.addEventListener("input", () => {
+        state.rfqContactPhone = phoneInp.value;
+        saveRfqToStorage();
+        updateRfqActionLinks();
+      });
+    }
+
     const notesTextarea = document.getElementById("rfq-customer-notes");
     if (notesTextarea) {
       notesTextarea.addEventListener("input", () => {
@@ -549,6 +637,13 @@
         saveRfqToStorage();
         updateRfqActionLinks();
         updateFloatingWhatsApp(state.selectedProduct);
+      });
+    }
+
+    const copySummaryBtn = document.getElementById("rfq-copy-summary-btn");
+    if (copySummaryBtn) {
+      copySummaryBtn.addEventListener("click", () => {
+        copyTextToClipboard(formatRfqWhatsAppMessage(), copySummaryBtn);
       });
     }
 
@@ -1217,12 +1312,23 @@
       const val = pill.getAttribute("data-brand-filter");
       pill.classList.toggle("active", val === state.brand);
     });
+
+    document.querySelectorAll(".js-featured-tab").forEach((tab) => {
+      const tCat = tab.getAttribute("data-tab-cat") || "all";
+      const tBrand = tab.getAttribute("data-tab-brand") || "all";
+      const isMatch = tCat === state.category && tBrand === state.brand;
+      tab.classList.toggle("active", isMatch);
+      tab.setAttribute("aria-selected", isMatch ? "true" : "false");
+    });
   }
 
   /**
    * Interactive Pneumatic Cylinder Force Calculator
-   * F_ext (N) = (pi * D^2 / 4) * P(bar) * 0.1
-   * F_ret (N) = (pi * (D^2 - d^2) / 4) * P(bar) * 0.1
+   * Theoretical Force:
+   *   F_ext_theo (N) = (pi * D^2 / 4) * P(bar) * 0.1
+   *   F_ret_theo (N) = (pi * (D^2 - d^2) / 4) * P(bar) * 0.1
+   * Actual / Practical Force (accounting for seal friction & line efficiency eta = 0.80):
+   *   F_actual = 0.80 * F_theo
    * 1 kgf = 9.80665 N
    */
   function initCylinderCalculator() {
@@ -1230,18 +1336,48 @@
     const rodInput = document.getElementById("calc-rod-input");
     const pressureInput = document.getElementById("calc-pressure-input");
     const pressureSlider = document.getElementById("calc-pressure-slider");
+    const validationMsg = document.getElementById("calc-validation-msg");
     const presetButtons = document.querySelectorAll("[data-bore-preset]");
 
     if (!boreInput || !rodInput || !pressureInput) return;
 
     function updateCalculation() {
-      const D = Math.max(6, parseFloat(boreInput.value) || 63);
-      let d = Math.max(2, parseFloat(rodInput.value) || 20);
-      if (d >= D) {
-        d = Math.round(D * 0.35);
-        rodInput.value = String(d);
+      const warnings = [];
+      let rawD = parseFloat(boreInput.value);
+      if (isNaN(rawD) || rawD < 6) {
+        warnings.push("قطر پیستون در محدوده استاندارد (۶ تا ۳۲۰ میلی‌متر) تنظیم شد.");
+        rawD = 63;
+      } else if (rawD > 320) {
+        warnings.push("حداکثر قطر محاسباتی استاندارد ۳۲۰ میلی‌متر در نظر گرفته شد.");
+        rawD = 320;
       }
-      const P = Math.min(16, Math.max(0.5, parseFloat(pressureInput.value) || 6));
+      const D = rawD;
+
+      let d = Math.max(2, parseFloat(rodInput.value) || 20);
+      if (d >= D * 0.85) {
+        d = STANDARD_ROD_MAP[D] || Math.max(4, Math.round(D * 0.32));
+        rodInput.value = String(d);
+        warnings.push(`قطر شفت نمی‌تواند بزرگ‌تر یا مساوی قطر پیستون باشد؛ مقدار استاندارد Ø${d}mm لحاظ شد.`);
+      }
+
+      let rawP = parseFloat(pressureInput.value);
+      if (isNaN(rawP) || rawP < 0.5) {
+        rawP = 6;
+      } else if (rawP > 16) {
+        rawP = 16;
+        warnings.push("حداکثر فشار ایمن مدار پنوماتیک ۱۶ بار لحاظ گردید.");
+      }
+      const P = rawP;
+
+      if (validationMsg) {
+        if (warnings.length > 0) {
+          validationMsg.textContent = warnings.join(" ");
+          validationMsg.style.display = "block";
+        } else {
+          validationMsg.textContent = "";
+          validationMsg.style.display = "none";
+        }
+      }
 
       state.calc.bore = D;
       state.calc.rod = d;
@@ -1256,23 +1392,38 @@
       const areaExtMm2 = (Math.PI * D * D) / 4;
       const areaRetMm2 = (Math.PI * (D * D - d * d)) / 4;
 
-      // Force in Newtons (1 bar = 0.1 N/mm^2)
+      // Theoretical Force in Newtons (1 bar = 0.1 N/mm^2)
       const forceExtN = areaExtMm2 * P * 0.1;
       const forceRetN = areaRetMm2 * P * 0.1;
 
       const forceExtKgf = forceExtN / 9.80665;
       const forceRetKgf = forceRetN / 9.80665;
 
+      // Actual Reliable Design Force (80% efficiency accounting for friction & pressure drop)
+      const actualEfficiency = 0.8;
+      const actualExtN = forceExtN * actualEfficiency;
+      const actualRetN = forceRetN * actualEfficiency;
+      const actualExtKgf = forceExtKgf * actualEfficiency;
+      const actualRetKgf = forceRetKgf * actualEfficiency;
+
       const extNEl = document.getElementById("calc-ext-n");
       const extKgfEl = document.getElementById("calc-ext-kgf");
+      const extActualEl = document.getElementById("calc-ext-actual");
       const retNEl = document.getElementById("calc-ret-n");
       const retKgfEl = document.getElementById("calc-ret-kgf");
+      const retActualEl = document.getElementById("calc-ret-actual");
       const summarySpecEl = document.getElementById("calc-formula-summary");
 
       if (extNEl) extNEl.textContent = `${Math.round(forceExtN).toLocaleString("en-US")} N`;
-      if (extKgfEl) extKgfEl.textContent = `≈ ${forceExtKgf.toFixed(1)} kgf`;
+      if (extKgfEl) extKgfEl.textContent = `≈ ${forceExtKgf.toFixed(1)} kgf (تئوری)`;
+      if (extActualEl) {
+        extActualEl.textContent = `${Math.round(actualExtN).toLocaleString("en-US")} N (≈ ${actualExtKgf.toFixed(1)} kgf)`;
+      }
       if (retNEl) retNEl.textContent = `${Math.round(forceRetN).toLocaleString("en-US")} N`;
-      if (retKgfEl) retKgfEl.textContent = `≈ ${forceRetKgf.toFixed(1)} kgf`;
+      if (retKgfEl) retKgfEl.textContent = `≈ ${forceRetKgf.toFixed(1)} kgf (تئوری)`;
+      if (retActualEl) {
+        retActualEl.textContent = `${Math.round(actualRetN).toLocaleString("en-US")} N (≈ ${actualRetKgf.toFixed(1)} kgf)`;
+      }
       if (summarySpecEl) {
         summarySpecEl.textContent = `Ø${D}mm Bore | Ø${d}mm Rod | ${P} bar`;
       }
@@ -1762,7 +1913,40 @@
 
   /**
    * Interactive Cross-Reference Quick Finder in #cross-reference section
+   * Explicitly states compatibility criteria, flags missing parameters (voltage, port thread, stroke, mounting),
+   * never claims interchangeability solely on bore/port size, and offers direct engineering review via WhatsApp/RFQ.
    */
+  function detectMissingParameters(rawQuery, matchedItem) {
+    const norm = normalizeSearchText(rawQuery);
+    const missing = [];
+    if (!matchedItem) return missing;
+
+    if (matchedItem.category === "valves") {
+      if (!/(24|220|110|12|\bdc\b|\bac\b|ولت)/.test(norm)) {
+        missing.push("ولتاژ بوبین (24V DC یا 220V AC)");
+      }
+      if (!/(1\/8|1\/4|3\/8|1\/2|06|08|10|15|پورت)/.test(norm)) {
+        missing.push("سایز رزوه پورت (1/8\" الی 1/2\" BSPP)");
+      }
+      missing.push("نحوه نصب (خطی یا روی منیفولد)");
+    } else if (matchedItem.category === "cylinders") {
+      const nums = norm.match(/\d+/g) || [];
+      if (nums.length < 2) {
+        missing.push("کورس دقیق سیلندر (Stroke بر حسب میلی‌متر)");
+      }
+      if (nums.length < 1) {
+        missing.push("قطر پیستون (Bore Ø mm)");
+      }
+      missing.push("نوع پایه نصبی (LB, FA, CB) و نیاز به سنسور مگنت");
+    } else {
+      if (!/(1\/4|3\/8|1\/2|3\/4|1|پورت|سایز)/.test(norm)) {
+        missing.push("سایز رزوه پورت یا قطر خارجی شیلنگ (OD mm)");
+      }
+      missing.push("دبی عبوری خط و نوع تخلیه فیلتر (دستی یا اتوماتیک)");
+    }
+    return missing;
+  }
+
   function initCrossReferenceFinder() {
     const input = document.getElementById("crossref-finder-input");
     const resultBox = document.getElementById("crossref-finder-result");
@@ -1770,38 +1954,28 @@
 
     function runLookup(rawVal) {
       const q = normalizeSearchText(rawVal);
-      const compact = normalizeCompact(rawVal);
       if (!q || q.length < 2) {
         resultBox.style.display = "none";
         resultBox.innerHTML = "";
         return;
       }
 
-      const products = window.PRODUCTS_DATA || [];
-      const matches = products.filter((p) => {
-        const hay = [
-          p.code,
-          p.nameFa,
-          p.nameEn,
-          p.brand,
-          p.portSize,
-          ...(p.equivalentTo || []),
-          ...(p.keywords || [])
-        ].join(" ");
-        return (
-          normalizeSearchText(hay).includes(q) ||
-          (compact.length >= 2 && normalizeCompact(hay).includes(compact))
-        );
-      });
+      const ranked = getRankedProducts(rawVal, true);
 
       resultBox.style.display = "block";
-      if (matches.length === 0) {
+      if (ranked.length === 0) {
         resultBox.innerHTML = `
-          <div style="padding:0.75rem 0.9rem; background:var(--bg-primary); border:1px solid var(--border-tech); border-radius:var(--radius-sm); font-size:0.83rem;">
-            کد <strong>${rawVal}</strong> در جدول نمونه یافت نشد؛ برای استعلام معادل دقیق در برند <strong>JPC</strong> یا تأمین اروپایی، مستقیماً در واتساپ پیام دهید:
-            <div style="margin-top:0.55rem;">
-              <a href="${buildWhatsAppUrl(null, `سلام، درخواست بررسی و معادل‌یابی کد فنی ${rawVal} را دارم.`)}" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-xs">
-                استعلام کد در واتساپ (0912 130 5167)
+          <div style="padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-tech); border-radius:var(--radius-sm); font-size:0.83rem; line-height:1.7;">
+            <div>کد <strong class="mono" dir="ltr">${rawVal}</strong> در جدول معادل‌های نمونه یافت نشد.</div>
+            <div style="color:var(--text-secondary); margin-top:0.2rem;">
+              توجه مهندسی: جایگزینی قطعه صرفاً بر اساس سایز ظاهری مجاز نیست. کد فنی یا تصویر پلاک را برای بررسی دقیق کارشناسان فنی ارسال نمایید:
+            </div>
+            <div style="margin-top:0.6rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="${buildWhatsAppUrl(null, `سلام، درخواست بررسی فنی و معادل‌یابی کد ${rawVal} را در برند JPC یا تأمین اروپایی دارم.`)}" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-xs">
+                بررسی مهندسی در واتساپ (09121305167)
+              </a>
+              <a href="https://ai.jpciran.com" target="_blank" rel="noopener noreferrer" class="btn btn-ai-scan btn-xs">
+                اسکن پلاک با هوش مصنوعی AI
               </a>
             </div>
           </div>
@@ -1809,37 +1983,59 @@
         return;
       }
 
-      resultBox.innerHTML = matches
+      resultBox.innerHTML = ranked
         .slice(0, 3)
-        .map((m) => {
+        .map((entry) => {
+          const m = entry.item;
           const jpcAlt =
             m.brand === "JPC"
               ? m
               : m.jpcAlternativeId
               ? findProductById(m.jpcAlternativeId)
               : null;
+          const missingParams = detectMissingParameters(rawVal, jpcAlt || m);
+          const compatibilityBasis =
+            m.category === "cylinders"
+              ? "معیار تطابق: ابعاد نصبی و فواصل سوراخ‌کاری استاندارد ISO (صرفِ قطر پیستون بدون تطبیق کورس و پایه کافی نیست)"
+              : m.category === "valves"
+              ? "معیار تطابق: آرایش پورت و عملکرد اسپول (ولتاژ بوبین و استاندارد رزوه G/NPT باید تطبیق داده شود)"
+              : "معیار تطابق: سایز پورت رزوه G و محدوده فشار کاری";
+
           return `
-            <div style="padding:0.75rem 0.9rem; background:var(--bg-primary); border:1px solid var(--border-strong); border-radius:var(--radius-sm); margin-bottom:0.5rem; display:flex; align-items:center; justify-content:space-between; gap:0.75rem; flex-wrap:wrap;">
-              <div>
-                <div style="font-size:0.84rem; font-weight:800; color:var(--text-primary);">
-                  <span class="mono" style="color:var(--steel-accent);">${m.code}</span> — ${m.nameFa}
+            <div style="padding:0.85rem 1rem; background:var(--bg-primary); border:1px solid var(--border-strong); border-radius:var(--radius-sm); margin-bottom:0.6rem; display:flex; flex-direction:column; gap:0.55rem;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem; flex-wrap:wrap;">
+                <div>
+                  <div style="font-size:0.86rem; font-weight:800; color:var(--text-primary);">
+                    <span class="mono" dir="ltr" style="color:var(--steel-accent);">${m.code}</span> — ${m.nameFa}
+                  </div>
+                  <div style="font-size:0.77rem; color:var(--text-secondary); margin-top:0.2rem;">
+                    سایز پورت: <span class="mono" dir="ltr">${m.portSize}</span> | فشار: <span class="mono" dir="ltr">${m.pressureRange}</span>
+                    ${
+                      jpcAlt
+                        ? ` | <strong style="color:var(--amber-hover);">پیشنهاد هم‌ابعاد JPC: <span class="mono" dir="ltr">${jpcAlt.code}</span></strong>`
+                        : ""
+                    }
+                  </div>
                 </div>
-                <div style="font-size:0.76rem; color:var(--text-secondary); margin-top:0.2rem;">
-                  سایز پورت: <span class="mono">${m.portSize}</span> | فشار: <span class="mono">${m.pressureRange}</span>
-                  ${
-                    jpcAlt
-                      ? ` | <strong style="color:var(--amber-hover);">معادل ابعادی JPC: <span class="mono">${jpcAlt.code}</span></strong>`
-                      : ""
-                  }
+                <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                  <button type="button" class="btn btn-rfq-add btn-xs js-xref-add" data-id="${(jpcAlt || m).id}">
+                    + افزودن ${(jpcAlt || m).code} به سبد استعلام
+                  </button>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-xref-spec" data-id="${m.id}">
+                    مشخصات فنی
+                  </button>
+                  <a href="${buildWhatsAppUrl(jpcAlt || m, `سلام، جهت تأیید نهایی معادل‌یابی کد "${rawVal}" با مدل "${(jpcAlt || m).code}" و تطبیق پارامترهای فنی پیام می‌دهم.`)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-tech btn-xs">
+                    تأیید مهندسی در واتساپ
+                  </a>
                 </div>
               </div>
-              <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
-                <button type="button" class="btn btn-rfq-add btn-xs js-xref-add" data-id="${(jpcAlt || m).id}">
-                  + افزودن ${(jpcAlt || m).code} به استعلام
-                </button>
-                <button type="button" class="btn btn-outline-tech btn-xs js-xref-spec" data-id="${m.id}">
-                  مشخصات فنی
-                </button>
+              <div style="font-size:0.75rem; padding:0.45rem 0.65rem; background:var(--status-warning-bg); border-right:3px solid var(--status-warning); border-radius:3px; color:var(--text-primary);">
+                <div><strong>${compatibilityBasis}</strong></div>
+                ${
+                  missingParams.length > 0
+                    ? `<div style="margin-top:0.15rem; color:var(--text-secondary);">پارامترهای نیازمند تعیین در استعلام: <strong>${missingParams.join(" ، ")}</strong></div>`
+                    : ""
+                }
               </div>
             </div>
           `;
@@ -1849,7 +2045,7 @@
       resultBox.querySelectorAll(".js-xref-add").forEach((btn) => {
         btn.addEventListener("click", () => {
           const prod = findProductById(btn.getAttribute("data-id"));
-          if (prod) addToRfqList(prod);
+          if (prod) addToRfqList(prod, `معادل‌یابی شده برای کد: ${rawVal}`);
         });
       });
 
@@ -1953,11 +2149,47 @@
       });
     });
 
-    // Brand Matrix interactive cards (scroll + filter catalog by brand)
+    // Section G Featured Product Tabs
+    document.querySelectorAll(".js-featured-tab").forEach((tabBtn) => {
+      tabBtn.addEventListener("click", () => {
+        state.category = tabBtn.getAttribute("data-tab-cat") || "all";
+        state.brand = tabBtn.getAttribute("data-tab-brand") || "all";
+        state.searchQuery = "";
+        const sInp = document.getElementById("catalog-search-input");
+        const sClr = document.getElementById("search-clear-btn");
+        if (sInp) sInp.value = "";
+        if (sClr) sClr.classList.remove("visible");
+        syncFilterPillsUI();
+        renderCatalog();
+      });
+    });
+
+    // Section E Category Discovery Quick Filter Buttons
+    document.querySelectorAll(".js-cat-quick-filter").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.category = btn.getAttribute("data-cat") || "all";
+        state.brand = "all";
+        const q = btn.getAttribute("data-query") || "";
+        state.searchQuery = q;
+        const sInp = document.getElementById("catalog-search-input");
+        const sClr = document.getElementById("search-clear-btn");
+        if (sInp) sInp.value = q;
+        if (sClr) sClr.classList.toggle("visible", q.length > 0);
+        syncFilterPillsUI();
+        renderCatalog();
+        const catalogSection = document.getElementById("catalog");
+        if (catalogSection) {
+          catalogSection.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+
+    // Brand Discovery interactive cards (scroll + filter catalog by brand)
     document.querySelectorAll("[data-select-brand]").forEach((card) => {
       card.addEventListener("click", () => {
         const brandVal = card.getAttribute("data-select-brand");
         state.brand = brandVal;
+        state.category = "all";
         syncFilterPillsUI();
         renderCatalog();
         const catalogSection = document.getElementById("catalog");

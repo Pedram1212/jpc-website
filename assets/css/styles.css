@@ -4167,3 +4167,369 @@ body.overlay-open .mobile-quick-action-bar {
   }
 }
 
+/* ==========================================================================
+   PART 2 REDESIGN: SECTIONS E THROUGH M (Category Discovery, Brands,
+   Featured Products Tabs, Engineering Tools, B2B RFQ, Trust, Knowledge, Final CTA)
+   ========================================================================== */
+
+/* Section E: 9-Card Category Discovery Grid */
+.category-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.cat-discovery-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.cat-discovery-card:hover {
+  border-color: var(--steel-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cat-discovery-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cat-discovery-svg-box {
+  width: 68px;
+  height: 46px;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-tech);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--steel-accent);
+  padding: 0.3rem;
+  flex-shrink: 0;
+}
+
+.cat-discovery-svg-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cat-discovery-code-tag {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-xs);
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.cat-discovery-title-fa {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.cat-discovery-title-en {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--steel-accent);
+  font-weight: 600;
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.cat-discovery-desc {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.cat-discovery-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-tech);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--steel-accent);
+}
+
+/* Section F: Brands Discovery Cards with Role Clarity */
+.brands-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.brand-discovery-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.brand-discovery-card.is-proprietary {
+  border: 2px solid var(--orange-action);
+  background: linear-gradient(to left, rgba(242, 140, 40, 0.04), var(--bg-secondary));
+}
+
+.brand-discovery-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.brand-role-pill {
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--radius-xs);
+}
+
+.brand-role-proprietary {
+  background-color: var(--amber-soft);
+  color: var(--amber-hover);
+  border: 1px solid rgba(242, 140, 40, 0.35);
+}
+
+.brand-role-sourced {
+  background-color: var(--steel-soft);
+  color: var(--steel-accent);
+  border: 1px solid var(--steel-border);
+}
+
+.brand-role-clarity-note {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-tech);
+  border-right: 3px solid var(--steel-accent);
+  border-radius: var(--radius-xs);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.79rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Section G: Featured Product Tabs Bar */
+.featured-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border-tech);
+}
+
+.featured-tabs-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.featured-tab-btn:hover {
+  border-color: var(--steel-accent);
+  color: var(--steel-accent);
+}
+
+.featured-tab-btn.active {
+  background-color: var(--navy-primary);
+  color: #FFFFFF;
+  border-color: var(--navy-primary);
+}
+
+/* Section H: Engineering Tools Modules (Actual vs. Theoretical Force, AI Launch Card, X-Ref Warning) */
+.force-comparison-note-box {
+  background-color: rgba(16, 36, 58, 0.75);
+  border: 1px solid rgba(225, 231, 238, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  line-height: 1.65;
+}
+
+.force-actual-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(225, 231, 238, 0.2);
+  font-size: 0.78rem;
+  color: #F28C28;
+  font-weight: 700;
+}
+
+.xref-criteria-warning-box {
+  background-color: var(--status-warning-bg);
+  border: 1px solid rgba(183, 106, 19, 0.35);
+  border-right: 4px solid var(--status-warning);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.15rem;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.ai-tool-module-card {
+  margin-top: 1.75rem;
+  background-color: var(--navy-primary);
+  color: #F5F7FA;
+  border: 1px solid rgba(34, 184, 207, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-md);
+}
+
+/* Section K: Technical Knowledge Center Grid */
+.knowledge-center-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
+}
+
+.knowledge-article-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-tech);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.knowledge-article-card:hover {
+  border-color: var(--steel-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.knowledge-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+}
+
+.knowledge-article-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.knowledge-article-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+}
+
+.knowledge-article-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-tech);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* Section L: Final High-Conversion CTA Banner */
+.final-cta-section {
+  background-color: var(--navy-primary);
+  color: #F5F7FA;
+  border-top: 1px solid var(--slate-border);
+  border-bottom: 2px solid var(--orange-action);
+  padding-block: 3.5rem;
+}
+
+.final-cta-box {
+  background-color: var(--navy-secondary);
+  border: 1px solid rgba(225, 231, 238, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+  .category-discovery-grid,
+  .knowledge-center-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brands-discovery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-discovery-grid,
+  .knowledge-center-grid {
+    grid-template-columns: 1fr;
+  }
+  .final-cta-box {
+    padding: 1.35rem;
+  }
+  .ai-tool-module-card {
+    padding: 1.15rem;
+  }
+}
+
+
