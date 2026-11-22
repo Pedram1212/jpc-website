@@ -648,50 +648,278 @@
   }
 
   /**
-   * Filter products using Smart Persian/English Normalizer & Cross-Reference matching
+   * 8-Tier Technical Search Ranking & Normalization Engine
+   * Priority:
+   * (1) Exact normalized code
+   * (2) Manufacturer article number / equivalent code
+   * (3) SKU alias / partial code prefix
+   * (4) Product series (4V210, DNC, DSBC, MFH, PRA, ADVU, MAL, OU-FRL, MS6, B74G)
+   * (5) Technical attributes (voltage, bore, stroke, port size, configuration)
+   * (6) Persian / English title
+   * (7) Verified Persian synonyms & brand transliterations (فستو, نورگرن, رکسروت, فلوکنترل, شیر برقی, جک)
+   * (8) Controlled multi-token / fuzzy match within verified dataset
    */
-  function getFilteredProducts() {
-    const products = window.PRODUCTS_DATA || [];
-    const normQuery = normalizeSearchText(state.searchQuery);
-    const compactQuery = normalizeCompact(state.searchQuery);
+  const BRAND_TRANSLITERATION_MAP = {
+    "فستو": "festo",
+    "نورگرن": "norgren",
+    "رکسروت": "bosch rexroth",
+    "بوش": "bosch rexroth",
+    "بوش رکسروت": "bosch rexroth",
+    "جی پی سی": "jpc",
+    "جلالی": "jpc"
+  };
 
-    return products.filter((item) => {
-      const matchCategory =
-        state.category === "all" || item.category === state.category;
-      const matchBrand =
-        state.brand === "all" ||
-        item.brand.toLowerCase() === state.brand.toLowerCase();
+  function expandPersianSynonyms(normText) {
+    let expanded = normText;
+    Object.keys(BRAND_TRANSLITERATION_MAP).forEach((faKey) => {
+      if (expanded.includes(faKey)) {
+        expanded += " " + BRAND_TRANSLITERATION_MAP[faKey];
+      }
+    });
+    return expanded;
+  }
 
-      if (!matchCategory || !matchBrand) return false;
-      if (!normQuery) return true;
+  function scoreProductMatch(item, rawQuery) {
+    const normQuery = normalizeSearchText(rawQuery);
+    const compactQuery = normalizeCompact(rawQuery);
+    if (!normQuery) {
+      return { score: 1, tier: 0, matchLabel: "", matchedCode: item.code, isExact: true };
+    }
 
-      const fields = [
-        item.code,
-        item.nameFa,
-        item.nameEn,
-        item.brand,
-        item.brandFa,
-        item.categoryTitleFa,
-        item.portSize,
-        item.pressureRange,
+    const normCode = normalizeSearchText(item.code);
+    const compactCode = normalizeCompact(item.code);
+    const equivList = item.equivalentTo || [];
+    const normEquivs = equivList.map((e) => ({
+      raw: e,
+      norm: normalizeSearchText(e),
+      compact: normalizeCompact(e)
+    }));
+
+    // Tier 1: Exact Normalized Code
+    if (
+      compactQuery.length >= 2 &&
+      (compactCode === compactQuery || normCode === normQuery)
+    ) {
+      return {
+        score: 1000,
+        tier: 1,
+        matchLabel: "تطابق دقیق کد فنی",
+        matchType: "exact",
+        matchedCode: item.code,
+        isExact: true
+      };
+    }
+
+    // Tier 2: Exact Manufacturer Article Number / Equivalent Cross-Reference Code
+    for (let i = 0; i < normEquivs.length; i++) {
+      const eq = normEquivs[i];
+      if (
+        compactQuery.length >= 2 &&
+        (eq.compact === compactQuery || eq.norm === normQuery)
+      ) {
+        return {
+          score: 940,
+          tier: 2,
+          matchLabel: `معادل دقیق کد ${eq.raw}`,
+          matchType: "xref",
+          matchedCode: eq.raw,
+          isExact: true
+        };
+      }
+    }
+
+    // Tier 3: SKU Alias / Direct Code Substring (e.g., 4V210-08 inside JPC-4V210-08-24DC)
+    if (compactQuery.length >= 3 && compactCode.includes(compactQuery)) {
+      return {
+        score: 880,
+        tier: 3,
+        matchLabel: "تطابق کد فنی / سری",
+        matchType: "exact",
+        matchedCode: item.code,
+        isExact: true
+      };
+    }
+
+    for (let i = 0; i < normEquivs.length; i++) {
+      const eq = normEquivs[i];
+      if (
+        compactQuery.length >= 3 &&
+        (eq.compact.includes(compactQuery) || compactQuery.includes(eq.compact))
+      ) {
+        return {
+          score: 840,
+          tier: 3,
+          matchLabel: `معادل کد فنی (${eq.raw})`,
+          matchType: "xref",
+          matchedCode: eq.raw,
+          isExact: true
+        };
+      }
+    }
+
+    // Tier 4: Product Series Match (e.g., DSBC, DNC, MFH, 4V210, PRA, ADVU, MAL)
+    const seriesTokens = ["4v210", "4v220", "4v330", "3v210", "dnc", "dsbc", "mfh", "jmfh", "pra", "advu", "adngf", "mal", "dsnu", "ms6", "b74g", "nl2", "oufrl", "asc", "pun"];
+    for (let s = 0; s < seriesTokens.length; s++) {
+      const ser = seriesTokens[s];
+      if (compactQuery.includes(ser) && (compactCode.includes(ser) || normEquivs.some((e) => e.compact.includes(ser)))) {
+        // Also check if numbers in query (bore/stroke/port) match item
+        const queryNums = normQuery.match(/\d+/g) || [];
+        const itemBlob = normalizeSearchText(
+          [item.code, item.nameFa, item.nameEn, item.boreStrokeSpec || "", item.portSize || "", ...(item.equivalentTo || []), ...(item.supportedBores || [])].join(" ")
+        );
+        const numHits = queryNums.filter((n) => itemBlob.includes(n)).length;
+        return {
+          score: 760 + numHits * 25,
+          tier: 4,
+          matchLabel: "تطابق سری فنی",
+          matchType: "xref",
+          matchedCode: item.code,
+          isExact: numHits === queryNums.length
+        };
+      }
+    }
+
+    // Prepare comprehensive searchable corpus for Tiers 5–8
+    const attrCorpus = normalizeSearchText(
+      [
+        item.portSize || "",
+        item.pressureRange || "",
         item.voltage || "",
         item.valveConfiguration || "",
         item.cylinderType || "",
         item.boreStrokeSpec || "",
         item.accessoryType || "",
-        item.applicationsFa || "",
-        ...(item.equivalentTo || []),
-        ...(item.keywords || [])
-      ].join(" ");
+        (item.supportedBores || []).join(" ")
+      ].join(" ")
+    );
+    const titleCorpus = normalizeSearchText(`${item.nameFa} ${item.nameEn} ${item.brand} ${item.brandFa} ${item.categoryTitleFa}`);
+    const synonymCorpus = expandPersianSynonyms(
+      normalizeSearchText([...(item.keywords || []), item.applicationsFa || "", item.brandFa || "", item.brand || ""].join(" "))
+    );
+    const fullCorpus = `${normCode} ${titleCorpus} ${attrCorpus} ${synonymCorpus} ${normEquivs.map((e) => e.norm).join(" ")}`;
+    const fullCompact = normalizeCompact(fullCorpus);
 
-      const normFields = normalizeSearchText(fields);
-      const compactFields = normalizeCompact(fields);
+    // Tokenize query (ignoring trivial stop words like "به", "با", "در", "از")
+    const stopWords = new Set(["به", "با", "در", "از", "و", "یا", "مدل", "سری", "قطر", "کورس", "سایز", "برند"]);
+    const rawTokens = expandPersianSynonyms(normQuery)
+      .split(/[\s\-/,،]+/)
+      .filter((t) => t.length >= 1 && !stopWords.has(t));
 
-      return (
-        normFields.includes(normQuery) ||
-        (compactQuery.length >= 2 && compactFields.includes(compactQuery))
-      );
-    });
+    // Tier 5 & 6: Direct phrase match in Title or Technical Attributes
+    if (titleCorpus.includes(normQuery)) {
+      return {
+        score: 700,
+        tier: 6,
+        matchLabel: "تطابق عنوان محصول",
+        matchType: "exact",
+        matchedCode: item.code,
+        isExact: true
+      };
+    }
+    if (attrCorpus.includes(normQuery)) {
+      return {
+        score: 720,
+        tier: 5,
+        matchLabel: "تطابق مشخصات فنی",
+        matchType: "exact",
+        matchedCode: item.code,
+        isExact: true
+      };
+    }
+
+    // Tier 7: Verified Synonyms & Multi-token Technical Attribute Query (e.g., "شیر برقی ۲۴ ولت" or "جک پنوماتیک قطر ۶۳ کورس ۲۰۰")
+    if (rawTokens.length > 0) {
+      let matchedTokens = 0;
+      let attrTokenHits = 0;
+      let titleTokenHits = 0;
+
+      rawTokens.forEach((tok) => {
+        const cTok = normalizeCompact(tok);
+        if (fullCorpus.includes(tok) || (cTok.length >= 2 && fullCompact.includes(cTok))) {
+          matchedTokens++;
+          if (attrCorpus.includes(tok)) attrTokenHits++;
+          if (titleCorpus.includes(tok)) titleTokenHits++;
+        }
+      });
+
+      const ratio = matchedTokens / rawTokens.length;
+      if (ratio === 1) {
+        return {
+          score: 640 + attrTokenHits * 18 + titleTokenHits * 15,
+          tier: attrTokenHits > 0 ? 5 : 7,
+          matchLabel: attrTokenHits > 0 ? "تطابق مشخصات و ویژگی‌ها" : "تطابق کلیدواژه فنی",
+          matchType: "exact",
+          matchedCode: item.code,
+          isExact: true
+        };
+      }
+
+      // Tier 8: Controlled Approximate / Partial Token Match (at least 60% of tokens or compact match)
+      if (
+        (rawTokens.length >= 2 && ratio >= 0.6 && matchedTokens >= 2) ||
+        (compactQuery.length >= 3 && fullCompact.includes(compactQuery))
+      ) {
+        return {
+          score: Math.round(420 * ratio) + attrTokenHits * 10,
+          tier: 8,
+          matchLabel: "تطابق تقریبی مشخصات",
+          matchType: "approx",
+          matchedCode: item.code,
+          isExact: false
+        };
+      }
+    }
+
+    return { score: 0, tier: 99, matchLabel: "", matchedCode: item.code, isExact: false };
+  }
+
+  function getRankedProducts(queryOverride, ignoreCategoryBrandFilters) {
+    const products = window.PRODUCTS_DATA || [];
+    const activeQuery =
+      typeof queryOverride === "string" ? queryOverride : state.searchQuery;
+    const hasQuery = normalizeSearchText(activeQuery).length > 0;
+
+    const results = [];
+    for (let i = 0; i < products.length; i++) {
+      const item = products[i];
+      if (!ignoreCategoryBrandFilters) {
+        const matchCategory =
+          state.category === "all" || item.category === state.category;
+        const matchBrand =
+          state.brand === "all" ||
+          item.brand.toLowerCase() === state.brand.toLowerCase();
+        if (!matchCategory || !matchBrand) continue;
+      }
+
+      if (!hasQuery) {
+        results.push({ item, match: { score: 1, tier: 0, matchLabel: "", matchedCode: item.code, isExact: true } });
+        continue;
+      }
+
+      const match = scoreProductMatch(item, activeQuery);
+      if (match.score > 0) {
+        results.push({ item, match });
+      }
+    }
+
+    if (hasQuery) {
+      results.sort((a, b) => {
+        if (b.match.score !== a.match.score) return b.match.score - a.match.score;
+        // Tie-breaker: prioritize JPC proprietary brand
+        if (a.item.brand === "JPC" && b.item.brand !== "JPC") return -1;
+        if (b.item.brand === "JPC" && a.item.brand !== "JPC") return 1;
+        return 0;
+      });
+    }
+
+    return results;
+  }
+
+  /**
+   * Filter products using Smart Persian/English Normalizer & Cross-Reference matching
+   */
+  function getFilteredProducts() {
+    return getRankedProducts().map((r) => r.item);
   }
 
   /**
@@ -1766,27 +1994,315 @@
       });
     }
 
-    // Hero Quick Search Form (Above the fold on mobile/desktop)
+    // Primary Technical Search Hub & Accessible Keyboard-Navigable Autocomplete
     const heroSearchForm = document.getElementById("hero-quick-search-form");
     const heroSearchInput = document.getElementById("hero-quick-search-input");
-    if (heroSearchForm && heroSearchInput) {
-      heroSearchForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const q = heroSearchInput.value.trim();
-        state.searchQuery = q;
-        if (searchInput) {
-          searchInput.value = q;
+    const heroSearchClear = document.getElementById("hero-quick-search-clear");
+    const acPanel = document.getElementById("hero-tech-autocomplete");
+    let acActiveIndex = -1;
+    let acCurrentMatches = [];
+
+    function escapeHtmlStr(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function highlightCodeText(text, query) {
+      const safeText = escapeHtmlStr(text);
+      const normQ = normalizeSearchText(query);
+      if (!normQ || normQ.length < 2) return safeText;
+      const tokens = normQ.split(/[\s\-/]+/).filter((t) => t.length >= 2);
+      if (tokens.length === 0) return safeText;
+      const escapedTokens = tokens.map((t) =>
+        t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      );
+      try {
+        const rx = new RegExp(`(${escapedTokens.join("|")})`, "gi");
+        return safeText.replace(rx, "<mark>$1</mark>");
+      } catch (e) {
+        return safeText;
+      }
+    }
+
+    function closeAutocomplete() {
+      if (!acPanel || !heroSearchInput) return;
+      acPanel.classList.remove("open");
+      heroSearchInput.setAttribute("aria-expanded", "false");
+      heroSearchInput.removeAttribute("aria-activedescendant");
+      acActiveIndex = -1;
+    }
+
+    function updateAcActiveOption() {
+      if (!acPanel || !heroSearchInput) return;
+      const items = acPanel.querySelectorAll(".tech-ac-item");
+      items.forEach((el, idx) => {
+        const isCurrent = idx === acActiveIndex;
+        el.classList.toggle("active", isCurrent);
+        el.setAttribute("aria-selected", isCurrent ? "true" : "false");
+        if (isCurrent) {
+          heroSearchInput.setAttribute("aria-activedescendant", el.id);
+          el.scrollIntoView({ block: "nearest" });
         }
-        if (clearBtn) {
-          clearBtn.classList.toggle("visible", q.length > 0);
+      });
+    }
+
+    function renderAutocomplete(rawVal) {
+      if (!acPanel || !heroSearchInput) return;
+      const q = String(rawVal || "").trim();
+      if (heroSearchClear) {
+        heroSearchClear.classList.toggle("visible", q.length > 0);
+      }
+
+      if (q.length < 1) {
+        closeAutocomplete();
+        return;
+      }
+
+      const ranked = getRankedProducts(q, true);
+      acCurrentMatches = ranked.slice(0, 6);
+      acActiveIndex = -1;
+
+      if (acCurrentMatches.length === 0) {
+        const safeQ = escapeHtmlStr(q);
+        acPanel.innerHTML = `
+          <div class="tech-ac-header">
+            <span>نتایج جستجو در دیتاست رسمی JPC</span>
+            <span>۰ مورد</span>
+          </div>
+          <div class="tech-ac-empty">
+            <div>کد فنی یا مشخصه <strong class="mono" dir="ltr">${safeQ}</strong> در دیتاست نمونه کاتالوگ یافت نشد.</div>
+            <div style="font-size:0.78rem; color:#64748B; margin-top:0.25rem;">
+              ما خارج از دیتاست تأییدشده محصولی پیشنهاد نمی‌دهیم؛ اما می‌توانید همین کد را مستقیماً استعلام کنید یا با دستیار هوش مصنوعی پلاک قطعه را اسکن نمایید:
+            </div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.65rem;">
+              <button type="button" class="btn btn-amber btn-xs" id="ac-empty-quote-btn">
+                ثبت استعلام کد ${safeQ}
+              </button>
+              <a href="https://ai.jpciran.com" target="_blank" rel="noopener noreferrer" class="btn btn-ai-scan btn-xs">
+                دستیار هوشمند تشخیص پلاک AI
+              </a>
+            </div>
+          </div>
+        `;
+        acPanel.classList.add("open");
+        heroSearchInput.setAttribute("aria-expanded", "true");
+
+        const emptyQuoteBtn = document.getElementById("ac-empty-quote-btn");
+        if (emptyQuoteBtn) {
+          emptyQuoteBtn.addEventListener("click", () => {
+            closeAutocomplete();
+            openQuickQuoteModal({
+              code: q,
+              nameFa: `استعلام کد فنی درخواستی: ${q}`,
+              brand: "تأمین JPC / برندهای صنعتی"
+            });
+          });
         }
-        renderCatalog();
+        return;
+      }
+
+      const exactCount = ranked.filter((r) => r.match.isExact).length;
+      const headerLabel =
+        exactCount > 0
+          ? `${ranked.length} تجهیز منطبق در دیتاست تأییدشده JPC`
+          : `${ranked.length} نتیجه با تطابق تقریبی مشخصات`;
+
+      acPanel.innerHTML = `
+        <div class="tech-ac-header">
+          <span>${headerLabel}</span>
+          <span>کلیدهای ↑↓ برای انتخاب · Enter برای مشاهده</span>
+        </div>
+        ${acCurrentMatches
+          .map((entry, idx) => {
+            const p = entry.item;
+            const m = entry.match;
+            const badgeTypeClass =
+              m.matchType === "exact"
+                ? "tech-ac-match-exact"
+                : m.matchType === "xref"
+                ? "tech-ac-match-xref"
+                : "tech-ac-match-approx";
+            const jpcEquivNote =
+              p.brand !== "JPC" && p.jpcAlternativeCode
+                ? ` · معادل JPC: <span class="mono" dir="ltr" style="color:#087F8C; font-weight:700;">${escapeHtmlStr(p.jpcAlternativeCode)}</span>`
+                : "";
+
+            return `
+              <div
+                class="tech-ac-item"
+                id="tech-ac-opt-${idx}"
+                role="option"
+                aria-selected="false"
+                data-idx="${idx}"
+                data-product-id="${escapeHtmlStr(p.id)}"
+              >
+                <div class="tech-ac-main">
+                  <div class="tech-ac-top-line">
+                    <span class="tech-ac-code" dir="ltr">${highlightCodeText(p.code, q)}</span>
+                    <span class="brand-badge ${p.brand === "JPC" ? "badge-jpc" : "badge-euro"}" style="font-size:0.68rem;">${escapeHtmlStr(p.brand)}</span>
+                    <span class="tech-ac-match-badge ${badgeTypeClass}">${escapeHtmlStr(m.matchLabel)}</span>
+                  </div>
+                  <div class="tech-ac-title">${highlightCodeText(p.nameFa, q)}</div>
+                  <div class="tech-ac-specs">
+                    پورت: <span class="mono" dir="ltr">${escapeHtmlStr(p.portSize)}</span> · فشار: <span class="mono" dir="ltr">${escapeHtmlStr(p.pressureRange)}</span>${jpcEquivNote}
+                  </div>
+                </div>
+                <div class="tech-ac-actions">
+                  <button type="button" class="btn btn-rfq-add btn-xs js-ac-add-rfq" data-id="${escapeHtmlStr(p.id)}" title="افزودن به سبد استعلام">
+                    + استعلام
+                  </button>
+                  <button type="button" class="btn btn-outline-tech btn-xs js-ac-open-spec" data-id="${escapeHtmlStr(p.id)}">
+                    مشخصات
+                  </button>
+                </div>
+              </div>
+            `;
+          })
+          .join("")}
+      `;
+
+      acPanel.classList.add("open");
+      heroSearchInput.setAttribute("aria-expanded", "true");
+
+      acPanel.querySelectorAll(".tech-ac-item").forEach((row) => {
+        row.addEventListener("click", (ev) => {
+          if (ev.target.closest("button")) return;
+          const pid = row.getAttribute("data-product-id");
+          const prod = findProductById(pid);
+          closeAutocomplete();
+          if (prod) {
+            openTechDetailModal(prod);
+          }
+        });
+      });
+
+      acPanel.querySelectorAll(".js-ac-add-rfq").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          const prod = findProductById(btn.getAttribute("data-id"));
+          if (prod) addToRfqList(prod);
+        });
+      });
+
+      acPanel.querySelectorAll(".js-ac-open-spec").forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          const prod = findProductById(btn.getAttribute("data-id"));
+          closeAutocomplete();
+          if (prod) openTechDetailModal(prod);
+        });
+      });
+    }
+
+    function executePrimarySearch(qVal, shouldScroll) {
+      const q = String(qVal || "").trim();
+      state.searchQuery = q;
+      state.category = "all";
+      state.brand = "all";
+      syncFilterPillsUI();
+      if (searchInput) searchInput.value = q;
+      if (heroSearchInput) heroSearchInput.value = q;
+      if (clearBtn) clearBtn.classList.toggle("visible", q.length > 0);
+      if (heroSearchClear) heroSearchClear.classList.toggle("visible", q.length > 0);
+      renderCatalog();
+      if (shouldScroll) {
         const catalogSection = document.getElementById("catalog");
         if (catalogSection) {
           catalogSection.scrollIntoView({ behavior: "smooth" });
         }
+      }
+    }
+
+    if (heroSearchInput) {
+      heroSearchInput.addEventListener("input", () => {
+        const q = heroSearchInput.value;
+        state.searchQuery = q;
+        if (searchInput) searchInput.value = q;
+        if (clearBtn) clearBtn.classList.toggle("visible", q.trim().length > 0);
+        renderCatalog();
+        renderAutocomplete(q);
+      });
+
+      heroSearchInput.addEventListener("focus", () => {
+        if (heroSearchInput.value.trim().length > 0) {
+          renderAutocomplete(heroSearchInput.value);
+        }
+      });
+
+      heroSearchInput.addEventListener("keydown", (e) => {
+        if (!acPanel || !acPanel.classList.contains("open")) return;
+        const count = acCurrentMatches.length;
+        if (e.key === "ArrowDown") {
+          if (count === 0) return;
+          e.preventDefault();
+          acActiveIndex = (acActiveIndex + 1) % count;
+          updateAcActiveOption();
+        } else if (e.key === "ArrowUp") {
+          if (count === 0) return;
+          e.preventDefault();
+          acActiveIndex = (acActiveIndex - 1 + count) % count;
+          updateAcActiveOption();
+        } else if (e.key === "Enter" && acActiveIndex >= 0 && acCurrentMatches[acActiveIndex]) {
+          e.preventDefault();
+          const chosen = acCurrentMatches[acActiveIndex].item;
+          closeAutocomplete();
+          openTechDetailModal(chosen);
+        } else if (e.key === "Escape") {
+          closeAutocomplete();
+        }
       });
     }
+
+    if (heroSearchClear && heroSearchInput) {
+      heroSearchClear.addEventListener("click", () => {
+        executePrimarySearch("", false);
+        closeAutocomplete();
+        heroSearchInput.focus();
+      });
+    }
+
+    if (heroSearchForm && heroSearchInput) {
+      heroSearchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        closeAutocomplete();
+        executePrimarySearch(heroSearchInput.value, true);
+      });
+    }
+
+    // Quick Part-Number & Specification Chips
+    document.querySelectorAll(".js-quick-search-tag").forEach((tagBtn) => {
+      tagBtn.addEventListener("click", () => {
+        const q = tagBtn.getAttribute("data-query") || "";
+        if (heroSearchInput) {
+          heroSearchInput.value = q;
+          heroSearchInput.focus();
+        }
+        executePrimarySearch(q, false);
+        renderAutocomplete(q);
+      });
+    });
+
+    // Header Search Trigger Button
+    document.querySelectorAll(".js-focus-tech-search").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetInput = heroSearchInput || searchInput;
+        if (targetInput) {
+          targetInput.scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => targetInput.focus(), 220);
+        }
+      });
+    });
+
+    // Close autocomplete when clicking outside
+    document.addEventListener("click", (e) => {
+      const hub = document.getElementById("primary-tech-search-hub");
+      if (hub && !hub.contains(e.target)) {
+        closeAutocomplete();
+      }
+    });
 
     // Modal close triggers
     document.querySelectorAll("[data-close-modal]").forEach((btn) => {
