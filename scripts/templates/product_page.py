@@ -40,6 +40,8 @@ def get_product_slug(product: dict) -> str:
 
 
 def build_product_faqs(product: dict) -> list:
+    import math
+
     ta = product.get("technicalAttributes", {})
     model = product["modelCode"]
     brand_disp = product.get("brandDisplay") or product["brand"]
@@ -48,27 +50,53 @@ def build_product_faqs(product: dict) -> list:
     press = ta.get("pressureRange") or product.get("pressureRange") or "1 – 10 bar"
     bore = ta.get("boreMm")
     stroke = ta.get("strokeMm")
+    rod = ta.get("rodDiameterMm")
     cush = ta.get("cushioning")
     vfunc = ta.get("valveFunction")
     volt = ta.get("coilVoltage")
     tube = ta.get("tubeOdMm")
+    flow = ta.get("flowRateLMin")
     caveat = product.get("caveatsFa", "")
 
     faqs = []
     if bore and stroke:
+        rod_d = rod or max(6, round(float(bore) * 0.32))
+        area_ext = math.pi * (float(bore) / 2.0) ** 2
+        area_ret = math.pi * ((float(bore) / 2.0) ** 2 - (float(rod_d) / 2.0) ** 2)
+        f_ext_theo_n = round(area_ext * 0.6)
+        f_ext_eff_n = round(f_ext_theo_n * 0.8)
+        f_ret_theo_n = round(area_ret * 0.6)
+        f_ret_eff_n = round(f_ret_theo_n * 0.8)
+        f_ext_eff_kgf = round(f_ext_eff_n / 9.81, 1)
+        f_ret_eff_kgf = round(f_ret_eff_n / 9.81, 1)
+
         faqs.append((
             f"مشخصات ابعادی و استاندارد نصب {product['titleFa']} (کد {model}) چیست؟",
-            f"این سیلندر از سری {fam} برند {brand_disp} دارای قطر پیستون {bore} میلی‌متر، کورس حرکتی {stroke} میلی‌متر، قطر شفت استاندارد {ta.get('rodDiameterMm') or 'ISO'} میلی‌متر، سایز پورت {port} و ضربه‌گیر {cush or 'استاندارد'} است و در محدوده فشار کاری {press} فعالیت می‌کند."
+            f"این سیلندر از سری {fam} برند {brand_disp} دارای قطر پیستون {bore} میلی‌متر، کورس حرکتی {stroke} میلی‌متر، قطر شفت استاندارد {rod_d} میلی‌متر، سایز پورت {port} و ضربه‌گیر {cush or 'استاندارد'} است و در محدوده فشار کاری {press} فعالیت می‌کند."
+        ))
+        faqs.append((
+            f"نیروی تئوری و واقعی جک {model} در فشار استاندارد ۶ بار چقدر است؟",
+            f"برای قطر پیستون {bore}mm و شفت {rod_d}mm در فشار کاری ۶ بار (0.6 MPa): نیروی تئوری کورس رفت حدود {f_ext_theo_n} نیوتن است که با اعمال ضریب راندمان ۸۰٪ (جهت جبران اصطکاک پکینگ و فشار برگشتی اگزوز)، نیروی عملیاتی مؤثر رفت حدود {f_ext_eff_n} نیوتن ({f_ext_eff_kgf} kgf) به دست می‌آید. در کورس برگشت نیز به دلیل اشغال سطح مقطع توسط شفت، نیروی تئوری {f_ret_theo_n} نیوتن و نیروی مؤثر واقعی حدود {f_ret_eff_n} نیوتن ({f_ret_eff_kgf} kgf) محاسبه می‌شود."
         ))
     elif vfunc:
+        cv_approx = round(float(flow) / 980.0, 2) if flow else None
+        flow_note = (
+            f"با دبی اسمی حدود {flow} L/min (معادل تقریبی Cv ≈ {cv_approx}) "
+            if flow
+            else ""
+        )
         faqs.append((
             f"آرایش شیر، سایز پورت و ولتاژ بوبین مدل {model} به چه صورت است؟",
-            f"مدل {model} از خانواده {fam} برند {brand_disp} یک شیر کنترل جهت با آرایش {vfunc}، سایز پورت اتصال {port} و محدوده فشار کاری {press} است. وضعیت ولتاژ بوبین ({volt or '24V DC / 220V AC'}) پیش از صدور پیش‌فاکتور نهایی با نیاز تابلو برق شما تطبیق داده می‌شود."
+            f"مدل {model} از خانواده {fam} برند {brand_disp} یک شیر کنترل جهت با آرایش {vfunc}، {flow_note}سایز پورت اتصال {port} و محدوده فشار کاری {press} است. وضعیت ولتاژ بوبین ({volt or '24V DC / 220V AC'}) پیش از صدور پیش‌فاکتور نهایی با نیاز تابلو برق شما تطبیق داده می‌شود."
+        ))
+        faqs.append((
+            f"در انتخاب دبی (Qn / Cv) و ولتاژ بوبین برای شیر {model} به چه نکاتی دقت کنیم؟",
+            f"سایز پورت ({port}) و دبی عبوری شیر باید متناسب با قطر جک و سرعت رفت‌وبرگشت مورد نیاز خط انتخاب شود تا افت فشار مسیر از ۰.۵ بار فراتر نرود. همچنین تطابق ولتاژ تغذیه PLC یا رله (24V DC در برابر 220V AC) و استاندارد سوکت DIN پیش از نصب الزامی است."
         ))
     elif tube:
         faqs.append((
             f"سایز شیلنگ و رزوه اتصال در قطعه {model} ({brand_disp}) چند است؟",
-            f"این تجهیز از سری {fam} برند {brand_disp} برای سایز شیلنگ/اتصال {tube} میلی‌متر و پورت/رزوه {port} در محدوده فشار {press} طراحی شده است. پیش از ثبت سفارش، سازگاری قطر خارجی شیلنگ (OD) و تعداد در بسته بررسی می‌شود."
+            f"این تجهیز از سری {fam} برند {brand_disp} برای قطر خارجی شیلنگ (Tube OD) برابر {tube} میلی‌متر و پورت/رزوه {port} در محدوده فشار {press} طراحی شده است. پیش از ثبت سفارش، تلرانس قطر خارجی شیلنگ (PU/PA) و تعداد در بسته بررسی می‌شود."
         ))
     else:
         faqs.append((
@@ -77,13 +105,8 @@ def build_product_faqs(product: dict) -> list:
         ))
 
     faqs.append((
-        f"آیا امکان جایگزینی یا معادل‌یابی کد {model} با برند اختصاصی JPC وجود دارد؟",
-        f"واحد مهندسی شرکت جلالی پنوماتیک امکان بررسی تطابق ابعادی، سایز پورت ({port})، فشار کاری ({press}) و عملکرد مدار را برای پیشنهاد جایگزین اقتصادی از برند اختصاصی JPC یا تأمین کد اصلی فراهم کرده است. هرگونه جایگزینی تنها پس از تطبیق پارامترهای فنی خط تولید شما انجام می‌گیرد."
-    ))
-
-    faqs.append((
-        f"پیش از نهایی‌سازی سفارش کد {model} چه پارامترهایی باید کنترل شوند؟",
-        f"توصیه مهندسی JPC: {caveat or 'کد دقیق حک‌شده روی پلاک، سایز رزوه، فشار کاری و دمای محیط باید با دیتاشیت نسخه مربوطه کنترل شود.'}"
+        f"پیش از جایگزینی کد {model} با برند اختصاصی JPC یا برندهای دیگر چه مواردی باید کنترل شود؟",
+        f"علاوه بر تطابق عملکردی در فشار کاری ({press})، واحد مهندسی JPC چهار پارامتر کلیدی را قبل از هرگونه جایگزینی بین‌برندی کنترل می‌کند: ۱) استاندارد ابعادی نصب و فاصله پیچ‌ها (مانند ISO 15552 یا الگوی منیفولد)، ۲) سایز و نوع رزوه پورت ({port} — موازی G در برابر مخروطی R/NPT)، ۳) ولتاژ و توان بوبین یا نوع شیار سنسور مگنتی، و ۴) {caveat or 'شرایط دمای محیط و نوع سیال'}."
     ))
 
     faqs.append((

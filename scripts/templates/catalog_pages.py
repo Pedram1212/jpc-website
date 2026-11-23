@@ -774,11 +774,63 @@ def render_brand_page(brand_meta: dict, all_products: list, families: list) -> s
     )
 
 
+def build_series_engineering_faqs(family: dict, fam_products: list) -> list:
+    import math
+
+    fam_code = family["code"]
+    brand = family["brand"]
+    ui_cat = family["uiCategory"]
+    bores = sorted({p["technicalAttributes"]["boreMm"] for p in fam_products if p["technicalAttributes"]["boreMm"] is not None})
+    ports = sorted({p["technicalAttributes"]["portSize"] for p in fam_products if p["technicalAttributes"]["portSize"]})
+
+    faqs = []
+    if ui_cat == "cylinders":
+        sample_bore = bores[0] if bores else 63
+        sample_rod = max(6, round(float(sample_bore) * 0.32))
+        f_ext_theo = round(math.pi * (float(sample_bore) / 2.0) ** 2 * 0.6)
+        f_ext_eff = round(f_ext_theo * 0.8)
+        f_ret_eff = round(math.pi * ((float(sample_bore) / 2.0) ** 2 - (float(sample_rod) / 2.0) ** 2) * 0.6 * 0.8)
+        faqs.append((
+            f"نحوه محاسبه نیروی تئوری و واقعی سیلندرهای سری {fam_code} ({brand}) در فشار ۶ بار چگونه است؟",
+            f"نیروی تئوری از رابطه F = P × A محاسبه می‌شود (در فشار ۶ بار، P = 0.6 N/mm²). به‌طور نمونه برای قطر پیستون {sample_bore}mm در سری {fam_code}، نیروی تئوری کورس رفت حدود {f_ext_theo} نیوتن است؛ اما در طراحی صنعتی به دلیل اصطکاک پکینگ‌ها و فشار برگشتی اگزوز، ضریب راندمان ۸۰٪ اعمال می‌شود که نیروی مؤثر واقعی رفت را حدود {f_ext_eff} نیوتن و کورس برگشت را حدود {f_ret_eff} نیوتن می‌دهد."
+        ))
+        faqs.append((
+            f"پیش از جایگزینی جک‌های سری {fam_code} با برندهای هم‌استاندارد چه نکاتی باید کنترل شود؟",
+            f"اگرچه سری {fam_code} از استاندارد ابعادی ({' / '.join(family.get('standards') or ['ISO 15552'])}) پیروی می‌کند، پیش از جایگزینی بین‌برندی باید سایز رزوه پورت ({', '.join(ports[:4]) or 'G1/8..G1/2'})، نوع شیار نصب سنسور مگنتی (T-Slot یا Tie-Rod) و نوع ضربه‌گیر انتهایی (تنظیم‌شونده PPV در برابر خودتنظیم PPS) تطبیق داده شود."
+        ))
+    elif ui_cat == "valves":
+        faqs.append((
+            f"در انتخاب شیرهای برقی سری {fam_code} ({brand}) چگونه دبی (Cv / Qn) و ولتاژ بوبین را تطبیق دهیم؟",
+            f"دبی اسمی شیر (L/min) باید بر اساس قطر و سرعت سیلندر طوری انتخاب شود که افت فشار از ۰.۵ بار بیشتر نشود. همچنین قبل از ثبت سفارش در سری {fam_code} باید سایز پورت ({', '.join(ports[:4]) or 'G1/8..G1/2'})، آرایش شیر (۳/۲، ۵/۲ تک‌بوبین یا دوبوبین، ۵/۳ مرکز بسته/باز) و ولتاژ بوبین (24V DC یا 220V AC) با تابلوی فرمان کنترل گردد."
+        ))
+        faqs.append((
+            f"آیا شیرهای سری {fam_code} با منیفولدهای برندهای دیگر قابل تعویض هستند؟",
+            f"خیر؛ تطابق سایز پورت رزوه‌ای به معنای یکسان بودن الگوی سوراخ‌کاری روی منیفولد (Sub-base Footprint) نیست. در صورت نصب روی منیفولد یا جزیره شیر، باید نقشه ابعادی کف شیر و مشخصات کد پلاک توسط واحد فنی JPC بررسی شود."
+        ))
+    else:
+        faqs.append((
+            f"معیارهای کلیدی انتخاب فنی در سری {fam_code} ({brand}) چیست؟",
+            f"برای انتخاب دقیق در سری {fam_code} باید سایز رزوه و نوع آن (موازی BSPP سری G در برابر مخروطی BSPT سری R یا NPT)، قطر خارجی شیلنگ (Tube OD بر حسب میلی‌متر)، محدوده فشار و دمای کاری مدار، و برای اتصالات فستو تعداد استاندارد در بسته (Pack Quantity) کنترل شود."
+        ))
+        faqs.append((
+            f"نحوه بررسی اصالت، موجودی و معادل‌یابی کدهای سری {fam_code} در جلالی پنوماتیک چگونه است؟",
+            f"کد دقیق مدل سازنده یا عکس پلاک قطعه را از طریق سبد استعلام (RFQ)، واتساپ فنی (09121305167) یا دستیار هوشمند پلاک‌خوان (ai.jpciran.com) ارسال کنید تا موجودی روز کد اصلی یا جایگزین مهندسی برند JPC اعلام شود."
+        ))
+
+    if family["manufacturerId"] == "bosch-rexroth":
+        faqs.append((
+            f"وضعیت کدهای تاریخی Bosch Rexroth / AVENTICS سری {fam_code} چگونه است؟",
+            f"کدهای ۱۰ رقمی (مانند 0820... و R412...) در سری {fam_code} از کاتالوگ تاریخی Rexroth Pneumatics / AVENTICS استخراج شده‌اند تا قطعات ماشین‌آلات قدیمی شناسایی شوند. هر کد پیش از سفارش نهایی باید از نظر وضعیت تولید فعلی و سازگاری منیفولد راستی‌آزمایی شود."
+        ))
+
+    return faqs
+
+
 def render_series_page(family: dict, all_products: list) -> str:
     """
     Generate `/series/<family-id>/index.html` (`depth=2`, `base_prefix="../../"`).
-    Explains the series architecture, supported configurations, selection parameters,
-    and lists all variants in that series (linking published variants to `/product/<slug>/`).
+    Includes Schema.org `ProductGroup` JSON-LD, `FAQPage` JSON-LD, scannable
+    variant comparison matrix table, and engineering selection Q&As.
     """
     base_prefix = "../../"
     fam_id = family["id"]
@@ -793,6 +845,73 @@ def render_series_page(family: dict, all_products: list) -> str:
         (f"برند {family['brand']}", f"{SITE_DOMAIN}/brands/{family['manufacturerId']}/"),
         (f"سری {family['code']}", canonical_url),
     ]
+
+    # Build Schema.org ProductGroup (NO fake prices, offers, or ratings)
+    axis_label_map = {
+        "boreMm": "https://schema.org/size",
+        "strokeMm": "کورس حرکتی (Stroke mm)",
+        "portSize": "سایز پورت / رزوه (Port Thread)",
+        "tubeOdMm": "قطر خارجی شیلنگ (Tube OD mm)",
+        "valveFunction": "آرایش شیر (Valve Function)",
+        "cushioning": "نوع ضربه‌گیر (Cushioning)",
+    }
+    varies_by = [axis_label_map[ax] for ax in family.get("variantAxes", []) if ax in axis_label_map]
+    if not varies_by:
+        varies_by = ["کد مدل سازنده (Manufacturer Model)"]
+
+    variant_source = fam_published if fam_published else fam_products[:8]
+    has_variant = []
+    for vp in variant_source:
+        v_is_pub = vp["publicationStatus"] == "published"
+        v_url = f"{SITE_DOMAIN}/product/{get_product_slug(vp)}/" if v_is_pub else canonical_url
+        v_ta = vp.get("technicalAttributes", {})
+        v_props = [
+            {"@type": "PropertyValue", "name": "Port Size", "value": str(vp["portSize"])},
+            {"@type": "PropertyValue", "name": "Operating Pressure", "value": str(vp["pressureRange"])},
+        ]
+        if v_ta.get("boreMm") is not None:
+            v_props.append({"@type": "PropertyValue", "name": "Bore Diameter (mm)", "value": str(v_ta["boreMm"])})
+        if v_ta.get("strokeMm") is not None:
+            v_props.append({"@type": "PropertyValue", "name": "Stroke Length (mm)", "value": str(v_ta["strokeMm"])})
+        if v_ta.get("valveFunction"):
+            v_props.append({"@type": "PropertyValue", "name": "Valve Function", "value": str(v_ta["valveFunction"])})
+
+        has_variant.append({
+            "@type": "Product",
+            "name": vp["titleFa"],
+            "sku": vp["sku"],
+            "mpn": vp["modelCode"],
+            "url": v_url,
+            "additionalProperty": v_props,
+        })
+
+    product_group_ld = {
+        "@type": "ProductGroup",
+        "@id": f"{canonical_url}#product-group",
+        "name": family["titleFa"],
+        "productGroupID": family["code"],
+        "url": canonical_url,
+        "brand": {
+            "@type": "Brand",
+            "name": family["brand"],
+        },
+        "variesBy": varies_by,
+        "hasVariant": has_variant,
+    }
+
+    series_faqs = build_series_engineering_faqs(family, fam_products)
+    faq_ld = {
+        "@type": "FAQPage",
+        "@id": f"{canonical_url}#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a},
+            }
+            for q, a in series_faqs
+        ],
+    }
 
     item_list_ld = {
         "@type": "ItemList",
@@ -817,7 +936,7 @@ def render_series_page(family: dict, all_products: list) -> str:
     jsonld_str = build_base_jsonld_graph(
         canonical_url=canonical_url,
         breadcrumbs=breadcrumbs,
-        extra_nodes=[item_list_ld],
+        extra_nodes=[product_group_ld, item_list_ld, faq_ld],
     )
 
     # Summarize variant ranges in this series
@@ -848,17 +967,24 @@ def render_series_page(family: dict, all_products: list) -> str:
         for k, v in config_bullets
     )
 
-    # Complete HTML table of all variants in this series
+    # Complete HTML Variant Comparison Matrix Table of all variants in this series
     variant_rows_html = []
     for p in fam_products:
         is_pub = p["publicationStatus"] == "published"
         p_slug = get_product_slug(p)
         ta = p["technicalAttributes"]
-        key_spec = (
-            f"Ø{ta['boreMm']} × {ta['strokeMm']} mm ({ta.get('cushioning') or 'ISO'})"
-            if (ta.get("boreMm") and ta.get("strokeMm"))
-            else (ta.get("valveFunction") or (f"Tube {ta.get('tubeOdMm')} mm" if ta.get("tubeOdMm") else p["subCategory"]))
+
+        bore_or_port = (
+            f"Ø{ta['boreMm']} mm | {p['portSize']}"
+            if ta.get("boreMm") is not None
+            else (f"Tube {ta['tubeOdMm']} mm | {p['portSize']}" if ta.get("tubeOdMm") else p["portSize"])
         )
+        stroke_or_volt = (
+            f"{ta['strokeMm']} mm ({ta.get('cushioning') or 'ISO'})"
+            if ta.get("strokeMm") is not None
+            else (f"{ta.get('valveFunction') or p['subCategory']} · {ta.get('coilVoltage') or '—'}" if ta.get("valveFunction") else p["subCategory"])
+        )
+
         model_cell = (
             f'<a href="{base_prefix}product/{esc(p_slug)}/index.html" class="mono" dir="ltr" style="font-weight: 800; color: #087F8C;">{esc(p["modelCode"])}</a>'
             if is_pub
@@ -877,14 +1003,22 @@ def render_series_page(family: dict, all_products: list) -> str:
         )
         variant_rows_html.append(f"""              <tr>
                 <td>{model_cell}</td>
-                <td class="mono" dir="ltr">{esc(p['articleNumber'] or '—')}</td>
-                <td>{esc(p['titleFa'])}</td>
-                <td class="mono" dir="ltr">{esc(key_spec)}</td>
-                <td class="mono" dir="ltr">{esc(p['portSize'])}</td>
+                <td class="mono" dir="ltr" style="font-variant-numeric: tabular-nums;">{esc(p['articleNumber'] or '—')}</td>
+                <td class="mono" dir="ltr" style="font-variant-numeric: tabular-nums;">{esc(bore_or_port)}</td>
+                <td>{esc(stroke_or_volt)}</td>
+                <td class="mono" dir="ltr" style="font-variant-numeric: tabular-nums;">{esc(p['pressureRange'])}</td>
                 <td>{action_cell}</td>
               </tr>""")
 
     variants_table_body = "\n".join(variant_rows_html)
+
+    faqs_html = "\n".join(
+        f"""        <details class="faq-item" {'open' if idx == 0 else ''} style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 10px; padding: 1rem 1.15rem; margin-bottom: 0.75rem;">
+          <summary style="font-weight: 800; color: #10243A; cursor: pointer; font-size: 0.94rem;">{esc(q)}</summary>
+          <p style="margin-top: 0.65rem; font-size: 0.87rem; color: #475569; line-height: 1.85;">{esc(a)}</p>
+        </details>"""
+        for idx, (q, a) in enumerate(series_faqs)
+    )
 
     main_html = f"""
     <nav aria-label="مسیر راهنما (Breadcrumb)" style="background: #F1F5F9; border-bottom: 1px solid #E1E7EE; padding: 0.75rem 0; font-size: 0.82rem;">
@@ -903,10 +1037,10 @@ def render_series_page(family: dict, all_products: list) -> str:
       <div class="container">
         <span class="section-eyebrow">مرجع مهندسی خانواده محصول · {esc(family['brand'])}</span>
         <h1 style="font-size: clamp(1.35rem, 3.2vw, 1.9rem); font-weight: 900; color: #10243A; margin: 0.35rem 0 0.65rem;">
-          {esc(family['titleFa'])} — مشخصات، پیکربندی و جدول {family['skuCount']} کد فنی
+          {esc(family['titleFa'])} — ماتریس مقایسه و جدول {family['skuCount']} کد فنی
         </h1>
         <p style="font-size: 0.92rem; color: #334155; line-height: 1.9; max-width: 900px; margin-bottom: 1.25rem;">
-          خانواده <strong class="mono" dir="ltr">{esc(family['code'])}</strong> از برند <strong>{esc(family['brand'])}</strong> شامل <strong>{family['skuCount']} واریانت و کد فنی</strong> در کاتالوگ شرکت جلالی پنوماتیک (JPC) است. در جدول زیر می‌توانید تمامی کدهای مدل، شماره سفارش سازنده (Article No.)، ابعاد، سایز پورت و وضعیت استعلام هر واریانت را بررسی و به سبد استعلام (RFQ) اضافه نمایید.
+          خانواده <strong class="mono" dir="ltr">{esc(family['code'])}</strong> از برند <strong>{esc(family['brand'])}</strong> شامل <strong>{family['skuCount']} واریانت و کد فنی</strong> در کاتالوگ شرکت جلالی پنوماتیک (JPC) است. در ماتریس مقایسه زیر می‌توانید کد مدل، شماره سفارش سازنده (Article No.)، قطر/پورت، کورس/ولتاژ و فشار کاری هر واریانت را مقایسه کرده و مستقیماً به سبد استعلام (RFQ) اضافه کنید.
         </p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
@@ -920,25 +1054,28 @@ def render_series_page(family: dict, all_products: list) -> str:
           <a href="{base_prefix}festo-cross-reference.html" class="btn btn-outline-tech btn-sm">
             🔄 تطبیق و معادل‌یابی با برند JPC
           </a>
+          <a href="{base_prefix}index.html#calculator" class="btn btn-outline-tech btn-sm">
+            ⚙️ محاسبه‌گر نیروی جک پنوماتیک
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding: 2rem 0;">
+    <section class="section" style="padding: 2rem 0 1.25rem;">
       <div class="container">
         <div style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 14px; padding: clamp(1.15rem, 3vw, 1.75rem);">
           <h2 style="font-size: 1.15rem; font-weight: 800; color: #10243A; margin-bottom: 1rem;">
-            جدول کامل کدهای فنی و واریانت‌های سری <span dir="ltr" class="mono">{esc(family['code'])}</span> ({len(fam_products)} مدل)
+            ماتریس مقایسه فنی و جدول کدهای سری <span dir="ltr" class="mono">{esc(family['code'])}</span> ({len(fam_products)} مدل)
           </h2>
           <div class="table-responsive">
-            <table class="tech-comparison-table" aria-label="جدول کدهای فنی سری {esc(family['code'])}">
+            <table class="tech-comparison-table" aria-label="ماتریس مقایسه کدهای فنی سری {esc(family['code'])}">
               <thead>
                 <tr>
                   <th scope="col">کد مدل سازنده</th>
                   <th scope="col">شماره سفارش (Article No.)</th>
-                  <th scope="col">عنوان و شرح فارسی</th>
-                  <th scope="col">مشخصه فنی / سایز</th>
-                  <th scope="col">پورت / اتصال</th>
+                  <th scope="col">قطر / سایز پورت</th>
+                  <th scope="col">کورس / آرایش و ولتاژ</th>
+                  <th scope="col">فشار کاری</th>
                   <th scope="col">عملیات و استعلام</th>
                 </tr>
               </thead>
@@ -950,11 +1087,23 @@ def render_series_page(family: dict, all_products: list) -> str:
         </div>
       </div>
     </section>
+
+    <section class="section" style="padding: 1rem 0 2.25rem;">
+      <div class="container">
+        <div style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 14px; padding: clamp(1.15rem, 3vw, 1.75rem);">
+          <span class="section-eyebrow">محاسبات مهندسی و راهنمای انتخاب سریع</span>
+          <h2 style="font-size: 1.15rem; font-weight: 800; color: #10243A; margin: 0.25rem 0 1rem;">
+            پرسش‌های متداول محاسبه و انتخاب در سری <span dir="ltr" class="mono">{esc(family['code'])}</span>
+          </h2>
+{faqs_html}
+        </div>
+      </div>
+    </section>
 """
 
     return render_full_html_page(
-        title=f"{family['titleFa']} | جدول {family['skuCount']} کد فنی و استعلام قیمت | JPC Iran",
-        meta_description=f"راهنمای انتخاب، جدول مشخصات فنی و استعلام قیمت {family['skuCount']} مدل از {family['titleFa']} در شرکت جلالی پنوماتیک لاله‌زار تهران.",
+        title=f"{family['titleFa']} | ماتریس مقایسه {family['skuCount']} کد فنی و استعلام قیمت | JPC Iran",
+        meta_description=f"ماتریس مقایسه، راهنمای محاسبه و انتخاب، و استعلام قیمت {family['skuCount']} مدل از {family['titleFa']} در شرکت جلالی پنوماتیک لاله‌زار تهران.",
         canonical_url=canonical_url,
         base_prefix=base_prefix,
         active_section=family["uiCategory"],
