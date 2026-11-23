@@ -384,6 +384,28 @@ def render_main_catalog_hub(all_products: list, families: list, manufacturers: l
       </div>
     </section>
 
+    <!-- ENGINEERING COMPARISON & CROSS-REFERENCE GUIDES (/compare/) -->
+    <section class="section" style="padding: 1.25rem 0;">
+      <div class="container">
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 14px; padding: 1.25rem 1.4rem;">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 0.9rem;">
+            <div>
+              <span class="section-eyebrow">مرجع مهندسی معادل‌یابی و مقایسه فنی (GEO / B2B)</span>
+              <h2 style="font-size: 1.12rem; font-weight: 800; color: #10243A; margin: 0.2rem 0 0;">راهنماهای تخصصی مقایسه و جایگزینی قطعات اروپایی با JPC</h2>
+            </div>
+            <a href="{base_prefix}compare/index.html" class="btn btn-outline-tech btn-sm">مشاهده مرکز معادل‌یابی و مقایسه فنی ←</a>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.65rem;">
+            <a href="{base_prefix}compare/festo-dsbc-vs-iso-15552-cylinders/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.65rem 0.85rem; text-decoration: none; color: #10243A; font-size: 0.82rem; font-weight: 700;">مقایسه جک Festo DSBC با استاندارد ISO 15552 (JPC DNC) ←</a>
+            <a href="{base_prefix}compare/festo-mfh-vs-jpc-4v-solenoid-valves/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.65rem 0.85rem; text-decoration: none; color: #10243A; font-size: 0.82rem; font-weight: 700;">مقایسه شیر برقی Festo MFH با سری JPC 4V210 / 4V220 ←</a>
+            <a href="{base_prefix}compare/festo-vuvg-vs-compact-manifold-valves/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.65rem 0.85rem; text-decoration: none; color: #10243A; font-size: 0.82rem; font-weight: 700;">مقایسه شیر کامپکت Festo VUVG با شیرهای منیفولدی ←</a>
+            <a href="{base_prefix}compare/festo-ms-vs-jpc-frl-air-preparation/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.65rem 0.85rem; text-decoration: none; color: #10243A; font-size: 0.82rem; font-weight: 700;">مقایسه واحد مراقبت Festo MS با سری JPC AC4010 ←</a>
+            <a href="{base_prefix}compare/rexroth-aventics-hf03-lg-0820055051-replacement/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.65rem 0.85rem; text-decoration: none; color: #10243A; font-size: 0.82rem; font-weight: 700;">راهنمای جایگزینی Rexroth / AVENTICS HF03-LG (0820055051) ←</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- INTERACTIVE FILTERABLE 500-PRODUCT CATALOG GRID -->
     <section class="section" id="catalog" style="padding: 2rem 0;">
       <div class="container">
@@ -1051,8 +1073,14 @@ def render_series_page(family: dict, all_products: list) -> str:
           <a href="{esc(family['sourceUrl'])}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-tech btn-sm">
             📄 مشاهده مستند مرجع سازنده برای سری {esc(family['code'])} ↗
           </a>
+          <a href="{base_prefix}compare/index.html" class="btn btn-outline-tech btn-sm">
+            ⚖️ مرکز مقایسه فنی و معادل‌یابی
+          </a>
+          <a href="{base_prefix}compare/{'rexroth-aventics-hf03-lg-0820055051-replacement' if family['id'] == 'rexroth-hf03-lg' else ('festo-dsbc-vs-iso-15552-cylinders' if family['uiCategory'] == 'cylinders' else ('festo-mfh-vs-jpc-4v-solenoid-valves' if family['uiCategory'] == 'valves' else 'festo-ms-vs-jpc-frl-air-preparation'))}/index.html" class="btn btn-outline-tech btn-sm">
+            🔄 راهنمای مقایسه فنی سری {esc(family['code'])} با معادل‌ها
+          </a>
           <a href="{base_prefix}festo-cross-reference.html" class="btn btn-outline-tech btn-sm">
-            🔄 تطبیق و معادل‌یابی با برند JPC
+            📋 جدول جامع معادل‌یابی JPC
           </a>
           <a href="{base_prefix}index.html#calculator" class="btn btn-outline-tech btn-sm">
             ⚙️ محاسبه‌گر نیروی جک پنوماتیک

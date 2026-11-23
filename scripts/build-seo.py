@@ -998,11 +998,12 @@ def generate_llms_txt(out_path: Path) -> None:
         "",
         "---",
         "",
-        "## 2. معماری صفحات و راهنمای مسیرهای سایت (92 Indexable Canonical URLs)",
+        "## 2. معماری صفحات و راهنمای مسیرهای سایت (98 Indexable Canonical URLs)",
         "",
         "### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)",
         "- صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/",
         "- کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/",
+        "- مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/",
         "- شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html",
         "- جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html",
         "- واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html",
@@ -1035,6 +1036,14 @@ def generate_llms_txt(out_path: Path) -> None:
         "- سری‌های Norgren: `/series/norgren-v60/`, `/series/norgren-v61/`, `/series/norgren-v63/`, `/series/norgren-bl72/`, `/series/norgren-bl73/`, `/series/norgren-bl74/`, `/series/norgren-t40/`",
         "- سری تاریخی Bosch Rexroth / AVENTICS: `/series/rexroth-hf03-lg/`",
         "",
+        "### هـ) مرکز مقایسه فنی و ۵ راهنمای تخصصی معادل‌یابی (`/compare/`)",
+        "- مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/",
+        "- مقایسه جک پنوماتیک Festo DSBC با جک‌های استاندارد ISO 15552 (سری JPC DNC): https://jpciran.com/compare/festo-dsbc-vs-iso-15552-cylinders/",
+        "- مقایسه شیر برقی Festo سری MFH با شیرهای برقی JPC سری 4V: https://jpciran.com/compare/festo-mfh-vs-jpc-4v-solenoid-valves/",
+        "- مقایسه شیر برقی کامپکت Festo VUVG با شیرهای منیفولدی استاندارد: https://jpciran.com/compare/festo-vuvg-vs-compact-manifold-valves/",
+        "- مقایسه واحد مراقبت هوا Festo سری MS با واحدهای مراقبت JPC سری AC: https://jpciran.com/compare/festo-ms-vs-jpc-frl-air-preparation/",
+        "- راهنمای شناسایی و جایگزینی سیستم جزیره‌ای Bosch Rexroth / AVENTICS سری HF03-LG (کد 0820055051): https://jpciran.com/compare/rexroth-aventics-hf03-lg-0820055051-replacement/",
+        "",
     ]
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -1063,13 +1072,19 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
         "- **Working Hours:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰",
         "- **AI Nameplate Assistant:** `https://ai.jpciran.com` (دستیار هوشمند تشخیص پلاک AI)",
         "- **Canonical Website:** `https://jpciran.com/`",
-        "- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs).",
+        "- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs) + 6 engineering cross-reference comparison pages.",
         "",
         "---",
         "",
-        "## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`)",
+        "## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`, `/compare/`)",
         "",
         "- **Main Catalog Hub:** `https://jpciran.com/products/`",
+        "- **Technical Comparison & Cross-Reference Hub:** `https://jpciran.com/compare/`",
+        "  - `https://jpciran.com/compare/festo-dsbc-vs-iso-15552-cylinders/`",
+        "  - `https://jpciran.com/compare/festo-mfh-vs-jpc-4v-solenoid-valves/`",
+        "  - `https://jpciran.com/compare/festo-vuvg-vs-compact-manifold-valves/`",
+        "  - `https://jpciran.com/compare/festo-ms-vs-jpc-frl-air-preparation/`",
+        "  - `https://jpciran.com/compare/rexroth-aventics-hf03-lg-0820055051-replacement/`",
         "- **8 Category Directories:**",
         "  - `https://jpciran.com/products/pneumatic-cylinders/`",
         "  - `https://jpciran.com/products/solenoid-valves/`",
@@ -1152,6 +1167,7 @@ def generate_multi_level_catalog_pages() -> dict:
       - 4 Brand Pages (`/brands/<brand>/index.html`)
       - 30 Product Family / Series Pages (`/series/<family-id>/index.html`)
       - 40 Individual Product Pages (`/product/<slug>/index.html` — ONLY `published` pilot SKUs)
+      - `/compare/` (`compare/index.html`) + 5 Engineering Comparison Pages (`/compare/<slug>/index.html`)
     """
     import shutil
     from templates.catalog_pages import (
@@ -1160,6 +1176,11 @@ def generate_multi_level_catalog_pages() -> dict:
         render_category_directory_page,
         render_main_catalog_hub,
         render_series_page,
+    )
+    from templates.compare_pages import (
+        COMPARE_PAGES_SPEC,
+        render_compare_detail_page,
+        render_compare_hub_page,
     )
     from templates.product_page import get_product_slug, render_product_page
 
@@ -1234,6 +1255,24 @@ def generate_multi_level_catalog_pages() -> dict:
         generated_files.append(pdp_path)
         sitemap_extra_urls.append((f"https://jpciran.com/product/{slug}/", "weekly", "0.82"))
 
+    # 6. Technical Cross-Reference & Comparison Hub (/compare/index.html) + 5 Comparison Pages (/compare/<slug>/index.html)
+    compare_root_dir = ROOT_DIR / "compare"
+    if compare_root_dir.exists():
+        shutil.rmtree(compare_root_dir)
+    compare_root_dir.mkdir(parents=True, exist_ok=True)
+
+    compare_hub_path = compare_root_dir / "index.html"
+    compare_hub_path.write_text(render_compare_hub_page(), encoding="utf-8")
+    generated_files.append(compare_hub_path)
+    sitemap_extra_urls.append(("https://jpciran.com/compare/", "weekly", "0.9"))
+
+    for cmp_spec in COMPARE_PAGES_SPEC:
+        cmp_path = compare_root_dir / cmp_spec["slug"] / "index.html"
+        cmp_path.parent.mkdir(parents=True, exist_ok=True)
+        cmp_path.write_text(render_compare_detail_page(cmp_spec), encoding="utf-8")
+        generated_files.append(cmp_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/compare/{cmp_spec['slug']}/", "weekly", "0.86"))
+
     return {
         "files": generated_files,
         "sitemap_urls": sitemap_extra_urls,
@@ -1243,6 +1282,7 @@ def generate_multi_level_catalog_pages() -> dict:
             "brands": len(manufacturers),
             "series": len(families),
             "products_published": len(published_products),
+            "compare_pages": 1 + len(COMPARE_PAGES_SPEC),
             "total": len(generated_files),
         },
     }

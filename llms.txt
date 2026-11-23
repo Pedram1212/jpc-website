@@ -20,11 +20,12 @@
 
 ---
 
-## 2. معماری صفحات و راهنمای مسیرهای سایت (92 Indexable Canonical URLs)
+## 2. معماری صفحات و راهنمای مسیرهای سایت (98 Indexable Canonical URLs)
 
 ### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)
 - صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/
 - کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/
+- مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/
 - شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html
 - جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html
 - واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html
@@ -56,3 +57,11 @@
 - سری‌های Festo: `/series/festo-dsbc/`, `/series/festo-dsbc-d3/`, `/series/festo-qs/`, `/series/festo-qs-reducing/`, `/series/festo-qss/`, `/series/festo-qss-f/`, `/series/festo-qssf/`, `/series/festo-qsc/`, `/series/festo-qs-h/`, `/series/festo-qsh/`, `/series/festo-qsl-h/`, `/series/festo-qslv/`
 - سری‌های Norgren: `/series/norgren-v60/`, `/series/norgren-v61/`, `/series/norgren-v63/`, `/series/norgren-bl72/`, `/series/norgren-bl73/`, `/series/norgren-bl74/`, `/series/norgren-t40/`
 - سری تاریخی Bosch Rexroth / AVENTICS: `/series/rexroth-hf03-lg/`
+
+### هـ) مرکز مقایسه فنی و ۵ راهنمای تخصصی معادل‌یابی (`/compare/`)
+- مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/
+- مقایسه جک پنوماتیک Festo DSBC با جک‌های استاندارد ISO 15552 (سری JPC DNC): https://jpciran.com/compare/festo-dsbc-vs-iso-15552-cylinders/
+- مقایسه شیر برقی Festo سری MFH با شیرهای برقی JPC سری 4V: https://jpciran.com/compare/festo-mfh-vs-jpc-4v-solenoid-valves/
+- مقایسه شیر برقی کامپکت Festo VUVG با شیرهای منیفولدی استاندارد: https://jpciran.com/compare/festo-vuvg-vs-compact-manifold-valves/
+- مقایسه واحد مراقبت هوا Festo سری MS با واحدهای مراقبت JPC سری AC: https://jpciran.com/compare/festo-ms-vs-jpc-frl-air-preparation/
+- راهنمای شناسایی و جایگزینی سیستم جزیره‌ای Bosch Rexroth / AVENTICS سری HF03-LG (کد 0820055051): https://jpciran.com/compare/rexroth-aventics-hf03-lg-0820055051-replacement/

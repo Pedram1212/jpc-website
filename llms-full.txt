@@ -14,13 +14,19 @@
 - **Working Hours:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰
 - **AI Nameplate Assistant:** `https://ai.jpciran.com` (دستیار هوشمند تشخیص پلاک AI)
 - **Canonical Website:** `https://jpciran.com/`
-- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs).
+- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs) + 6 engineering cross-reference comparison pages.
 
 ---
 
-## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`)
+## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`, `/compare/`)
 
 - **Main Catalog Hub:** `https://jpciran.com/products/`
+- **Technical Comparison & Cross-Reference Hub:** `https://jpciran.com/compare/`
+  - `https://jpciran.com/compare/festo-dsbc-vs-iso-15552-cylinders/`
+  - `https://jpciran.com/compare/festo-mfh-vs-jpc-4v-solenoid-valves/`
+  - `https://jpciran.com/compare/festo-vuvg-vs-compact-manifold-valves/`
+  - `https://jpciran.com/compare/festo-ms-vs-jpc-frl-air-preparation/`
+  - `https://jpciran.com/compare/rexroth-aventics-hf03-lg-0820055051-replacement/`
 - **8 Category Directories:**
   - `https://jpciran.com/products/pneumatic-cylinders/`
   - `https://jpciran.com/products/solenoid-valves/`
