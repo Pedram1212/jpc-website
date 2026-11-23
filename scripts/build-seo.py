@@ -247,7 +247,7 @@ def render_product_card_html(product: dict) -> str:
               </div>
 
               <div class="product-card-body">
-                <h3 class="product-title-fa">{pname_fa}</h3>
+                <h3 class="product-title-fa"><a href="product/{html.escape(str(product.get('seo', {}).get('urlSlug', '')).strip('/').replace('product/', '') or product['id'])}/index.html" style="color:inherit; text-decoration:none;">{pname_fa}</a></h3>
                 {cross_ref_html}
                 <div class="product-specs-table">
                   <div class="spec-cell">
@@ -1060,7 +1060,111 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def generate_sitemap_xml(out_path: Path) -> None:
+def generate_multi_level_catalog_pages() -> dict:
+    """
+    Generate the clean directory URL architecture from `data/catalog-500.json`:
+      - `/products/` (`products/index.html`)
+      - 8 Category Pages (`/products/<cat>/index.html`)
+      - 4 Brand Pages (`/brands/<brand>/index.html`)
+      - 30 Product Family / Series Pages (`/series/<family-id>/index.html`)
+      - 40 Individual Product Pages (`/product/<slug>/index.html` — ONLY `published` pilot SKUs)
+    """
+    import shutil
+    from templates.catalog_pages import (
+        CATEGORY_PAGES_SPEC,
+        render_brand_page,
+        render_category_directory_page,
+        render_main_catalog_hub,
+        render_series_page,
+    )
+    from templates.product_page import get_product_slug, render_product_page
+
+    catalog_json_path = ROOT_DIR / "data" / "catalog-500.json"
+    catalog_doc = json.loads(catalog_json_path.read_text(encoding="utf-8"))
+    all_products = catalog_doc["products"]
+    families = catalog_doc["productFamilies"]
+    manufacturers = catalog_doc["manufacturers"]
+    families_by_id = {f["id"]: f for f in families}
+
+    generated_files = []
+    sitemap_extra_urls = []
+
+    # 1. Main Catalog Hub: /products/index.html
+    products_hub_path = ROOT_DIR / "products" / "index.html"
+    products_hub_path.parent.mkdir(parents=True, exist_ok=True)
+    products_hub_path.write_text(
+        render_main_catalog_hub(all_products, families, manufacturers),
+        encoding="utf-8",
+    )
+    generated_files.append(products_hub_path)
+    sitemap_extra_urls.append(("https://jpciran.com/products/", "weekly", "0.95"))
+
+    # 2. 8 Category Pages: /products/<slug>/index.html
+    for cat_spec in CATEGORY_PAGES_SPEC:
+        cat_path = ROOT_DIR / "products" / cat_spec["slug"] / "index.html"
+        cat_path.parent.mkdir(parents=True, exist_ok=True)
+        cat_path.write_text(
+            render_category_directory_page(cat_spec, all_products, families),
+            encoding="utf-8",
+        )
+        generated_files.append(cat_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/products/{cat_spec['slug']}/", "weekly", "0.9"))
+
+    # 3. 4 Brand Pages: /brands/<brand-id>/index.html
+    for brand_meta in manufacturers:
+        brand_path = ROOT_DIR / "brands" / brand_meta["id"] / "index.html"
+        brand_path.parent.mkdir(parents=True, exist_ok=True)
+        brand_path.write_text(
+            render_brand_page(brand_meta, all_products, families),
+            encoding="utf-8",
+        )
+        generated_files.append(brand_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/brands/{brand_meta['id']}/", "weekly", "0.88"))
+
+    # 4. 30 Product Family / Series Pages: /series/<family-id>/index.html
+    for fam in families:
+        fam_path = ROOT_DIR / "series" / fam["id"] / "index.html"
+        fam_path.parent.mkdir(parents=True, exist_ok=True)
+        fam_path.write_text(
+            render_series_page(fam, all_products),
+            encoding="utf-8",
+        )
+        generated_files.append(fam_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/series/{fam['id']}/", "weekly", "0.85"))
+
+    # 5. Individual Product Pages: ONLY the 40 `published` pilot SKUs (`/product/<slug>/index.html`)
+    product_root_dir = ROOT_DIR / "product"
+    if product_root_dir.exists():
+        shutil.rmtree(product_root_dir)
+    product_root_dir.mkdir(parents=True, exist_ok=True)
+
+    published_products = [p for p in all_products if p.get("publicationStatus") == "published"]
+    for prod in published_products:
+        slug = get_product_slug(prod)
+        pdp_path = product_root_dir / slug / "index.html"
+        pdp_path.parent.mkdir(parents=True, exist_ok=True)
+        pdp_path.write_text(
+            render_product_page(prod, all_products, families_by_id),
+            encoding="utf-8",
+        )
+        generated_files.append(pdp_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/product/{slug}/", "weekly", "0.82"))
+
+    return {
+        "files": generated_files,
+        "sitemap_urls": sitemap_extra_urls,
+        "counts": {
+            "hub": 1,
+            "categories": len(CATEGORY_PAGES_SPEC),
+            "brands": len(manufacturers),
+            "series": len(families),
+            "products_published": len(published_products),
+            "total": len(generated_files),
+        },
+    }
+
+
+def generate_sitemap_xml(out_path: Path, extra_urls: list = None) -> None:
     today = date.today().isoformat()
     urls = [
         ("https://jpciran.com/", "weekly", "1.0"),
@@ -1073,6 +1177,9 @@ def generate_sitemap_xml(out_path: Path) -> None:
         ("https://jpciran.com/pneumatics-lalehzar-tehran.html", "weekly", "0.9"),
         ("https://jpciran.com/what-is-pneumatics-jpc.html", "monthly", "0.85"),
     ]
+    if extra_urls:
+        urls.extend(extra_urls)
+
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -1148,14 +1255,22 @@ def main() -> None:
         sync_page_chrome_and_assets(html_path)
         print(f"[build-seo] Synced header/drawer/footer/JSON-LD & ?v={ASSET_VERSION} in {filename}")
 
+    multi_res = generate_multi_level_catalog_pages()
+    c = multi_res["counts"]
+    print(
+        f"[build-seo] Generated {c['total']} multi-level directory HTML pages: "
+        f"hub={c['hub']} (/products/), categories={c['categories']}, brands={c['brands']}, "
+        f"series={c['series']}, published_products={c['products_published']} (0 draft pages generated)"
+    )
+
     generate_llms_txt(LLMS_TXT_PATH)
     print(f"[build-seo] Generated {LLMS_TXT_PATH.name} ({LLMS_TXT_PATH.stat().st_size} bytes)")
 
     generate_llms_full_txt(published_products, LLMS_FULL_PATH)
     print(f"[build-seo] Generated {LLMS_FULL_PATH.name} ({LLMS_FULL_PATH.stat().st_size} bytes)")
 
-    generate_sitemap_xml(SITEMAP_PATH)
-    print(f"[build-seo] Generated {SITEMAP_PATH.name} ({SITEMAP_PATH.stat().st_size} bytes)")
+    generate_sitemap_xml(SITEMAP_PATH, extra_urls=multi_res["sitemap_urls"])
+    print(f"[build-seo] Generated {SITEMAP_PATH.name} ({SITEMAP_PATH.stat().st_size} bytes, {9 + len(multi_res['sitemap_urls'])} URLs)")
 
     generate_robots_txt(ROBOTS_PATH)
     print(f"[build-seo] Generated {ROBOTS_PATH.name} ({ROBOTS_PATH.stat().st_size} bytes)")
@@ -1163,3 +1278,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

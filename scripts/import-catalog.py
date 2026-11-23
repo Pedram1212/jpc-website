@@ -672,8 +672,14 @@ def normalize_record(raw: dict, existing_by_sku: dict) -> dict:
     enrich = JPC_ENRICHMENTS.get(row_id, {})
     canonical_sku = enrich.get("sku") or suggested_sku.replace("-/-", "-")
 
-    # Determine stable ID slug
-    url_slug = str(raw.get("مسیر پیشنهادی / URL Slug", "")).strip()
+    # Determine stable ID slug & normalized URL slug (remove redundant double jpc-jpc- prefix)
+    raw_url_slug = str(raw.get("مسیر پیشنهادی / URL Slug", "")).strip()
+    if raw_url_slug.startswith("/product/jpc-jpc-"):
+        url_slug = "/product/jpc-" + raw_url_slug[len("/product/jpc-jpc-"):]
+    elif raw_url_slug:
+        url_slug = raw_url_slug
+    else:
+        url_slug = f"/product/{slugify(canonical_sku)}/"
     slug_tail = url_slug.strip("/").split("/")[-1] if url_slug else slugify(canonical_sku)
     item_id = LEGACY_STABLE_IDS_BY_ROW.get(row_id, slug_tail or slugify(canonical_sku))
 
@@ -681,7 +687,8 @@ def normalize_record(raw: dict, existing_by_sku: dict) -> dict:
     category_id = cat_info["id"]
     ui_category = cat_info["uiCategory"]
     subcat_id = slugify(f"{category_id}-{subcat_fa}") or f"{category_id}-sub"
-    family_id = slugify(f"{manufacturer_id}-{family_code}")
+    family_prefix = "rexroth" if manufacturer_id == "bosch-rexroth" else manufacturer_id
+    family_id = slugify(f"{family_prefix}-{family_code}")
 
     # Parse technical attributes
     bore_mm = enrich.get("boreMm") or parse_number(raw.get("قطر پیستون (mm)", ""))
