@@ -1280,7 +1280,16 @@ def generate_sitemap_xml(out_path: Path, extra_urls: list = None) -> None:
             ]
         )
     xml_lines.append("</urlset>")
-    out_path.write_text("\n".join(xml_lines) + "\n", encoding="utf-8")
+    xml_text = ("\n".join(xml_lines) + "\n").lstrip("\ufeff \t\r\n")
+    import xml.etree.ElementTree as ET
+    root_el = ET.fromstring(xml_text)
+    loc_count = len(root_el.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc"))
+    if loc_count != len(urls):
+        raise RuntimeError(f"sitemap.xml URL count mismatch: expected {len(urls)}, parsed {loc_count}")
+    xml_bytes = xml_text.encode("utf-8")
+    if not xml_bytes.startswith(b'<?xml version="1.0" encoding="UTF-8"?>'):
+        raise RuntimeError("sitemap.xml must start at byte 0 with <?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+    out_path.write_bytes(xml_bytes)
 
 
 def generate_robots_txt(out_path: Path) -> None:
