@@ -394,7 +394,7 @@
           <span class="brand-sub">INDUSTRIAL</span>
         </div>
         <div class="brand-text">
-          <span class="brand-title">شرکت جلالی پنوماتیک</span>
+          <span class="brand-title"><span class="brand-company-prefix">شرکت </span>جلالی پنوماتیک</span>
           <span class="brand-subtitle">مرجع تخصصی تأمین، معادل‌یابی و اتوماسیون پنوماتیک صنعتی</span>
         </div>
       </a>
@@ -412,6 +412,22 @@
       </nav>
 
       <div class="header-actions">
+        <button
+          type="button"
+          class="rfq-header-btn js-open-rfq-drawer"
+          title="مشاهده لیست استعلام قیمت (RFQ)"
+          aria-label="سبد استعلام قیمت چندقلمی"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path>
+            <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+            <line x1="9" y1="12" x2="15" y2="12"></line>
+            <line x1="9" y1="16" x2="13" y2="16"></line>
+          </svg>
+          <span class="rfq-btn-label">سبد استعلام</span>
+          <span class="rfq-count-badge js-rfq-count-badge">0</span>
+        </button>
+
         <a
           href="../products/index.html"
           class="header-search-trigger"
@@ -424,22 +440,6 @@
           </svg>
           <span class="header-search-trigger-label">جستجوی کد فنی</span>
         </a>
-
-        <button
-          type="button"
-          class="rfq-header-btn js-open-rfq-drawer"
-          title="مشاهده لیست استعلام قیمت (RFQ)"
-          aria-label="سبد استعلام قیمت چندقلمی"
-        >
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path>
-            <rect x="9" y="3" width="6" height="4" rx="1"></rect>
-            <line x1="9" y1="12" x2="15" y2="12"></line>
-            <line x1="9" y1="16" x2="13" y2="16"></line>
-          </svg>
-          <span class="rfq-btn-label">سبد استعلام</span>
-          <span class="rfq-count-badge js-rfq-count-badge">0</span>
-        </button>
 
         <a
           href="https://ai.jpciran.com"
@@ -662,22 +662,23 @@
         </p>
 
         <!-- 8-TIER SEARCH BAR -->
-        <div id="primary-tech-search-hub" style="background: #FFFFFF; border-radius: 12px; padding: 1rem; color: #10243A; position: relative;">
-          <form id="hero-quick-search-form" role="search" aria-label="جستجوی کد فنی در ۵۰۰ تجهیز کاتالوگ" style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+        <div id="primary-tech-search-hub" class="catalog-search-hub-card">
+          <form id="hero-quick-search-form" class="catalog-hero-search-form" role="search" aria-label="جستجوی کد فنی در ۵۰۰ تجهیز کاتالوگ">
             <label for="hero-quick-search-input" class="sr-only">جستجوی کد فنی، شماره سفارش یا مشخصات پنوماتیک</label>
             <input
               type="search"
               id="hero-quick-search-input"
-              class="form-input"
+              class="form-input catalog-hero-search-input"
               placeholder="جستجوی کد فنی (مثلاً DSBC-32-100، 1376426، 4V210-08، V61B513A، QS-8، جک قطر ۶۳)..."
               autocomplete="off"
               aria-autocomplete="list"
               aria-controls="hero-tech-autocomplete"
               aria-expanded="false"
-              style="flex: 1; min-width: 240px;"
             />
-            <button type="button" id="hero-quick-search-clear" class="btn btn-outline-tech btn-sm" aria-label="پاک کردن جستجو">پاکسازی</button>
-            <button type="submit" class="btn btn-amber">جستجو در ۵۰۰ کد فنی</button>
+            <div class="catalog-hero-search-actions">
+              <button type="submit" class="btn btn-amber catalog-hero-search-submit">جستجو در ۵۰۰ کد فنی</button>
+              <button type="button" id="hero-quick-search-clear" class="btn btn-outline-tech btn-sm catalog-hero-search-clear" aria-label="پاک کردن جستجو">پاکسازی</button>
+            </div>
           </form>
           <div id="hero-tech-autocomplete" class="tech-autocomplete-panel" role="listbox" aria-label="پیشنهادهای کد فنی"></div>
         </div>

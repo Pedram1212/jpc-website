@@ -322,22 +322,23 @@ def render_main_catalog_hub(all_products: list, families: list, manufacturers: l
         </p>
 
         <!-- 8-TIER SEARCH BAR -->
-        <div id="primary-tech-search-hub" style="background: #FFFFFF; border-radius: 12px; padding: 1rem; color: #10243A; position: relative;">
-          <form id="hero-quick-search-form" role="search" aria-label="جستجوی کد فنی در ۵۰۰ تجهیز کاتالوگ" style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+        <div id="primary-tech-search-hub" class="catalog-search-hub-card">
+          <form id="hero-quick-search-form" class="catalog-hero-search-form" role="search" aria-label="جستجوی کد فنی در ۵۰۰ تجهیز کاتالوگ">
             <label for="hero-quick-search-input" class="sr-only">جستجوی کد فنی، شماره سفارش یا مشخصات پنوماتیک</label>
             <input
               type="search"
               id="hero-quick-search-input"
-              class="form-input"
+              class="form-input catalog-hero-search-input"
               placeholder="جستجوی کد فنی (مثلاً DSBC-32-100، 1376426، 4V210-08، V61B513A، QS-8، جک قطر ۶۳)..."
               autocomplete="off"
               aria-autocomplete="list"
               aria-controls="hero-tech-autocomplete"
               aria-expanded="false"
-              style="flex: 1; min-width: 240px;"
             />
-            <button type="button" id="hero-quick-search-clear" class="btn btn-outline-tech btn-sm" aria-label="پاک کردن جستجو">پاکسازی</button>
-            <button type="submit" class="btn btn-amber">جستجو در ۵۰۰ کد فنی</button>
+            <div class="catalog-hero-search-actions">
+              <button type="submit" class="btn btn-amber catalog-hero-search-submit">جستجو در ۵۰۰ کد فنی</button>
+              <button type="button" id="hero-quick-search-clear" class="btn btn-outline-tech btn-sm catalog-hero-search-clear" aria-label="پاک کردن جستجو">پاکسازی</button>
+            </div>
           </form>
           <div id="hero-tech-autocomplete" class="tech-autocomplete-panel" role="listbox" aria-label="پیشنهادهای کد فنی"></div>
         </div>
