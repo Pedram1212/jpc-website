@@ -1131,12 +1131,17 @@ Sitemap: https://jpciran.com/sitemap.xml
 
 def main() -> None:
     products = parse_products_from_js(PRODUCTS_JS_PATH)
-    print(f"[build-seo] Parsed {len(products)} products from {PRODUCTS_JS_PATH.name}")
+    published_products = [p for p in products if p.get("publicationStatus", "published") == "published"]
+    draft_count = len(products) - len(published_products)
+    print(
+        f"[build-seo] Parsed {len(products)} total PIM products from {PRODUCTS_JS_PATH.name} "
+        f"({len(published_products)} published for SEO indexing, {draft_count} draft for live search/RFQ)"
+    )
 
     for filename, cat_filter, page_url in PAGE_TARGETS:
         html_path = ROOT_DIR / filename
-        rendered_count = update_catalog_ssr_in_html(html_path, cat_filter, page_url, products)
-        print(f"[build-seo] Injected {rendered_count} SSR product cards + ItemList JSON-LD into {filename}")
+        rendered_count = update_catalog_ssr_in_html(html_path, cat_filter, page_url, published_products)
+        print(f"[build-seo] Injected {rendered_count} published SSR product cards + ItemList JSON-LD into {filename}")
 
     for filename in ALL_HTML_PAGES:
         html_path = ROOT_DIR / filename
@@ -1146,7 +1151,7 @@ def main() -> None:
     generate_llms_txt(LLMS_TXT_PATH)
     print(f"[build-seo] Generated {LLMS_TXT_PATH.name} ({LLMS_TXT_PATH.stat().st_size} bytes)")
 
-    generate_llms_full_txt(products, LLMS_FULL_PATH)
+    generate_llms_full_txt(published_products, LLMS_FULL_PATH)
     print(f"[build-seo] Generated {LLMS_FULL_PATH.name} ({LLMS_FULL_PATH.stat().st_size} bytes)")
 
     generate_sitemap_xml(SITEMAP_PATH)

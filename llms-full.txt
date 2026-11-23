@@ -21,311 +21,647 @@
 
 | ردیف | کد فنی مدل (SKU / Code) | نام فارسی تجهیز | English Product Name | برند (Brand) | سایز پورت (Port) | فشار کاری (Pressure) | کدهای هم‌ابعاد و معادل فنی (Compatible Equivalents) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | `JPC-4V210-08-24DC` | شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210 | JPC 5/2 Way Single Solenoid Valve 4V210-08 | **JPC** | `G 1/4" (سایز ۱/۴ اینچ)` | `1.5 – 8.0 bar` | `MFH-5-1/4, FESTO-MFH-5-1/4-B, V61B513A-A213J, NORGREN-V61B513A, 0820055051, 4V210-08, SY5120-5LZD-02` |
-| 2 | `JPC-4V220-08-220AC` | شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220 | JPC 5/2 Way Double Solenoid Valve 4V220-08 | **JPC** | `G 1/4" (سایز ۱/۴ اینچ)` | `1.5 – 8.0 bar` | `JMFH-5-1/4, FESTO-JMFH-5-1/4-B, V61B522A-A213J, REXROTH-0820055051-CD07, CD07-5/2, 4V220-08, SY5220-5LZD-02` |
-| 3 | `JPC-4V330C-10-24DC` | شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C | JPC 5/3 Way Closed Center Solenoid Valve 4V330C-10 | **JPC** | `G 3/8" (سایز ۳/۸ اینچ)` | `1.5 – 8.0 bar` | `VUVG-L18-M53C, V62C611A-A213J, 4V330C-10, 4V230C-08, 0820055501` |
-| 4 | `JPC-3V210-06-24DC` | شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210 | JPC 3/2 Way NC Solenoid Valve 3V210-06 | **JPC** | `G 1/8" (سایز ۱/۸ اینچ)` | `1.5 – 8.0 bar` | `MFH-3-1/8, MFH-3-1/4, V60A513A-A213J, 3V210-06, 3V210-08` |
-| 5 | `FESTO-MFH-5-1/4-B` | شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH | Festo Tiger Classic 5/2 Solenoid Valve MFH-5-1/4 | **Festo** | `G 1/4" & G 1/8" & G 1/2"` | `2.0 – 10.0 bar` | `MFH-5-1/4, JMFH-5-1/4, MFH-5-1/8, JPC-4V210-08-24DC, 4V210-08` |
-| 6 | `NORGREN-V61B513A-A213J` | شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61 | Norgren V61 Series Inline 5/2 & 5/3 Solenoid Valve | **Norgren** | `G 1/4" & G 3/8" & G 1/2"` | `2.0 – 10.0 bar` | `V61B513A, V60A513A, V62C513A, JPC-4V210-08-24DC, JPC-4V330C-10-24DC` |
-| 7 | `REXROTH-0820055051-CD07` | شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599 | Bosch Rexroth 5/2 Directional Control Valve CD07 / 581 | **Bosch Rexroth** | `G 1/4" & G 3/8" & G 1/2"` | `1.5 – 10.0 bar` | `0820055051, CD07, 581-ISO1, JPC-4V220-08-220AC, JPC-4V210-08-24DC` |
-| 8 | `JPC-DNC-63-200-PPV-A` | جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC | JPC Profile Pneumatic Cylinder ISO 15552 Series DNC | **JPC** | `G 3/8" (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ)` | `1.0 – 10.0 bar` | `DSBC-32, DSBC-40-100, DSBC-50-250, DSBC-63-200, DNC-40-100, DNC-63-200, PRA/182040/M/100, PRA/182050/M, R480141402, ISO-15552` |
-| 9 | `JPC-SC-80x150-S` | جک پنوماتیک چهارمیل صنعتی سری SC / SU | JPC Tie-Rod Double-Acting Pneumatic Cylinder SC Series | **JPC** | `G 1/4" الی G 3/4" (متناسب با قطر سیلندر)` | `1.0 – 9.0 bar` | `SC-32, SC-40, SC-50, SC-63, SC-80x150, SC-100, SC-125, MBB50, CP96SDB` |
-| 10 | `JPC-ADVU-40-50-PA` | جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA | JPC Compact Pneumatic Cylinder ADVU / SDA Series | **JPC** | `M5 / G 1/8" / G 1/4"` | `1.0 – 10.0 bar` | `ADVU-40-50-P-A, ADN-40-50, SDA-40x50, KPZ-40, RM/92040/M` |
-| 11 | `JPC-MAL-25x100-CA` | جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL | JPC Mini Round Pneumatic Cylinder DSNU / MAL Series | **JPC** | `M5 / G 1/8"` | `1.0 – 9.0 bar` | `DSNU-16, DSNU-20, DSNU-25-100-P-A, MAL-25x100, RA/802025/M, ISO-6432` |
-| 12 | `FESTO-DSBC-50-250-PPVA-N3` | جک پنوماتیک پروفیلی فستو سری DSBC / DNC | Festo ISO 15552 Standards-Based Cylinder DSBC-50 | **Festo** | `G 1/4" (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵)` | `0.6 – 12.0 bar` | `DSBC-50-250, DSBC-40-100, DNC-50-250, DNC-40-100, JPC-DNC-63-200-PPV-A` |
-| 13 | `NORGREN-PRA/182050/M` | جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra | Norgren ISOLine Profile & Lintra Rodless Cylinder | **Norgren** | `G 1/8" الی G 1/2"` | `1.0 – 10.0 bar` | `PRA/182050/M, PRA/182040/M/100, RA/8000, M/46000, JPC-DNC-63-200-PPV-A` |
-| 14 | `REXROTH-R480141402-PRA` | جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ | Bosch Rexroth Profile & Compact Cylinder PRA / KPZ Series | **Bosch Rexroth** | `G 1/8" الی G 1/2"` | `1.5 – 10.0 bar` | `R480141402, 0822350, PRA-ISO, KPZ, JPC-DNC-63-200-PPV-A, JPC-ADVU-40-50-PA` |
-| 15 | `JPC-AC4010-04-D` | واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن) | JPC FRL Air Preparation Unit AC4010-04 (Filter, Regulator, Lubricator) | **JPC** | `G 1/4", G 3/8", G 1/2", G 3/4", G 1"` | `0.5 – 10.0 bar (حداکثر فشار ورودی 12 bar)` | `MS6-LFR-1/2, FESTO-MS6-LFR-1/2-D7-ERM-AS, B74G-4GK-AD3-RMN, 0821300300, AC4010-04, AC3010-03, AC2010-02, OU-1/2` |
-| 16 | `JPC-HVFF-ASC-SET` | شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار | JPC Flow Control Valves, Push-in Fittings, PU Tubing & Pressure Gauges | **JPC** | `رزوه M5 الی 1/2" | قطر شیلنگ 4, 6, 8, 10, 12, 16 mm` | `0 – 10.0 bar (فشار ترکیدگی شیلنگ تا 24 bar)` | `GRLA-1/4-QS-8, ASC-200-08, ASC-300-10, SL8-02, PC8-02, PL8-02, PUN-H-8X1.25` |
-| 17 | `FESTO-MS6-LFR-1/2-D7-ERM-AS` | واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6 | Festo MS6 Series Modular Filter Regulator & Lubricator | **Festo** | `G 1/4", G 3/8", G 1/2"` | `0.8 – 12.0 bar` | `MS6-LFR-1/2, MS4-LFR-1/4, LFR-1/2-D-MIDI, JPC-AC4010-04-D` |
-| 18 | `NORGREN-B74G-4GK-AD3-RMN` | فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G) | Norgren Excelon B74G Filter-Regulator & FRL Unit | **Norgren** | `G 1/4", G 3/8", G 1/2", G 3/4"` | `0.3 – 10.0 bar (فشار ورودی تا 17 bar در کاسه فلزی)` | `B74G-4GK-AD3-RMN, B72G-2GK, B73G-3GK, JPC-AC4010-04-D` |
-| 19 | `REXROTH-0821300300-NL2` | واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS | Bosch Rexroth Air Preparation Unit & Pressure Regulator NL2 / AS | **Bosch Rexroth** | `G 1/4", G 3/8", G 1/2"` | `0.5 – 10.0 bar` | `0821300300, NL2-FRE, AS2-FRE, JPC-AC4010-04-D` |
+| 1 | `JPC-4V210-08-24DC` | شیر برقی ۵/۲ تک بوبین جی پی سی مدل JPC-4V210-08-24DC | JPC 4V210 solenoid valve 5/2 24V DC | **JPC** | `G1/4 (1/4 اینچ)` | `1.5 – 8 bar` | `JPC-4V210-08-24DC, JPC4V2100824DC, JPC 4V210 08 24DC, JPC_4V210_08_24DC, JPC JPC-4V210-08-24DC, jpc JPC-4V210-08-24DC, JPC Iran 4V210 JPC-4V210-08-24DC, JPC-JPC-4V210-08-24DC, Festo MFH-5-1/4-B, FESTO-MFH-5-1-4-B, Airtac 4V210-08, AIRTAC-4V210-08, SMC SY5120-5LZD-02, SMC-SY5120-5LZD-02, Norgren V61B513A-A213JB, NORGREN-V61B513A-A213JB, Mindman MVSC-220-4E1, MINDMAN-MVSC-220-4E1` |
+| 2 | `JPC-4V220-08-220AC` | شیر برقی ۵/۲ دو بوبین جی پی سی مدل JPC-4V220-08-220AC | JPC 4V220 solenoid valve 5/2 220V AC | **JPC** | `G1/4 (1/4 اینچ)` | `1.5 – 8 bar` | `JPC-4V220-08-220AC, JPC4V22008220AC, JPC 4V220 08 220AC, JPC_4V220_08_220AC, JPC JPC-4V220-08-220AC, jpc JPC-4V220-08-220AC, JPC Iran 4V220 JPC-4V220-08-220AC, JPC-JPC-4V220-08-220AC, Festo JMFH-5-1/4-B, FESTO-JMFH-5-1-4-B, Airtac 4V220-08, AIRTAC-4V220-08, SMC SY5220-5LZD-02, SMC-SY5220-5LZD-02, Norgren V61B523A-A2, NORGREN-V61B523A-A2` |
+| 3 | `JPC-4V330C-10-24DC` | شیر برقی ۵/۳ مرکز بسته جی پی سی مدل JPC-4V330C-10-24DC | JPC 4V330C 5/3 closed-center solenoid valve 24V DC | **JPC** | `G3/8 (3/8 اینچ)` | `1.5 – 8 bar` | `JPC-4V330C-10-24DC, JPC4V330C1024DC, JPC 4V330C 10 24DC, JPC_4V330C_10_24DC, JPC JPC-4V330C-10-24DC, jpc JPC-4V330C-10-24DC, JPC Iran 4V330C JPC-4V330C-10-24DC, JPC-JPC-4V330C-10-24DC, Festo MFH-5/3G-3/8-B, FESTO-MFH-5-3G-3-8-B, Airtac 4V330C-10, AIRTAC-4V330C-10, SMC SY7320-5LZD-03, SMC-SY7320-5LZD-03, Norgren V62C611A-A2, NORGREN-V62C611A-A2` |
+| 4 | `JPC-3V210-06-24DC` | شیر برقی ۳/۲ نرمال بسته جی پی سی مدل JPC-3V210-06-24DC | JPC 3V210 normally-closed 3/2 solenoid valve | **JPC** | `G1/8 (1/8 اینچ)` | `1.5 – 8 bar` | `JPC-3V210-06-24DC, JPC3V2100624DC, JPC 3V210 06 24DC, JPC_3V210_06_24DC, JPC JPC-3V210-06-24DC, jpc JPC-3V210-06-24DC, JPC Iran 3V210 JPC-3V210-06-24DC, JPC-JPC-3V210-06-24DC, Festo MFH-3-1/8, FESTO-MFH-3-1-8, Airtac 3V210-06, AIRTAC-3V210-06, Norgren V60A413A-A2, NORGREN-V60A413A-A2, Norgren V60A411A-A313JB, NORGREN-V60A411A-A313JB` |
+| 5 | `JPC-DNC-63-200-PPV-A` | جک استاندارد پنوماتیک جی پی سی مدل JPC-DNC-63-200-PPV-A | JPC DNC ISO 15552 cylinder Ø63 stroke 200 | **JPC** | `G3/8 (قطر 32 تا 125 موجود)` | `1 – 10 bar` | `JPC-DNC-63-200-PPV-A, JPCDNC63200PPVA, JPC DNC 63 200 PPV A, JPC_DNC_63_200_PPV_A, JPC JPC-DNC-63-200-PPV-A, jpc JPC-DNC-63-200-PPV-A, JPC Iran DNC JPC-DNC-63-200-PPV-A, JPC-JPC-DNC-63-200-PPV-A, Festo DSBC-63-200-PPVA-N3, FESTO-DSBC-63-200-PPVA-N3, Festo DNC-63-200-PPV-A, FESTO-DNC-63-200-PPV-A, Norgren PRA/182063/M/200, NORGREN-PRA-182063-M-200, Bosch Rexroth PRA-063-0200, BOSCH-REXROTH-PRA-063-0200, SMC CP96SDB63-200C, SMC-CP96SDB63-200C` |
+| 6 | `JPC-SC-80x150-S` | جک میله‌کش پنوماتیک جی پی سی مدل JPC-SC-80x150-S | JPC SC tie-rod cylinder Ø80 stroke 150 | **JPC** | `G3/8 (سایز 32 تا 200 موجود)` | `1 – 10 bar` | `JPC-SC-80x150-S, JPCSC80x150S, JPC SC 80x150 S, JPC_SC_80x150_S, JPC JPC-SC-80x150-S, jpc JPC-SC-80x150-S, JPC Iran SC JPC-SC-80x150-S, JPC-JPC-SC-80X150-S, Airtac SC80X150S, AIRTAC-SC80X150S, Mindman MCQI-80-150, MINDMAN-MCQI-80-150, SMC CA2B80-150, SMC-CA2B80-150` |
+| 7 | `JPC-ADVU-40-50-PA` | جک کامپکت پنوماتیک جی پی سی مدل JPC-ADVU-40-50-PA | JPC ADVU compact pneumatic cylinder Ø40 stroke 50 | **JPC** | `G1/8 (قطر 16 تا 100 موجود)` | `1 – 10 bar` | `JPC-ADVU-40-50-PA, JPCADVU4050PA, JPC ADVU 40 50 PA, JPC_ADVU_40_50_PA, JPC JPC-ADVU-40-50-PA, jpc JPC-ADVU-40-50-PA, JPC Iran ADVU JPC-ADVU-40-50-PA, JPC-JPC-ADVU-40-50-PA, Festo ADVU-40-50-P-A, FESTO-ADVU-40-50-P-A, Festo ADN-40-50-A-P-A, FESTO-ADN-40-50-A-P-A, Airtac SDA40X50S, AIRTAC-SDA40X50S, SMC CQ2B40-50DM, SMC-CQ2B40-50DM` |
+| 8 | `JPC-MAL-25x100-CA` | جک قلمی پنوماتیک جی پی سی مدل JPC-MAL-25x100-CA | JPC MAL mini pneumatic cylinder Ø25 stroke 100 | **JPC** | `G1/8 (M5 و G1/8 موجود)` | `1 – 9 bar` | `JPC-MAL-25x100-CA, JPCMAL25x100CA, JPC MAL 25x100 CA, JPC_MAL_25x100_CA, JPC JPC-MAL-25x100-CA, jpc JPC-MAL-25x100-CA, JPC Iran MAL JPC-MAL-25x100-CA, JPC-JPC-MAL-25X100-CA, Festo DSNU-25-100-P-A, FESTO-DSNU-25-100-P-A, Airtac MAL25X100CA, AIRTAC-MAL25X100CA, Norgren RM/8025/M/100, NORGREN-RM-8025-M-100, SMC CM2B25-100, SMC-CM2B25-100` |
+| 9 | `JPC-AC4010-04-D` | واحد مراقبت ترکیبی هوای فشرده جی پی سی مدل JPC-AC4010-04-D | JPC AC4010 FRL air service unit | **JPC** | `G1/2 (سایز G1/4 تا G1 موجود)` | `0.5 – 10 bar` | `JPC-AC4010-04-D, JPCAC401004D, JPC AC4010 04 D, JPC_AC4010_04_D, JPC JPC-AC4010-04-D, jpc JPC-AC4010-04-D, JPC Iran AC4010 JPC-AC4010-04-D, JPC-JPC-AC4010-04-D, Festo MS6-LFR-1/2-D7-ERM-AS, FESTO-MS6-LFR-1-2-D7-ERM-AS, SMC AC40-04DG-A, SMC-AC40-04DG-A, Norgren BL74-401G, NORGREN-BL74-401G, Norgren B74G-4GK-AD3-RMN, NORGREN-B74G-4GK-AD3-RMN, Airtac BC4000, AIRTAC-BC4000` |
+| 10 | `JPC-HVFF-ASC-SET` | کیت اتصالات و کنترل جریان جی پی سی مدل JPC-HVFF-ASC-SET | JPC pneumatic flow-control and fitting kit | **JPC** | `M5, G1/8, G1/4, G3/8, G1/2` | `0 – 10 bar` | `JPC-HVFF-ASC-SET, JPCHVFFASCSET, JPC HVFF ASC SET, JPC_HVFF_ASC_SET, JPC JPC-HVFF-ASC-SET, jpc JPC-HVFF-ASC-SET, JPC Iran HVFF JPC-HVFF-ASC-SET, JPC-JPC-HVFF-ASC-SET, Festo QS / GRLA / PUN-H, FESTO-QS-GRLA-PUN-H, SMC KQ2 / AS / TU, SMC-KQ2-AS-TU, Norgren Pneufit C, NORGREN-PNEUFIT-C` |
+| 11 | `DSBC-32-20-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 32 کورس 20 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø32 × 20 mm, PPVA | **Festo** | `G1/8` | `0.6 – 12 bar` | `DSBC-32-20-PPVA-N3, DSBC3220PPVAN3, DSBC 32 20 PPVA N3, DSBC_32_20_PPVA_N3, Festo DSBC-32-20-PPVA-N3, festo DSBC-32-20-PPVA-N3, Festo DSBC 32x20 PPVA, FESTO-DSBC-32-20-PPVA-N3, 2123069, سری JPC-DNC (سایز 32×20mm), JPC-DNC-63-200-PPV-A` |
+| 12 | `DSBC-32-100-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø32 × 100 mm, PPVA | **Festo** | `G1/8` | `0.6 – 12 bar` | `DSBC-32-100-PPVA-N3, DSBC32100PPVAN3, DSBC 32 100 PPVA N3, DSBC_32_100_PPVA_N3, Festo DSBC-32-100-PPVA-N3, festo DSBC-32-100-PPVA-N3, Festo DSBC 32x100 PPVA, FESTO-DSBC-32-100-PPVA-N3, 1376426, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A` |
+| 13 | `DSBC-32-100-PPSA-N3` | جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPSA | Festo DSBC ISO 15552 cylinder Ø32 × 100 mm, PPSA | **Festo** | `G1/8` | `0.6 – 12 bar` | `DSBC-32-100-PPSA-N3, DSBC32100PPSAN3, DSBC 32 100 PPSA N3, DSBC_32_100_PPSA_N3, Festo DSBC-32-100-PPSA-N3, festo DSBC-32-100-PPSA-N3, Festo DSBC 32x100 PPSA, FESTO-DSBC-32-100-PPSA-N3, 1376471, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A` |
+| 14 | `DSBC-40-100-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 40 کورس 100 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø40 × 100 mm, PPVA | **Festo** | `G1/4` | `0.6 – 12 bar` | `DSBC-40-100-PPVA-N3, DSBC40100PPVAN3, DSBC 40 100 PPVA N3, DSBC_40_100_PPVA_N3, Festo DSBC-40-100-PPVA-N3, festo DSBC-40-100-PPVA-N3, Festo DSBC 40x100 PPVA, FESTO-DSBC-40-100-PPVA-N3, 1376660, سری JPC-DNC (سایز 40×100mm), JPC-DNC-63-200-PPV-A` |
+| 15 | `DSBC-40-160-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 40 کورس 160 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø40 × 160 mm, PPVA | **Festo** | `G1/4` | `0.6 – 12 bar` | `DSBC-40-160-PPVA-N3, DSBC40160PPVAN3, DSBC 40 160 PPVA N3, DSBC_40_160_PPVA_N3, Festo DSBC-40-160-PPVA-N3, festo DSBC-40-160-PPVA-N3, Festo DSBC 40x160 PPVA, FESTO-DSBC-40-160-PPVA-N3, 1376662, سری JPC-DNC (سایز 40×160mm), JPC-DNC-63-200-PPV-A` |
+| 16 | `DSBC-50-250-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 50 کورس 250 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø50 × 250 mm, PPVA | **Festo** | `G1/4` | `0.6 – 12 bar` | `DSBC-50-250-PPVA-N3, DSBC50250PPVAN3, DSBC 50 250 PPVA N3, DSBC_50_250_PPVA_N3, Festo DSBC-50-250-PPVA-N3, festo DSBC-50-250-PPVA-N3, Festo DSBC 50x250 PPVA, FESTO-DSBC-50-250-PPVA-N3, سری JPC-DNC (سایز 50×250mm), JPC-DNC-63-200-PPV-A` |
+| 17 | `DSBC-63-200-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 63 کورس 200 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø63 × 200 mm, PPVA | **Festo** | `G3/8` | `0.6 – 12 bar` | `DSBC-63-200-PPVA-N3, DSBC63200PPVAN3, DSBC 63 200 PPVA N3, DSBC_63_200_PPVA_N3, Festo DSBC-63-200-PPVA-N3, festo DSBC-63-200-PPVA-N3, Festo DSBC 63x200 PPVA, FESTO-DSBC-63-200-PPVA-N3, JPC-DNC-63-200-PPV-A` |
+| 18 | `DSBC-80-200-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 80 کورس 200 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø80 × 200 mm, PPVA | **Festo** | `G3/8` | `0.6 – 12 bar` | `DSBC-80-200-PPVA-N3, DSBC80200PPVAN3, DSBC 80 200 PPVA N3, DSBC_80_200_PPVA_N3, Festo DSBC-80-200-PPVA-N3, festo DSBC-80-200-PPVA-N3, Festo DSBC 80x200 PPVA, FESTO-DSBC-80-200-PPVA-N3, سری JPC-DNC (سایز 80×200mm), JPC-DNC-63-200-PPV-A` |
+| 19 | `DSBC-100-100-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 100 کورس 100 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø100 × 100 mm, PPVA | **Festo** | `G1/2` | `0.6 – 12 bar` | `DSBC-100-100-PPVA-N3, DSBC100100PPVAN3, DSBC 100 100 PPVA N3, DSBC_100_100_PPVA_N3, Festo DSBC-100-100-PPVA-N3, festo DSBC-100-100-PPVA-N3, Festo DSBC 100x100 PPVA, FESTO-DSBC-100-100-PPVA-N3, 1384808, سری JPC-DNC (سایز 100×100mm), JPC-DNC-63-200-PPV-A` |
+| 20 | `DSBC-125-100-PPVA-N3` | جک پنوماتیک فستو DSBC قطر 125 کورس 100 مدل PPVA | Festo DSBC ISO 15552 cylinder Ø125 × 100 mm, PPVA | **Festo** | `G1/2` | `0.6 – 12 bar` | `DSBC-125-100-PPVA-N3, DSBC125100PPVAN3, DSBC 125 100 PPVA N3, DSBC_125_100_PPVA_N3, Festo DSBC-125-100-PPVA-N3, festo DSBC-125-100-PPVA-N3, Festo DSBC 125x100 PPVA, FESTO-DSBC-125-100-PPVA-N3, 1804960, سری JPC-DNC (سایز 125×100mm), JPC-DNC-63-200-PPV-A` |
+| 21 | `DSBC-32-100-D3-PPVA-N3` | جک پنوماتیک فستو DSBC-D3 قطر 32 کورس 100 PPVA | Festo DSBC D3 cylinder Ø32 × 100 mm, PPVA, 3 sensor slots | **Festo** | `G1/8` | `0.6 – 12 bar` | `DSBC-32-100-D3-PPVA-N3, DSBC32100D3PPVAN3, DSBC 32 100 D3 PPVA N3, DSBC_32_100_D3_PPVA_N3, Festo DSBC-32-100-D3-PPVA-N3, festo DSBC-32-100-D3-PPVA-N3, DSBC D3 32 100 PPVA, FESTO-DSBC-32-100-D3-PPVA-N3, 3656519, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A` |
+| 22 | `DSBC-40-100-D3-PPVA-N3` | جک پنوماتیک فستو DSBC-D3 قطر 40 کورس 100 PPVA | Festo DSBC D3 cylinder Ø40 × 100 mm, PPVA, 3 sensor slots | **Festo** | `G1/4` | `0.6 – 12 bar` | `DSBC-40-100-D3-PPVA-N3, DSBC40100D3PPVAN3, DSBC 40 100 D3 PPVA N3, DSBC_40_100_D3_PPVA_N3, Festo DSBC-40-100-D3-PPVA-N3, festo DSBC-40-100-D3-PPVA-N3, DSBC D3 40 100 PPVA, FESTO-DSBC-40-100-D3-PPVA-N3, 3660623, سری JPC-DNC (سایز 40×100mm), JPC-DNC-63-200-PPV-A` |
+| 23 | `QS-4` | رابط مستقیم دوطرفه شیلنگ فستو QS-4 | Festo Straight push-in connector QS-4 | **Festo** | `متریک / فشاری` | `-0.95 – 14 bar` | `QS-4, QS4, QS 4, QS_4, Festo QS-4, festo QS-4, QS 4mm push in fitting, FESTO-QS-4, 153031, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 24 | `QS-8` | رابط مستقیم دوطرفه شیلنگ فستو QS-8 | Festo Straight push-in connector QS-8 | **Festo** | `متریک / فشاری` | `-0.95 – 14 bar` | `QS-8, QS8, QS 8, QS_8, Festo QS-8, festo QS-8, QS 8mm push in fitting, FESTO-QS-8, 153033, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 25 | `QS-8-4` | رابط کاهنده مستقیم فستو QS-8-4 | Festo Reducing push-in connector QS-8-4 | **Festo** | `متریک / فشاری` | `-0.95 – 14 bar` | `QS-8-4, QS84, QS 8 4, QS_8_4, Festo QS-8-4, festo QS-8-4, QS-reducing 8/4mm push in fitting, FESTO-QS-8-4, 130606, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 26 | `QSS-6` | رابط پنلی مستقیم فستو QSS-6 | Festo Bulkhead push-in connector QSS-6 | **Festo** | `متریک / فشاری` | `-0.95 – 14 bar` | `QSS-6, QSS6, QSS 6, QSS_6, Festo QSS-6, festo QSS-6, QSS 6mm push in fitting, FESTO-QSS-6, 153158, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 27 | `QSSF-1/4-8-B` | رابط پنلی رزوه‌دار سری QSSF فستو QSSF-1/4-8-B | Festo QSSF bulkhead fitting QSSF-1/4-8-B | **Festo** | `1/4 (thread; verify female/male)` | `-0.95 – 14 bar` | `QSSF-1/4-8-B, QSSF1/48B, QSSF 1 4 8 B, QSSF_1/4_8_B, Festo QSSF-1/4-8-B, festo QSSF-1/4-8-B, QSSF 8mm push in fitting, FESTO-QSSF-1-4-8-B, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 28 | `QSLV-G1/8-6-100` | زانویی رزوه‌ای سری QSLV فستو QSLV-G1/8-6-100 | Festo QSLV threaded elbow connector QSLV-G1/8-6-100 | **Festo** | `G1/8` | `-0.95 – 14 bar` | `QSLV-G1/8-6-100, QSLVG1/86100, QSLV G1 8 6 100, QSLV_G1/8_6_100, Festo QSLV-G1/8-6-100, festo QSLV-G1/8-6-100, QSLV 6mm push in fitting, FESTO-QSLV-G1-8-6-100, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET` |
+| 29 | `V61B413A-A213JH` | شیر برقی نورگرن 3/2 NC مدل V61B413A-A213JH | Norgren pneumatic solenoid valve 3/2 NC G1/4 V61B413A-A213JH | **Norgren** | `G1/4` | `2 – 10 bar (بسته به مدل پایلوت)` | `V61B413A-A213JH, V61B413AA213JH, V61B413A A213JH, V61B413A_A213JH, Norgren V61B413A-A213JH, norgren V61B413A-A213JH, Norgren V61 3/2 NC G1/4, NORGREN-V61B413A-A213JH, JPC-3V210-06-24DC` |
+| 30 | `V60A513A-A213JB` | شیر برقی نورگرن 5/2 مدل V60A513A-A213JB | Norgren pneumatic solenoid valve 5/2 G1/8 V60A513A-A213JB | **Norgren** | `G1/8` | `2 – 10 bar (بسته به مدل پایلوت)` | `V60A513A-A213JB, V60A513AA213JB, V60A513A A213JB, V60A513A_A213JB, Norgren V60A513A-A213JB, norgren V60A513A-A213JB, Norgren V60 5/2 G1/8, NORGREN-V60A513A-A213JB` |
+| 31 | `V61B513A-A213JB` | شیر برقی نورگرن 5/2 مدل V61B513A-A213JB | Norgren pneumatic solenoid valve 5/2 G1/4 V61B513A-A213JB | **Norgren** | `G1/4` | `2 – 10 bar (بسته به مدل پایلوت)` | `V61B513A-A213JB, V61B513AA213JB, V61B513A A213JB, V61B513A_A213JB, Norgren V61B513A-A213JB, norgren V61B513A-A213JB, Norgren V61 5/2 G1/4, NORGREN-V61B513A-A213JB, JPC-4V210-08-24DC` |
+| 32 | `V63D513A-A213JB` | شیر برقی نورگرن 5/2 مدل V63D513A-A213JB | Norgren pneumatic solenoid valve 5/2 G1/2 V63D513A-A213JB | **Norgren** | `G1/2` | `2 – 10 bar (بسته به مدل پایلوت)` | `V63D513A-A213JB, V63D513AA213JB, V63D513A A213JB, V63D513A_A213JB, Norgren V63D513A-A213JB, norgren V63D513A-A213JB, Norgren V63 5/2 G1/2, NORGREN-V63D513A-A213JB` |
+| 33 | `V61B611A-A213JB` | شیر برقی نورگرن 5/3 APB مدل V61B611A-A213JB | Norgren pneumatic solenoid valve 5/3 APB G1/4 V61B611A-A213JB | **Norgren** | `G1/4` | `2 – 10 bar (بسته به مدل پایلوت)` | `V61B611A-A213JB, V61B611AA213JB, V61B611A A213JB, V61B611A_A213JB, Norgren V61B611A-A213JB, norgren V61B611A-A213JB, Norgren V61 5/3 APB G1/4, NORGREN-V61B611A-A213JB, JPC-4V330C-10-24DC` |
+| 34 | `BL72-201GA` | واحد مراقبت نورگرن BL72 مدل BL72-201GA | Norgren Excelon BL72 FRL boxed set BL72-201GA | **Norgren** | `G1/4` | `0.3 – 10 bar` | `BL72-201GA, BL72201GA, BL72 201GA, BL72_201GA, Norgren BL72-201GA, norgren BL72-201GA, Norgren Excelon BL72 boxed FRL G1/4, NORGREN-BL72-201GA, JPC-AC4010-04-D (سری AC2010..AC4010), JPC-AC4010-04-D` |
+| 35 | `BL74-401G` | واحد مراقبت نورگرن BL74 مدل BL74-401G | Norgren Excelon BL74 FRL boxed set BL74-401G | **Norgren** | `G1/2` | `0.3 – 10 bar` | `BL74-401G, BL74401G, BL74 401G, BL74_401G, Norgren BL74-401G, norgren BL74-401G, Norgren Excelon BL74 boxed FRL G1/2, NORGREN-BL74-401G, JPC-AC4010-04-D (سری AC2010..AC4010), JPC-AC4010-04-D` |
+| 36 | `T40C2800` | سایلنسر پنوماتیک نورگرن G1/4 مدل T40C2800 | Norgren T40 Quietaire sintered bronze silencer G1/4 T40C2800 | **Norgren** | `G1/4` | `0 – 10 bar` | `T40C2800, Norgren T40C2800, norgren T40C2800, T40 sintered bronze pneumatic silencer G1/4, NORGREN-T40C2800` |
+| 37 | `0820055201` | شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055201 | Legacy Rexroth AVENTICS Valve system directional spool component HF03-LG 0820055201 | **Bosch Rexroth** | `مطابق دیتاشیت سری` | `مطابق دیتاشیت HF03-LG` | `0820055201, Bosch Rexroth / AVENTICS 0820055201, bosch rexroth / aventics 0820055201, Bosch Rexroth Aventics HF03 LG 0820055201, BOSCH-REXROTH-AVENTICS-0820055201, BOSCH-REXROTH-/-AVENTICS-0820055201, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW` |
+| 38 | `0820055051` | شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055051 | Legacy Rexroth AVENTICS Valve system directional spool component HF03-LG 0820055051 | **Bosch Rexroth** | `مطابق دیتاشیت سری` | `مطابق دیتاشیت HF03-LG` | `0820055051, Bosch Rexroth / AVENTICS 0820055051, bosch rexroth / aventics 0820055051, Bosch Rexroth Aventics HF03 LG 0820055051, BOSCH-REXROTH-AVENTICS-0820055051, BOSCH-REXROTH-/-AVENTICS-0820055051, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW` |
+| 39 | `R412003484` | قطعه سیستم شیر جزیره‌ای رکسروت / آونتیکس R412003484 | Legacy Rexroth AVENTICS Valve terminal component HF03-LG R412003484 | **Bosch Rexroth** | `مطابق دیتاشیت سری` | `مطابق دیتاشیت HF03-LG` | `R412003484, Bosch Rexroth / AVENTICS R412003484, bosch rexroth / aventics R412003484, Bosch Rexroth Aventics HF03 LG R412003484, BOSCH-REXROTH-AVENTICS-R412003484, BOSCH-REXROTH-/-AVENTICS-R412003484, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW` |
+| 40 | `2123208000` | اتصال و رابط پنوماتیک رکسروت / آونتیکس 2123208000 | Legacy Rexroth AVENTICS Pneumatic connector fitting HF03-LG 2123208000 | **Bosch Rexroth** | `مطابق دیتاشیت سری` | `مطابق دیتاشیت HF03-LG` | `2123208000, Bosch Rexroth / AVENTICS 2123208000, bosch rexroth / aventics 2123208000, Bosch Rexroth Aventics HF03 LG 2123208000, BOSCH-REXROTH-AVENTICS-2123208000, BOSCH-REXROTH-/-AVENTICS-2123208000, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW` |
 
 ---
 
 ## 3. Detailed Technical Specifications by SKU
 
-### JPC-4V210-08-24DC — شیر برقی پنوماتیک ۵/۲ تک‌بوبین سری 4V210
-- **English Title:** JPC 5/2 Way Single Solenoid Valve 4V210-08
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/4" (سایز ۱/۴ اینچ)`
-- **Working Pressure:** `1.5 – 8.0 bar`
-- **Voltage / Actuation:** `24V DC / 220V AC`
-- **Body Material:** آلیاژ آلومینیوم آنودایز صنعتی
-- **Flow Rate / Cushioning:** 890 L/min (Cv = 0.89)
-- **Operating Temperature:** `-5°C to +60°C`
-- **Standard / Protection Class:** `IP65 (سوکت چراغ‌دار استاندارد DIN)`
-- **Compatible Equivalent Codes:** `MFH-5-1/4, FESTO-MFH-5-1/4-B, V61B513A-A213J, NORGREN-V61B513A, 0820055051, 4V210-08, SY5120-5LZD-02`
-- **Keywords:** شیر برقی پنج دو، شیر برقی 5/2، شیر تک بوبین، شیر باد 24 ولت، شیر باد 220 ولت، شیر پنوماتیک یک چهارم، 4V210، شیر فرمان جک دوطرفه
-- **Applications:** فرمان جک‌های دوطرفه در ماشین‌آلات بسته‌بندی، خطوط مونتاژ و سیستم‌های اتوماسیون صنعتی
+### JPC-4V210-08-24DC — شیر برقی ۵/۲ تک بوبین جی پی سی مدل JPC-4V210-08-24DC
+- **English Title:** JPC 4V210 solenoid valve 5/2 24V DC
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/4 (1/4 اینچ)`
+- **Working Pressure:** `1.5 – 8 bar`
+- **Voltage / Actuation:** `24V DC (موجود در 220V AC / 110V AC / 12V DC)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 890 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-4V210-08-24DC, JPC4V2100824DC, JPC 4V210 08 24DC, JPC_4V210_08_24DC, JPC JPC-4V210-08-24DC, jpc JPC-4V210-08-24DC, JPC Iran 4V210 JPC-4V210-08-24DC, JPC-JPC-4V210-08-24DC, Festo MFH-5-1/4-B, FESTO-MFH-5-1-4-B, Airtac 4V210-08, AIRTAC-4V210-08, SMC SY5120-5LZD-02, SMC-SY5120-5LZD-02, Norgren V61B513A-A213JB, NORGREN-V61B513A-A213JB, Mindman MVSC-220-4E1, MINDMAN-MVSC-220-4E1`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، شیر برقی ۵/۲ تک بوبین، قطعات پنوماتیک، 4V210، شیر برقی ۵/۲ تک بوبین جی پی سی مدل JPC-4V210-08-24DC، JPC، JPC-4V210-08-24DC، شیرهای کنترل جهت پنوماتیک، شیر برقی 5/2
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-4V210-08-24DC. شیر تک بوبین ۵/۲ دارای پورت G1/4 و تغذیه 24V DC، مطابق معرفی وب‌سایت JPC. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
 
-### JPC-4V220-08-220AC — شیر برقی پنوماتیک ۵/۲ دوبوبین سری 4V220
-- **English Title:** JPC 5/2 Way Double Solenoid Valve 4V220-08
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/4" (سایز ۱/۴ اینچ)`
-- **Working Pressure:** `1.5 – 8.0 bar`
+### JPC-4V220-08-220AC — شیر برقی ۵/۲ دو بوبین جی پی سی مدل JPC-4V220-08-220AC
+- **English Title:** JPC 4V220 solenoid valve 5/2 220V AC
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/4 (1/4 اینچ)`
+- **Working Pressure:** `1.5 – 8 bar`
 - **Voltage / Actuation:** `220V AC / 24V DC`
-- **Body Material:** آلیاژ آلومینیوم تقویت‌شده
-- **Flow Rate / Cushioning:** 890 L/min (Cv = 0.89)
-- **Operating Temperature:** `-5°C to +60°C`
-- **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes:** `JMFH-5-1/4, FESTO-JMFH-5-1/4-B, V61B522A-A213J, REXROTH-0820055051-CD07, CD07-5/2, 4V220-08, SY5220-5LZD-02`
-- **Keywords:** شیر برقی دو بوبین، شیر دو سر بوبین، شیر حافظه دار پنوماتیک، 4V220، شیر پنج به دو دوبوبین، شیر برقی 220 ولت
-- **Applications:** ماشین‌آلات صنعتی نیازمند حفظ موقعیت جک در زمان توقف اضطراری یا قطع تغذیه الکتریکی
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 890 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-4V220-08-220AC, JPC4V22008220AC, JPC 4V220 08 220AC, JPC_4V220_08_220AC, JPC JPC-4V220-08-220AC, jpc JPC-4V220-08-220AC, JPC Iran 4V220 JPC-4V220-08-220AC, JPC-JPC-4V220-08-220AC, Festo JMFH-5-1/4-B, FESTO-JMFH-5-1-4-B, Airtac 4V220-08, AIRTAC-4V220-08, SMC SY5220-5LZD-02, SMC-SY5220-5LZD-02, Norgren V61B523A-A2, NORGREN-V61B523A-A2`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، شیر برقی ۵/۲ دو بوبین، قطعات پنوماتیک، 4V220، شیر برقی ۵/۲ دو بوبین جی پی سی مدل JPC-4V220-08-220AC، JPC، JPC-4V220-08-220AC، شیرهای کنترل جهت پنوماتیک، شیر برقی 5/2
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-4V220-08-220AC. شیر دو بوبین ۵/۲ با تغذیه 220V AC، مطابق ادعای سایت JPC. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
 
-### JPC-4V330C-10-24DC — شیر برقی پنوماتیک ۵/۳ وسط بسته سری 4V330C
-- **English Title:** JPC 5/3 Way Closed Center Solenoid Valve 4V330C-10
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 3/8" (سایز ۳/۸ اینچ)`
-- **Working Pressure:** `1.5 – 8.0 bar`
+### JPC-4V330C-10-24DC — شیر برقی ۵/۳ مرکز بسته جی پی سی مدل JPC-4V330C-10-24DC
+- **English Title:** JPC 4V330C 5/3 closed-center solenoid valve 24V DC
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G3/8 (3/8 اینچ)`
+- **Working Pressure:** `1.5 – 8 bar`
 - **Voltage / Actuation:** `24V DC / 220V AC`
-- **Body Material:** آلومینیوم ماشین‌کاری دقیق
-- **Flow Rate / Cushioning:** 1680 L/min (Cv = 1.68)
-- **Operating Temperature:** `-5°C to +60°C`
-- **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes:** `VUVG-L18-M53C, V62C611A-A213J, 4V330C-10, 4V230C-08, 0820055501`
-- **Keywords:** شیر برقی پنج سه، شیر 5/3 وسط بسته، شیر مرکز بسته پنوماتیک، 4V330C، 4V230C، شیر سه حالته پنوماتیک، شیر سایز سه هشتم
-- **Applications:** پرس‌های پنوماتیک، دریچه‌های صنعتی و مکانیزم‌های موقعیت‌دهی میانی
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 1680 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-4V330C-10-24DC, JPC4V330C1024DC, JPC 4V330C 10 24DC, JPC_4V330C_10_24DC, JPC JPC-4V330C-10-24DC, jpc JPC-4V330C-10-24DC, JPC Iran 4V330C JPC-4V330C-10-24DC, JPC-JPC-4V330C-10-24DC, Festo MFH-5/3G-3/8-B, FESTO-MFH-5-3G-3-8-B, Airtac 4V330C-10, AIRTAC-4V330C-10, SMC SY7320-5LZD-03, SMC-SY7320-5LZD-03, Norgren V62C611A-A2, NORGREN-V62C611A-A2`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، شیر برقی ۵/۳ مرکز بسته، قطعات پنوماتیک، 4V330C، شیر برقی ۵/۳ مرکز بسته جی پی سی مدل JPC-4V330C-10-24DC، JPC، JPC-4V330C-10-24DC، شیرهای کنترل جهت پنوماتیک، شیر برقی 5/3
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-4V330C-10-24DC. شیر ۵/۳ با وضعیت وسط بسته، تغذیه 24V DC، مدل مندرج در کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
 
-### JPC-3V210-06-24DC — شیر برقی پنوماتیک ۳/۲ نرمال بسته سری 3V210
-- **English Title:** JPC 3/2 Way NC Solenoid Valve 3V210-06
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/8" (سایز ۱/۸ اینچ)`
-- **Working Pressure:** `1.5 – 8.0 bar`
+### JPC-3V210-06-24DC — شیر برقی ۳/۲ نرمال بسته جی پی سی مدل JPC-3V210-06-24DC
+- **English Title:** JPC 3V210 normally-closed 3/2 solenoid valve
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/8 (1/8 اینچ)`
+- **Working Pressure:** `1.5 – 8 bar`
 - **Voltage / Actuation:** `24V DC / 220V AC`
-- **Body Material:** آلیاژ آلومینیوم فشرده
+- **Body Material:** 
 - **Flow Rate / Cushioning:** 550 L/min
-- **Operating Temperature:** `-5°C to +60°C`
-- **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes:** `MFH-3-1/8, MFH-3-1/4, V60A513A-A213J, 3V210-06, 3V210-08`
-- **Keywords:** شیر برقی سه دو، شیر 3/2 نرمال بسته، شیر جک یکطرفه، 3V210، شیر باد یک هشتم
-- **Applications:** جک‌های قلمی و کامپکت یک‌طرفه، سیستم‌های اجکتور و تفکیک قطعات در خطوط سورتینگ
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-3V210-06-24DC, JPC3V2100624DC, JPC 3V210 06 24DC, JPC_3V210_06_24DC, JPC JPC-3V210-06-24DC, jpc JPC-3V210-06-24DC, JPC Iran 3V210 JPC-3V210-06-24DC, JPC-JPC-3V210-06-24DC, Festo MFH-3-1/8, FESTO-MFH-3-1-8, Airtac 3V210-06, AIRTAC-3V210-06, Norgren V60A413A-A2, NORGREN-V60A413A-A2, Norgren V60A411A-A313JB, NORGREN-V60A411A-A313JB`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، شیر برقی ۳/۲ نرمال بسته، قطعات پنوماتیک، 3V210، شیر برقی ۳/۲ نرمال بسته جی پی سی مدل JPC-3V210-06-24DC، JPC، JPC-3V210-06-24DC، شیرهای کنترل جهت پنوماتیک، شیر برقی 3/2
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-3V210-06-24DC. شیر ۳/۲ نرمال بسته، 24V DC، پورت G1/8 مطابق کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
 
-### FESTO-MFH-5-1/4-B — شیر برقی پنوماتیک ۵/۲ فستو سری MFH / JMFH
-- **English Title:** Festo Tiger Classic 5/2 Solenoid Valve MFH-5-1/4
-- **Brand:** Festo (فستو) (`Festo`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/4" & G 1/8" & G 1/2"`
-- **Working Pressure:** `2.0 – 10.0 bar`
-- **Voltage / Actuation:** `24V DC / 220V AC (کویل سری F)`
-- **Body Material:** آلومینیوم دایکاست صنعتی
-- **Flow Rate / Cushioning:** 1000 L/min
-- **Operating Temperature:** `-10°C to +60°C`
-- **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes:** `MFH-5-1/4, JMFH-5-1/4, MFH-5-1/8, JPC-4V210-08-24DC, 4V210-08`
-- **Keywords:** شیر برقی فستو، شیر تایگر فستو، MFH-5-1/4، JMFH، شیر پنوماتیک آلمانی
-- **Applications:** خطوط اتوماسیون کارخانجات خودروسازی، صنایع غذایی، دارویی و ماشین‌سازی پیشرفته
+### JPC-DNC-63-200-PPV-A — جک استاندارد پنوماتیک جی پی سی مدل JPC-DNC-63-200-PPV-A
+- **English Title:** JPC DNC ISO 15552 cylinder Ø63 stroke 200
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G3/8 (قطر 32 تا 125 موجود)`
+- **Working Pressure:** `1 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G3/8 (قطر 32 تا 125 موجود)
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-DNC-63-200-PPV-A, JPCDNC63200PPVA, JPC DNC 63 200 PPV A, JPC_DNC_63_200_PPV_A, JPC JPC-DNC-63-200-PPV-A, jpc JPC-DNC-63-200-PPV-A, JPC Iran DNC JPC-DNC-63-200-PPV-A, JPC-JPC-DNC-63-200-PPV-A, Festo DSBC-63-200-PPVA-N3, FESTO-DSBC-63-200-PPVA-N3, Festo DNC-63-200-PPV-A, FESTO-DNC-63-200-PPV-A, Norgren PRA/182063/M/200, NORGREN-PRA-182063-M-200, Bosch Rexroth PRA-063-0200, BOSCH-REXROTH-PRA-063-0200, SMC CP96SDB63-200C, SMC-CP96SDB63-200C`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، جک استاندارد پنوماتیک، قطعات پنوماتیک، DNC، جک استاندارد پنوماتیک جی پی سی مدل JPC-DNC-63-200-PPV-A، JPC، JPC-DNC-63-200-PPV-A، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-DNC-63-200-PPV-A. جک استاندارد DNC قطر ۶۳ کورس ۲۰۰ میلی‌متر با ضربه‌گیر پنوماتیک طبق کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
 
-### NORGREN-V61B513A-A213J — شیر برقی پنوماتیک ۵/۲ و ۵/۳ نورگرن سری V60 / V61
-- **English Title:** Norgren V61 Series Inline 5/2 & 5/3 Solenoid Valve
-- **Brand:** Norgren (نورگرن) (`Norgren`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/4" & G 3/8" & G 1/2"`
-- **Working Pressure:** `2.0 – 10.0 bar`
-- **Voltage / Actuation:** `24V DC / 220V AC`
-- **Body Material:** آلومینیوم صنعتی با پوشش مقاوم به خوردگی
+### JPC-SC-80x150-S — جک میله‌کش پنوماتیک جی پی سی مدل JPC-SC-80x150-S
+- **English Title:** JPC SC tie-rod cylinder Ø80 stroke 150
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G3/8 (سایز 32 تا 200 موجود)`
+- **Working Pressure:** `1 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G3/8 (سایز 32 تا 200 موجود)
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-SC-80x150-S, JPCSC80x150S, JPC SC 80x150 S, JPC_SC_80x150_S, JPC JPC-SC-80x150-S, jpc JPC-SC-80x150-S, JPC Iran SC JPC-SC-80x150-S, JPC-JPC-SC-80X150-S, Airtac SC80X150S, AIRTAC-SC80X150S, Mindman MCQI-80-150, MINDMAN-MCQI-80-150, SMC CA2B80-150, SMC-CA2B80-150`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، جک میله‌کش پنوماتیک، قطعات پنوماتیک، SC، جک میله‌کش پنوماتیک جی پی سی مدل JPC-SC-80x150-S، JPC، JPC-SC-80x150-S، جک و سیلندر پنوماتیک، جک میله‌کش
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-SC-80x150-S. سیلندر میله‌کش قطر ۸۰ کورس ۱۵۰ میلی‌متر طبق کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
+
+### JPC-ADVU-40-50-PA — جک کامپکت پنوماتیک جی پی سی مدل JPC-ADVU-40-50-PA
+- **English Title:** JPC ADVU compact pneumatic cylinder Ø40 stroke 50
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8 (قطر 16 تا 100 موجود)`
+- **Working Pressure:** `1 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8 (قطر 16 تا 100 موجود)
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-ADVU-40-50-PA, JPCADVU4050PA, JPC ADVU 40 50 PA, JPC_ADVU_40_50_PA, JPC JPC-ADVU-40-50-PA, jpc JPC-ADVU-40-50-PA, JPC Iran ADVU JPC-ADVU-40-50-PA, JPC-JPC-ADVU-40-50-PA, Festo ADVU-40-50-P-A, FESTO-ADVU-40-50-P-A, Festo ADN-40-50-A-P-A, FESTO-ADN-40-50-A-P-A, Airtac SDA40X50S, AIRTAC-SDA40X50S, SMC CQ2B40-50DM, SMC-CQ2B40-50DM`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، جک کامپکت پنوماتیک، قطعات پنوماتیک، ADVU، جک کامپکت پنوماتیک جی پی سی مدل JPC-ADVU-40-50-PA، JPC، JPC-ADVU-40-50-PA، جک و سیلندر پنوماتیک، جک کامپکت
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-ADVU-40-50-PA. سیلندر کامپکت قطر ۴۰ کورس ۵۰ میلی‌متر طبق کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
+
+### JPC-MAL-25x100-CA — جک قلمی پنوماتیک جی پی سی مدل JPC-MAL-25x100-CA
+- **English Title:** JPC MAL mini pneumatic cylinder Ø25 stroke 100
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8 (M5 و G1/8 موجود)`
+- **Working Pressure:** `1 – 9 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8 (M5 و G1/8 موجود)
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-MAL-25x100-CA, JPCMAL25x100CA, JPC MAL 25x100 CA, JPC_MAL_25x100_CA, JPC JPC-MAL-25x100-CA, jpc JPC-MAL-25x100-CA, JPC Iran MAL JPC-MAL-25x100-CA, JPC-JPC-MAL-25X100-CA, Festo DSNU-25-100-P-A, FESTO-DSNU-25-100-P-A, Airtac MAL25X100CA, AIRTAC-MAL25X100CA, Norgren RM/8025/M/100, NORGREN-RM-8025-M-100, SMC CM2B25-100, SMC-CM2B25-100`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، جک قلمی پنوماتیک، قطعات پنوماتیک، MAL، جک قلمی پنوماتیک جی پی سی مدل JPC-MAL-25x100-CA، JPC، JPC-MAL-25x100-CA، جک و سیلندر پنوماتیک، جک قلمی
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-MAL-25x100-CA. سیلندر قلمی سری MAL قطر ۲۵ کورس ۱۰۰ میلی‌متر طبق کاتالوگ سایت. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
+
+### JPC-AC4010-04-D — واحد مراقبت ترکیبی هوای فشرده جی پی سی مدل JPC-AC4010-04-D
+- **English Title:** JPC AC4010 FRL air service unit
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** واحد مراقبت و آماده‌سازی هوا (`frl-accessories`)
+- **Port Size:** `G1/2 (سایز G1/4 تا G1 موجود)`
+- **Working Pressure:** `0.5 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 3500 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-AC4010-04-D, JPCAC401004D, JPC AC4010 04 D, JPC_AC4010_04_D, JPC JPC-AC4010-04-D, jpc JPC-AC4010-04-D, JPC Iran AC4010 JPC-AC4010-04-D, JPC-JPC-AC4010-04-D, Festo MS6-LFR-1/2-D7-ERM-AS, FESTO-MS6-LFR-1-2-D7-ERM-AS, SMC AC40-04DG-A, SMC-AC40-04DG-A, Norgren BL74-401G, NORGREN-BL74-401G, Norgren B74G-4GK-AD3-RMN, NORGREN-B74G-4GK-AD3-RMN, Airtac BC4000, AIRTAC-BC4000`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، واحد مراقبت ترکیبی هوای فشرده، قطعات پنوماتیک، AC4010، واحد مراقبت ترکیبی هوای فشرده جی پی سی مدل JPC-AC4010-04-D، JPC، JPC-AC4010-04-D، واحد مراقبت و آماده‌سازی هوا، FRL فیلتر رگلاتور و روغن‌زن
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-AC4010-04-D. واحد مراقبت هوای فشرده سری AC4010 طبق کاتالوگ سایت؛ ابعاد اتصال باید با سند سازنده کنترل شوند. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
+
+### JPC-HVFF-ASC-SET — کیت اتصالات و کنترل جریان جی پی سی مدل JPC-HVFF-ASC-SET
+- **English Title:** JPC pneumatic flow-control and fitting kit
+- **Brand:** جی پی سی (JPC) (`JPC`)
+- **Category:** کیت و مجموعه تجهیزات پنوماتیک (`frl-accessories`)
+- **Port Size:** `M5, G1/8, G1/4, G3/8, G1/2`
+- **Working Pressure:** `0 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 4, 6, 8, 10, 12, 16mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `JPC-HVFF-ASC-SET, JPCHVFFASCSET, JPC HVFF ASC SET, JPC_HVFF_ASC_SET, JPC JPC-HVFF-ASC-SET, jpc JPC-HVFF-ASC-SET, JPC Iran HVFF JPC-HVFF-ASC-SET, JPC-JPC-HVFF-ASC-SET, Festo QS / GRLA / PUN-H, FESTO-QS-GRLA-PUN-H, SMC KQ2 / AS / TU, SMC-KQ2-AS-TU, Norgren Pneufit C, NORGREN-PNEUFIT-C`
+- **Keywords:** جی پی سی، جلالی پنوماتیک، کیت اتصالات و کنترل جریان، قطعات پنوماتیک، HVFF، کیت اتصالات و کنترل جریان جی پی سی مدل JPC-HVFF-ASC-SET، JPC، JPC-HVFF-ASC-SET، کیت و مجموعه تجهیزات پنوماتیک، کیت اتصالات، شیلنگ و کنترل جریان
+- **Applications:** معرفی محصول در وب‌سایت JPC Iran با کد JPC-HVFF-ASC-SET. کیت چندقلمی شامل اجزای جریان/اتصال پنوماتیک؛ این ردیف بسته/باندل است نه یک قطعه مستقل. این مشخصات صرفاً از معرفی عمومی JPC آمده‌اند. تولیدکننده اصلی، موجودی، گواهی کیفیت، دیتاشیت PDF، جزئیات نصب و شرایط کاربرد باید پیش از انتشار مستقل راستی‌آزمایی شوند.
+
+### DSBC-32-20-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 32 کورس 20 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø32 × 20 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-32-20-PPVA-N3, DSBC3220PPVAN3, DSBC 32 20 PPVA N3, DSBC_32_20_PPVA_N3, Festo DSBC-32-20-PPVA-N3, festo DSBC-32-20-PPVA-N3, Festo DSBC 32x20 PPVA, FESTO-DSBC-32-20-PPVA-N3, 2123069, سری JPC-DNC (سایز 32×20mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 32، کورس 20، PPVA، جک پنوماتیک فستو DSBC قطر 32 کورس 20 مدل PPVA، Festo، DSBC-32-20-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 32 میلی‌متر، طول حرکت 20 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-32-100-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø32 × 100 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-32-100-PPVA-N3, DSBC32100PPVAN3, DSBC 32 100 PPVA N3, DSBC_32_100_PPVA_N3, Festo DSBC-32-100-PPVA-N3, festo DSBC-32-100-PPVA-N3, Festo DSBC 32x100 PPVA, FESTO-DSBC-32-100-PPVA-N3, 1376426, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 32، کورس 100، PPVA، جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPVA، Festo، DSBC-32-100-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 32 میلی‌متر، طول حرکت 100 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-32-100-PPSA-N3 — جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPSA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø32 × 100 mm, PPSA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-32-100-PPSA-N3, DSBC32100PPSAN3, DSBC 32 100 PPSA N3, DSBC_32_100_PPSA_N3, Festo DSBC-32-100-PPSA-N3, festo DSBC-32-100-PPSA-N3, Festo DSBC 32x100 PPSA, FESTO-DSBC-32-100-PPSA-N3, 1376471, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 32، کورس 100، PPSA، جک پنوماتیک فستو DSBC قطر 32 کورس 100 مدل PPSA، Festo، DSBC-32-100-PPSA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 32 میلی‌متر، طول حرکت 100 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک خودتنظیم (PPS). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-40-100-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 40 کورس 100 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø40 × 100 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-40-100-PPVA-N3, DSBC40100PPVAN3, DSBC 40 100 PPVA N3, DSBC_40_100_PPVA_N3, Festo DSBC-40-100-PPVA-N3, festo DSBC-40-100-PPVA-N3, Festo DSBC 40x100 PPVA, FESTO-DSBC-40-100-PPVA-N3, 1376660, سری JPC-DNC (سایز 40×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 40، کورس 100، PPVA، جک پنوماتیک فستو DSBC قطر 40 کورس 100 مدل PPVA، Festo، DSBC-40-100-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 40 میلی‌متر، طول حرکت 100 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-40-160-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 40 کورس 160 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø40 × 160 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-40-160-PPVA-N3, DSBC40160PPVAN3, DSBC 40 160 PPVA N3, DSBC_40_160_PPVA_N3, Festo DSBC-40-160-PPVA-N3, festo DSBC-40-160-PPVA-N3, Festo DSBC 40x160 PPVA, FESTO-DSBC-40-160-PPVA-N3, 1376662, سری JPC-DNC (سایز 40×160mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 40، کورس 160، PPVA، جک پنوماتیک فستو DSBC قطر 40 کورس 160 مدل PPVA، Festo، DSBC-40-160-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 40 میلی‌متر، طول حرکت 160 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-50-250-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 50 کورس 250 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø50 × 250 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-50-250-PPVA-N3, DSBC50250PPVAN3, DSBC 50 250 PPVA N3, DSBC_50_250_PPVA_N3, Festo DSBC-50-250-PPVA-N3, festo DSBC-50-250-PPVA-N3, Festo DSBC 50x250 PPVA, FESTO-DSBC-50-250-PPVA-N3, سری JPC-DNC (سایز 50×250mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 50، کورس 250، PPVA، جک پنوماتیک فستو DSBC قطر 50 کورس 250 مدل PPVA، Festo، DSBC-50-250-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 50 میلی‌متر، طول حرکت 250 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-63-200-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 63 کورس 200 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø63 × 200 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G3/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G3/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-63-200-PPVA-N3, DSBC63200PPVAN3, DSBC 63 200 PPVA N3, DSBC_63_200_PPVA_N3, Festo DSBC-63-200-PPVA-N3, festo DSBC-63-200-PPVA-N3, Festo DSBC 63x200 PPVA, FESTO-DSBC-63-200-PPVA-N3, JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 63، کورس 200، PPVA، جک پنوماتیک فستو DSBC قطر 63 کورس 200 مدل PPVA، Festo، DSBC-63-200-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 63 میلی‌متر، طول حرکت 200 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-80-200-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 80 کورس 200 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø80 × 200 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G3/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G3/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-80-200-PPVA-N3, DSBC80200PPVAN3, DSBC 80 200 PPVA N3, DSBC_80_200_PPVA_N3, Festo DSBC-80-200-PPVA-N3, festo DSBC-80-200-PPVA-N3, Festo DSBC 80x200 PPVA, FESTO-DSBC-80-200-PPVA-N3, سری JPC-DNC (سایز 80×200mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 80، کورس 200، PPVA، جک پنوماتیک فستو DSBC قطر 80 کورس 200 مدل PPVA، Festo، DSBC-80-200-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 80 میلی‌متر، طول حرکت 200 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-100-100-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 100 کورس 100 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø100 × 100 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/2`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/2
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-100-100-PPVA-N3, DSBC100100PPVAN3, DSBC 100 100 PPVA N3, DSBC_100_100_PPVA_N3, Festo DSBC-100-100-PPVA-N3, festo DSBC-100-100-PPVA-N3, Festo DSBC 100x100 PPVA, FESTO-DSBC-100-100-PPVA-N3, 1384808, سری JPC-DNC (سایز 100×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 100، کورس 100، PPVA، جک پنوماتیک فستو DSBC قطر 100 کورس 100 مدل PPVA، Festo، DSBC-100-100-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 100 میلی‌متر، طول حرکت 100 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-125-100-PPVA-N3 — جک پنوماتیک فستو DSBC قطر 125 کورس 100 مدل PPVA
+- **English Title:** Festo DSBC ISO 15552 cylinder Ø125 × 100 mm, PPVA
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/2`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/2
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-125-100-PPVA-N3, DSBC125100PPVAN3, DSBC 125 100 PPVA N3, DSBC_125_100_PPVA_N3, Festo DSBC-125-100-PPVA-N3, festo DSBC-125-100-PPVA-N3, Festo DSBC 125x100 PPVA, FESTO-DSBC-125-100-PPVA-N3, 1804960, سری JPC-DNC (سایز 125×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک فستو، سیلندر فستو، جک دوطرفه، جک ISO15552، جک قطر 125، کورس 100، PPVA، جک پنوماتیک فستو DSBC قطر 125 کورس 100 مدل PPVA، Festo، DSBC-125-100-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد ISO 15552
+- **Applications:** جک پنوماتیک Festo سری DSBC، عملکرد دوطرفه، مطابق خانواده استاندارد ISO 15552، قطر پیستون 125 میلی‌متر، طول حرکت 100 میلی‌متر و ضربه‌گیر دو انتها از نوع پنوماتیک قابل تنظیم (PPV). امکان تشخیص موقعیت با سنسور مناسب وجود دارد. برای انتخاب نهایی، نیروی موردنیاز، فشار کاری، نوع اتصال، فضای نصب، سنسور و مشخصات کامل مدل بررسی شوند.
+
+### DSBC-32-100-D3-PPVA-N3 — جک پنوماتیک فستو DSBC-D3 قطر 32 کورس 100 PPVA
+- **English Title:** Festo DSBC D3 cylinder Ø32 × 100 mm, PPVA, 3 sensor slots
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/8
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-32-100-D3-PPVA-N3, DSBC32100D3PPVAN3, DSBC 32 100 D3 PPVA N3, DSBC_32_100_D3_PPVA_N3, Festo DSBC-32-100-D3-PPVA-N3, festo DSBC-32-100-D3-PPVA-N3, DSBC D3 32 100 PPVA, FESTO-DSBC-32-100-D3-PPVA-N3, 3656519, سری JPC-DNC (سایز 32×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک D3 فستو، DSBC سه شیار، شیار سنسور، جک قطر 32، کورس 100، جک پنوماتیک فستو DSBC-D3 قطر 32 کورس 100 PPVA، Festo، DSBC-32-100-D3-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد سه‌شیار D3
+- **Applications:** سیلندر دوطرفه فستو DSBC مدل D3 مطابق خانواده ISO 15552. قطر پیستون 32 میلی‌متر، کورس 100 میلی‌متر و سه موقعیت شیار برای سنسورهای مجاز. ضربه‌گیر دو انتها پنوماتیک قابل تنظیم PPV. ابعاد و شرایط نصب، تجهیزات جانبی و رنج فشار دقیق از دیتاشیت همین کد کنترل شوند.
+
+### DSBC-40-100-D3-PPVA-N3 — جک پنوماتیک فستو DSBC-D3 قطر 40 کورس 100 PPVA
+- **English Title:** Festo DSBC D3 cylinder Ø40 × 100 mm, PPVA, 3 sensor slots
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** جک و سیلندر پنوماتیک (`cylinders`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0.6 – 12 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `DSBC-40-100-D3-PPVA-N3, DSBC40100D3PPVAN3, DSBC 40 100 D3 PPVA N3, DSBC_40_100_D3_PPVA_N3, Festo DSBC-40-100-D3-PPVA-N3, festo DSBC-40-100-D3-PPVA-N3, DSBC D3 40 100 PPVA, FESTO-DSBC-40-100-D3-PPVA-N3, 3660623, سری JPC-DNC (سایز 40×100mm), JPC-DNC-63-200-PPV-A`
+- **Keywords:** جک D3 فستو، DSBC سه شیار، شیار سنسور، جک قطر 40، کورس 100، جک پنوماتیک فستو DSBC-D3 قطر 40 کورس 100 PPVA، Festo، DSBC-40-100-D3-PPVA-N3، جک و سیلندر پنوماتیک، جک استاندارد سه‌شیار D3
+- **Applications:** سیلندر دوطرفه فستو DSBC مدل D3 مطابق خانواده ISO 15552. قطر پیستون 40 میلی‌متر، کورس 100 میلی‌متر و سه موقعیت شیار برای سنسورهای مجاز. ضربه‌گیر دو انتها پنوماتیک قابل تنظیم PPV. ابعاد و شرایط نصب، تجهیزات جانبی و رنج فشار دقیق از دیتاشیت همین کد کنترل شوند.
+
+### QS-4 — رابط مستقیم دوطرفه شیلنگ فستو QS-4
+- **English Title:** Festo Straight push-in connector QS-4
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `متریک / فشاری`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 4mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QS-4, QS4, QS 4, QS_4, Festo QS-4, festo QS-4, QS 4mm push in fitting, FESTO-QS-4, 153031, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QS، رابط مستقیم دوطرفه شیلنگ فستو QS-4، Festo، QS-4، اتصالات و رابط‌های پنوماتیک، رابط مستقیم دوطرفه شیلنگ
+- **Applications:** اتصال مستقیم دو سر برای شیلنگ پنوماتیک از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QS-4. اندازه شیلنگ/اتصال 4 میلی‌متر. تعداد بسته‌بندی این ردیف باید با SKU تأیید شود. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### QS-8 — رابط مستقیم دوطرفه شیلنگ فستو QS-8
+- **English Title:** Festo Straight push-in connector QS-8
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `متریک / فشاری`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 8mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QS-8, QS8, QS 8, QS_8, Festo QS-8, festo QS-8, QS 8mm push in fitting, FESTO-QS-8, 153033, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QS، رابط مستقیم دوطرفه شیلنگ فستو QS-8، Festo، QS-8، اتصالات و رابط‌های پنوماتیک، رابط مستقیم دوطرفه شیلنگ
+- **Applications:** اتصال مستقیم دو سر برای شیلنگ پنوماتیک از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QS-8. اندازه شیلنگ/اتصال 8 میلی‌متر. تعداد بسته‌بندی این ردیف باید با SKU تأیید شود. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### QS-8-4 — رابط کاهنده مستقیم فستو QS-8-4
+- **English Title:** Festo Reducing push-in connector QS-8-4
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `متریک / فشاری`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 8/4mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QS-8-4, QS84, QS 8 4, QS_8_4, Festo QS-8-4, festo QS-8-4, QS-reducing 8/4mm push in fitting, FESTO-QS-8-4, 130606, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QS-reducing، رابط کاهنده مستقیم فستو QS-8-4، Festo، QS-8-4، اتصالات و رابط‌های پنوماتیک، رابط کاهنده مستقیم
+- **Applications:** اتصال مستقیم دو شیلنگ با قطرهای متفاوت از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QS-8-4. اندازه شیلنگ/اتصال 8/4 میلی‌متر. تعداد بسته‌بندی این ردیف باید با SKU تأیید شود. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### QSS-6 — رابط پنلی مستقیم فستو QSS-6
+- **English Title:** Festo Bulkhead push-in connector QSS-6
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `متریک / فشاری`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 6mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QSS-6, QSS6, QSS 6, QSS_6, Festo QSS-6, festo QSS-6, QSS 6mm push in fitting, FESTO-QSS-6, 153158, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QSS، رابط پنلی مستقیم فستو QSS-6، Festo، QSS-6، اتصالات و رابط‌های پنوماتیک، رابط پنلی مستقیم
+- **Applications:** اتصال عبوری از پنل برای شیلنگ پنوماتیک از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QSS-6. اندازه شیلنگ/اتصال 6 میلی‌متر. تعداد بسته‌بندی این ردیف باید با SKU تأیید شود. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### QSSF-1/4-8-B — رابط پنلی رزوه‌دار سری QSSF فستو QSSF-1/4-8-B
+- **English Title:** Festo QSSF bulkhead fitting QSSF-1/4-8-B
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `1/4 (thread; verify female/male)`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 8mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QSSF-1/4-8-B, QSSF1/48B, QSSF 1 4 8 B, QSSF_1/4_8_B, Festo QSSF-1/4-8-B, festo QSSF-1/4-8-B, QSSF 8mm push in fitting, FESTO-QSSF-1-4-8-B, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QSSF، رابط پنلی رزوه‌دار سری QSSF فستو QSSF-1/4-8-B، Festo، QSSF-1/4-8-B، اتصالات و رابط‌های پنوماتیک، رابط پنلی رزوه‌دار سری QSSF
+- **Applications:** اتصال پنلی/رزوه‌ای با سایز رزوه درج‌شده در کد از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QSSF-1/4-8-B. اندازه شیلنگ/اتصال 8 میلی‌متر. رزوه 1/4 (thread; verify female/male). تعداد بسته‌بندی این ردیف باید با SKU تأیید شود. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### QSLV-G1/8-6-100 — زانویی رزوه‌ای سری QSLV فستو QSLV-G1/8-6-100
+- **English Title:** Festo QSLV threaded elbow connector QSLV-G1/8-6-100
+- **Brand:** فستو (Festo) (`Festo`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `-0.95 – 14 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** شیلنگ 6mm
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `QSLV-G1/8-6-100, QSLVG1/86100, QSLV G1 8 6 100, QSLV_G1/8_6_100, Festo QSLV-G1/8-6-100, festo QSLV-G1/8-6-100, QSLV 6mm push in fitting, FESTO-QSLV-G1-8-6-100, سری اتصالات فشاری JPC (PC / PL / PU), JPC-HVFF-ASC-SET`
+- **Keywords:** فیتینگ فستو، اتصالات شیلنگ باد، کوپلینگ پنوماتیک، رابط شیلنگ، اتصالات فشاری، سری QSLV، زانویی رزوه‌ای سری QSLV فستو QSLV-G1/8-6-100، Festo، QSLV-G1/8-6-100، اتصالات و رابط‌های پنوماتیک، زانویی رزوه‌ای سری QSLV
+- **Applications:** زانویی شیلنگ به رزوه با سایز G از خانواده اتصالات فشاری Festo QS، کد سفارش سازنده QSLV-G1/8-6-100. اندازه شیلنگ/اتصال 6 میلی‌متر. رزوه G1/8. بسته‌بندی 100 عددی طبق کاتالوگ. برای انتخاب نهایی باید سازگاری قطر خارجی شیلنگ، جنس شیلنگ، رزوه، فشار مجاز و دمای سیال با داده فنی همین نسخه کنترل شود.
+
+### V61B413A-A213JH — شیر برقی نورگرن 3/2 NC مدل V61B413A-A213JH
+- **English Title:** Norgren pneumatic solenoid valve 3/2 NC G1/4 V61B413A-A213JH
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `2 – 10 bar (بسته به مدل پایلوت)`
+- **Voltage / Actuation:** `15–30 V DC (LED)`
+- **Body Material:** 
 - **Flow Rate / Cushioning:** 1300 L/min
-- **Operating Temperature:** `-10°C to +50°C`
-- **Standard / Protection Class:** `IP65 NEMA 4`
-- **Compatible Equivalent Codes:** `V61B513A, V60A513A, V62C513A, JPC-4V210-08-24DC, JPC-4V330C-10-24DC`
-- **Keywords:** شیر برقی نورگرن، شیر V61 نورگرن، شیر پنوماتیک انگلیسی، V61B513A
-- **Applications:** صنایع فولاد، سیمان، پتروشیمی و ماشین‌آلات سنگین خطوط فرآیندی
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `V61B413A-A213JH, V61B413AA213JH, V61B413A A213JH, V61B413A_A213JH, Norgren V61B413A-A213JH, norgren V61B413A-A213JH, Norgren V61 3/2 NC G1/4, NORGREN-V61B413A-A213JH, JPC-3V210-06-24DC`
+- **Keywords:** شیر برقی نورگرن، شیر پنوماتیک، 3/2 NC، G1/4، شیر V61، کنترل جهت، شیر برقی نورگرن 3/2 NC مدل V61B413A-A213JH، Norgren، V61B413A-A213JH، شیرهای کنترل جهت پنوماتیک، شیر برقی و پایلوتی
+- **Applications:** شیر کنترل جهت IMI Norgren پیکربندی‌شده به کد دقیق V61B413A-A213JH از خانواده V60/V61/V63. تابع شیر 3/2 NC، پورت G1/4، دبی مرجع 1300 لیتر/دقیقه، مکانیزم سلونوئید / فنر بادی. رنج الکتریکی درج‌شده: 15–30 V DC (LED). توجه: بازه ولتاژ در سند به معنای امکان انتخاب هر ولتاژی نیست؛ برای سفارش باید نسخه بوبین، کانکتور و ولتاژ واقعی از دیتاشیت و فروشنده کنترل شود.
 
-### REXROTH-0820055051-CD07 — شیر برقی پنوماتیک ۵/۲ بوش رکسروت سری CD07 / ISO 5599
-- **English Title:** Bosch Rexroth 5/2 Directional Control Valve CD07 / 581
-- **Brand:** Bosch Rexroth (بوش رکسروت) (`Bosch Rexroth`)
-- **Category:** شیرهای برقی پنوماتیک (`valves`)
-- **Port Size:** `G 1/4" & G 3/8" & G 1/2"`
-- **Working Pressure:** `1.5 – 10.0 bar`
-- **Voltage / Actuation:** `24V DC / 230V AC`
-- **Body Material:** آلومینیوم و پلی‌آمید تقویت‌شده با الیاف شیشه
-- **Flow Rate / Cushioning:** 1400 L/min
-- **Operating Temperature:** `-15°C to +50°C`
-- **Standard / Protection Class:** `IP65`
-- **Compatible Equivalent Codes:** `0820055051, CD07, 581-ISO1, JPC-4V220-08-220AC, JPC-4V210-08-24DC`
-- **Keywords:** شیر برقی رکسروت، شیر برقی بوش، CD07، 0820055051، شیر زیرشیری ایزو
-- **Applications:** تجهیزات خطوط نورد، ماشین‌آلات CNC، صنایع چوب، کاغذ و نساجی صنعتی
+### V60A513A-A213JB — شیر برقی نورگرن 5/2 مدل V60A513A-A213JB
+- **English Title:** Norgren pneumatic solenoid valve 5/2 G1/8 V60A513A-A213JB
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/8`
+- **Working Pressure:** `2 – 10 bar (بسته به مدل پایلوت)`
+- **Voltage / Actuation:** `12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 750 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `V60A513A-A213JB, V60A513AA213JB, V60A513A A213JB, V60A513A_A213JB, Norgren V60A513A-A213JB, norgren V60A513A-A213JB, Norgren V60 5/2 G1/8, NORGREN-V60A513A-A213JB`
+- **Keywords:** شیر برقی نورگرن، شیر پنوماتیک، 5/2، G1/8، شیر V60، کنترل جهت، شیر برقی نورگرن 5/2 مدل V60A513A-A213JB، Norgren، V60A513A-A213JB، شیرهای کنترل جهت پنوماتیک، شیر برقی و پایلوتی
+- **Applications:** شیر کنترل جهت IMI Norgren پیکربندی‌شده به کد دقیق V60A513A-A213JB از خانواده V60/V61/V63. تابع شیر 5/2، پورت G1/8، دبی مرجع 750 لیتر/دقیقه، مکانیزم سلونوئید / فنر بادی. رنج الکتریکی درج‌شده: 12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی). توجه: بازه ولتاژ در سند به معنای امکان انتخاب هر ولتاژی نیست؛ برای سفارش باید نسخه بوبین، کانکتور و ولتاژ واقعی از دیتاشیت و فروشنده کنترل شود.
 
-### JPC-DNC-63-200-PPV-A — جک پنوماتیک پروفیلی استاندارد ISO 15552 سری DNC
-- **English Title:** JPC Profile Pneumatic Cylinder ISO 15552 Series DNC
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `G 3/8" (سایز پورت بر اساس قطر: 1/8 تا 1/2 اینچ)`
-- **Working Pressure:** `1.0 – 10.0 bar`
-- **Voltage / Actuation:** `سازگار با سنسور مگنتی 24V DC (Reed / PNP)`
-- **Body Material:** لوله پروفیل آلومینیوم هاردآنودایز + شفت کروم سخت CK45
-- **Flow Rate / Cushioning:** ضربه‌گیر پنوماتیکی قابل تنظیم در دو انتها (PPV)
-- **Operating Temperature:** `-10°C to +70°C`
-- **Standard / Protection Class:** `استاندارد ابعادی ISO 15552 / VDMA 24562`
-- **Compatible Equivalent Codes:** `DSBC-32, DSBC-40-100, DSBC-50-250, DSBC-63-200, DNC-40-100, DNC-63-200, PRA/182040/M/100, PRA/182050/M, R480141402, ISO-15552`
-- **Keywords:** جک پروفیلی، جک DNC، سیلندر پروفیلی مگنت دار، جک ایزو 15552، جک دوطرفه پنوماتیک، جک قطر 40، جک قطر 50، جک قطر 63، جک قطر 80، جک قطر 100
-- **Applications:** ایستگاه‌های انتقال قطعه، خطوط بسته‌بندی، پرس‌های سبک و ماشین‌آلات صنعتی
+### V61B513A-A213JB — شیر برقی نورگرن 5/2 مدل V61B513A-A213JB
+- **English Title:** Norgren pneumatic solenoid valve 5/2 G1/4 V61B513A-A213JB
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `2 – 10 bar (بسته به مدل پایلوت)`
+- **Voltage / Actuation:** `12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 1300 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `V61B513A-A213JB, V61B513AA213JB, V61B513A A213JB, V61B513A_A213JB, Norgren V61B513A-A213JB, norgren V61B513A-A213JB, Norgren V61 5/2 G1/4, NORGREN-V61B513A-A213JB, JPC-4V210-08-24DC`
+- **Keywords:** شیر برقی نورگرن، شیر پنوماتیک، 5/2، G1/4، شیر V61، کنترل جهت، شیر برقی نورگرن 5/2 مدل V61B513A-A213JB، Norgren، V61B513A-A213JB، شیرهای کنترل جهت پنوماتیک، شیر برقی و پایلوتی
+- **Applications:** شیر کنترل جهت IMI Norgren پیکربندی‌شده به کد دقیق V61B513A-A213JB از خانواده V60/V61/V63. تابع شیر 5/2، پورت G1/4، دبی مرجع 1300 لیتر/دقیقه، مکانیزم سلونوئید / فنر بادی. رنج الکتریکی درج‌شده: 12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی). توجه: بازه ولتاژ در سند به معنای امکان انتخاب هر ولتاژی نیست؛ برای سفارش باید نسخه بوبین، کانکتور و ولتاژ واقعی از دیتاشیت و فروشنده کنترل شود.
 
-### JPC-SC-80x150-S — جک پنوماتیک چهارمیل صنعتی سری SC / SU
-- **English Title:** JPC Tie-Rod Double-Acting Pneumatic Cylinder SC Series
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `G 1/4" الی G 3/4" (متناسب با قطر سیلندر)`
-- **Working Pressure:** `1.0 – 9.0 bar`
-- **Voltage / Actuation:** `قابلیت سفارش با پیستون مگنت‌دار (سری SC-S)`
-- **Body Material:** کپ‌های آلومینیوم دایکاست + چهار میل مهار فولادی گالوانیزه
-- **Flow Rate / Cushioning:** مجهز به ضربه‌گیر قابل تنظیم در دو سر جک
-- **Operating Temperature:** `-5°C to +70°C`
-- **Standard / Protection Class:** `مقاوم در برابر بارهای محوری سنگین`
-- **Compatible Equivalent Codes:** `SC-32, SC-40, SC-50, SC-63, SC-80x150, SC-100, SC-125, MBB50, CP96SDB`
-- **Keywords:** جک چهارمیل، جک چهار میل، سیلندر چهارمیل، جک SC، جک بادی کارگاهی، جک پنوماتیک سنگین
-- **Applications:** صنایع چوب و ام‌دی‌اف، دروازه‌های تخلیه مواد، خطوط کانوایر و ماشین‌سازی عمومی
+### V63D513A-A213JB — شیر برقی نورگرن 5/2 مدل V63D513A-A213JB
+- **English Title:** Norgren pneumatic solenoid valve 5/2 G1/2 V63D513A-A213JB
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/2`
+- **Working Pressure:** `2 – 10 bar (بسته به مدل پایلوت)`
+- **Voltage / Actuation:** `12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 4500 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `V63D513A-A213JB, V63D513AA213JB, V63D513A A213JB, V63D513A_A213JB, Norgren V63D513A-A213JB, norgren V63D513A-A213JB, Norgren V63 5/2 G1/2, NORGREN-V63D513A-A213JB`
+- **Keywords:** شیر برقی نورگرن، شیر پنوماتیک، 5/2، G1/2، شیر V63، کنترل جهت، شیر برقی نورگرن 5/2 مدل V63D513A-A213JB، Norgren، V63D513A-A213JB، شیرهای کنترل جهت پنوماتیک، شیر برقی و پایلوتی
+- **Applications:** شیر کنترل جهت IMI Norgren پیکربندی‌شده به کد دقیق V63D513A-A213JB از خانواده V60/V61/V63. تابع شیر 5/2، پورت G1/2، دبی مرجع 4500 لیتر/دقیقه، مکانیزم سلونوئید / فنر بادی. رنج الکتریکی درج‌شده: 12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی). توجه: بازه ولتاژ در سند به معنای امکان انتخاب هر ولتاژی نیست؛ برای سفارش باید نسخه بوبین، کانکتور و ولتاژ واقعی از دیتاشیت و فروشنده کنترل شود.
 
-### JPC-ADVU-40-50-PA — جک پنوماتیک کامپکت (فشرده) سری ADVU / SDA
-- **English Title:** JPC Compact Pneumatic Cylinder ADVU / SDA Series
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `M5 / G 1/8" / G 1/4"`
-- **Working Pressure:** `1.0 – 10.0 bar`
-- **Voltage / Actuation:** `مجهز به مگنت داخلی جهت نصب سنسور`
-- **Body Material:** بدنه یکپارچه آلومینیوم آنودایز با شفت استیل/کروم
-- **Flow Rate / Cushioning:** طول بدنه بسیار کوتاه جهت فضاهای محدود نصب
-- **Operating Temperature:** `-10°C to +60°C`
-- **Standard / Protection Class:** `طراحی کم‌جا (Space-Saving Design)`
-- **Compatible Equivalent Codes:** `ADVU-40-50-P-A, ADN-40-50, SDA-40x50, KPZ-40, RM/92040/M`
-- **Keywords:** جک کامپکت، جک فشرده، جک کتابی، جک ADVU، جک SDA، جک کورس کوتاه، جک یکطرفه کامپکت
-- **Applications:** فیکسچرهای صنعتی، ماشین‌آلات بسته‌بندی وکیوم، لیبل‌چسبان و خطوط مونتاژ قطعات الکترونیک
+### V61B611A-A213JB — شیر برقی نورگرن 5/3 APB مدل V61B611A-A213JB
+- **English Title:** Norgren pneumatic solenoid valve 5/3 APB G1/4 V61B611A-A213JB
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `2 – 10 bar (بسته به مدل پایلوت)`
+- **Voltage / Actuation:** `12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** 950 L/min
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `V61B611A-A213JB, V61B611AA213JB, V61B611A A213JB, V61B611A_A213JB, Norgren V61B611A-A213JB, norgren V61B611A-A213JB, Norgren V61 5/3 APB G1/4, NORGREN-V61B611A-A213JB, JPC-4V330C-10-24DC`
+- **Keywords:** شیر برقی نورگرن، شیر پنوماتیک، 5/3 APB، G1/4، شیر V61، کنترل جهت، شیر برقی نورگرن 5/3 APB مدل V61B611A-A213JB، Norgren، V61B611A-A213JB، شیرهای کنترل جهت پنوماتیک، شیر برقی و پایلوتی
+- **Applications:** شیر کنترل جهت IMI Norgren پیکربندی‌شده به کد دقیق V61B611A-A213JB از خانواده V60/V61/V63. تابع شیر 5/3 APB، پورت G1/4، دبی مرجع 950 لیتر/دقیقه، مکانیزم دو سلونوئید. رنج الکتریکی درج‌شده: 12–250 V AC/DC (مطابق کاتالوگ، نه ولتاژ نامی قطعی). توجه: بازه ولتاژ در سند به معنای امکان انتخاب هر ولتاژی نیست؛ برای سفارش باید نسخه بوبین، کانکتور و ولتاژ واقعی از دیتاشیت و فروشنده کنترل شود.
 
-### JPC-MAL-25x100-CA — جک پنوماتیک قلمی (مینی استیل و آلومینیوم) سری DSNU / MAL
-- **English Title:** JPC Mini Round Pneumatic Cylinder DSNU / MAL Series
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `M5 / G 1/8"`
-- **Working Pressure:** `1.0 – 9.0 bar`
-- **Voltage / Actuation:** `دارای مگنت داخلی جهت سنسور کمربندی`
-- **Body Material:** لوله استنلس استیل ۳۰۴ یا آلومینیوم سخت‌کاری شده
-- **Flow Rate / Cushioning:** واشر ضربه‌گیر الاستومری یا بادی قابل تنظیم
-- **Operating Temperature:** `-10°C to +70°C`
-- **Standard / Protection Class:** `ISO 6432 (در تیپ استیل DSNU)`
-- **Compatible Equivalent Codes:** `DSNU-16, DSNU-20, DSNU-25-100-P-A, MAL-25x100, RA/802025/M, ISO-6432`
-- **Keywords:** جک قلمی، جک مینی، جک استیل، جک DSNU، جک MAL، سیلندر قلمی برگشت فنر
-- **Applications:** صنایع غذایی و لبنی، دستگاه‌های پرکن، تفکیک‌کننده‌های خطوط بسته‌بندی و نساجی
+### BL72-201GA — واحد مراقبت نورگرن BL72 مدل BL72-201GA
+- **English Title:** Norgren Excelon BL72 FRL boxed set BL72-201GA
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** واحد مراقبت و آماده‌سازی هوا (`frl-accessories`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0.3 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `BL72-201GA, BL72201GA, BL72 201GA, BL72_201GA, Norgren BL72-201GA, norgren BL72-201GA, Norgren Excelon BL72 boxed FRL G1/4, NORGREN-BL72-201GA, JPC-AC4010-04-D (سری AC2010..AC4010), JPC-AC4010-04-D`
+- **Keywords:** واحد مراقبت، FRL، فیلتر رگلاتور، روغن زن، ست پنوماتیک، G1/4، تخلیه اتوماتیک، واحد مراقبت نورگرن BL72 مدل BL72-201GA، Norgren، BL72-201GA، واحد مراقبت و آماده‌سازی هوا، ست فیلتر رگولاتور روغن‌زن
+- **Applications:** مجموعه آماده‌سازی هوای فشرده IMI Norgren Excelon مدل BL72-201GA، خانواده BL72 با پورت G1/4. مجموعه شامل اجزای فیلتر/رگولاتور و روغن‌زن است. نوع تخلیه تخلیه اتوماتیک و پیکربندی همراه با شیر قطع کن. جزئیات متعلقات، لوازم نصب و محدوده فشار نسخه مورد نظر باید از منبع سازنده تأیید شود.
 
-### FESTO-DSBC-50-250-PPVA-N3 — جک پنوماتیک پروفیلی فستو سری DSBC / DNC
-- **English Title:** Festo ISO 15552 Standards-Based Cylinder DSBC-50
-- **Brand:** Festo (فستو) (`Festo`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `G 1/4" (سایز پورت متناسب با قطر ۳۲ الی ۱۲۵)`
-- **Working Pressure:** `0.6 – 12.0 bar`
-- **Voltage / Actuation:** `شیار استاندارد سنسور سری SME / SMT-8M`
-- **Body Material:** آلومینیوم آنودایز + شفت فولاد آلیاژی High-Alloy
-- **Flow Rate / Cushioning:** ضربه‌گیر خودتنظیم PPS یا قابل تنظیم دستی PPV
-- **Operating Temperature:** `-20°C to +80°C`
-- **Standard / Protection Class:** `ISO 15552`
-- **Compatible Equivalent Codes:** `DSBC-50-250, DSBC-40-100, DNC-50-250, DNC-40-100, JPC-DNC-63-200-PPV-A`
-- **Keywords:** جک فستو، جک DSBC، جک DNC فستو، سیلندر پروفیلی فستو
-- **Applications:** ماشین‌آلات دقیق صنعتی، خطوط رباتیک و اتوماسیون پیشرفته کارخانجات
+### BL74-401G — واحد مراقبت نورگرن BL74 مدل BL74-401G
+- **English Title:** Norgren Excelon BL74 FRL boxed set BL74-401G
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** واحد مراقبت و آماده‌سازی هوا (`frl-accessories`)
+- **Port Size:** `G1/2`
+- **Working Pressure:** `0.3 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/2
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `BL74-401G, BL74401G, BL74 401G, BL74_401G, Norgren BL74-401G, norgren BL74-401G, Norgren Excelon BL74 boxed FRL G1/2, NORGREN-BL74-401G, JPC-AC4010-04-D (سری AC2010..AC4010), JPC-AC4010-04-D`
+- **Keywords:** واحد مراقبت، FRL، فیلتر رگلاتور، روغن زن، ست پنوماتیک، G1/2، تخلیه اتوماتیک، واحد مراقبت نورگرن BL74 مدل BL74-401G، Norgren، BL74-401G، واحد مراقبت و آماده‌سازی هوا، ست فیلتر رگولاتور روغن‌زن
+- **Applications:** مجموعه آماده‌سازی هوای فشرده IMI Norgren Excelon مدل BL74-401G، خانواده BL74 با پورت G1/2. مجموعه شامل اجزای فیلتر/رگولاتور و روغن‌زن است. نوع تخلیه تخلیه اتوماتیک و پیکربندی همراه با شیر قطع کن. جزئیات متعلقات، لوازم نصب و محدوده فشار نسخه مورد نظر باید از منبع سازنده تأیید شود.
 
-### NORGREN-PRA/182050/M — جک پنوماتیک پروفیلی و بدون شفت نورگرن سری ISOLine / Lintra
-- **English Title:** Norgren ISOLine Profile & Lintra Rodless Cylinder
-- **Brand:** Norgren (نورگرن) (`Norgren`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `G 1/8" الی G 1/2"`
-- **Working Pressure:** `1.0 – 10.0 bar`
-- **Voltage / Actuation:** `مجهز به مگنت موقعیت‌یاب کالسکه`
-- **Body Material:** پروفیل آلومینیوم اکسترود شده با نوار آب‌بندی استیل/پلی‌یورتان
-- **Flow Rate / Cushioning:** سیستم ضربه‌گیر تطبیقی (Adaptive Cushioning)
-- **Operating Temperature:** `-15°C to +80°C`
-- **Standard / Protection Class:** `ISO 15552 / Rodless Industrial`
-- **Compatible Equivalent Codes:** `PRA/182050/M, PRA/182040/M/100, RA/8000, M/46000, JPC-DNC-63-200-PPV-A`
-- **Keywords:** جک نورگرن، جک بدون شفت، جک رادلس، جک کالسکه ای، PRA/182050
-- **Applications:** سیستم‌های پالتایزر، درب‌های اتوماتیک صنعتی، برش‌های طولی و خطوط انتقال مواد
+### T40C2800 — سایلنسر پنوماتیک نورگرن G1/4 مدل T40C2800
+- **English Title:** Norgren T40 Quietaire sintered bronze silencer G1/4 T40C2800
+- **Brand:** نورگرن (Norgren) (`Norgren`)
+- **Category:** صداخفه‌کن و اگزوز پنوماتیک (`frl-accessories`)
+- **Port Size:** `G1/4`
+- **Working Pressure:** `0 – 10 bar`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** G1/4
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `T40C2800, Norgren T40C2800, norgren T40C2800, T40 sintered bronze pneumatic silencer G1/4, NORGREN-T40C2800`
+- **Keywords:** صداخفه کن، سایلنسر، اگزوز شیر پنوماتیک، نویز، G1/4، سایلنسر پنوماتیک نورگرن G1/4 مدل T40C2800، Norgren، T40C2800، صداخفه‌کن و اگزوز پنوماتیک، سایلنسر برنزی T40
+- **Applications:** سایلنسر یا اگزوز صداخفه‌کن Pneumatic Quietaire از Norgren، کد T40C2800 و اتصال رزوه G1/4. برای کاهش صدای هوای خروجی شیرهای پنوماتیک استفاده می‌شود. در نصب باید دبی مجاز، محدودیت فشار برگشتی، نوع رزوه G/R و آلودگی هوای خروجی بررسی شوند.
 
-### REXROTH-R480141402-PRA — جک پنوماتیک پروفیلی و کامپکت بوش رکسروت سری PRA / KPZ
-- **English Title:** Bosch Rexroth Profile & Compact Cylinder PRA / KPZ Series
-- **Brand:** Bosch Rexroth (بوش رکسروت) (`Bosch Rexroth`)
-- **Category:** جک‌های پنوماتیک (`cylinders`)
-- **Port Size:** `G 1/8" الی G 1/2"`
-- **Working Pressure:** `1.5 – 10.0 bar`
-- **Voltage / Actuation:** `سازگار با سنسورهای شیاری T-Slot`
-- **Body Material:** بدنه آلومینیوم مقاوم و شفت استنلس استیل
-- **Flow Rate / Cushioning:** ضربه‌گیر پنوماتیک دقیق با قابلیت جذب انرژی جنبشی بالا
-- **Operating Temperature:** `-20°C to +80°C`
-- **Standard / Protection Class:** `ISO 15552 / ISO 21287`
-- **Compatible Equivalent Codes:** `R480141402, 0822350, PRA-ISO, KPZ, JPC-DNC-63-200-PPV-A, JPC-ADVU-40-50-PA`
-- **Keywords:** جک رکسروت، جک بوش رکسروت، سیلندر PRA رکسروت، جک KPZ
-- **Applications:** تجهیزات تست و مونتاژ، ماشین‌آلات فرم‌دهی و خطوط اتوماسیون کارخانجات
+### 0820055201 — شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055201
+- **English Title:** Legacy Rexroth AVENTICS Valve system directional spool component HF03-LG 0820055201
+- **Brand:** بوش رکسروت / آونتیکس (Rexroth / AVENTICS) (`Bosch Rexroth`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `مطابق دیتاشیت سری`
+- **Working Pressure:** `مطابق دیتاشیت HF03-LG`
+- **Voltage / Actuation:** `بسته به کد بوبین (تأیید در زمان استعلام)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** مطابق دیتاشیت سری
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `0820055201, Bosch Rexroth / AVENTICS 0820055201, bosch rexroth / aventics 0820055201, Bosch Rexroth Aventics HF03 LG 0820055201, BOSCH-REXROTH-AVENTICS-0820055201, BOSCH-REXROTH-/-AVENTICS-0820055201, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW`
+- **Keywords:** رکسروت پنوماتیک، آونتیکس، Rexroth Pneumatics، HF03-LG، جزیره شیر، شیر منیفولد، قطعات قدیمی، شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055201، Bosch Rexroth / AVENTICS، 0820055201، شیرهای کنترل جهت پنوماتیک، شیر کنترل جهت سیستم جزیره‌ای
+- **Applications:** کد مرجع 0820055201 در کاتالوگ تاریخی Rexroth Pneumatics / AVENTICS مربوط به سیستم شیر جزیره‌ای سری HF03-LG درج شده است. طبقه پیشنهادی: شیر کنترل جهت سیستم جزیره‌ای. این ردیف مرجع تأمین یا شناسایی قطعات قدیمی ماشین‌آلات است؛ بدون کنترل صفحه منبع، مشخصات مکانیکی و الکتریکی دقیق و سازنده کنونی نباید به‌عنوان محصول فعال منتشر شود.
 
-### JPC-AC4010-04-D — واحد مراقبت هوای فشرده دوتکه و سه‌تکه سری AC / OU (فیلتر، رگولاتور، روغن‌زن)
-- **English Title:** JPC FRL Air Preparation Unit AC4010-04 (Filter, Regulator, Lubricator)
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** تجهیزات جانبی و مراقبت هوا (`frl-accessories`)
-- **Port Size:** `G 1/4", G 3/8", G 1/2", G 3/4", G 1"`
-- **Working Pressure:** `0.5 – 10.0 bar (حداکثر فشار ورودی 12 bar)`
-- **Voltage / Actuation:** `تخلیه دستی / نیمه‌اتوماتیک / اتوماتیک (Drain)`
-- **Body Material:** بدنه آلومینیوم دایکاست + لیوان پلی‌کربنات با گارد محافظ فلزی
-- **Flow Rate / Cushioning:** فیلتراسیون ۵ و ۴۰ میکرون | دبی تا 4000 L/min
-- **Operating Temperature:** `5°C to +60°C`
-- **Standard / Protection Class:** `همراه با براکت نصب و گیج فشار روغنی/خشک`
-- **Compatible Equivalent Codes:** `MS6-LFR-1/2, FESTO-MS6-LFR-1/2-D7-ERM-AS, B74G-4GK-AD3-RMN, 0821300300, AC4010-04, AC3010-03, AC2010-02, OU-1/2`
-- **Keywords:** واحد مراقبت، واحد مراقبت باد، فیلتر رگولاتور، روغن زن پنوماتیک، FRL، AC4010، واحد مراقبت نیم اینچ، واحد مراقبت یک چهارم، آبگیر باد
-- **Applications:** ورودی هوای فشرده کلیه ماشین‌آلات صنعتی، تابلوهای پنوماتیک و ایستگاه‌های کاری
+### 0820055051 — شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055051
+- **English Title:** Legacy Rexroth AVENTICS Valve system directional spool component HF03-LG 0820055051
+- **Brand:** بوش رکسروت / آونتیکس (Rexroth / AVENTICS) (`Bosch Rexroth`)
+- **Category:** شیرهای کنترل جهت پنوماتیک (`valves`)
+- **Port Size:** `مطابق دیتاشیت سری`
+- **Working Pressure:** `مطابق دیتاشیت HF03-LG`
+- **Voltage / Actuation:** `بسته به کد بوبین (تأیید در زمان استعلام)`
+- **Body Material:** 
+- **Flow Rate / Cushioning:** مطابق دیتاشیت سری
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `0820055051, Bosch Rexroth / AVENTICS 0820055051, bosch rexroth / aventics 0820055051, Bosch Rexroth Aventics HF03 LG 0820055051, BOSCH-REXROTH-AVENTICS-0820055051, BOSCH-REXROTH-/-AVENTICS-0820055051, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW`
+- **Keywords:** رکسروت پنوماتیک، آونتیکس، Rexroth Pneumatics، HF03-LG، جزیره شیر، شیر منیفولد، قطعات قدیمی، شیر کنترل جهت سیستم جزیره‌ای رکسروت / آونتیکس 0820055051، Bosch Rexroth / AVENTICS، 0820055051، شیرهای کنترل جهت پنوماتیک، شیر کنترل جهت سیستم جزیره‌ای
+- **Applications:** کد مرجع 0820055051 در کاتالوگ تاریخی Rexroth Pneumatics / AVENTICS مربوط به سیستم شیر جزیره‌ای سری HF03-LG درج شده است. طبقه پیشنهادی: شیر کنترل جهت سیستم جزیره‌ای. این ردیف مرجع تأمین یا شناسایی قطعات قدیمی ماشین‌آلات است؛ بدون کنترل صفحه منبع، مشخصات مکانیکی و الکتریکی دقیق و سازنده کنونی نباید به‌عنوان محصول فعال منتشر شود.
 
-### JPC-HVFF-ASC-SET — شیر کنترل جریان (فلوکنترل)، اتصالات پنوماتیک، شیلنگ PU و گیج فشار
-- **English Title:** JPC Flow Control Valves, Push-in Fittings, PU Tubing & Pressure Gauges
-- **Brand:** JPC (برند اختصاصی) (`JPC`)
-- **Category:** تجهیزات جانبی و مراقبت هوا (`frl-accessories`)
-- **Port Size:** `رزوه M5 الی 1/2" | قطر شیلنگ 4, 6, 8, 10, 12, 16 mm`
-- **Working Pressure:** `0 – 10.0 bar (فشار ترکیدگی شیلنگ تا 24 bar)`
-- **Voltage / Actuation:** `مکانیکی / پنوماتیکی`
-- **Body Material:** برنج آبکاری نیکل، PBT صنعتی و شیلنگ 100% پلی‌یورتان (PU)
-- **Flow Rate / Cushioning:** تنظیم دقیق سرعت کورس رفت و برگشت جک
-- **Operating Temperature:** `-20°C to +60°C`
-- **Standard / Protection Class:** `آب‌بندی اورینگ NBR و رزوه تفلون‌دار (PTFE Coated)`
-- **Compatible Equivalent Codes:** `GRLA-1/4-QS-8, ASC-200-08, ASC-300-10, SL8-02, PC8-02, PL8-02, PUN-H-8X1.25`
-- **Keywords:** فلوکنترل، فلو کنترل، شیر یکطرفه گلویی، شیر تنظیم سرعت جک، اتصالات پنوماتیک، فیتینگ پنوماتیک، شیلنگ پلی یورتان، شیلنگ PU، گیج فشار باد، مانومتر پنوماتیک، اگزوز خفه کن
-- **Applications:** لوله‌کشی مدارهای فرمان و قدرت پنوماتیک، تنظیم سرعت حرکت جک‌ها و مانیتورینگ فشار خط
+### R412003484 — قطعه سیستم شیر جزیره‌ای رکسروت / آونتیکس R412003484
+- **English Title:** Legacy Rexroth AVENTICS Valve terminal component HF03-LG R412003484
+- **Brand:** بوش رکسروت / آونتیکس (Rexroth / AVENTICS) (`Bosch Rexroth`)
+- **Category:** لوازم یدکی و جانبی پنوماتیک (`frl-accessories`)
+- **Port Size:** `مطابق دیتاشیت سری`
+- **Working Pressure:** `مطابق دیتاشیت HF03-LG`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** مطابق دیتاشیت سری
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `R412003484, Bosch Rexroth / AVENTICS R412003484, bosch rexroth / aventics R412003484, Bosch Rexroth Aventics HF03 LG R412003484, BOSCH-REXROTH-AVENTICS-R412003484, BOSCH-REXROTH-/-AVENTICS-R412003484, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW`
+- **Keywords:** رکسروت پنوماتیک، آونتیکس، Rexroth Pneumatics، HF03-LG، جزیره شیر، شیر منیفولد، قطعات قدیمی، قطعه سیستم شیر جزیره‌ای رکسروت / آونتیکس R412003484، Bosch Rexroth / AVENTICS، R412003484، لوازم یدکی و جانبی پنوماتیک، قطعه سیستم شیر جزیره‌ای
+- **Applications:** کد مرجع R412003484 در کاتالوگ تاریخی Rexroth Pneumatics / AVENTICS مربوط به سیستم شیر جزیره‌ای سری HF03-LG درج شده است. طبقه پیشنهادی: قطعه سیستم شیر جزیره‌ای. این ردیف مرجع تأمین یا شناسایی قطعات قدیمی ماشین‌آلات است؛ بدون کنترل صفحه منبع، مشخصات مکانیکی و الکتریکی دقیق و سازنده کنونی نباید به‌عنوان محصول فعال منتشر شود.
 
-### FESTO-MS6-LFR-1/2-D7-ERM-AS — واحد مراقبت و فیلتر رگولاتور ماژولار فستو سری MS4 / MS6
-- **English Title:** Festo MS6 Series Modular Filter Regulator & Lubricator
-- **Brand:** Festo (فستو) (`Festo`)
-- **Category:** تجهیزات جانبی و مراقبت هوا (`frl-accessories`)
-- **Port Size:** `G 1/4", G 3/8", G 1/2"`
-- **Working Pressure:** `0.8 – 12.0 bar`
-- **Voltage / Actuation:** `تخلیه دستی چرخشی یا اتوماتیک کامل`
-- **Body Material:** آلومینیوم دایکاست با کاسه محافظ یکپارچه
-- **Flow Rate / Cushioning:** 2200 – 5500 L/min
-- **Operating Temperature:** `-10°C to +60°C`
-- **Standard / Protection Class:** `طراحی ماژولار سری MS`
-- **Compatible Equivalent Codes:** `MS6-LFR-1/2, MS4-LFR-1/4, LFR-1/2-D-MIDI, JPC-AC4010-04-D`
-- **Keywords:** واحد مراقبت فستو، فیلتر رگولاتور فستو، MS6-LFR، MS4-LFR
-- **Applications:** تغذیه هوای فشرده ماشین‌آلات حساس، خطوط بسته‌بندی دارویی و صنایع الکترونیک
-
-### NORGREN-B74G-4GK-AD3-RMN — فیلتر رگولاتور و واحد مراقبت نورگرن سری Excelon (B72G / B73G / B74G)
-- **English Title:** Norgren Excelon B74G Filter-Regulator & FRL Unit
-- **Brand:** Norgren (نورگرن) (`Norgren`)
-- **Category:** تجهیزات جانبی و مراقبت هوا (`frl-accessories`)
-- **Port Size:** `G 1/4", G 3/8", G 1/2", G 3/4"`
-- **Working Pressure:** `0.3 – 10.0 bar (فشار ورودی تا 17 bar در کاسه فلزی)`
-- **Voltage / Actuation:** `تخلیه اتوماتیک (Auto Drain) یا دستی`
-- **Body Material:** آلومینیوم صنعتی با کاسه شفاف گارددار یا تمام فلزی
-- **Flow Rate / Cushioning:** تا 4800 L/min
-- **Operating Temperature:** `-20°C to +65°C`
-- **Standard / Protection Class:** `سیستم اتصال سریع ماژولار Quikclamp`
-- **Compatible Equivalent Codes:** `B74G-4GK-AD3-RMN, B72G-2GK, B73G-3GK, JPC-AC4010-04-D`
-- **Keywords:** فیلتر رگولاتور نورگرن، واحد مراقبت نورگرن، B74G، Excelon
-- **Applications:** کمپرسورخانه‌ها، خطوط اصلی توزیع باد کارخانجات، صنایع ذوب، پتروشیمی و معادن
-
-### REXROTH-0821300300-NL2 — واحد مراقبت هوا و رگولاتور فشار بوش رکسروت سری NL2 / AS
-- **English Title:** Bosch Rexroth Air Preparation Unit & Pressure Regulator NL2 / AS
-- **Brand:** Bosch Rexroth (بوش رکسروت) (`Bosch Rexroth`)
-- **Category:** تجهیزات جانبی و مراقبت هوا (`frl-accessories`)
-- **Port Size:** `G 1/4", G 3/8", G 1/2"`
-- **Working Pressure:** `0.5 – 10.0 bar`
-- **Voltage / Actuation:** `نیمه‌اتوماتیک / اتوماتیک`
-- **Body Material:** آلومینیوم دایکاست و پلیمر مهندسی مقاوم
-- **Flow Rate / Cushioning:** تا 3500 L/min
-- **Operating Temperature:** `-10°C to +60°C`
-- **Standard / Protection Class:** `استاندارد صنعتی اروپا`
-- **Compatible Equivalent Codes:** `0821300300, NL2-FRE, AS2-FRE, JPC-AC4010-04-D`
-- **Keywords:** واحد مراقبت رکسروت، رگولاتور بوش رکسروت، 0821300300، NL2
-- **Applications:** خطوط مونتاژ خودروسازی، ماشین‌آلات تزریق و فرمینگ، سیستم‌های کنترل فرآیند
+### 2123208000 — اتصال و رابط پنوماتیک رکسروت / آونتیکس 2123208000
+- **English Title:** Legacy Rexroth AVENTICS Pneumatic connector fitting HF03-LG 2123208000
+- **Brand:** بوش رکسروت / آونتیکس (Rexroth / AVENTICS) (`Bosch Rexroth`)
+- **Category:** اتصالات و رابط‌های پنوماتیک (`frl-accessories`)
+- **Port Size:** `مطابق دیتاشیت سری`
+- **Working Pressure:** `مطابق دیتاشیت HF03-LG`
+- **Voltage / Actuation:** ``
+- **Body Material:** 
+- **Flow Rate / Cushioning:** مطابق دیتاشیت سری
+- **Operating Temperature:** ``
+- **Standard / Protection Class:** ``
+- **Compatible Equivalent Codes:** `2123208000, Bosch Rexroth / AVENTICS 2123208000, bosch rexroth / aventics 2123208000, Bosch Rexroth Aventics HF03 LG 2123208000, BOSCH-REXROTH-AVENTICS-2123208000, BOSCH-REXROTH-/-AVENTICS-2123208000, بررسی مهندسی سیستم جزیره شیر HF03-LG, JPC-ENGINEERING-REVIEW`
+- **Keywords:** رکسروت پنوماتیک، آونتیکس، Rexroth Pneumatics، HF03-LG، جزیره شیر، شیر منیفولد، قطعات قدیمی، اتصال و رابط پنوماتیک رکسروت / آونتیکس 2123208000، Bosch Rexroth / AVENTICS، 2123208000، اتصالات و رابط‌های پنوماتیک، اتصال و رابط پنوماتیک
+- **Applications:** کد مرجع 2123208000 در کاتالوگ تاریخی Rexroth Pneumatics / AVENTICS مربوط به سیستم شیر جزیره‌ای سری HF03-LG درج شده است. طبقه پیشنهادی: اتصال و رابط پنوماتیک. این ردیف مرجع تأمین یا شناسایی قطعات قدیمی ماشین‌آلات است؛ بدون کنترل صفحه منبع، مشخصات مکانیکی و الکتریکی دقیق و سازنده کنونی نباید به‌عنوان محصول فعال منتشر شود.

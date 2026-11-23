@@ -18,6 +18,7 @@
     category: initialCategory,
     brand: "all",
     searchQuery: "",
+    visibleLimit: 24,
     selectedProduct: null,
     theme: localStorage.getItem("jpc_theme") || "light",
     rfqItems: loadRfqFromStorage(),
@@ -850,6 +851,10 @@
 
     const normCode = normalizeSearchText(item.code);
     const compactCode = normalizeCompact(item.code);
+    const normSku = normalizeSearchText(item.sku || item.code);
+    const compactSku = normalizeCompact(item.sku || item.code);
+    const normArticle = normalizeSearchText(item.articleNumber || "");
+    const compactArticle = normalizeCompact(item.articleNumber || "");
     const equivList = item.equivalentTo || [];
     const normEquivs = equivList.map((e) => ({
       raw: e,
@@ -857,10 +862,13 @@
       compact: normalizeCompact(e)
     }));
 
-    // Tier 1: Exact Normalized Code
+    // Tier 1: Exact Normalized Code or SKU
     if (
       compactQuery.length >= 2 &&
-      (compactCode === compactQuery || normCode === normQuery)
+      (compactCode === compactQuery ||
+        normCode === normQuery ||
+        compactSku === compactQuery ||
+        normSku === normQuery)
     ) {
       return {
         score: 1000,
@@ -873,6 +881,20 @@
     }
 
     // Tier 2: Exact Manufacturer Article Number / Equivalent Cross-Reference Code
+    if (
+      compactArticle.length >= 3 &&
+      (compactArticle === compactQuery || normArticle === normQuery)
+    ) {
+      return {
+        score: 960,
+        tier: 2,
+        matchLabel: `شماره سفارش سازنده (${item.articleNumber})`,
+        matchType: "exact",
+        matchedCode: item.code,
+        isExact: true
+      };
+    }
+
     for (let i = 0; i < normEquivs.length; i++) {
       const eq = normEquivs[i];
       if (
@@ -891,7 +913,12 @@
     }
 
     // Tier 3: SKU Alias / Direct Code Substring (e.g., 4V210-08 inside JPC-4V210-08-24DC)
-    if (compactQuery.length >= 3 && compactCode.includes(compactQuery)) {
+    if (
+      compactQuery.length >= 3 &&
+      (compactCode.includes(compactQuery) ||
+        compactSku.includes(compactQuery) ||
+        (compactArticle.length >= 4 && compactArticle.includes(compactQuery)))
+    ) {
       return {
         score: 880,
         tier: 3,
@@ -919,8 +946,13 @@
       }
     }
 
-    // Tier 4: Product Series Match (e.g., DSBC, DNC, MFH, 4V210, PRA, ADVU, MAL)
-    const seriesTokens = ["4v210", "4v220", "4v330", "3v210", "dnc", "dsbc", "mfh", "jmfh", "pra", "advu", "adngf", "mal", "dsnu", "ms6", "b74g", "nl2", "oufrl", "asc", "pun"];
+    // Tier 4: Product Series Match (covering all 30 PIM families across JPC, Festo, Norgren & Bosch Rexroth)
+    const seriesTokens = [
+      "4v210", "4v220", "4v330", "3v210", "dnc", "dsbc", "sc", "mfh", "jmfh",
+      "pra", "advu", "adngf", "mal", "dsnu", "ms6", "b74g", "bl72", "bl73", "bl74",
+      "v60", "v61", "v63", "t40", "hf03", "qssf", "qslv", "qsl", "qsh", "qss", "qsc", "qs",
+      "ac4010", "hvff", "nl2", "oufrl", "asc", "pun"
+    ];
     for (let s = 0; s < seriesTokens.length; s++) {
       const ser = seriesTokens[s];
       if (compactQuery.includes(ser) && (compactCode.includes(ser) || normEquivs.some((e) => e.compact.includes(ser)))) {
@@ -951,14 +983,16 @@
         item.cylinderType || "",
         item.boreStrokeSpec || "",
         item.accessoryType || "",
+        item.subCategory || "",
+        item.family || "",
         (item.supportedBores || []).join(" ")
       ].join(" ")
     );
-    const titleCorpus = normalizeSearchText(`${item.nameFa} ${item.nameEn} ${item.brand} ${item.brandFa} ${item.categoryTitleFa}`);
+    const titleCorpus = normalizeSearchText(`${item.nameFa} ${item.nameEn} ${item.brand} ${item.brandDisplay || ""} ${item.brandFa} ${item.categoryTitleFa}`);
     const synonymCorpus = expandPersianSynonyms(
       normalizeSearchText([...(item.keywords || []), item.applicationsFa || "", item.brandFa || "", item.brand || ""].join(" "))
     );
-    const fullCorpus = `${normCode} ${titleCorpus} ${attrCorpus} ${synonymCorpus} ${normEquivs.map((e) => e.norm).join(" ")}`;
+    const fullCorpus = `${normCode} ${normSku} ${normArticle} ${titleCorpus} ${attrCorpus} ${synonymCorpus} ${normEquivs.map((e) => e.norm).join(" ")}`;
     const fullCompact = normalizeCompact(fullCorpus);
 
     // Tokenize query (ignoring trivial stop words like "به", "با", "در", "از")
@@ -1049,7 +1083,8 @@
           state.category === "all" || item.category === state.category;
         const matchBrand =
           state.brand === "all" ||
-          item.brand.toLowerCase() === state.brand.toLowerCase();
+          item.brand.toLowerCase() === state.brand.toLowerCase() ||
+          (item.brandDisplay && item.brandDisplay.toLowerCase().includes(state.brand.toLowerCase()));
         if (!matchCategory || !matchBrand) continue;
       }
 
@@ -1067,9 +1102,11 @@
     if (hasQuery) {
       results.sort((a, b) => {
         if (b.match.score !== a.match.score) return b.match.score - a.match.score;
-        // Tie-breaker: prioritize JPC proprietary brand
+        // Tie-breaker: prioritize JPC proprietary brand, then published flagship SKUs
         if (a.item.brand === "JPC" && b.item.brand !== "JPC") return -1;
         if (b.item.brand === "JPC" && a.item.brand !== "JPC") return 1;
+        if (a.item.publicationStatus === "published" && b.item.publicationStatus !== "published") return -1;
+        if (b.item.publicationStatus === "published" && a.item.publicationStatus !== "published") return 1;
         return 0;
       });
     }
@@ -1094,9 +1131,15 @@
 
     const filtered = getFilteredProducts();
     const total = (window.PRODUCTS_DATA || []).length;
+    const limit = state.visibleLimit || 24;
+    const visibleItems = filtered.slice(0, limit);
 
     if (counter) {
-      counter.innerHTML = `نمایش <strong>${filtered.length}</strong> مدل از <strong>${total}</strong> تجهیز کاتالوگ`;
+      if (filtered.length > visibleItems.length) {
+        counter.innerHTML = `نمایش <strong>${visibleItems.length}</strong> از <strong>${filtered.length}</strong> مدل منطبق (بانک کاتالوگ: <strong>${total}</strong> کد فنی)`;
+      } else {
+        counter.innerHTML = `نمایش <strong>${filtered.length}</strong> مدل از <strong>${total}</strong> تجهیز کاتالوگ`;
+      }
     }
 
     if (filtered.length === 0) {
@@ -1136,7 +1179,7 @@
       return;
     }
 
-    grid.innerHTML = filtered
+    const cardsHtml = visibleItems
       .map((product) => {
         const isJpc = product.brand === "JPC";
         const inRfq = isProductInRfq(product.id);
@@ -1280,6 +1323,44 @@
         `;
       })
       .join("");
+
+    const remainingCount = filtered.length - visibleItems.length;
+    const loadMoreHtml =
+      remainingCount > 0
+        ? `
+          <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 0.65rem; padding: 1.35rem; background: var(--surface-card); border: 1px dashed var(--border-subtle); border-radius: 12px; text-align: center;">
+            <div style="font-size: 0.88rem; color: var(--text-secondary);">
+              در حال نمایش <strong>${visibleItems.length}</strong> مدل از <strong>${filtered.length}</strong> کد فنی منطبق در بانک ۵۰۰ قطعه‌ای JPC
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+              <button type="button" class="btn btn-outline-tech btn-sm" id="catalog-load-more-btn">
+                نمایش ${Math.min(48, remainingCount)} مدل بعدی (+${remainingCount} مدل باقی‌مانده)
+              </button>
+              <button type="button" class="btn btn-amber btn-sm" id="catalog-load-all-btn">
+                نمایش تمام ${filtered.length} مدل این فیلتر
+              </button>
+            </div>
+          </div>
+        `
+        : "";
+
+    grid.innerHTML = cardsHtml + loadMoreHtml;
+
+    const loadMoreBtn = document.getElementById("catalog-load-more-btn");
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener("click", () => {
+        state.visibleLimit = (state.visibleLimit || 24) + 48;
+        renderCatalog();
+      });
+    }
+
+    const loadAllBtn = document.getElementById("catalog-load-all-btn");
+    if (loadAllBtn) {
+      loadAllBtn.addEventListener("click", () => {
+        state.visibleLimit = filtered.length;
+        renderCatalog();
+      });
+    }
 
     // Attach listeners to newly rendered buttons
     grid.querySelectorAll(".js-quote-trigger").forEach((btn) => {

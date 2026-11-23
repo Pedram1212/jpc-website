@@ -1,0 +1,347 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jpciran.com/schemas/catalog-schema.json",
+  "title": "JPC Iran Industrial Pneumatics PIM Catalog Schema",
+  "description": "Normalized Product Information Management (PIM) schema for Jalali Pneumatic Company (JPC - شرکت جلالی پنوماتیک) distinguishing manufacturers/brands, categories/subcategories, product families/series, individual SKUs/variants, verified cross-reference tiers, and publication lifecycle states.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "company",
+    "governanceRules",
+    "publicationStates",
+    "crossReferenceTiers",
+    "manufacturers",
+    "categories",
+    "productFamilies",
+    "summary",
+    "products"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "2.0.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "ISO 8601 date or timestamp of catalog generation"
+    },
+    "company": {
+      "type": "object",
+      "required": ["nameFa", "nameEn", "shortName", "addressFa", "phones", "whatsapp", "workingHoursFa", "website", "aiAssistantUrl"],
+      "properties": {
+        "nameFa": { "type": "string", "const": "شرکت جلالی پنوماتیک (JPC)" },
+        "nameEn": { "type": "string", "const": "Jalali Pneumatic Company (JPC)" },
+        "shortName": { "type": "string", "const": "JPC" },
+        "managementNoteFa": { "type": "string", "const": "با مدیریت امیر جلالی" },
+        "addressFa": { "type": "string", "const": "تهران، لاله‌زار جنوبی، روبروی کوچه علیپور، پاساژ رزاق‌منش، پلاک ۱" },
+        "phones": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "whatsapp": { "type": "string", "const": "09121305167" },
+        "workingHoursFa": { "type": "string", "const": "شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰" },
+        "website": { "type": "string", "const": "https://www.jpciran.com/" },
+        "aiAssistantUrl": { "type": "string", "const": "https://ai.jpciran.com" }
+      }
+    },
+    "publicationStates": {
+      "type": "object",
+      "required": ["draft", "pending_verification", "approved", "published", "archived"],
+      "properties": {
+        "draft": {
+          "type": "object",
+          "description": "Imported research/catalog record searchable in live client search & RFQ basket, excluded from standalone SEO page generation and sitemap.xml."
+        },
+        "pending_verification": {
+          "type": "object",
+          "description": "Awaiting engineering verification of datasheet parameters, coil voltage, or packaging quantity before indexing."
+        },
+        "approved": {
+          "type": "object",
+          "description": "Verified by JPC engineering team and queued for next SEO build rollout."
+        },
+        "published": {
+          "type": "object",
+          "description": "Verified flagship SKU eligible for dedicated indexable HTML product pages, SSR catalog cards, structured data (JSON-LD), and sitemap.xml inclusion."
+        },
+        "archived": {
+          "type": "object",
+          "description": "Discontinued or superseded historical part number retained only for cross-reference lookup."
+        }
+      }
+    },
+    "crossReferenceTiers": {
+      "type": "object",
+      "required": [
+        "verified_direct_replacement",
+        "conditionally_compatible",
+        "functionally_similar",
+        "unverified_candidate"
+      ],
+      "properties": {
+        "verified_direct_replacement": {
+          "type": "object",
+          "description": "Drop-in replacement verified across mounting standard (e.g., ISO 15552), bore/stroke, thread size, voltage, and operating pressure."
+        },
+        "conditionally_compatible": {
+          "type": "object",
+          "description": "Dimensionally or functionally compatible under shared standard (e.g., ISO 15552 or G-thread port), subject to verifying T-slot sensor groove, coil connector pinout, or cushioning type."
+        },
+        "functionally_similar": {
+          "type": "object",
+          "description": "Performs the same pneumatic circuit function (e.g., 5/2 single solenoid G1/4) with different body footprint or sub-base manifold geometry."
+        },
+        "unverified_candidate": {
+          "type": "object",
+          "description": "Candidate alternative requiring engineering review of machine operating conditions before substitution."
+        }
+      }
+    },
+    "manufacturers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "code",
+          "name",
+          "nameFa",
+          "legalAttribution",
+          "sourcingRole",
+          "isLegacy",
+          "disclaimerFa",
+          "officialSources"
+        ],
+        "properties": {
+          "id": { "type": "string", "enum": ["jpc", "festo", "norgren", "bosch-rexroth"] },
+          "code": { "type": "string" },
+          "name": { "type": "string" },
+          "nameFa": { "type": "string" },
+          "legalAttribution": { "type": "string" },
+          "sourcingRole": {
+            "type": "string",
+            "enum": [
+              "proprietary_brand",
+              "international_sourcing_and_cross_reference",
+              "historical_legacy_sourcing_reference"
+            ]
+          },
+          "isLegacy": { "type": "boolean" },
+          "disclaimerFa": { "type": "string" },
+          "officialSources": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "uiCategory",
+          "titleFa",
+          "titleEn",
+          "slug",
+          "defaultSchematicType",
+          "subcategories"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "uiCategory": { "type": "string", "enum": ["cylinders", "valves", "frl-accessories"] },
+          "titleFa": { "type": "string" },
+          "titleEn": { "type": "string" },
+          "slug": { "type": "string" },
+          "defaultSchematicType": { "type": "string" },
+          "subcategories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "titleFa", "titleEn", "count"],
+              "properties": {
+                "id": { "type": "string" },
+                "titleFa": { "type": "string" },
+                "titleEn": { "type": "string" },
+                "count": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "productFamilies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "code",
+          "manufacturerId",
+          "categoryId",
+          "uiCategory",
+          "titleFa",
+          "titleEn",
+          "standards",
+          "variantAxes",
+          "skuCount",
+          "publishedCount",
+          "sourceUrl"
+        ]
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ProductRecord"
+      }
+    }
+  },
+  "$defs": {
+    "ProductRecord": {
+      "type": "object",
+      "required": [
+        "catalogRowId",
+        "id",
+        "sku",
+        "suggestedSiteSku",
+        "manufacturerId",
+        "manufacturer",
+        "manufacturerAttribution",
+        "brand",
+        "brandFa",
+        "isLegacyBrand",
+        "legacyFlagTextFa",
+        "categoryId",
+        "category",
+        "categoryTitleFa",
+        "subCategoryId",
+        "subCategory",
+        "familyId",
+        "family",
+        "modelCode",
+        "articleNumber",
+        "titleFa",
+        "titleEn",
+        "shortDescriptionFa",
+        "descriptionFa",
+        "specs",
+        "technicalAttributes",
+        "keywords",
+        "aliases",
+        "synonyms",
+        "seo",
+        "commercial",
+        "media",
+        "crossReferences",
+        "publicationStatus",
+        "verificationStatus",
+        "verificationStatusFa",
+        "sourceUrl",
+        "caveatsFa",
+        "reviewedOn"
+      ],
+      "properties": {
+        "catalogRowId": { "type": "integer", "minimum": 1 },
+        "id": { "type": "string", "minLength": 2 },
+        "sku": { "type": "string", "minLength": 2 },
+        "suggestedSiteSku": { "type": "string" },
+        "manufacturerId": { "type": "string", "enum": ["jpc", "festo", "norgren", "bosch-rexroth"] },
+        "manufacturer": { "type": "string" },
+        "manufacturerAttribution": { "type": "string" },
+        "brand": { "type": "string", "enum": ["JPC", "Festo", "Norgren", "Bosch Rexroth"] },
+        "brandDisplay": { "type": "string" },
+        "brandFa": { "type": "string" },
+        "isLegacyBrand": { "type": "boolean" },
+        "legacyFlagTextFa": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "category": { "type": "string", "enum": ["cylinders", "valves", "frl-accessories"] },
+        "categoryTitleFa": { "type": "string" },
+        "subCategoryId": { "type": "string" },
+        "subCategory": { "type": "string" },
+        "familyId": { "type": "string" },
+        "family": { "type": "string" },
+        "modelCode": { "type": "string", "minLength": 1 },
+        "articleNumber": {
+          "type": ["string", "null"],
+          "description": "Verified manufacturer order/article number; null or empty string if unverified. Never fabricated from modelCode."
+        },
+        "titleFa": { "type": "string", "minLength": 3 },
+        "titleEn": { "type": "string", "minLength": 3 },
+        "shortDescriptionFa": { "type": "string" },
+        "descriptionFa": { "type": "string" },
+        "technicalAttributes": {
+          "type": "object",
+          "required": [
+            "boreMm",
+            "strokeMm",
+            "rodDiameterMm",
+            "portSize",
+            "tubeOdMm",
+            "valveFunction",
+            "coilVoltage",
+            "cushioning",
+            "actuationType",
+            "standards",
+            "packQuantity",
+            "packQuantityCaveatFa",
+            "flowRateLMin",
+            "pressureRange"
+          ],
+          "properties": {
+            "boreMm": { "type": ["number", "null"] },
+            "strokeMm": { "type": ["number", "null"] },
+            "rodDiameterMm": { "type": ["number", "null"] },
+            "portSize": { "type": ["string", "null"] },
+            "tubeOdMm": { "type": ["string", "null"] },
+            "valveFunction": { "type": ["string", "null"] },
+            "coilVoltage": { "type": ["string", "null"] },
+            "cushioning": { "type": ["string", "null"] },
+            "actuationType": { "type": ["string", "null"] },
+            "standards": { "type": "array", "items": { "type": "string" } },
+            "packQuantity": { "type": ["integer", "null"] },
+            "packQuantityCaveatFa": { "type": ["string", "null"] },
+            "flowRateLMin": { "type": ["number", "null"] },
+            "pressureRange": { "type": "string" }
+          }
+        },
+        "publicationStatus": {
+          "type": "string",
+          "enum": ["draft", "pending_verification", "approved", "published", "archived"]
+        },
+        "verificationStatus": {
+          "type": "string",
+          "enum": [
+            "manufacturer_catalog_verified_pending_final_qa",
+            "historical_catalog_reference_only",
+            "jpc_catalog_pending_independent_datasheet"
+          ]
+        },
+        "crossReferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["targetSku", "targetModel", "targetBrand", "tier", "engineeringNoteFa"],
+            "properties": {
+              "targetSku": { "type": "string" },
+              "targetModel": { "type": "string" },
+              "targetBrand": { "type": "string" },
+              "tier": {
+                "type": "string",
+                "enum": [
+                  "verified_direct_replacement",
+                  "conditionally_compatible",
+                  "functionally_similar",
+                  "unverified_candidate"
+                ]
+              },
+              "engineeringNoteFa": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
