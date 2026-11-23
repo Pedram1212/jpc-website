@@ -741,6 +741,8 @@ def render_full_html_page(
   <script src="{base_prefix}assets/js/products-data.js?v={ASSET_VERSION}" defer></script>
   <script src="{base_prefix}assets/js/app.js?v={ASSET_VERSION}" defer></script>
 {extra_inline_script}
+  <script>window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};</script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
 """

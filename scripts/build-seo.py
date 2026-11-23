@@ -912,6 +912,19 @@ def sync_page_chrome_and_assets(html_path: Path) -> None:
     # 4. Sanitize JSON-LD so امیر جلالی appears only once (inside Organization.founder)
     content = sanitize_jsonld_amir_jalali(content)
 
+    # 5. Inject official Vercel Web Analytics snippet idempotently right before </body>
+    content = re.sub(
+        r"\s*<script>\s*window\.va\s*=\s*window\.va\s*\|\|.*?/_vercel/insights/script\.js[^>]*>\s*</script>",
+        "",
+        content,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
+    va_snippet = (
+        '  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n'
+        '  <script defer src="/_vercel/insights/script.js"></script>\n'
+    )
+    content = re.sub(r"\s*</body>", f"\n{va_snippet}</body>", content, count=1, flags=re.IGNORECASE)
+
     html_path.write_text(content, encoding="utf-8")
 
 
