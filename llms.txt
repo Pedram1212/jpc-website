@@ -20,12 +20,14 @@
 
 ---
 
-## 2. معماری صفحات و راهنمای مسیرهای سایت (98 Indexable Canonical URLs)
+## 2. معماری صفحات و راهنمای مسیرهای سایت (100 Indexable Canonical URLs)
 
 ### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)
 - صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/
 - کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/
 - مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/
+- مرکز جامع انتخاب و محاسبه واحد مراقبت هوای فشرده (FRL): https://jpciran.com/guides/frl-air-preparation-guide/
+- مرکز عیبیابی مدارهای پنوماتیک و تشخیص قطعات: https://jpciran.com/guides/pneumatic-troubleshooting-guide/
 - شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html
 - جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html
 - واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html

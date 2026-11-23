@@ -998,12 +998,14 @@ def generate_llms_txt(out_path: Path) -> None:
         "",
         "---",
         "",
-        "## 2. معماری صفحات و راهنمای مسیرهای سایت (98 Indexable Canonical URLs)",
+        "## 2. معماری صفحات و راهنمای مسیرهای سایت (100 Indexable Canonical URLs)",
         "",
         "### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)",
         "- صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/",
         "- کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/",
         "- مرکز معادل‌یابی و مقایسه فنی تجهیزات پنوماتیک: https://jpciran.com/compare/",
+        "- مرکز جامع انتخاب و محاسبه واحد مراقبت هوای فشرده (FRL): https://jpciran.com/guides/frl-air-preparation-guide/",
+        "- مرکز عیبیابی مدارهای پنوماتیک و تشخیص قطعات: https://jpciran.com/guides/pneumatic-troubleshooting-guide/",
         "- شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html",
         "- جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html",
         "- واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html",
@@ -1072,13 +1074,18 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
         "- **Working Hours:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰",
         "- **AI Nameplate Assistant:** `https://ai.jpciran.com` (دستیار هوشمند تشخیص پلاک AI)",
         "- **Canonical Website:** `https://jpciran.com/`",
-        "- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs) + 6 engineering cross-reference comparison pages.",
+        "- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs) + 6 engineering cross-reference comparison pages + 4 complete engineering knowledge hubs.",
         "",
         "---",
         "",
-        "## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`, `/compare/`)",
+        "## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`, `/compare/`, `/guides/`)",
         "",
         "- **Main Catalog Hub:** `https://jpciran.com/products/`",
+        "- **4 Engineering Knowledge Hubs:**",
+        "  - `https://jpciran.com/pneumatic-cylinder-buying-guide.html`",
+        "  - `https://jpciran.com/solenoid-valve-guide.html`",
+        "  - `https://jpciran.com/guides/frl-air-preparation-guide/`",
+        "  - `https://jpciran.com/guides/pneumatic-troubleshooting-guide/`",
         "- **Technical Comparison & Cross-Reference Hub:** `https://jpciran.com/compare/`",
         "  - `https://jpciran.com/compare/festo-dsbc-vs-iso-15552-cylinders/`",
         "  - `https://jpciran.com/compare/festo-mfh-vs-jpc-4v-solenoid-valves/`",
@@ -1168,6 +1175,7 @@ def generate_multi_level_catalog_pages() -> dict:
       - 30 Product Family / Series Pages (`/series/<family-id>/index.html`)
       - 40 Individual Product Pages (`/product/<slug>/index.html` — ONLY `published` pilot SKUs)
       - `/compare/` (`compare/index.html`) + 5 Engineering Comparison Pages (`/compare/<slug>/index.html`)
+      - 2 Engineering Knowledge Hubs (`/guides/frl-air-preparation-guide/`, `/guides/pneumatic-troubleshooting-guide/`)
     """
     import shutil
     from templates.catalog_pages import (
@@ -1182,6 +1190,7 @@ def generate_multi_level_catalog_pages() -> dict:
         render_compare_detail_page,
         render_compare_hub_page,
     )
+    from templates.guide_pages import GUIDE_PAGES_SPEC, render_guide_page
     from templates.product_page import get_product_slug, render_product_page
 
     catalog_json_path = ROOT_DIR / "data" / "catalog-500.json"
@@ -1273,6 +1282,19 @@ def generate_multi_level_catalog_pages() -> dict:
         generated_files.append(cmp_path)
         sitemap_extra_urls.append((f"https://jpciran.com/compare/{cmp_spec['slug']}/", "weekly", "0.86"))
 
+    # 7. 2 Engineering Knowledge Hubs (/guides/<slug>/index.html)
+    guides_root_dir = ROOT_DIR / "guides"
+    if guides_root_dir.exists():
+        shutil.rmtree(guides_root_dir)
+    guides_root_dir.mkdir(parents=True, exist_ok=True)
+
+    for guide_spec in GUIDE_PAGES_SPEC:
+        guide_path = guides_root_dir / guide_spec["slug"] / "index.html"
+        guide_path.parent.mkdir(parents=True, exist_ok=True)
+        guide_path.write_text(render_guide_page(guide_spec), encoding="utf-8")
+        generated_files.append(guide_path)
+        sitemap_extra_urls.append((f"https://jpciran.com/guides/{guide_spec['slug']}/", "monthly", "0.86"))
+
     return {
         "files": generated_files,
         "sitemap_urls": sitemap_extra_urls,
@@ -1283,6 +1305,7 @@ def generate_multi_level_catalog_pages() -> dict:
             "series": len(families),
             "products_published": len(published_products),
             "compare_pages": 1 + len(COMPARE_PAGES_SPEC),
+            "guide_pages": len(GUIDE_PAGES_SPEC),
             "total": len(generated_files),
         },
     }

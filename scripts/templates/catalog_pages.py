@@ -1116,7 +1116,7 @@ def render_series_page(family: dict, all_products: list) -> str:
       </div>
     </section>
 
-    <section class="section" style="padding: 1rem 0 2.25rem;">
+    <section class="section" style="padding: 1rem 0 1.25rem;">
       <div class="container">
         <div style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 14px; padding: clamp(1.15rem, 3vw, 1.75rem);">
           <span class="section-eyebrow">محاسبات مهندسی و راهنمای انتخاب سریع</span>
@@ -1124,6 +1124,23 @@ def render_series_page(family: dict, all_products: list) -> str:
             پرسش‌های متداول محاسبه و انتخاب در سری <span dir="ltr" class="mono">{esc(family['code'])}</span>
           </h2>
 {faqs_html}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding: 0.5rem 0 2.25rem;">
+      <div class="container">
+        <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 14px; padding: clamp(1.15rem, 3vw, 1.6rem);">
+          <span class="section-eyebrow">دانشنامه مهندسی و معادل‌یابی JPC</span>
+          <h2 style="font-size: 1.1rem; font-weight: 800; color: #10243A; margin: 0.2rem 0 0.85rem;">
+            راهنماهای مهندسی مرتبط
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.65rem;">
+            <a href="{base_prefix}pneumatic-cylinder-buying-guide.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.75rem 0.9rem; text-decoration: none; color: #10243A; font-size: 0.83rem; font-weight: 700;">📘 راهنمای انتخاب جک پنوماتیک (ISO 15552 و SC) ←</a>
+            <a href="{base_prefix}solenoid-valve-guide.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.75rem 0.9rem; text-decoration: none; color: #10243A; font-size: 0.83rem; font-weight: 700;">⚡ راهنمای انتخاب شیر برقی ۵/۲، ۳/۲ و ۵/۳ ←</a>
+            <a href="{base_prefix}guides/frl-air-preparation-guide/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.75rem 0.9rem; text-decoration: none; color: #10243A; font-size: 0.83rem; font-weight: 700;">🌬️ مرکز جامع انتخاب واحد مراقبت هوا (FRL) ←</a>
+            <a href="{base_prefix}guides/pneumatic-troubleshooting-guide/index.html" style="background: #FFFFFF; border: 1px solid #E1E7EE; border-radius: 8px; padding: 0.75rem 0.9rem; text-decoration: none; color: #10243A; font-size: 0.83rem; font-weight: 700;">🛠️ مرکز عیبیابی مدارهای پنوماتیک و تشخیص رزوه ←</a>
+          </div>
         </div>
       </div>
     </section>
