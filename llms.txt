@@ -5,27 +5,54 @@
 
 ---
 
-## معرفی فارسی (Persian Summary)
+## 1. معرفی رسمی مجموعه (Corporate Profile)
 
-**نام مجموعه:** شرکت جلالی پنوماتیک (JPC)
-**مؤسس و مدیریت مجموعه:** با مدیریت امیر جلالی (Amir Jalali)
-**برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)
-**دامنه‌های رسمی:** `https://jpciran.com` و `https://jalalipneumatic.ir`
-**حوزه فعالیت:** تأمین تخصصی تجهیزات پنوماتیک صنعتی، شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا (FRL) و اتصالات در ایران.
-**آدرس فروشگاه مرکزی:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱
-**تلفن‌های ثابت:** `021-33110796` | `021-33932529`
-**همراه و واتساپ:** `09121305167` (`https://wa.me/989121305167`)
-**ساعات کاری:** شنبه تا پنجشنبه ۰۹:۰۰ تا ۱۸:۰۰
-**دستیار هوشمند تشخیص پلاک (AI):** `https://ai.jpciran.com`
+- **نام شرکت:** شرکت جلالی پنوماتیک (JPC)
+- **مؤسس و مدیریت مجموعه:** با مدیریت امیر جلالی (Amir Jalali)
+- **برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)
+- **دامنه‌های رسمی:** `https://jpciran.com` و `https://www.jpciran.com`
+- **حوزه فعالیت:** تأمین تخصصی تجهیزات پنوماتیک صنعتی، شیرهای برقی، جک‌های پنوماتیک ISO 15552، واحدهای مراقبت هوا (FRL) و اتصالات در ایران.
+- **آدرس فروشگاه مرکزی:** تهران، لاله‌زار جنوبی، روبروی کوچه علیپور، پاساژ رزاق‌منش، پلاک ۱
+- **تلفن‌های ثابت:** `021-33110796` | `021-33932529`
+- **همراه و واتساپ:** `09121305167` (`https://wa.me/989121305167`)
+- **ساعات کاری:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰
+- **دستیار هوشمند تشخیص پلاک (AI):** `https://ai.jpciran.com`
 
-### صفحات تخصصی و ابزارهای مهندسی
-- صفحه اصلی و جستجوی فنی کد قطعه: https://jpciran.com/
+---
+
+## 2. معماری صفحات و راهنمای مسیرهای سایت (92 Indexable Canonical URLs)
+
+### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)
+- صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/
+- کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/
 - شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html
 - جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html
 - واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html
 - جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC: https://jpciran.com/festo-cross-reference.html
 - راهنمای خرید جک پنوماتیک: https://jpciran.com/pneumatic-cylinder-buying-guide.html
 - راهنمای انتخاب شیر برقی پنوماتیک: https://jpciran.com/solenoid-valve-guide.html
-- فروشگاه پنوماتیک لالهزار تهران: https://jpciran.com/pneumatics-lalehzar-tehran.html
+- فروشگاه پنوماتیک لاله‌زار تهران: https://jpciran.com/pneumatics-lalehzar-tehran.html
 - پنوماتیک چیست و معرفی برند JPC: https://jpciran.com/what-is-pneumatics-jpc.html
 - دستیار هوشمند تشخیص پلاک AI: https://ai.jpciran.com
+
+### ب) ۸ صفحه دسته‌بندی تخصصی (`/products/<category>/`)
+- جک و سیلندر پنوماتیک: https://jpciran.com/products/pneumatic-cylinders/
+- شیرهای برقی و کنترل جهت: https://jpciran.com/products/solenoid-valves/
+- واحد مراقبت و آماده‌سازی هوا (FRL): https://jpciran.com/products/air-preparation/
+- اتصالات فشاری و رزوه‌ای پنوماتیک: https://jpciran.com/products/pneumatic-fittings/
+- شیلنگ و لوله‌های پنوماتیک: https://jpciran.com/products/pneumatic-tubing/
+- شیرهای کنترل جریان و فلوکنترل: https://jpciran.com/products/flow-control-valves/
+- رگلاتورهای فشار و فیلتر رگلاتور: https://jpciran.com/products/pressure-regulators/
+- صداخفه‌کن و سایلنسر پنوماتیک: https://jpciran.com/products/silencers-exhaust/
+
+### ج) ۴ صفحه برند و شفافیت نقش تأمین (`/brands/<brand>/`)
+- برند اختصاصی JPC (Proprietary Brand): https://jpciran.com/brands/jpc/
+- فستو آلمان (Festo — 400 catalog SKUs): https://jpciran.com/brands/festo/
+- نورگرن (Norgren — 55 catalog SKUs): https://jpciran.com/brands/norgren/
+- بوش رکسروت / آونتیکس (Bosch Rexroth / AVENTICS — 35 historical legacy reference SKUs): https://jpciran.com/brands/bosch-rexroth/
+
+### د) ۳۰ صفحه خانواده و سری فنی (`/series/<family>/`)
+- سری‌های JPC: `/series/jpc-4v210/`, `/series/jpc-4v220/`, `/series/jpc-4v330c/`, `/series/jpc-3v210/`, `/series/jpc-dnc/`, `/series/jpc-sc/`, `/series/jpc-advu/`, `/series/jpc-mal/`, `/series/jpc-ac4010/`, `/series/jpc-hvff/`
+- سری‌های Festo: `/series/festo-dsbc/`, `/series/festo-dsbc-d3/`, `/series/festo-qs/`, `/series/festo-qs-reducing/`, `/series/festo-qss/`, `/series/festo-qss-f/`, `/series/festo-qssf/`, `/series/festo-qsc/`, `/series/festo-qs-h/`, `/series/festo-qsh/`, `/series/festo-qsl-h/`, `/series/festo-qslv/`
+- سری‌های Norgren: `/series/norgren-v60/`, `/series/norgren-v61/`, `/series/norgren-v63/`, `/series/norgren-bl72/`, `/series/norgren-bl73/`, `/series/norgren-bl74/`, `/series/norgren-t40/`
+- سری تاریخی Bosch Rexroth / AVENTICS: `/series/rexroth-hf03-lg/`

@@ -1,32 +1,40 @@
+# شرکت جلالی پنوماتیک (JPC - Jalali Pneumatic Company)
+# Robots & AI Search Crawler Policy (GEO / AEO)
+
 User-agent: *
 Allow: /
+Disallow: /data/
 
-# Search Engine Crawlers
+# 1. Primary Search Indexing Crawlers (Google, Bing, OpenAI Search)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# AI & Generative Search Crawlers (GEO / AEO)
-User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+# 2. Generative AI & Model-Training Bots (Explicitly Separated from Search Indexing Bots)
+User-agent: GPTBot
+Allow: /
+Disallow: /data/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /data/
+
 User-agent: ClaudeBot
 Allow: /
+Disallow: /data/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /data/
 
 Sitemap: https://jpciran.com/sitemap.xml
-# LLMs Summary: https://jpciran.com/llms.txt
-# LLMs Full Catalog & Technical Index: https://jpciran.com/llms-full.txt
+# LLMs Structured Summary: https://jpciran.com/llms.txt
+# LLMs Full Technical Catalog Index: https://jpciran.com/llms-full.txt

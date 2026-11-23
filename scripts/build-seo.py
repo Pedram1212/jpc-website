@@ -441,8 +441,8 @@ def build_shared_header_and_drawers(filename: str) -> str:
       </a>
 
       <nav class="main-nav" aria-label="ناوبری اصلی">
-        <a href="{prefix}#catalog" class="nav-link{nav_products_active}">محصولات</a>
-        <a href="{prefix}#sourcing" class="nav-link">
+        <a href="products/index.html" class="nav-link{nav_products_active}">محصولات</a>
+        <a href="brands/jpc/index.html" class="nav-link">
           <span>برندها</span>
           <span class="nav-link-badge" dir="ltr">JPC</span>
         </a>
@@ -555,12 +555,12 @@ def build_shared_header_and_drawers(filename: str) -> str:
           <span style="display:inline-flex; align-items:center; gap:0.4rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path><path d="M5 3v4M3 5h4M19 17v4M17 19h4"></path></svg><span>دستیار هوشمند تشخیص پلاک AI</span></span>
           <span class="mono" dir="ltr">AI</span>
         </a>
-        <a href="{prefix}#catalog" class="mobile-nav-link">
-          <span>محصولات (کاتالوگ جامع)</span>
+        <a href="products/index.html" class="mobile-nav-link">
+          <span>کاتالوگ جامع محصولات (۵۰۰ کد فنی)</span>
           <span class="mono" dir="ltr">ALL</span>
         </a>
-        <a href="{prefix}#sourcing" class="mobile-nav-link">
-          <span>برندها (JPC و برندهای اروپایی)</span>
+        <a href="brands/jpc/index.html" class="mobile-nav-link">
+          <span>برند اختصاصی JPC و برندهای صنعتی</span>
           <span class="nav-link-badge" dir="ltr">JPC</span>
         </a>
         <a href="festo-cross-reference.html" class="mobile-nav-link">
@@ -579,17 +579,21 @@ def build_shared_header_and_drawers(filename: str) -> str:
           <span>درباره ما (فروشگاه لالهزار تهران)</span>
           <span class="mono" dir="ltr">ABOUT</span>
         </a>
-        <a href="solenoid-valves.html" class="mobile-nav-link">
+        <a href="products/solenoid-valves/index.html" class="mobile-nav-link">
           <span>شیرهای برقی پنوماتیک</span>
           <span class="mono" dir="ltr">3/2 · 5/2</span>
         </a>
-        <a href="pneumatic-cylinders.html" class="mobile-nav-link">
-          <span>جک‌های پنوماتیک</span>
+        <a href="products/pneumatic-cylinders/index.html" class="mobile-nav-link">
+          <span>جک‌های پنوماتیک ISO 15552</span>
           <span class="mono" dir="ltr">ISO</span>
         </a>
-        <a href="frl-accessories.html" class="mobile-nav-link">
-          <span>واحد مراقبت هوا و اتصالات</span>
+        <a href="products/air-preparation/index.html" class="mobile-nav-link">
+          <span>واحد مراقبت هوا (FRL)</span>
           <span class="mono" dir="ltr">FRL</span>
+        </a>
+        <a href="products/pneumatic-fittings/index.html" class="mobile-nav-link">
+          <span>اتصالات فشاری و شیلنگ</span>
+          <span class="mono" dir="ltr">QS</span>
         </a>
         <a href="pneumatic-cylinder-buying-guide.html" class="mobile-nav-link">
           <span>راهنمای خرید جک پنوماتیک</span>
@@ -733,19 +737,23 @@ def build_shared_footer(filename: str) -> str:
         <div>
           <h4 class="footer-col-title">دسته‌بندی محصولات</h4>
           <ul class="footer-links">
-            <li><a href="solenoid-valves.html">شیرهای برقی پنوماتیک (3/2, 5/2, 5/3)</a></li>
-            <li><a href="pneumatic-cylinders.html">جک و سیلندر پنوماتیک (پروفیلی، چهارمیل، کامپکت)</a></li>
-            <li><a href="frl-accessories.html">واحد مراقبت هوا (FRL)، رگولاتور و مانومتر</a></li>
-            <li><a href="frl-accessories.html">اتصالات، شیلنگ پنوماتیک و شیر فلوکنترل</a></li>
-            <li><a href="{prefix}#categories">مرور هر ۹ گروه کالایی پنوماتیک</a></li>
+            <li><a href="products/index.html">کاتالوگ جامع محصولات (۵۰۰ کد فنی)</a></li>
+            <li><a href="products/pneumatic-cylinders/index.html">جک و سیلندر پنوماتیک ISO 15552</a></li>
+            <li><a href="products/solenoid-valves/index.html">شیرهای برقی پنوماتیک (3/2, 5/2, 5/3)</a></li>
+            <li><a href="products/air-preparation/index.html">واحد مراقبت هوا (FRL) و رگلاتور</a></li>
+            <li><a href="products/pneumatic-fittings/index.html">اتصالات فشاری و شیلنگ پنوماتیک</a></li>
+            <li><a href="products/silencers-exhaust/index.html">صداخفه‌کن و سایلنسر برنزی</a></li>
+            <li><a href="solenoid-valves.html">صفحه جامع شیرهای برقی</a> | <a href="pneumatic-cylinders.html">جک‌ها</a> | <a href="frl-accessories.html">FRL</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-col-title">برندها و ابزارهای مهندسی</h4>
           <ul class="footer-links">
-            <li><a href="{prefix}#jpc-brand">برند تجاری اختصاصی JPC</a></li>
-            <li><a href="{prefix}#sourcing">تأمین و معادل‌یابی Festo، Norgren و Bosch Rexroth</a></li>
+            <li><a href="brands/jpc/index.html">برند تجاری اختصاصی JPC</a></li>
+            <li><a href="brands/festo/index.html">کاتالوگ و معادل‌یابی فستو (Festo)</a></li>
+            <li><a href="brands/norgren/index.html">کاتالوگ و معادل‌یابی نورگرن (Norgren)</a></li>
+            <li><a href="brands/bosch-rexroth/index.html">نمایه تاریخی Bosch Rexroth / AVENTICS</a></li>
             <li><a href="{prefix}#calculator">محاسبه‌گر نیروی سیلندر پنوماتیک (N / kgf)</a></li>
             <li><a href="festo-cross-reference.html">ابزار معادل‌یابی کدهای فنی پنوماتیک</a></li>
             <li><a href="https://ai.jpciran.com" target="_blank" rel="noopener noreferrer" style="color:#F28C28; font-weight:700;">دستیار هوشمند تشخیص پلاک AI</a></li>
@@ -962,40 +970,73 @@ def generate_llms_txt(out_path: Path) -> None:
         "",
         "---",
         "",
-        "## معرفی فارسی (Persian Summary)",
+        "## 1. معرفی رسمی مجموعه (Corporate Profile)",
         "",
-        "**نام مجموعه:** شرکت جلالی پنوماتیک (JPC)",
-        "**مؤسس و مدیریت مجموعه:** با مدیریت امیر جلالی (Amir Jalali)",
-        "**برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)",
-        "**دامنه‌های رسمی:** `https://jpciran.com` و `https://jalalipneumatic.ir`",
-        "**حوزه فعالیت:** تأمین تخصصی تجهیزات پنوماتیک صنعتی، شیرهای برقی، جک‌های پنوماتیک، واحدهای مراقبت هوا (FRL) و اتصالات در ایران.",
-        "**آدرس فروشگاه مرکزی:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱",
-        "**تلفن‌های ثابت:** `021-33110796` | `021-33932529`",
-        "**همراه و واتساپ:** `09121305167` (`https://wa.me/989121305167`)",
-        "**ساعات کاری:** شنبه تا پنجشنبه ۰۹:۰۰ تا ۱۸:۰۰",
-        "**دستیار هوشمند تشخیص پلاک (AI):** `https://ai.jpciran.com`",
+        "- **نام شرکت:** شرکت جلالی پنوماتیک (JPC)",
+        "- **مؤسس و مدیریت مجموعه:** با مدیریت امیر جلالی (Amir Jalali)",
+        "- **برند تجاری اختصاصی:** JPC (Jalali Pneumatic Company)",
+        "- **دامنه‌های رسمی:** `https://jpciran.com` و `https://www.jpciran.com`",
+        "- **حوزه فعالیت:** تأمین تخصصی تجهیزات پنوماتیک صنعتی، شیرهای برقی، جک‌های پنوماتیک ISO 15552، واحدهای مراقبت هوا (FRL) و اتصالات در ایران.",
+        "- **آدرس فروشگاه مرکزی:** تهران، لاله‌زار جنوبی، روبروی کوچه علیپور، پاساژ رزاق‌منش، پلاک ۱",
+        "- **تلفن‌های ثابت:** `021-33110796` | `021-33932529`",
+        "- **همراه و واتساپ:** `09121305167` (`https://wa.me/989121305167`)",
+        "- **ساعات کاری:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰",
+        "- **دستیار هوشمند تشخیص پلاک (AI):** `https://ai.jpciran.com`",
         "",
-        "### صفحات تخصصی و ابزارهای مهندسی",
-        "- صفحه اصلی و جستجوی فنی کد قطعه: https://jpciran.com/",
+        "---",
+        "",
+        "## 2. معماری صفحات و راهنمای مسیرهای سایت (92 Indexable Canonical URLs)",
+        "",
+        "### الف) صفحات اصلی و راهنماهای مهندسی (Root Landing & Technical Guides)",
+        "- صفحه اصلی و جستجوی ۸سطحی ۵۰۰ کد فنی: https://jpciran.com/",
+        "- کاتالوگ جامع محصولات پنوماتیک (۵۰۰ کد فنی): https://jpciran.com/products/",
         "- شیرهای برقی پنوماتیک (3/2, 5/2, 5/3): https://jpciran.com/solenoid-valves.html",
         "- جک و سیلندر پنوماتیک (ISO 15552 & 6432): https://jpciran.com/pneumatic-cylinders.html",
         "- واحد مراقبت هوا (FRL)، رگولاتور، فلوکنترل و اتصالات: https://jpciran.com/frl-accessories.html",
         "- جدول معادل‌یابی فستو، نورگرن و رکسروت به JPC: https://jpciran.com/festo-cross-reference.html",
         "- راهنمای خرید جک پنوماتیک: https://jpciran.com/pneumatic-cylinder-buying-guide.html",
         "- راهنمای انتخاب شیر برقی پنوماتیک: https://jpciran.com/solenoid-valve-guide.html",
-        "- فروشگاه پنوماتیک لالهزار تهران: https://jpciran.com/pneumatics-lalehzar-tehran.html",
+        "- فروشگاه پنوماتیک لاله‌زار تهران: https://jpciran.com/pneumatics-lalehzar-tehran.html",
         "- پنوماتیک چیست و معرفی برند JPC: https://jpciran.com/what-is-pneumatics-jpc.html",
         "- دستیار هوشمند تشخیص پلاک AI: https://ai.jpciran.com",
+        "",
+        "### ب) ۸ صفحه دسته‌بندی تخصصی (`/products/<category>/`)",
+        "- جک و سیلندر پنوماتیک: https://jpciran.com/products/pneumatic-cylinders/",
+        "- شیرهای برقی و کنترل جهت: https://jpciran.com/products/solenoid-valves/",
+        "- واحد مراقبت و آماده‌سازی هوا (FRL): https://jpciran.com/products/air-preparation/",
+        "- اتصالات فشاری و رزوه‌ای پنوماتیک: https://jpciran.com/products/pneumatic-fittings/",
+        "- شیلنگ و لوله‌های پنوماتیک: https://jpciran.com/products/pneumatic-tubing/",
+        "- شیرهای کنترل جریان و فلوکنترل: https://jpciran.com/products/flow-control-valves/",
+        "- رگلاتورهای فشار و فیلتر رگلاتور: https://jpciran.com/products/pressure-regulators/",
+        "- صداخفه‌کن و سایلنسر پنوماتیک: https://jpciran.com/products/silencers-exhaust/",
+        "",
+        "### ج) ۴ صفحه برند و شفافیت نقش تأمین (`/brands/<brand>/`)",
+        "- برند اختصاصی JPC (Proprietary Brand): https://jpciran.com/brands/jpc/",
+        "- فستو آلمان (Festo — 400 catalog SKUs): https://jpciran.com/brands/festo/",
+        "- نورگرن (Norgren — 55 catalog SKUs): https://jpciran.com/brands/norgren/",
+        "- بوش رکسروت / آونتیکس (Bosch Rexroth / AVENTICS — 35 historical legacy reference SKUs): https://jpciran.com/brands/bosch-rexroth/",
+        "",
+        "### د) ۳۰ صفحه خانواده و سری فنی (`/series/<family>/`)",
+        "- سری‌های JPC: `/series/jpc-4v210/`, `/series/jpc-4v220/`, `/series/jpc-4v330c/`, `/series/jpc-3v210/`, `/series/jpc-dnc/`, `/series/jpc-sc/`, `/series/jpc-advu/`, `/series/jpc-mal/`, `/series/jpc-ac4010/`, `/series/jpc-hvff/`",
+        "- سری‌های Festo: `/series/festo-dsbc/`, `/series/festo-dsbc-d3/`, `/series/festo-qs/`, `/series/festo-qs-reducing/`, `/series/festo-qss/`, `/series/festo-qss-f/`, `/series/festo-qssf/`, `/series/festo-qsc/`, `/series/festo-qs-h/`, `/series/festo-qsh/`, `/series/festo-qsl-h/`, `/series/festo-qslv/`",
+        "- سری‌های Norgren: `/series/norgren-v60/`, `/series/norgren-v61/`, `/series/norgren-v63/`, `/series/norgren-bl72/`, `/series/norgren-bl73/`, `/series/norgren-bl74/`, `/series/norgren-t40/`",
+        "- سری تاریخی Bosch Rexroth / AVENTICS: `/series/rexroth-hf03-lg/`",
         "",
     ]
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def generate_llms_full_txt(products: list, out_path: Path) -> None:
+    from templates.product_page import get_product_slug
+
+    catalog_json_path = ROOT_DIR / "data" / "catalog-500.json"
+    catalog_doc = json.loads(catalog_json_path.read_text(encoding="utf-8"))
+    families = catalog_doc.get("productFamilies", [])
+
     lines = [
         "# شرکت جلالی پنوماتیک | JPC – Jalali Pneumatic Company (Full AI & Technical Catalog Reference)",
         "",
-        "> **شرکت جلالی پنوماتیک (`JPC`)**؛ تأمین‌کننده و توزیع‌کننده تخصصی تجهیزات پنوماتیک صنعتی در ایران (تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱).",
+        "> **شرکت جلالی پنوماتیک (`JPC`)**؛ تأمین‌کننده و توزیع‌کننده تخصصی تجهیزات پنوماتیک صنعتی در ایران (تهران، لاله‌زار جنوبی، روبروی کوچه علیپور، پاساژ رزاق‌منش، پلاک ۱).",
         "",
         "---",
         "",
@@ -1003,25 +1044,55 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
         "",
         "- **Company:** شرکت جلالی پنوماتیک (JPC)",
         "- **Management:** با مدیریت امیر جلالی (`Amir Jalali`)",
-        "- **Address:** تهران، لالهزار جنوبی، روبروی کوچه علیپور، پاساژ رزاقمنش، پلاک ۱",
+        "- **Address:** تهران، لاله‌زار جنوبی، روبروی کوچه علیپور، پاساژ رزاق‌منش، پلاک ۱",
         "- **Landlines:** `021-33110796` | `021-33932529`",
         "- **WhatsApp / Mobile:** `09121305167` (`https://wa.me/989121305167`)",
-        "- **Working Hours:** شنبه تا پنجشنبه ۰۹:۰۰ تا ۱۸:۰۰",
+        "- **Working Hours:** شنبه تا پنج‌شنبه ۰۹:۰۰ تا ۱۸:۰۰",
         "- **AI Nameplate Assistant:** `https://ai.jpciran.com` (دستیار هوشمند تشخیص پلاک AI)",
         "- **Canonical Website:** `https://jpciran.com/`",
+        "- **Catalog Scope:** 500 normalized PIM SKUs across 30 product series (40 published dedicated product pages + 460 draft technical search SKUs).",
         "",
         "---",
         "",
-        "## 2. Complete Verified Product Catalog Table (جدول کامل محصولات و معادل‌های فنی)",
+        "## 2. Multi-Level URL Directory Map (`/products/`, `/brands/`, `/series/`)",
         "",
-        "| ردیف | کد فنی مدل (SKU / Code) | نام فارسی تجهیز | English Product Name | برند (Brand) | سایز پورت (Port) | فشار کاری (Pressure) | کدهای هم‌ابعاد و معادل فنی (Compatible Equivalents) |",
-        "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
+        "- **Main Catalog Hub:** `https://jpciran.com/products/`",
+        "- **8 Category Directories:**",
+        "  - `https://jpciran.com/products/pneumatic-cylinders/`",
+        "  - `https://jpciran.com/products/solenoid-valves/`",
+        "  - `https://jpciran.com/products/air-preparation/`",
+        "  - `https://jpciran.com/products/pneumatic-fittings/`",
+        "  - `https://jpciran.com/products/pneumatic-tubing/`",
+        "  - `https://jpciran.com/products/flow-control-valves/`",
+        "  - `https://jpciran.com/products/pressure-regulators/`",
+        "  - `https://jpciran.com/products/silencers-exhaust/`",
+        "- **4 Brand Pages:**",
+        "  - `https://jpciran.com/brands/jpc/` (Proprietary JPC brand — 10 SKUs)",
+        "  - `https://jpciran.com/brands/festo/` (Festo sourcing & cross-reference — 400 SKUs)",
+        "  - `https://jpciran.com/brands/norgren/` (Norgren sourcing & cross-reference — 55 SKUs)",
+        "  - `https://jpciran.com/brands/bosch-rexroth/` (Historical Rexroth Pneumatics / AVENTICS legacy index — 35 SKUs)",
+        "- **30 Product Series Pages (`/series/<family-id>/`):**",
     ]
+    for f in families:
+        lines.append(f"  - `https://jpciran.com/series/{f['id']}/` — {f['titleFa']} ({f['skuCount']} SKUs)")
+
+    lines.extend(
+        [
+            "",
+            "---",
+            "",
+            "## 3. Published Flagship Product Pages Table (۴۰ صفحه تخصصی محصول منتشرشده `/product/<slug>/`)",
+            "",
+            "| ردیف | کد مدل سازنده | شماره سفارش (Article No.) | عنوان فارسی تجهیز | برند | پورت / اتصال | فشار کاری | آدرس صفحه تخصصی محصول (Canonical Product URL) |",
+            "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
+        ]
+    )
 
     for idx, p in enumerate(products, start=1):
-        equivs = ", ".join(p.get("equivalentTo", []))
+        p_slug = get_product_slug(p)
+        art = p.get("articleNumber") or "—"
         lines.append(
-            f"| {idx} | `{p['code']}` | {p['nameFa']} | {p['nameEn']} | **{p['brand']}** | `{p['portSize']}` | `{p['pressureRange']}` | `{equivs}` |"
+            f"| {idx} | `{p['modelCode']}` | `{art}` | {p['nameFa']} | **{p.get('brandDisplay') or p['brand']}** | `{p['portSize']}` | `{p['pressureRange']}` | `https://jpciran.com/product/{p_slug}/` |"
         )
 
     lines.extend(
@@ -1029,30 +1100,30 @@ def generate_llms_full_txt(products: list, out_path: Path) -> None:
             "",
             "---",
             "",
-            "## 3. Detailed Technical Specifications by SKU",
+            "## 4. Detailed Technical Specifications by Published SKU",
             "",
         ]
     )
 
     for p in products:
-        equivs = ", ".join(p.get("equivalentTo", []))
+        p_slug = get_product_slug(p)
+        equivs = ", ".join(p.get("equivalentCodes", []) or p.get("equivalentTo", [])[:5])
         keywords = "، ".join(p.get("keywords", []))
         lines.extend(
             [
-                f"### {p['code']} — {p['nameFa']}",
+                f"### {p['modelCode']} — {p['nameFa']}",
+                f"- **Canonical URL:** `https://jpciran.com/product/{p_slug}/`",
+                f"- **Site SKU:** `{p.get('sku', p['code'])}`",
+                f"- **Manufacturer Article No.:** `{p.get('articleNumber') or 'Not specified in source table'}`",
                 f"- **English Title:** {p['nameEn']}",
-                f"- **Brand:** {p['brandFa']} (`{p['brand']}`)",
-                f"- **Category:** {p['categoryTitleFa']} (`{p['category']}`)",
+                f"- **Brand & Attribution:** {p['brandFa']} (`{p.get('manufacturerAttribution', p['brand'])}`)",
+                f"- **Series / Family:** `{p.get('family', '')}` (`https://jpciran.com/series/{p.get('familyId', '')}/`)",
+                f"- **Category:** {p['categoryTitleFa']} / {p.get('subCategory', '')}",
                 f"- **Port Size:** `{p['portSize']}`",
                 f"- **Working Pressure:** `{p['pressureRange']}`",
-                f"- **Voltage / Actuation:** `{p.get('voltage', 'N/A')}`",
-                f"- **Body Material:** {p.get('bodyMaterial', '')}",
-                f"- **Flow Rate / Cushioning:** {p.get('flowRate', '')}",
-                f"- **Operating Temperature:** `{p.get('operatingTemp', '')}`",
-                f"- **Standard / Protection Class:** `{p.get('protectionClass', '')}`",
-                f"- **Compatible Equivalent Codes:** `{equivs}`",
+                f"- **Cross-Reference / Compatible Codes:** `{equivs}`",
+                f"- **Verification & Caveats:** {p.get('caveatsFa', '')}",
                 f"- **Keywords:** {keywords}",
-                f"- **Applications:** {p.get('applicationsFa', '')}",
                 "",
             ]
         )
@@ -1200,38 +1271,46 @@ def generate_sitemap_xml(out_path: Path, extra_urls: list = None) -> None:
 
 
 def generate_robots_txt(out_path: Path) -> None:
-    content = """User-agent: *
-Allow: /
+    content = """# شرکت جلالی پنوماتیک (JPC - Jalali Pneumatic Company)
+# Robots & AI Search Crawler Policy (GEO / AEO)
 
-# Search Engine Crawlers
+User-agent: *
+Allow: /
+Disallow: /data/
+
+# 1. Primary Search Indexing Crawlers (Google, Bing, OpenAI Search)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# AI & Generative Search Crawlers (GEO / AEO)
-User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+# 2. Generative AI & Model-Training Bots (Explicitly Separated from Search Indexing Bots)
+User-agent: GPTBot
+Allow: /
+Disallow: /data/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /data/
+
 User-agent: ClaudeBot
 Allow: /
+Disallow: /data/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /data/
 
 Sitemap: https://jpciran.com/sitemap.xml
-# LLMs Summary: https://jpciran.com/llms.txt
-# LLMs Full Catalog & Technical Index: https://jpciran.com/llms-full.txt
+# LLMs Structured Summary: https://jpciran.com/llms.txt
+# LLMs Full Technical Catalog Index: https://jpciran.com/llms-full.txt
 """
     out_path.write_text(content, encoding="utf-8")
 

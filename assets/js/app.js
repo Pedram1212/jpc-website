@@ -521,11 +521,13 @@
     const uniqueCount = state.rfqItems.length;
 
     // Update header & floating badges
-    document.querySelectorAll(".js-rfq-count").forEach((el) => {
+    document.querySelectorAll(".js-rfq-count, .js-rfq-count-badge").forEach((el) => {
       el.textContent = String(uniqueCount);
     });
 
-    const drawerBody = document.getElementById("rfq-drawer-body");
+    const drawerBody =
+      document.getElementById("rfq-items-container") ||
+      document.getElementById("rfq-drawer-body");
     const formPopulateBtn = document.getElementById("rfq-populate-form-btn");
     const clearBtn = document.getElementById("rfq-clear-btn");
 
@@ -1257,25 +1259,39 @@
                       </svg>
                       <span>کپی</span>
                     </button>
-                    <span class="product-code-pill">${product.code}</span>
+                    <span class="product-code-pill" dir="ltr">${product.code}</span>
                   </div>
                   <span class="product-cat-label">${product.categoryTitleFa}</span>
                 </div>
               </div>
 
               <div class="product-card-body">
-                <h3 class="product-title-fa">${product.nameFa}</h3>
+                <h3 class="product-title-fa">${
+                  product.publicationStatus === "published"
+                    ? `<a href="${
+                        window.location.pathname.includes("/products/") && !window.location.pathname.endsWith("/products/") && !window.location.pathname.endsWith("/products/index.html")
+                          ? "../../"
+                          : window.location.pathname.includes("/products")
+                          ? "../"
+                          : ""
+                      }product/${
+                        (product.seo && product.seo.urlSlug
+                          ? product.seo.urlSlug.replace(/^\/+|\/+$/g, "").replace(/^product\//, "")
+                          : product.id)
+                      }/index.html" style="color:inherit; text-decoration:none;">${product.nameFa}</a>`
+                    : product.nameFa
+                }</h3>
 
                 ${crossRefHtml}
 
                 <div class="product-specs-table">
                   <div class="spec-cell">
                     <span class="spec-key">سایز پورت (Port)</span>
-                    <span class="spec-val mono">${product.portSize}</span>
+                    <span class="spec-val mono" dir="ltr">${product.portSize}</span>
                   </div>
                   <div class="spec-cell">
                     <span class="spec-key">فشار کاری (Pressure)</span>
-                    <span class="spec-val mono">${product.pressureRange}</span>
+                    <span class="spec-val mono" dir="ltr">${product.pressureRange}</span>
                   </div>
                   <div class="spec-cell spec-cell-wide">
                     <span class="spec-key">${thirdSpecLabel}</span>
@@ -2835,6 +2851,19 @@
         trackJpcEvent("engineering_tool_opened", { toolName: "cross_reference_tool" });
       }
     });
+
+    // Keep floating bottom-left quick RFQ/WhatsApp pills hidden when scrollY < 320
+    const floatingStacks = document.querySelectorAll(".floating-actions-stack");
+    if (floatingStacks.length > 0) {
+      const syncFloatingVisibility = () => {
+        const shouldShow = (window.scrollY || window.pageYOffset || 0) >= 320;
+        floatingStacks.forEach((el) => {
+          el.classList.toggle("is-scrolled-visible", shouldShow);
+        });
+      };
+      window.addEventListener("scroll", syncFloatingVisibility, { passive: true });
+      syncFloatingVisibility();
+    }
 
     // Initialize Views
     syncFilterPillsUI();
