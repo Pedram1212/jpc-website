@@ -4952,3 +4952,166 @@ summary:focus-visible,
   }
 }
 
+/* ==========================================================================
+   UNIFIED SOLID WHITE MODAL CARD, CRISP FORM INPUTS & ACTION BUTTONS
+   ========================================================================== */
+.modal-dialog,
+.modal-card,
+.modal-content {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.32);
+  overflow: hidden;
+  width: calc(100% - 24px);
+  max-width: 520px;
+  max-height: 90dvh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#tech-detail-modal .modal-dialog,
+#tech-detail-modal .modal-card {
+  max-width: 680px;
+}
+
+.modal-header {
+  background: #10243a;
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+}
+
+.modal-header .modal-title,
+.modal-header h3 {
+  color: #ffffff;
+}
+
+.modal-body {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.prefilled-product-banner {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-right: 4px solid #f97316;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-body label,
+.modal-body .form-label {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.84rem;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.modal-body input,
+.modal-body select,
+.modal-body textarea,
+.modal-body .form-control,
+.modal-body .form-input,
+.modal-body .form-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.45;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.modal-body input::placeholder,
+.modal-body textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.modal-body input:focus,
+.modal-body select:focus,
+.modal-body textarea:focus,
+.modal-body .form-control:focus,
+.modal-body .form-input:focus,
+.modal-body .form-textarea:focus {
+  background: #ffffff;
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  outline: none;
+}
+
+/* High-Contrast Secondary WhatsApp & Telegram Action Buttons */
+.btn-whatsapp,
+#modal-wa-direct-btn,
+#modal-direct-wa-btn {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1.5px solid #10b981;
+  border-radius: 10px;
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.btn-whatsapp:hover,
+#modal-wa-direct-btn:hover,
+#modal-direct-wa-btn:hover {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.btn-telegram,
+#modal-direct-tg-btn {
+  background: #eff6ff;
+  color: #0369a1;
+  border: 1.5px solid #38bdf8;
+  border-radius: 10px;
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.btn-telegram:hover,
+#modal-direct-tg-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+/* Audit: Solid #ffffff backgrounds for RFQ Drawer, Mobile Drawer & Search Autocomplete */
+.rfq-drawer,
+.rfq-drawer-body,
+.mobile-drawer,
+.tech-autocomplete-panel {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+[data-theme="dark"] .rfq-drawer,
+[data-theme="dark"] .rfq-drawer-body,
+[data-theme="dark"] .mobile-drawer {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}

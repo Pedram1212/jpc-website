@@ -1075,38 +1075,43 @@
   </main>
 
   <!-- QUICK QUOTE MODAL -->
-  <div class="modal-backdrop" id="quick-quote-modal" role="dialog" aria-modal="true" aria-labelledby="quick-quote-modal-title">
-    <div class="modal-card">
+  <div class="modal-backdrop" id="quick-quote-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="quick-quote-modal-title">
+    <div class="modal-dialog modal-card">
       <div class="modal-header">
         <div>
-          <h3 class="modal-title" id="quick-quote-modal-title">درخواست استعلام قیمت و موجودی</h3>
-          <div style="margin-top: 0.35rem;">
-            <span class="product-code-pill" id="modal-product-code" dir="ltr">JPC-CODE</span>
-          </div>
+          <span class="mono" style="font-size: 0.72rem; color: #F59E0B;">QUICK B2B INQUIRY</span>
+          <h3 class="modal-title" id="quick-quote-modal-title" style="margin-top: 0.15rem;">درخواست استعلام قیمت و موجودی</h3>
         </div>
         <button type="button" class="modal-close-btn" data-close-modal aria-label="بستن پنجره">✕</button>
       </div>
       <div class="modal-body">
-        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
-          تجهیز انتخابی: <strong id="modal-product-title" style="color: var(--text-primary);">تجهیز پنوماتیک</strong>
-        </p>
-        <form id="modal-quote-form">
+        <div class="prefilled-product-banner">
+          <div>
+            <div style="font-size: 0.76rem; color: #475569;">تجهیز انتخابی:</div>
+            <div id="modal-prefill-name" style="font-size: 0.95rem; font-weight: 800; color: #0f172a;">تجهیز پنوماتیک JPC</div>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 0.72rem; color: #475569;">کد فنی:</div>
+            <span class="product-code-pill mono" id="modal-prefill-code" dir="ltr">JPC-CODE</span>
+          </div>
+        </div>
+        <form id="quick-quote-form">
           <div class="form-grid">
+            <div class="form-group full-width">
+              <label class="form-label" for="modal-tech-code-input">کد فنی و عنوان تجهیز (تکمیل خودکار)</label>
+              <input type="text" id="modal-tech-code-input" name="modalTechCode" class="form-control mono" dir="ltr" readonly />
+            </div>
             <div class="form-group">
               <label class="form-label" for="modal-name">نام یا نام شرکت *</label>
-              <input type="text" id="modal-name" class="form-input" required placeholder="نام شرکت یا مسئول خرید" />
+              <input type="text" id="modal-name" name="modalCompany" class="form-input" required placeholder="نام شرکت یا مسئول خرید" />
             </div>
             <div class="form-group">
               <label class="form-label" for="modal-phone">شماره موبایل / تلفن *</label>
-              <input type="tel" id="modal-phone" class="form-input mono" dir="ltr" required placeholder="0912..." />
+              <input type="tel" id="modal-phone" name="modalPhone" class="form-input mono" dir="ltr" required placeholder="0912..." />
             </div>
-            <div class="form-group">
-              <label class="form-label" for="modal-qty">تعداد مورد نیاز</label>
-              <input type="text" id="modal-qty" class="form-input" value="1 عدد" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="modal-note">توضیحات فنی (ولتاژ، کورس، درخواست معادل JPC)</label>
-              <input type="text" id="modal-note" class="form-input" placeholder="مثلاً: بوبین 24V DC یا معادل JPC" />
+            <div class="form-group full-width">
+              <label class="form-label" for="modal-qty">تعداد مورد نیاز و توضیحات فنی</label>
+              <input type="text" id="modal-qty" name="modalQty" class="form-input" value="1 عدد" placeholder="تعداد، ولتاژ بوبین، کورس یا درخواست معادل JPC" />
             </div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1.25rem;">
@@ -1114,7 +1119,7 @@
               ثبت و ارسال به واتساپ واحد فروش
             </button>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-              <a href="https://wa.me/989121305167" id="modal-direct-wa-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+              <a href="https://wa.me/989121305167" id="modal-wa-direct-btn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
                 استعلام فوری واتساپ
               </a>
               <a href="https://t.me/+989121305167" id="modal-direct-tg-btn" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-sm">
@@ -1122,6 +1127,7 @@
               </a>
             </div>
           </div>
+          <div id="modal-form-feedback" class="form-feedback" style="margin-top: 0.85rem;"></div>
         </form>
       </div>
     </div>
